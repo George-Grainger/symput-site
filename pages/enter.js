@@ -1,9 +1,10 @@
-import { auth, firestore, googleAuthProvider } from '../lib/firebase';
-import { UserContext } from '../lib/context';
-
+import { auth, firestore, googleAuthProvider } from '@/lib/firebase';
+import { UserContext } from '@/lib/context';
+import Image from 'next/image';
 import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
-import Metatags from '../components/Metatags';
+import Metatags from '@/components/Metatags';
+import Router from 'next/router';
 
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
@@ -21,22 +22,24 @@ export default function Enter(props) {
           <SignOutButton />
         )
       ) : (
-        <SignInButton />
+        <SignInWithGoogleButton />
       )}
     </main>
   );
 }
 
 // Sign in with Google button
-function SignInButton() {
+function SignInWithGoogleButton() {
   const signInWithGoogle = async () => {
-    //TODO Add error catch
-    await auth.signInWithPopup(googleAuthProvider);
+    try {
+      await auth.signInWithPopup(googleAuthProvider);
+    } catch {}
   };
 
   return (
     <button className="btn-google" onClick={signInWithGoogle}>
-      <img src={'/google.png'} width="30px" /> Sign in with Google
+      <Image src={'/google.png'} width="222px" height="222px" /> Sign in with
+      Google
     </button>
   );
 }
@@ -66,11 +69,16 @@ function UsernameForm() {
     batch.set(userDoc, {
       username: formValue,
       photoURL: user.photoURL,
-      displayName: user.displayName
+      displayName: user.displayName,
+      provider: user.providerData[0].providerId,
+      email: user.email
     });
     batch.set(usernameDoc, { uid: user.uid });
 
-    await batch.commit();
+    await batch
+      .commit()
+      .then(Router.push('/admin'))
+      .catch(console.log('Error'));
   };
 
   const onChange = (e) => {
@@ -118,7 +126,7 @@ function UsernameForm() {
         <form onSubmit={onSubmit}>
           <input
             name="username"
-            placeholder="myname"
+            placeholder="username"
             value={formValue}
             onChange={onChange}
           />
