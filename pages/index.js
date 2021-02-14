@@ -2,6 +2,9 @@ import { useContext } from 'react';
 import { UserContext } from '@/lib/context';
 import { getSortedPeopleData } from '@/lib/team';
 import Head from 'next/head';
+import Hero from '@/components/Hero';
+import Overview from '@/components/Overview';
+import Team from '@/components/Team';
 
 export const getStaticProps = async ({ locale }) => {
   const allPeopleData = getSortedPeopleData(locale);
@@ -18,8 +21,10 @@ const IndexPage = ({ allPeopleData }) => {
     <>
       <Head>
         <title>Symput</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/symput-textless.ico" />
       </Head>
+      <Hero />
+      <Overview />
       <h1 className="title">Symput</h1>
 
       <p className="description">

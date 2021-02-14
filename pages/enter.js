@@ -6,7 +6,7 @@ import debounce from 'lodash.debounce';
 import Metatags from '@/components/Metatags';
 import Router from 'next/router';
 
-export default function Enter(props) {
+export default function Enter() {
   const { user, username } = useContext(UserContext);
 
   // 1. user signed out <SignInButton />
