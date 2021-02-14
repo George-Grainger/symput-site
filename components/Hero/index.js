@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Triangle from '@/components/triangle';
+import Triangle from '@/components/Triangle';
 
 const Hero = () => (
   <section className="min-h-1.1v relative pt-16 pb-32 flex content-center items-center justify-center">
