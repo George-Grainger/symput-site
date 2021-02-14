@@ -1,6 +1,12 @@
 ---
 name: 'George Grainger'
 summary: 'Quam et numquam aperiam vel aliquam a animi. Velit aut provident sed sunt quibusdam maiores.'
+socials:
+  {
+    'facebook': 'https://www.facebook.com/public/George-Grainger',
+    'instagram': 'https://www.instagram.com/georgegrainger1/?hl=en',
+    'google': 'https://myaccount.google.com/'
+  }
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

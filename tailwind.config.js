@@ -13,6 +13,12 @@ module.exports = {
       colors: {
         orange: colors.orange
       },
+      minHeight: {
+        '1/4v': '25vh',
+        '1/2v': '50vh',
+        '3/4v': '75vh',
+        '1.1v': '110vh'
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
