@@ -6,9 +6,11 @@ import LoggedIn from './loggedIn';
 import LoggedOut from './loggedOut';
 import Navlink from './Navlink';
 import { FaBars, FaCog } from 'react-icons/fa';
+import uuid from 'react-uuid';
 
 // Top navbar
-export default function Navbar({ transparent }) {
+export default function Navbar({ data, transparent }) {
+  const { links, loginText } = data;
   const { username } = useContext(UserContext);
 
   const [navScrolled, setNavScrolled] = useState(false);
@@ -46,10 +48,13 @@ export default function Navbar({ transparent }) {
           </a>
         </Link>
         <ul className="lg:flex hidden gap-4 xl:gap-8">
-          <Navlink href="/">Aims</Navlink>
-          <Navlink href="/">The Team</Navlink>
-          <Navlink href="/">Release Date</Navlink>
-          <Navlink href="/">Feedback</Navlink>
+          {links?.map(({ text, link }) => {
+            return (
+              <Navlink key={uuid()} href={link}>
+                {text}
+              </Navlink>
+            );
+          })}
         </ul>
 
         <ul className="flex items-center gap-4 lg:gap-12">
@@ -57,7 +62,7 @@ export default function Navbar({ transparent }) {
           {username && <LoggedIn />}
 
           {/* user is not signed OR has not created username */}
-          {!username && <LoggedOut />}
+          {!username && <LoggedOut loginText={loginText} />}
 
           <button
             className="cursor-pointer text-xl px-3 py-1 focus:outline-none hover:text-yellow-400"

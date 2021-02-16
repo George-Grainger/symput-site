@@ -8,13 +8,13 @@ const LinkColumn = ({ column }) => {
         {column.title}
       </span>
       <ul>
-        {Object.entries(column.links).map(([key, value]) => {
+        {column.links.map(({ link, text }) => {
           return (
             <li
               key={uuid()}
               className="text-gray-700 hover:text-yellow-900 font-semibold block pb-2 text-sm"
             >
-              <Link href={value}>{key}</Link>
+              <Link href={link}>{text}</Link>
             </li>
           );
         })}

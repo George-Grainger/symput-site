@@ -2,7 +2,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Head from 'next/head';
 
-const Layout = ({ title, children }) => {
+const Layout = ({ title, navbarData, footerData, children }) => {
   return (
     <>
       <Head>
@@ -11,10 +11,10 @@ const Layout = ({ title, children }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <Navbar transparent={true} />
+        <Navbar data={navbarData} transparent={true} />
       </header>
       <main>{children}</main>
-      <Footer />
+      <Footer data={footerData} />
     </>
   );
 };

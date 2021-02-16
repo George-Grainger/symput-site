@@ -1,0 +1,14 @@
+{
+  "links": [
+    { "link": "/aims", "en": "Aims", "ar": "أهداف", "zh-cn": "目的" },
+    { "link": "/team", "en": "The Team", "ar": "الفريق", "zh-cn": "团队" },
+    {
+      "link": "/release",
+      "en": "Release Date",
+      "ar": "يوم الاصدار",
+      "zh-cn": "发布日期"
+    },
+    { "link": "/feedback", "en": "Feedback", "ar": "استجابة", "zh-cn": "回馈" }
+  ],
+  "login": { "en": "Log in", "ar": "يسجل دخول", "zh-cn": "登录" }
+}

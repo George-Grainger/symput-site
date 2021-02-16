@@ -1,27 +1,37 @@
-import { useContext } from 'react';
-import { UserContext } from '@/lib/context';
-import { getSortedPeopleData } from '@/lib/team';
-import Head from 'next/head';
 import Hero from '@/components/Hero';
 import Overview from '@/components/Overview';
-import Team from '@/components/Team';
 import Layout from 'layout/Layout';
+import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
+import Link from 'next/link';
 
 export const getStaticProps = async ({ locale }) => {
-  const allPeopleData = getSortedPeopleData(locale);
+  const pageData = getPageData(locale, 'landing');
+  const navbarData = getNavbarData(locale);
+  const footerData = getFooterData(locale);
   return {
     props: {
-      allPeopleData
+      pageData,
+      navbarData,
+      footerData
     }
   };
 };
 
-const IndexPage = ({ allPeopleData }) => {
-  const { user, username } = useContext(UserContext);
+const IndexPage = ({ pageData, navbarData, footerData }) => {
+  const { hero, overview } = pageData;
   return (
-    <Layout>
-      <Hero />
-      <Overview />
+    <Layout navbarData={navbarData} footerData={footerData}>
+      <Hero {...hero} />
+      <Overview {...overview} />
+      <Link href="/" locale="zh-cn">
+        - cn -
+      </Link>
+      <Link href="/" locale="ar">
+        - ar -
+      </Link>
+      <Link href="/" locale="en">
+        - en -
+      </Link>
     </Layout>
   );
 };
