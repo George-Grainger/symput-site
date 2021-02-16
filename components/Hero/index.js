@@ -1,14 +1,16 @@
 import Link from 'next/link';
-import Triangle from '@/components/Triangle';
+import Image from 'next/image';
 
 const Hero = () => (
   <section className="min-h-1.1v relative pt-16 pb-32 flex content-center items-center justify-center">
-    <div
-      className="absolute top-0 w-full h-full bg-center bg-cover"
-      style={{
-        backgroundImage: "url('/heroImage.jpg')"
-      }}
-    >
+    <div className="absolute h-full w-full top-0 z-0;">
+      <Image
+        alt="Hero"
+        src="/heroImage.jpg"
+        layout="fill"
+        objectFit="cover"
+        priority
+      />
       <span
         id="blackOverlay"
         className="w-full h-full absolute opacity-75 bg-black"
@@ -27,7 +29,6 @@ const Hero = () => (
         </Link>
       </div>
     </div>
-    <Triangle color="text-white" />
   </section>
 );
 export default Hero;

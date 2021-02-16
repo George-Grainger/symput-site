@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Head from 'next/head';
 
@@ -13,7 +14,7 @@ const Layout = ({ title, children }) => {
         <Navbar transparent={true} />
       </header>
       <main>{children}</main>
-      <footer></footer>
+      <Footer />
     </>
   );
 };

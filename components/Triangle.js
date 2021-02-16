@@ -1,6 +1,8 @@
 const Triangle = ({ color }) => {
   return (
-    <div className="top-auto -bottom-px left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-64">
+    <div
+      className={`top-px bottom-auto left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-64 transform -translate-y-full`}
+    >
       <svg
         className="absolute bottom-0 overflow-hidden"
         xmlns="http://www.w3.org/2000/svg"

@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Hero from '@/components/Hero';
 import Overview from '@/components/Overview';
 import Team from '@/components/Team';
+import Layout from 'layout/Layout';
 
 export const getStaticProps = async ({ locale }) => {
   const allPeopleData = getSortedPeopleData(locale);
@@ -18,19 +19,10 @@ export const getStaticProps = async ({ locale }) => {
 const IndexPage = ({ allPeopleData }) => {
   const { user, username } = useContext(UserContext);
   return (
-    <>
-      <Head>
-        <title>Symput</title>
-        <link rel="icon" href="/symput-textless.ico" />
-      </Head>
+    <Layout>
       <Hero />
       <Overview />
-      <h1 className="title">Symput</h1>
-
-      <p className="description">
-        Current user: <code>{username}</code>
-      </p>
-    </>
+    </Layout>
   );
 };
 export default IndexPage;

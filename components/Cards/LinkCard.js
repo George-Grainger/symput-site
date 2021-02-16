@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import Icon from '../Icons/Icon';
 
-const SimpleCard = ({
+const LinkCard = ({
   className,
   icon,
   title,
@@ -20,15 +21,7 @@ const SimpleCard = ({
     <div
       className={`${bgColor} ${textColor} ${className} shadow-lg rounded-lg text-center p-8`}
     >
-      {icon && (
-        <div
-          className={
-            'text-black p-3 text-center inline-flex items-center justify-center w-16 h-16 shadow-lg rounded-full bg-white'
-          }
-        >
-          {icon}
-        </div>
-      )}
+      {icon && <Icon icon={icon} height="16" width="16" />}
       <p className="text-lg mt-4 font-semibold">{title}</p>
       <p className="text-base opacity-75 mt-2">{children}</p>
       <Link href={link}>
@@ -42,4 +35,4 @@ const SimpleCard = ({
   );
 };
 
-export default SimpleCard;
+export default LinkCard;
