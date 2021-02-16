@@ -3,7 +3,7 @@ import { HiChevronDoubleRight } from 'react-icons/hi';
 import { GiProgression } from 'react-icons/gi';
 import Icon from '../Icons/Icon';
 
-const TextArea = ({ title, children }) => {
+const TextArea = ({ title, linkText, children }) => {
   return (
     <>
       <Icon icon={<GiProgression />} height="16" width="16" />
@@ -12,7 +12,7 @@ const TextArea = ({ title, children }) => {
         {children}
         <Link href="/">
           <a className="font-bold hover:text-yellow-400">
-            Recent updates <HiChevronDoubleRight className="ml-1 inline" />
+            {linkText} <HiChevronDoubleRight className="ml-1 inline" />
           </a>
         </Link>
       </div>
