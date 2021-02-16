@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <UserContext.Provider value={userData}>
-      <Navbar transparent />
       <Component {...pageProps} />
       <Toaster />
     </UserContext.Provider>
