@@ -7,8 +7,8 @@ const TextArea = ({ title, linkText, children }) => {
   return (
     <>
       <Icon icon={<GiProgression />} height="16" width="16" />
-      <h3 className="text-3xl mb-4 font-semibold leading-normal">{title}</h3>
-      <div className="text-lg font-light leading-relaxed text-gray-700 flex flex-col gap-4">
+      <h3 className="text-3xl my-4 font-semibold leading-normal">{title}</h3>
+      <div className="text-lg font-light leading-relaxed flex flex-col">
         {children}
         <Link href="/">
           <a className="font-bold hover:text-yellow-400">
