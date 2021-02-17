@@ -1,15 +1,16 @@
 import Link from 'next/link';
 
-export default function LoggedOut({ loginText }) {
+export default function LoggedOut({
+  loginText,
+  className = 'btn hidden lg:block'
+}) {
   return (
-    <ul>
-      <li>
-        <Link href="/enter">
-          <button className="btn btn-yellow md:block hidden">
-            {loginText}
-          </button>
-        </Link>
-      </li>
-    </ul>
+    <li>
+      <Link href="/enter">
+        <button className={`${className} btn-yellow lg:my-0 my-6`}>
+          {loginText}
+        </button>
+      </Link>
+    </li>
   );
 }

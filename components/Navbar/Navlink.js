@@ -1,12 +1,18 @@
 import Link from 'next/link';
 
-const Navlink = ({ href, children }) => {
+const Navlink = ({ href, children, sidebar = false }) => {
   return (
-    <Link href={href}>
-      <a className="lg:p6 p-4 flex items-center text-s uppercase font-bold hover:text-yellow-400">
-        {children}
-      </a>
-    </Link>
+    <li>
+      <Link href={href}>
+        <a
+          className={` ${
+            sidebar ? 'p-8 my-2 text-3xl' : 'lg:p6 p-4 text-xl'
+          } flex items-center font-semibold hover:text-yellow-400`}
+        >
+          {children}
+        </a>
+      </Link>
+    </li>
   );
 };
 

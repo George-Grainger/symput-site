@@ -10,7 +10,7 @@ const LinkCard = ({
   link = '/'
 }) => {
   return (
-    <div className={`${className} shadow-lg rounded-lg text-center p-8`}>
+    <div className={`${className} shadow-lg rounded-lg text-center p-8 mb-8`}>
       {icon && <Icon icon={icon} size="h-16 w-16" />}
       <p className="text-lg mt-4 font-semibold">{title}</p>
       <p className="text-base opacity-75 mt-2">{children}</p>
