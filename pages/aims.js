@@ -1,3 +1,4 @@
+import { getFooterData, getNavbarData } from '@/lib/pageContent';
 import Layout from 'layout/Layout';
 
 export const getStaticProps = async ({ locale }) => {
