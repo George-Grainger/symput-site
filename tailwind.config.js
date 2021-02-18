@@ -13,6 +13,10 @@ module.exports = {
       colors: {
         orange: colors.orange
       },
+      spacing: {
+        18: '4.5rem',
+        9: '2.25rem'
+      },
       minHeight: {
         '1/4v': '25vh',
         '1/2v': '50vh',

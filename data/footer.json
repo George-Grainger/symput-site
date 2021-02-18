@@ -1,8 +1,8 @@
 {
   "socialsTitle": {
-    "en": "Log in",
-    "ar": "اتبع وسائل التواصل الاجتماعي لدينا!",
-    "zh-cn": "关注我们的社交！"
+    "en": "Follow us on social media!",
+    "ar": "تابعنا على وسائل التواصل الإجتماعي!",
+    "zh-cn": "在社交媒体上关注我们！ "
   },
   "socialsSubtitle": {
     "en": "Find us on any of these platforms to stay updated.",
@@ -51,7 +51,7 @@
           "link": "/languages",
           "en": "Languages",
           "ar": "اللغات",
-          "zh-cn": "Languages"
+          "zh-cn": "语言能力"
         },
         {
           "link": "/accessibiity",
@@ -87,10 +87,10 @@
           "zh-cn": "饼干"
         },
         {
-          "link": "/",
-          "en": "CC Licenses",
-          "ar": "تراخيص المشاع الإبداعي",
-          "zh-cn": "知识共享许可"
+          "link": "/credits",
+          "en": "Credits",
+          "ar": "الاعتمادات",
+          "zh-cn": "学分"
         }
       ]
     }

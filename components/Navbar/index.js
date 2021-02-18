@@ -5,13 +5,15 @@ import { UserContext } from '@/lib/context';
 import LoggedIn from './loggedIn';
 import LoggedOut from './loggedOut';
 import Navlink from './Navlink';
-import { FaBars, FaCog } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 import uuid from 'react-uuid';
 import Sidebar from './Sidebar';
+import Settings from './Settings';
 
 // Top navbar
 export default function Navbar({ data, transparent }) {
-  const { links, loginText } = data;
+  const { links, loginText, sidebarInfo, settingsInfo } = data;
+  const { sidebarOpenAria, sidebarCloseAria } = sidebarInfo;
   const { username } = useContext(UserContext);
 
   const [navScrolled, setNavScrolled] = useState(false);
@@ -45,7 +47,7 @@ export default function Navbar({ data, transparent }) {
       >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <Link href="/">
-            <a className="flex items-center text-3xl font-bold leading-relaxed py-2 whitespace-no-wrap uppercase hover:text-yellow-400">
+            <a className="flex items-center text-2xl font-bold leading-relaxed py-2 whitespace-no-wrap uppercase hover:text-yellow-400">
               <Image
                 src="/symput-textless.png"
                 alt="Symput logo"
@@ -66,26 +68,20 @@ export default function Navbar({ data, transparent }) {
             })}
           </ul>
 
-          <ul className="flex items-center gap-4 lg:gap-12">
+          <ul className="flex items-center gap-2 md:gap-6">
             {/* user is not signed OR has not created username */}
             {!username && <LoggedOut loginText={loginText} />}
 
             <li>
-              <button
-                ariaLabel="Open settings"
-                className="cursor-pointer text-xl px-3 py-1 focus:outline-none hover:text-yellow-400"
-                onClick={() => console.log('Nothing set yet')}
-              >
-                <FaCog className="h-8 w-8" />
-              </button>
+              <Settings {...settingsInfo} />
             </li>
             <li>
               <button
-                ariaLabel="Open sidebar navigation"
-                className="cursor-pointer block lg:hidden text-xl px-3 py-1 focus:outline-none hover:text-yellow-400"
+                aria-label={sidebarOpenAria}
+                className="cursor-pointer block lg:hidden text-xl p-3 focus:outline-none hover:text-yellow-400"
                 onClick={() => setSidebarOpen(true)}
               >
-                <FaBars className="h-8 w-8" />
+                <FaBars className="h-6 w-6" />
               </button>
             </li>
             {/* user is signed-in and has username */}
@@ -94,6 +90,7 @@ export default function Navbar({ data, transparent }) {
         </div>
       </nav>
       <Sidebar
+        closeAria={sidebarCloseAria}
         links={links}
         open={sidebarOpen}
         clickHandler={() => setSidebarOpen(false)}

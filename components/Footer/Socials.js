@@ -8,25 +8,25 @@ const Socials = ({ title, subtitle }) => {
       <h5 className="text-lg text-gray-700">{subtitle}</h5>
       <div className="flex gap-4 justify-between">
         <IconLink
-          ariaLabel="Twitter"
+          aria-label="Twitter"
           icon={<FaTwitter />}
           size="h-10 w-10"
           buttonColor="bg-blue-400"
         />
         <IconLink
-          ariaLabel="Facebook"
+          aria-label="Facebook"
           icon={<FaFacebook />}
           size="h-10 w-10"
           buttonColor="bg-blue-600"
         />
         <IconLink
-          ariaLabel="Instagram"
+          aria-label="Instagram"
           icon={<FaInstagram />}
           size="h-10 w-10"
           buttonColor="bg-gray-800"
         />
         <IconLink
-          ariaLabel="Google"
+          aria-label="Google"
           icon={<FaGoogle />}
           size="h-10 w-10"
           buttonColor="bg-red-600"

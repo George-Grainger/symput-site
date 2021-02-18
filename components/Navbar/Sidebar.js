@@ -5,17 +5,21 @@ import { useContext } from 'react';
 import { UserContext } from '@/lib/context';
 import { FaTimes } from 'react-icons/fa';
 
-const Sidebar = ({ links, open, clickHandler }) => {
+const Sidebar = ({ links, open, clickHandler, closeAria }) => {
   const { username } = useContext(UserContext);
   return (
     <div
       className={` ${
-        open ? 'top-0 opacity-100' : '-top-full opacity-0'
-      } fixed z-50 w-full h-full flex bg-white justify-center items-center transition-all duration-300`}
+        open ? 'top-0' : '-top-full'
+      } fixed z-50 w-full h-full flex bg-white justify-center items-center transition-all duration-200`}
     >
-      <div onClick={clickHandler} className="p-3 absolute top-3 right-3">
-        <FaTimes className="h-12 w-12" />
-      </div>
+      <button
+        aria-label={closeAria}
+        onClick={clickHandler}
+        className="p-3 absolute top-3 right-3 cursor-pointer"
+      >
+        <FaTimes className="h-8 w-8" />
+      </button>
       <ul className="flex flex-col items-center">
         {links?.map(({ text, link }) => {
           return (
