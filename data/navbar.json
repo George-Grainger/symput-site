@@ -10,5 +10,31 @@
     },
     { "link": "/feedback", "en": "Feedback", "ar": "استجابة", "zh-cn": "回馈" }
   ],
-  "login": { "en": "Log in", "ar": "يسجل دخول", "zh-cn": "登录" }
+  "loginText": { "en": "Log in", "ar": "يسجل دخول", "zh-cn": "登录" },
+  "sidebarInfo": {
+    "sidebarOpenAria": {
+      "en": "Open sidebar navigation",
+      "ar": "افتح تنقل الشريط الجانبي",
+      "zh-cn": "打开侧边栏导航"
+    },
+    "sidebarCloseAria": {
+      "en": "Close sidebar",
+      "ar": "إغلاق الشريط الجانبي",
+      "zh-cn": "关闭侧边栏"
+    }
+  },
+  "settingsInfo": {
+    "settingsTitle": { "en": "Settings", "ar": "إعدادات", "zh-cn": "设定值" },
+    "darkModeTitle": {
+      "en": "Toggle dark mode",
+      "ar": "تبديل الوضع الداكن",
+      "zh-cn": "切换暗模式"
+    },
+    "languagesTitle": {
+      "en": "Languages",
+      "ar": "اللغات",
+      "zh-cn": "语言能力"
+    },
+    "exitButtonText": { "en": "Exit", "ar": "مخرج", "zh-cn": "出口" }
+  }
 }

@@ -14,6 +14,13 @@ body {
   grid-column: 1/-1;
 }
 
+input:checked ~ .toggle-circle {
+  transform: translateX(100%);
+}
+input:checked ~ .toggle-path {
+  @apply bg-black;
+}
+
 .card-yellow {
   @apply bg-yellow-500 text-black;
 }
