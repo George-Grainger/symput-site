@@ -18,7 +18,7 @@ const Settings = ({
         className="cursor-pointer text-xl p-3 focus:outline-none hover:text-yellow-400"
         onClick={() => setShowModal(true)}
       >
-        <FaCog className="h-6 w-6" />
+        <FaCog className="h-6 w-6" height="1.5rem" width="1.5rem" />
       </button>
       <Modal
         hidden={!showModal}
