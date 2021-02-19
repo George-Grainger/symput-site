@@ -13,7 +13,7 @@ export default function Modal({
       <div
         className={`${
           hidden ? 'hidden' : 'flex'
-        } justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none text-black dark:text-white`}
+        } justify-center pointer-events-none items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none text-black dark:text-white`}
       >
         <div className="relative w-auto m-6 max-w-xl">
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-800 outline-none focus:outline-none">
