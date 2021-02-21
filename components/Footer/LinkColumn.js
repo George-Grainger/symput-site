@@ -3,8 +3,8 @@ import uuid from 'react-uuid';
 
 const LinkColumn = ({ column }) => {
   return (
-    <div className="flex-auto">
-      <span className="block text-black text-lg md:text-base font-semibold mb-2">
+    <div className="flex-auto ">
+      <span className="block text-lg md:text-base font-semibold mb-2">
         {column.title}
       </span>
       <ul>
@@ -12,7 +12,7 @@ const LinkColumn = ({ column }) => {
           return (
             <li
               key={uuid()}
-              className="text-gray-700 hover:text-yellow-900 font-semibold block pb-2 text-base md:text-sm"
+              className="text-gray-700 dark:text-gray-200 dark:hover:text-yellow-400 hover:text-yellow-900 font-semibold block pb-2 text-base md:text-sm  transition-colors duration-300"
             >
               <Link href={link}>{text}</Link>
             </li>

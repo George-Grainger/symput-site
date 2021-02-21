@@ -26,7 +26,7 @@ input:checked ~ .toggle-path {
 }
 
 .card-black {
-  @apply bg-gray-800 text-white;
+  @apply bg-gray-900 dark:bg-gray-300 text-white dark:text-black;
 }
 
 .card-yellow button {
@@ -34,11 +34,11 @@ input:checked ~ .toggle-path {
 }
 
 .card-black button {
-  @apply btn-yellow-inverted;
+  @apply btn-yellow-inverted dark:btn-black-inverted;
 }
 
 .md\:card-yellow {
-  @apply md:bg-yellow-500 md:text-black;
+  @apply md:bg-yellow-500 md:dark:bg-yellow-500 md:text-black;
 }
 
 .md\:card-yellow button {
@@ -46,15 +46,15 @@ input:checked ~ .toggle-path {
 }
 
 .md\:card-black {
-  @apply md:bg-gray-800 md:text-white;
+  @apply md:bg-gray-900 md:dark:bg-gray-300 md:text-white md:dark:text-black;
 }
 
 .md\:card-black button {
-  @apply md:btn-yellow-inverted;
+  @apply md:btn-yellow-inverted md:dark:btn-black-inverted;
 }
 
 .btn {
-  @apply font-bold py-3 px-6 rounded;
+  @apply font-bold py-3 px-6 rounded transition-colors duration-100;
 }
 
 .btn-lg {
@@ -66,11 +66,27 @@ input:checked ~ .toggle-path {
 }
 
 .btn-black-inverted {
-  @apply text-gray-800 bg-transparent border border-solid border-gray-800;
+  @apply text-gray-900 bg-transparent border border-solid border-gray-900;
 }
 
 .btn-black-inverted:hover {
-  @apply text-white bg-black border-black;
+  @apply text-white bg-gray-900 border-gray-900;
+}
+
+.dark\:btn-black-inverted {
+  @apply dark:text-gray-900 bg-transparent border border-solid dark:border-gray-900;
+}
+
+.dark\:btn-black-inverted:hover {
+  @apply dark:text-white md:dark:bg-gray-900 dark:border-gray-900;
+}
+
+.md\:dark\:btn-black-inverted {
+  @apply md:dark:text-gray-900 bg-transparent border border-solid md:dark:border-gray-900;
+}
+
+.md\:dark\:btn-black-inverted:hover {
+  @apply md:dark:text-white md:dark:bg-gray-900 md:dark:border-gray-900;
 }
 
 .btn-yellow-inverted {
@@ -94,9 +110,9 @@ input:checked ~ .toggle-path {
 }
 
 .md\:btn-black-inverted {
-  @apply md:text-gray-800 bg-transparent border border-solid md:border-gray-800;
+  @apply md:text-gray-900 bg-transparent border border-solid md:border-gray-900;
 }
 
 .md\:btn-black-inverted:hover {
-  @apply md:text-white md:bg-black md:border-black;
+  @apply md:text-white md:bg-gray-900 md:border-gray-900;
 }

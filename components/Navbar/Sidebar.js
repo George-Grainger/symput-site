@@ -8,10 +8,10 @@ import { FaTimes } from 'react-icons/fa';
 const Sidebar = ({ links, open, clickHandler, closeAria }) => {
   const { username } = useContext(UserContext);
   return (
-    <div
+    <aside
       className={` ${
         open ? 'top-0' : '-top-full'
-      } fixed z-50 w-full h-full flex bg-white justify-center items-center transition-all duration-200`}
+      } fixed z-50 w-full h-full flex bg-white dark:bg-gray-900 dark:text-white justify-center items-center transition-all duration-200`}
     >
       <button
         aria-label={closeAria}
@@ -33,7 +33,7 @@ const Sidebar = ({ links, open, clickHandler, closeAria }) => {
           <LoggedOut loginText={'Login'} className={'btn-lg text-2xl'} />
         )}
       </ul>
-    </div>
+    </aside>
   );
 };
 

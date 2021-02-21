@@ -42,7 +42,7 @@ const Member = ({ name, image, slug, socials = {}, children }) => {
           )}
           {availableSocials.includes('instagram') && (
             <Link bg="" href={socials.instagram}>
-              <AiFillInstagram className="text-gray-800 h-6 w-6" />
+              <AiFillInstagram className="text-gray-900 h-6 w-6" />
             </Link>
           )}
           {availableSocials.includes('google') && (
