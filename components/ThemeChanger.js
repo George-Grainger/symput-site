@@ -39,7 +39,7 @@ const ThemeChanger = ({ title }) => {
             onChange={handleToggle}
             checked={theme === 'dark' ? 'checked' : ''}
           />
-          <div className="toggle-path bg-gray-200 dark:bg-gray-800 w-18 h-9 rounded-full shadow-inner transform transition duration-300"></div>
+          <div className="toggle-path bg-gray-200 dark:bg-black w-18 h-9 rounded-full shadow-inner transform transition duration-300"></div>
           <div className="toggle-circle absolute w-8 h-8 bg-white rounded-full shadow top-0.5 left-1 transition duration-300"></div>
         </div>
         <FaMoon

@@ -22,8 +22,8 @@ const Overview = ({
   sideTextP3,
   sideTextLink
 }) => (
-  <section className="pt-24 pb-36 px-8 bg-white dark:bg-gray-800 relative">
-    <Triangle color="text-white dark:text-gray-800" />
+  <section className="py-24 px-8 bg-white dark:bg-gray-900 dark:text-white relative transition-colors duration-300">
+    <Triangle color="text-white dark:text-gray-900 transition-colors duration-300" />
     <div className="max-w-screen-lg xl:max-w-screen-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-x-8 mx-auto">
       <div className="flex flex-col col-span-1 lg:col-span-3">
         <LinkCard
@@ -65,7 +65,7 @@ const Overview = ({
           {card4Content}
         </LinkCard>
       </div>
-      <div className="flex flex-col col-span-1 md:col-span-2 lg:col-span-4 m-auto lg:ml-16 xl:ml-24 max-w-prose dark:text-white">
+      <div className="flex flex-col col-span-1 md:col-span-2 lg:col-span-4 m-auto lg:ml-16 xl:ml-24 max-w-prose">
         <TextArea title={sideTextTitle} linkText={sideTextLink}>
           <p className="mb-4">{sideTextP1}</p>
           <p className="mb-4">{sideTextP2}</p>

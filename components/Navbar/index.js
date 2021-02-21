@@ -15,7 +15,6 @@ export default function Navbar({ data, transparent }) {
   const { links, loginText, sidebarInfo, settingsInfo } = data;
   const { sidebarOpenAria, sidebarCloseAria } = sidebarInfo;
   const { username } = useContext(UserContext);
-
   const [navScrolled, setNavScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -41,8 +40,8 @@ export default function Navbar({ data, transparent }) {
         className={
           (transparent && !navScrolled
             ? 'bg-transparent text-white'
-            : 'bg-white text-black shadow-lg') +
-          ' fixed z-40 top-0 w-full flex flex-wrap items-center justify-between px-2 py-3 transition'
+            : 'bg-white text-black dark:text-white dark:bg-gray-900 shadow-lg') +
+          ' fixed z-40 top-0 w-full flex flex-wrap items-center justify-between px-2 py-3 transition duration-300'
         }
       >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">

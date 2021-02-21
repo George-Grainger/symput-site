@@ -14,7 +14,7 @@ const Settings = ({
   return (
     <>
       <button
-        aria-label="Open ttings"
+        aria-label="Open setttings"
         className="cursor-pointer text-xl p-3 focus:outline-none hover:text-yellow-400"
         onClick={() => setShowModal(!showModal)}
       >
