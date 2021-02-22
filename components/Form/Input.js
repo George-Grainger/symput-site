@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import ErrorMessage from './errorMessage';
+import ErrorMessage from './ErrorMessage';
 
 const Input = forwardRef((props, ref) => {
   const { label, className = '', name, errors, required } = props;
