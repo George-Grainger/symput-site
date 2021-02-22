@@ -19,7 +19,7 @@ export const getStaticProps = async ({ locale }) => {
 const IndexPage = ({ pageData, navbarData, footerData }) => {
   const { hero, overview } = pageData;
   return (
-    <Layout navbarData={navbarData} footerData={footerData}>
+    <Layout transparent navbarData={navbarData} footerData={footerData}>
       <Hero {...hero} />
       <Overview {...overview} />
     </Layout>
