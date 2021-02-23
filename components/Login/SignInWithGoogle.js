@@ -4,9 +4,14 @@ import { auth, googleAuthProvider } from '@/lib/firebase';
 // Sign in with Google button
 const SignInWithGoogleButton = () => {
   const signInWithGoogle = async () => {
-    try {
-      await auth.signInWithPopup(googleAuthProvider);
-    } catch {}
+    auth
+      .signInWithPopup(googleAuthProvider)
+      .then((authUser) => {
+        console.log(authUser.user.emailVerified);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

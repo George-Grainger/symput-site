@@ -1,8 +1,10 @@
 import { getUserWithUsername, postToJSON } from '@/lib/firebase';
-import UserProfile from '@/components/UserProfile';
 import PostFeed from '@/components/PostFeed';
+import Layout from 'layout/Layout';
+import { getFooterData, getNavbarData } from '@/lib/pageContent';
+import UserCard from '@/components/Cards/UserCard';
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps({ query, locale }) {
   const { username } = query;
 
   const userDoc = await getUserWithUsername(username);
@@ -28,16 +30,29 @@ export async function getServerSideProps({ query }) {
     posts = (await postsQuery.get()).docs.map(postToJSON);
   }
 
+  const navbarData = getNavbarData(locale);
+  const footerData = getFooterData(locale);
+
   return {
-    props: { user, posts } // will be passed to the page component as props
+    props: {
+      user,
+      posts,
+      navbarData,
+      footerData
+    } // will be passed to the page component as props
   };
 }
 
-export default function UserProfilePage({ user, posts }) {
+export default function UserProfilePage({
+  user,
+  posts,
+  navbarData,
+  footerData
+}) {
   return (
-    <main>
-      <UserProfile user={user} />
+    <Layout navbarData={navbarData} footerData={footerData}>
+      <UserCard user={user} />
       <PostFeed posts={posts} />
-    </main>
+    </Layout>
   );
 }

@@ -19,7 +19,9 @@ const SignInForm = () => {
   const onSubmit = async (data) => {
     auth
       .createUserWithEmailAndPassword(data.suemail, data.supassword)
-      .then(console.log('sucess'))
+      .then((authUser) => {
+        console.log(authUser.user.emailVerified);
+      })
       .catch((error) => {
         setError('sueemail', { type: error.code, message: error.message });
       });

@@ -4,11 +4,14 @@ import { auth, githubAuthProvider } from '@/lib/firebase';
 // Sign in with Github button
 const SignInWithGitHubButton = () => {
   const signInWithGitHub = async () => {
-    try {
-      await auth.signInWithPopup(githubAuthProvider);
-    } catch (err) {
-      console.log(err);
-    }
+    auth
+      .signInWithPopup(githubAuthProvider)
+      .then((authUser) => {
+        console.log(authUser.user.emailVerified);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

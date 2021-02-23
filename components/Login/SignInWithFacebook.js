@@ -4,11 +4,14 @@ import { auth, facebookAuthProvider } from '@/lib/firebase';
 // Sign in with Facebook button
 const SignInWithFacebookButton = () => {
   const signInWithFacebook = async () => {
-    try {
-      await auth.signInWithPopup(facebookAuthProvider);
-    } catch (err) {
-      console.log(err);
-    }
+    auth
+      .signInWithPopup(facebookAuthProvider)
+      .then((authUser) => {
+        console.log(authUser.user.emailVerified);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

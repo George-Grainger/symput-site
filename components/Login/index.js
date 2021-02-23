@@ -23,19 +23,20 @@ const Login = () => {
     }
     setOpenTab(tab);
   };
+
   return (
-    <section className="py-24 px-8 w-full flex justify-center items-center bg-yellow-400 dark:bg-gray-600 transition-colors duration-300">
-      <div className="grid md:grid-cols-2 gap-x-10 z-10 card bg-gray-900 text-white">
-        <h1 className="md:col-span-2 text-3xl font-semibold w-full">Welcome</h1>
-        <hr className="md:col-span-2 my-6 border-b-1 border-gray-200" />
-        <div className="grid grid-cols-1 gap-4 justify-center content-start">
+    <section className="pt-12 pb-24 px-8 w-full min-h-screen flex justify-center items-center bg-yellow-400 dark:bg-gray-600 transition-colors duration-300">
+      <div className="grid md:grid-cols-4 gap-x-10 z-10 card bg-gray-900 text-white">
+        <h1 className="md:col-span-4 text-3xl font-semibold w-full">Welcome</h1>
+        <hr className="md:col-span-4 my-6 border-b-1 border-gray-200" />
+        <div className="grid grid-cols-1 md:col-span-2 gap-4 justify-center content-start">
           <h2 className="col-span-1 font-bold">Sign in with</h2>
           <SignInWithGoogleButton />
           <SignInWithTwitterButton />
           <SignInWithFacebookButton />
           <SignInWithGitHubButton />
         </div>
-        <div>
+        <div className="col-span-2">
           <hr className="my-6 border-b-1 border-gray-200  md:border-0 md:my-0" />
           <div className="flex flex-wrap">
             <h2 className="w-full col-span-2 font-bold">
@@ -76,7 +77,10 @@ const Login = () => {
           </div>
 
           <div className={resettingPassword ? 'block' : 'hidden'}>
-            <PasswordReset email={email} />
+            <PasswordReset
+              email={email}
+              handleReturn={() => handleTabChange(1)}
+            />
           </div>
           <div
             className={openTab === 1 && !resettingPassword ? 'block' : 'hidden'}
@@ -89,6 +93,7 @@ const Login = () => {
             <SignUpForm />
           </div>
         </div>
+        {/* <Ellipsis /> */}
       </div>
     </section>
   );

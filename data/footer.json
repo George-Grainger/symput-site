@@ -81,10 +81,10 @@
           "zh-cn": "隐私政策"
         },
         {
-          "link": "/cookies",
-          "en": "Cookies",
-          "ar": "بسكويت",
-          "zh-cn": "饼干"
+          "link": "/terms",
+          "en": "Terms of service",
+          "ar": "شروط الخدمة",
+          "zh-cn": "服务条款"
         },
         {
           "link": "/credits",

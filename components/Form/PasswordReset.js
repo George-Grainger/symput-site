@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from './Input';
 import { auth } from '@/lib/firebase';
+import Ellipsis from '../Loading/Ellipsis';
 
-const PasswordReset = ({ email }) => {
+const PasswordReset = ({ email, handleReturn }) => {
+  const [sending, setSending] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -12,34 +17,58 @@ const PasswordReset = ({ email }) => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setSending(true);
     auth
       .sendPasswordResetEmail(data.resetemail)
-      .then(console.log('sucess'))
+      .then(() => {
+        setSuccess(true);
+      })
       .catch((error) => {
         setError('resetemail', { type: error.code, message: error.message });
+        setSending(false);
       });
   };
 
   return (
-    <form className="grid gap-4 text-left" onSubmit={handleSubmit(onSubmit)}>
-      <Input
-        label="Email"
-        errors={errors}
-        defaultValue={email}
-        name="resetemail"
-        ref={register({
-          required: true,
-          pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        })}
-      />
+    <>
+      {success ? (
+        <div>Success</div>
+      ) : (
+        <form
+          className="grid gap-4 text-left"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <Input
+            label="Email"
+            errors={errors}
+            defaultValue={email}
+            name="resetemail"
+            ref={register({
+              required: true,
+              pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            })}
+          />
 
-      <input
-        className="btn btn-yellow my-4"
-        disabled={isSubmitting}
-        type="submit"
-        value="Send reset link"
-      />
-    </form>
+          {sending ? (
+            <Ellipsis />
+          ) : (
+            <input
+              className="btn btn-yellow my-4"
+              disabled={isSubmitting}
+              type="submit"
+              value="Send reset link"
+            />
+          )}
+
+          <a
+            onClick={handleReturn}
+            className="text-white underline text-center cursor-pointer hover:text-yellow-400"
+          >
+            Go back
+          </a>
+        </form>
+      )}
+    </>
   );
 };
 
