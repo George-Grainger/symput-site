@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { getSortedPeopleData } from '@/lib/team';
 import Team from '@/components/Team';
 
@@ -14,9 +13,6 @@ export const getStaticProps = async ({ locale }) => {
 };
 
 const TeamPage = ({ allPeopleData }) => {
-  const router = useRouter();
-  const { locale } = router;
-
   return (
     <>
       <Head>
@@ -27,7 +23,7 @@ const TeamPage = ({ allPeopleData }) => {
         <ul>
           {allPeopleData.map(({ slug, name, summary }) => (
             <li key={slug}>
-              <Link href={`/team/${slug}`} locale={locale}>
+              <Link href={`/team/${slug}`}>
                 <a>{name}</a>
               </Link>
               <br />
