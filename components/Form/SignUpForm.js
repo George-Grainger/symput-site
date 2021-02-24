@@ -37,7 +37,10 @@ const SignInForm = () => {
         required
         ref={register({
           required: true,
-          pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          pattern: {
+            value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            message: 'Please enter a valid email address'
+          }
         })}
       />
       <CustomInput
@@ -48,7 +51,14 @@ const SignInForm = () => {
         required
         ref={register({
           required: true,
-          minLength: 8
+          minLength: {
+            value: 8,
+            message: 'Password must be 8 characters or more'
+          },
+          maxLength: {
+            value: 8,
+            message: 'Password must be 40 characters or less'
+          }
         })}
       />
       <CustomInput
