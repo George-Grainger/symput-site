@@ -17,7 +17,11 @@ module.exports = {
         18: '4.5rem',
         9: '2.25rem'
       },
+      minWidth: {
+        login: 'clamp(311px, 100%, 906px)'
+      },
       minHeight: {
+        login: '577px',
         '1/4v': '25vh',
         '1/2v': '50vh',
         '3/4v': '75vh',

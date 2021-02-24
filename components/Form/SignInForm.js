@@ -8,13 +8,10 @@ const SignInForm = ({ handlePasswordReset }) => {
     register,
     handleSubmit,
     setError,
-    watch,
+    getValues,
     errors,
     formState: { isSubmitting }
   } = useForm();
-
-  const email = useRef({});
-  email.current = watch('siemail');
 
   const onSubmit = async (data) => {
     auth
@@ -34,7 +31,10 @@ const SignInForm = ({ handlePasswordReset }) => {
         name="siemail"
         ref={register({
           required: true,
-          pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          pattern: {
+            value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            message: 'Please enter a valid email address'
+          }
         })}
       />
       <Input
@@ -44,7 +44,14 @@ const SignInForm = ({ handlePasswordReset }) => {
         type="password"
         ref={register({
           required: true,
-          minLength: 8
+          minLength: {
+            value: 8,
+            message: 'Password must be 8 characters or more'
+          },
+          maxLength: {
+            value: 8,
+            message: 'Password must be 40 characters or less'
+          }
         })}
       />
 
@@ -56,10 +63,10 @@ const SignInForm = ({ handlePasswordReset }) => {
       />
 
       <a
-        onClick={() => handlePasswordReset(email.current)}
+        onClick={() => handlePasswordReset(getValues('siemail'))}
         className="text-white underline text-center cursor-pointer hover:text-yellow-400"
       >
-        Forgotton your password?
+        Forgot password?
       </a>
     </form>
   );

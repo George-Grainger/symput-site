@@ -14,7 +14,7 @@ import Settings from './Settings';
 export default function Navbar({ data, transparent }) {
   const { links, loginText, sidebarInfo, settingsInfo } = data;
   const { sidebarOpenAria, sidebarCloseAria } = sidebarInfo;
-  const { username } = useContext(UserContext);
+  const { user, username, loading, error } = useContext(UserContext);
   const [navScrolled, setNavScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
