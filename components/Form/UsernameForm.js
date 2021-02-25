@@ -1,39 +1,26 @@
-import { firestore } from '@/lib/firebase';
 import { useForm } from 'react-hook-form';
 import debounce from 'lodash.debounce';
 import Router from 'next/router';
 import { UserContext } from '@/lib/context';
 import { useEffect, useState, useCallback, useContext } from 'react';
-import UsernameMessage from '@/components/Login/UsernameMessage';
+import UsernameMessage from '@/components/Form/UsernameMessage';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
+import { uploadUserDataPostLogin, usernameExists } from '@/lib/firestoreUtils';
 
 const UsernameForm = () => {
   const [formValue, setFormValue] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { register, errors, handleSubmit, getValues } = useForm();
+  const { register, errors, handleSubmit } = useForm();
   const { user, validated } = useContext(UserContext);
   const re = /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 
   const onSubmit = async (e) => {
-    // Create refs for both documents
-    const userDoc = firestore.doc(`users/${user.uid}`);
-    const usernameDoc = firestore.doc(`usernames/${formValue}`);
-
-    // Commit both docs together as a batch write.
-    const batch = firestore.batch();
-    batch.set(userDoc, {
-      username: formValue,
-      photoURL: user.photoURL,
-      displayName: user.displayName,
-      provider: user.providerData[0].providerId,
-      email: user.email
-    });
-    batch.set(usernameDoc, { uid: user.uid });
-
-    await batch
-      .commit()
-      .then(Router.push('/admin'))
+    uploadUserDataPostLogin(user, formValue)
+      // .then(() => {
+      //   if(verfied)
+      //   Router.push('/admin')
+      // })
       .catch(console.log('Error'));
   };
 
@@ -64,9 +51,7 @@ const UsernameForm = () => {
   const checkUsername = useCallback(
     debounce(async (username) => {
       if (username.length >= 3 && username.length <= 20) {
-        const ref = firestore.doc(`usernames/${username}`);
-        const { exists } = await ref.get();
-        console.log('Firestore read executed!');
+        const exists = await usernameExists(username);
         setIsValid(!exists);
         setLoading(false);
       }
@@ -76,10 +61,10 @@ const UsernameForm = () => {
 
   return (
     <div className="grid w-full h-full gap-x-10">
-      <h1 className="text-3xl font-semibold w-full">You're In!</h1>
+      <h1 className="text-3xl font-semibold w-full">You're In</h1>
       <hr className="my-6 border-b-1 border-gray-200" />
       <form
-        className="grid gap-4 text-left w-3/5 mx-auto md:pt-20"
+        className="grid gap-4 text-left md:w-3/5 mx-auto md:pt-20"
         onSubmit={handleSubmit(onSubmit)}
       >
         <label htmlFor="username" className="required font-bold text-lg">

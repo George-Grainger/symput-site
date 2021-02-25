@@ -1,7 +1,6 @@
-import ErrorMessage from '../Form/ErrorMessage';
+import ErrorMessage from './ErrorMessage';
 
 const UsernameMessage = ({ username, isValid, loading, error }) => {
-  console.log(error);
   if (username.length >= 19 && loading) {
     return (
       <p role="alert" className="text-yellow-400 text-center">

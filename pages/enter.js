@@ -1,10 +1,11 @@
 import { UserContext } from '@/lib/context';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData } from '@/lib/pageContent';
 import LoginPlaceHolder from '@/components/Loading/LoginPalceHolder';
-import UsernameForm from '@/components/Login/UsernameForm';
+import UsernameForm from '@/components/Form/UsernameForm';
+import { useRouter } from 'next/router';
 
 const Login = dynamic(() => import('@/components/Login'), {
   loading: () => <LoginPlaceHolder />
@@ -16,6 +17,10 @@ const SignOutButton = dynamic(
     loading: () => <LoginPlaceHolder />
   }
 );
+
+const VerifyUser = dynamic(() => import('@/components/Login/VerifyUser'), {
+  loading: () => <LoginPlaceHolder />
+});
 
 export const getStaticProps = async ({ locale }) => {
   const navbarData = getNavbarData(locale);
@@ -30,6 +35,13 @@ export const getStaticProps = async ({ locale }) => {
 
 export default function Enter({ navbarData, footerData }) {
   const { user, username, loading, error, verified } = useContext(UserContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (user && !loading && username && verified) {
+      router.push('/admin');
+    }
+  }, [user, loading, verified]);
 
   const getCurrentState = () => {
     if (error) {
@@ -41,7 +53,7 @@ export default function Enter({ navbarData, footerData }) {
     } else if (!username) {
       return <UsernameForm />;
     } else if (!verified) {
-      return <div>Get verified</div>;
+      return <VerifyUser />;
     } else {
       return <SignOutButton />;
     }
