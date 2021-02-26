@@ -2,8 +2,12 @@ import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from './Input';
 import { auth } from '@/lib/firebase';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/router';
 
 const SignInForm = ({ handlePasswordReset }) => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -16,12 +20,14 @@ const SignInForm = ({ handlePasswordReset }) => {
   const onSubmit = async (data) => {
     auth
       .signInWithEmailAndPassword(data.siemail, data.sipassword)
-      .then(console.log('sucess'))
+      .then(() => {
+        toast.success('Logged in successfully');
+      })
       .catch((error) => {
-        setError('siepassword', { type: error.code, message: error.message });
+        setError('sipassword', { type: error.code, message: error.message });
       });
   };
-
+  console.log(errors);
   return (
     <form className="grid gap-4 text-left" onSubmit={handleSubmit(onSubmit)}>
       <Input
@@ -49,7 +55,7 @@ const SignInForm = ({ handlePasswordReset }) => {
             message: 'Password must be 8 characters or more'
           },
           maxLength: {
-            value: 8,
+            value: 40,
             message: 'Password must be 40 characters or less'
           }
         })}

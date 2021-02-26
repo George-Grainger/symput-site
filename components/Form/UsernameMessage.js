@@ -13,8 +13,19 @@ const UsernameMessage = ({ username, isValid, loading, error }) => {
         Checking...
       </p>
     );
+  }
+  if (!isValid && username.length > 2) {
+    return (
+      <ErrorMessage
+        className="text-center"
+        error={{
+          type: 'already-in-use',
+          message: 'Username is already in use'
+        }}
+      />
+    );
   } else if (error) {
-    return <ErrorMessage error={error} />;
+    return <ErrorMessage className="text-center" error={error} />;
   } else if (isValid) {
     return (
       <p role="alert" className="text-green-500 text-center">

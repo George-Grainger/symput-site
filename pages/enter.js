@@ -11,12 +11,9 @@ const Login = dynamic(() => import('@/components/Login'), {
   loading: () => <LoginPlaceHolder />
 });
 
-const SignOutButton = dynamic(
-  () => import('@/components/Login/SignOutButton'),
-  {
-    loading: () => <LoginPlaceHolder />
-  }
-);
+const Completed = dynamic(() => import('@/components/Login/Completed'), {
+  loading: () => <LoginPlaceHolder />
+});
 
 const VerifyUser = dynamic(() => import('@/components/Login/VerifyUser'), {
   loading: () => <LoginPlaceHolder />
@@ -55,7 +52,7 @@ export default function Enter({ navbarData, footerData }) {
     } else if (!verified) {
       return <VerifyUser />;
     } else {
-      return <SignOutButton />;
+      return <Completed />;
     }
   };
 

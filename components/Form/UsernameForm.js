@@ -1,27 +1,40 @@
 import { useForm } from 'react-hook-form';
+import { firestore } from '@/lib/firebase';
 import debounce from 'lodash.debounce';
-import Router from 'next/router';
 import { UserContext } from '@/lib/context';
 import { useEffect, useState, useCallback, useContext } from 'react';
 import UsernameMessage from '@/components/Form/UsernameMessage';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
-import { uploadUserDataPostLogin, usernameExists } from '@/lib/firestoreUtils';
+import toast from 'react-hot-toast';
 
 const UsernameForm = () => {
   const [formValue, setFormValue] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
   const { register, errors, handleSubmit } = useForm();
-  const { user, validated } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const re = /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 
-  const onSubmit = async (e) => {
-    uploadUserDataPostLogin(user, formValue)
-      // .then(() => {
-      //   if(verfied)
-      //   Router.push('/admin')
-      // })
-      .catch(console.log('Error'));
+  const onSubmit = async () => {
+    // Create refs for both documents
+    const userDoc = firestore.doc(`users/${user.uid}`);
+    const usernameDoc = firestore.doc(`usernames/${formValue}`);
+
+    // Commit both docs together as a batch write.
+    const batch = firestore.batch();
+    batch.set(userDoc, {
+      username: formValue,
+      photoURL: user.photoURL,
+      displayName: user.displayName,
+      provider: user.providerData[0].providerId,
+      email: user.email
+    });
+    batch.set(usernameDoc, { uid: user.uid });
+    toast.promise(batch.commit(), {
+      loading: 'Reserving your name',
+      success: <b>Username saved</b>,
+      error: <b>Uh oh, something went wrong, please try again.</b>
+    });
   };
 
   const onChange = (e) => {
@@ -51,7 +64,8 @@ const UsernameForm = () => {
   const checkUsername = useCallback(
     debounce(async (username) => {
       if (username.length >= 3 && username.length <= 20) {
-        const exists = await usernameExists(username);
+        const ref = firestore.doc(`usernames/${username}`);
+        const { exists } = await ref.get();
         setIsValid(!exists);
         setLoading(false);
       }

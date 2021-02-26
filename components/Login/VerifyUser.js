@@ -1,20 +1,22 @@
 import { UserContext } from '@/lib/context';
 import { useContext, useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 const VerifyUser = () => {
   const { user, username, loading } = useContext(UserContext);
 
-  const sendEmail = async () => {
-    if (!loading) {
-      user
-        ?.sendEmailVerification()
-        .then(() => console.log('Success'))
-        .catch((error) => console.log(error));
+  const sendEmail = async (firstTime) => {
+    if (!loading && !firstTime) {
+      toast.promise(user?.sendEmailVerification(), {
+        loading: 'Sending email',
+        success: 'Email Sent',
+        error: 'Email failed to send, please try again.'
+      });
     }
   };
 
   useEffect(() => {
-    sendEmail();
+    sendEmail(true);
   }, [user]);
 
   return (
@@ -40,7 +42,7 @@ const VerifyUser = () => {
         </p>
       </div>
       <button
-        onClick={sendEmail}
+        onClick={() => sendEmail(false)}
         className="btn btn-yellow md:col-start-2 md:col-span-3 mt-12"
       >
         Resend the verification email
