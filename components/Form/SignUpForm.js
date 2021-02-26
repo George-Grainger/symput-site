@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import CustomInput from './Input';
 import { auth } from '@/lib/firebase';
+import toast from 'react-hot-toast';
 
 const SignInForm = () => {
   const {
@@ -19,11 +20,11 @@ const SignInForm = () => {
   const onSubmit = async (data) => {
     auth
       .createUserWithEmailAndPassword(data.suemail, data.supassword)
-      .then((authUser) => {
-        console.log(authUser.user.emailVerified);
+      .then(() => {
+        toast.success('Account registered');
       })
       .catch((error) => {
-        setError('sueemail', { type: error.code, message: error.message });
+        setError('suemail', { type: error.code, message: error.message });
       });
   };
 
@@ -56,7 +57,7 @@ const SignInForm = () => {
             message: 'Password must be 8 characters or more'
           },
           maxLength: {
-            value: 8,
+            value: 40,
             message: 'Password must be 40 characters or less'
           }
         })}

@@ -11,7 +11,13 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider attribute="class">
       <UserContext.Provider value={userData}>
         <Component {...pageProps} />
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            style: {
+              margin: '100px'
+            }
+          }}
+        />
       </UserContext.Provider>
     </ThemeProvider>
   );
