@@ -82,6 +82,10 @@ input:checked ~ .toggle-path {
   @apply md:btn-yellow-inverted md:dark:btn-black-inverted;
 }
 
+.btn-sm {
+  @apply font-bold py-2 px-4 rounded transition-colors duration-100 shadow-md cursor-pointer;
+}
+
 .btn {
   @apply font-bold py-3 px-6 rounded transition-colors duration-100 shadow-md cursor-pointer;
 }
@@ -92,6 +96,18 @@ input:checked ~ .toggle-path {
 
 .btn-yellow {
   @apply bg-yellow-400 text-black;
+}
+
+.dark\:btn-yellow {
+  @apply dark:bg-yellow-400 dark:text-black;
+}
+
+.btn-black {
+  @apply text-white bg-gray-900;
+}
+
+.btn-black:hover {
+  @apply bg-gray-700;
 }
 
 .btn-black-inverted {
@@ -124,6 +140,10 @@ input:checked ~ .toggle-path {
 
 .btn-yellow:hover {
   @apply text-white bg-yellow-600;
+}
+
+.dark\:btn-yellow:hover {
+  @apply dark:text-white dark:bg-yellow-600;
 }
 
 .btn-yellow-inverted:hover {

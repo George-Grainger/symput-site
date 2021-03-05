@@ -1,14 +1,12 @@
-import PostFeed from '@/components/PostFeed';
-import Metatags from '@/components/Metatags';
-import Loader from '@/components/Loader';
-import { firestore, fromMillis, postToJSON } from '@/lib/firebase';
-
-import { useState } from 'react';
+import { firestore, postToJSON } from '@/lib/firebase';
+import FeedbackFeed from '@/components/Feedback/FeedbackFeed';
+import { getFooterData, getNavbarData } from '@/lib/pageContent';
+import Layout from 'layout/Layout';
 
 // Max post to query per page
 const LIMIT = 10;
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ locale }) {
   const postsQuery = firestore
     .collectionGroup('posts')
     .where('published', '==', true)
@@ -16,74 +14,19 @@ export async function getServerSideProps() {
     .limit(LIMIT);
 
   const posts = (await postsQuery.get()).docs.map(postToJSON);
+  const navbarData = getNavbarData(locale);
+  const footerData = getFooterData(locale);
+  // console.log(navbarData, footerData);
 
   return {
-    props: { posts } // will be passed to the page component as props
+    props: { posts, navbarData, footerData }
   };
 }
 
-export default function Feedback(props) {
-  const [posts, setPosts] = useState(props.posts);
-  const [loading, setLoading] = useState(false);
-
-  const [postsEnd, setPostsEnd] = useState(false);
-
-  // Get next page in pagination query
-  const getMorePosts = async () => {
-    setLoading(true);
-    const last = posts[posts.length - 1];
-
-    const cursor =
-      typeof last.createdAt === 'number'
-        ? fromMillis(last.createdAt)
-        : last.createdAt;
-
-    const query = firestore
-      .collectionGroup('posts')
-      .where('published', '==', true)
-      .orderBy('createdAt', 'desc')
-      .startAfter(cursor)
-      .limit(LIMIT);
-
-    const newPosts = (await query.get()).docs.map((doc) => doc.data());
-
-    setPosts(posts.concat(newPosts));
-    setLoading(false);
-
-    if (newPosts.length < LIMIT) {
-      setPostsEnd(true);
-    }
-  };
-
+export default function FB({ posts, navbarData, footerData }) {
   return (
-    <main>
-      <Metatags
-        title="Feedback Page"
-        description="Get the latest posts on our site"
-      />
-
-      <div className="card card-info">
-        <h2>💡 Next.js + Firebase - The Full Course</h2>
-        <p>
-          Welcome! This app is built with Next.js and Firebase and is loosely
-          inspired by Dev.to.
-        </p>
-        <p>
-          Sign up for an 👨‍🎤 account, ✍️ write posts, then 💞 heart content
-          created by other users. All public content is server-rendered and
-          search-engine optimized.
-        </p>
-      </div>
-
-      <PostFeed posts={posts} />
-
-      {!loading && !postsEnd && (
-        <button onClick={getMorePosts}>Load more</button>
-      )}
-
-      <Loader show={loading} />
-
-      {postsEnd && 'You have reached the end!'}
-    </main>
+    <Layout navbarData={navbarData} footerData={footerData}>
+      <FeedbackFeed initialPosts={posts} />
+    </Layout>
   );
 }

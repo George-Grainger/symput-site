@@ -109,7 +109,7 @@ const UsernameForm = () => {
         <button
           type="submit"
           className="btn btn-yellow my-4"
-          // disabled={!isValid}
+          disabled={!isValid}
         >
           {loading ? <ButtonEllipsis /> : 'Choose'}
         </button>

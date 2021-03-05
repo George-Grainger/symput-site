@@ -1,12 +1,12 @@
 import { UserContext } from '@/lib/context';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import toast from 'react-hot-toast';
 
 const VerifyUser = () => {
   const { user, username, loading } = useContext(UserContext);
 
-  const sendEmail = async (firstTime) => {
-    if (!loading && !firstTime) {
+  const sendEmail = async () => {
+    if (!loading) {
       toast.promise(user?.sendEmailVerification(), {
         loading: 'Sending email',
         success: 'Email Sent',
@@ -14,10 +14,6 @@ const VerifyUser = () => {
       });
     }
   };
-
-  useEffect(() => {
-    sendEmail(true);
-  }, [user]);
 
   return (
     <div className="grid md:grid-cols-5 w-full h-full">

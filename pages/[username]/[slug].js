@@ -1,4 +1,4 @@
-import PostContent from '@/components/PostContent';
+import PostContent from '@/components/Feedback/FeedbackContent';
 import HeartButton from '@/components/HeartButton';
 import AuthCheck from '@/components/AuthCheck';
 import Metatags from '@/components/Metatags';
@@ -51,6 +51,7 @@ export async function getStaticPaths() {
 }
 
 export default function Post(props) {
+  console.log(props);
   const postRef = firestore.doc(props.path);
   const [realtimePost] = useDocumentData(postRef);
 

@@ -1,5 +1,5 @@
 import AuthCheck from '@/components/AuthCheck';
-import PostFeed from '@/components/PostFeed';
+import PostFeed from '@/components/Feedback/FeedbackFeed';
 import { UserContext } from '@/lib/context';
 import { firestore, auth, serverTimestamp } from '@/lib/firebase';
 
@@ -42,7 +42,7 @@ function PostList() {
 
 function CreateNewPost() {
   const router = useRouter();
-  const { username } = useContext(UserContext);
+  const { user, username } = useContext(UserContext);
   const [title, setTitle] = useState('');
 
   // Ensure slug is URL safe
@@ -67,6 +67,7 @@ function CreateNewPost() {
       slug,
       uid,
       username,
+      photoURL: user.photoURL,
       published: false,
       content: '# hello world!',
       createdAt: serverTimestamp(),

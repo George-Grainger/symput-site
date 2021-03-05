@@ -2,7 +2,7 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 
 // UI component for main post content
-export default function PostContent({ post }) {
+export default function FeedbackContent({ post }) {
   const createdAt =
     typeof post?.createdAt === 'number'
       ? new Date(post.createdAt)
