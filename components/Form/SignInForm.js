@@ -1,13 +1,9 @@
-import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from './Input';
 import { auth } from '@/lib/firebase';
 import toast from 'react-hot-toast';
-import { useRouter } from 'next/router';
 
 const SignInForm = ({ handlePasswordReset }) => {
-  const router = useRouter();
-
   const {
     register,
     handleSubmit,
@@ -27,7 +23,7 @@ const SignInForm = ({ handlePasswordReset }) => {
         setError('sipassword', { type: error.code, message: error.message });
       });
   };
-  console.log(errors);
+
   return (
     <form className="grid gap-4 text-left" onSubmit={handleSubmit(onSubmit)}>
       <Input

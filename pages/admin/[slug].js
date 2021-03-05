@@ -11,7 +11,7 @@ import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 
-export default function AdminPostEdit(props) {
+export default function AdminPostEdit() {
   return (
     <AuthCheck>
       <PostManager />

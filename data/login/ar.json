@@ -1,0 +1,58 @@
+{
+  "title": "Sign in to Symput",
+  "loginPage": {
+    "heading": "Welcome",
+    "signInWith": "Sign in with",
+    "credentials": "Or through credentials",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "email": "Email",
+    "emailEG": "your@email.com",
+    "password": "Password",
+    "reminder": "Forgot password?",
+    "repeatPassword": "Repeat password"
+  },
+
+  "usernameForm": {
+    "heading": "You're in",
+    "username": "Username",
+    "button": "choose",
+    "toast": {
+      "loading": "Reserving your name",
+      "success": "Username saved",
+      "error": "Uh oh, something went wrong, please try again."
+    },
+    "errors": {
+      "minLength": "Username must be 3 characters or more",
+      "maxLength": "Usernames must be 20 characters or less",
+      "pattern": "Username is invalid",
+      "inUse": "Username is already in use",
+      "checking": "Checking...",
+      "nearLim": "20 characters is the max limit - checking",
+      "isAvailable": "is available"
+    }
+  },
+
+  "verifyPage": {
+    "heading": "Please verify your email",
+    "p1Subtitle": "If you signed up through Facebook, Twitter, GitHub or Google",
+    "p1Content": "The link will be sent to the email address associated with the account you signed in with.",
+    "p2Subtitle": "If you signed up through credentials",
+    "p2Content": "The link will be sent to the email you registered the account with.",
+    "button": "Resent the verification email",
+    "toast": {
+      "loading": "Sending email",
+      "success": "Email sent",
+      "error": "Email failed to send, please try again"
+    }
+  },
+
+  "completedPage": {
+    "heading": "Congratulations",
+    "subheading": "You're fully signed up",
+    "p1": "Let us know your feedback through the admin area.",
+    "p2": "We'd love to know what you think",
+    "button": "Take a look round",
+    "imgAlt": "Congratulations!"
+  }
+}
