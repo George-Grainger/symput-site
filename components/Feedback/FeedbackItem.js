@@ -3,6 +3,7 @@ import { UserContext } from '@/lib/context';
 import { useState, useEffect, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import LinkableAvatar from '../LinkableAvatar';
+import { FaEdit, FaHeart } from 'react-icons/fa';
 
 export default function FeedbackItem({ post, initialAdmin = false }) {
   const [admin, setAdmin] = useState(initialAdmin);
@@ -13,53 +14,64 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
       setAdmin(true);
     }
   }, [loading]);
-  console.log('admin - ', admin);
 
   const wordCount = post?.content.trim().split(/\s+/g).length;
   const minutesToRead = (wordCount / 100 + 1).toFixed(0);
+  const updatedDate = new Date(post.updatedAt);
 
   return (
     <Link href={`/${post.username}/${post.slug}`}>
-      <div className="min-w-feedback px-10 my-4 py-6 bg-white rounded-lg shadow-md cursor-pointer">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl sm:text-2xl text-black font-bold">
-            <a>{post.title}</a>
-          </h2>
-          <span className="text-gray-800">
-            {wordCount} words. {minutesToRead} min read
-          </span>
-        </div>
-        <p className="mt-2 text-black">
-          <ReactMarkdown>
-            {post.content.length < 100
-              ? post.content
-              : post.content.substr(0, 100)}
-          </ReactMarkdown>
-        </p>
-        <div className="flex justify-between items-center">
-          <span>💗 {post.heartCount || 0}</span>
+      <div className="px-5 py-4 bg-white hover:bg-gray-200 text-gray-900 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer">
+        <div className="relative flex mb-4 items-start">
+          {admin && (
+            <Link href={`/admin/${post.slug}`}>
+              <FaEdit className="absolute right-0 h-6 w-6 text-gray-600 hover:text-yellow-800" />
+            </Link>
+          )}
           <Link href={`/${post.username}`} passHref>
-            <a className="flex items-center mt-4">
-              <LinkableAvatar
-                height="40px"
-                width="40px"
-                className="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
-                src={post.photoURL || '/hacker.png'}
-                alt="avatar"
-              />
-              <strong className="sm:ml-4 text-gray-800 font-superbold">
-                By @{post.username}
-              </strong>
-            </a>
+            <LinkableAvatar
+              height="50px"
+              width="50px"
+              className="object-cover rounded-full"
+              src={post.photoURL || '/hacker.png'}
+              alt="avatar"
+            />
           </Link>
+          <div className="ml-4 mt-0.5">
+            <Link href={`/${post.username}`}>
+              <a className="block font-medium text-base leading-snug hover:text-yellow-800 mb-1">
+                {post.username}
+              </a>
+            </Link>
+            <span className="block text-sm font-light leading-snug text-gray-600">
+              {updatedDate.toLocaleString('en-GB', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit'
+              })}
+            </span>
+          </div>
         </div>
-        {admin && (
-          <Link href={`/admin/${post.slug}`}>
-            <a className="btn-sm btn-yellow w-full sm:auto order-2 mt-4">
-              Edit your post
-            </a>
-          </Link>
-        )}
+        <ReactMarkdown>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </ReactMarkdown>
+        <div className="flex justify-between items-center mt-5">
+          <div className="flex ml-1 font-light items-center">
+            <FaHeart className="text-red-500 inline mr-2" />
+            {post.heartCount || 0}
+          </div>
+          <div className="ml-1 font-light text-gray-600">
+            {wordCount} words. {minutesToRead} min read
+          </div>
+        </div>
       </div>
     </Link>
   );

@@ -1,5 +1,4 @@
 import { getUserWithUsername, postToJSON } from '@/lib/firebase';
-import PostFeed from '@/components/Feedback/FeedbackFeed';
 import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData } from '@/lib/pageContent';
 import UserCard from '@/components/Cards/UserCard';
@@ -51,8 +50,7 @@ export default function UserProfilePage({
 }) {
   return (
     <Layout navbarData={navbarData} footerData={footerData}>
-      <UserCard user={user} />
-      <PostFeed posts={posts} />
+      <UserCard user={user} posts={posts} />
     </Layout>
   );
 }

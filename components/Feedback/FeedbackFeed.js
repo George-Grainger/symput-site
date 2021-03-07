@@ -61,7 +61,7 @@ export default function FeedbackFeed({ initialPosts, admin }) {
         )}
         <Loader show={loading} />
         {postsEnd && (
-          <div className="btn cursor-default bg-green-500 text-white my-4">
+          <div className="font-bold py-3 px-6 rounded shadow-md cursor-default bg-green-500 text-white my-4">
             You have reached the end!
           </div>
         )}
