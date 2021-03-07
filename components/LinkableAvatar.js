@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const LinkableAvatar = forwardRef((props, ref) => {
   return (
-    <span ref={ref}>
+    <span className="flex items-center" ref={ref}>
       <Image {...props} />
     </span>
   );

@@ -20,7 +20,7 @@ const Sidebar = ({ links, open, clickHandler, closeAria }) => {
       >
         <FaTimes className="h-8 w-8" />
       </button>
-      <ul className="flex flex-col items-center">
+      <ul className="grid gap-4 align-items-center">
         {links?.map(({ text, link }) => {
           return (
             <Navlink key={uuid()} href={link} sidebar>
