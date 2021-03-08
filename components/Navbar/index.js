@@ -44,7 +44,7 @@ export default function Navbar({ data, transparent }) {
           ' fixed z-40 top-0 w-full flex flex-wrap items-center justify-between px-2 py-3 transition duration-300'
         }
       >
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between xl:relative">
           <Link href="/">
             <a className="flex items-center text-2xl font-bold leading-relaxed py-2 whitespace-no-wrap uppercase hover:text-yellow-400">
               <Image
@@ -68,9 +68,6 @@ export default function Navbar({ data, transparent }) {
           </ul>
 
           <ul className="flex items-center gap-2 md:gap-6">
-            {/* user is not signed OR has not created username */}
-            {!username && <LoggedOut loginText={loginText} />}
-
             <li>
               <Settings {...settingsInfo} />
             </li>
@@ -83,6 +80,10 @@ export default function Navbar({ data, transparent }) {
                 <FaBars className="h-6 w-6" />
               </button>
             </li>
+
+            {/* user is not signed OR has not created username */}
+            {!username && <LoggedOut loginText={loginText} />}
+
             {/* user is signed-in and has username */}
             {username && <LoggedIn />}
           </ul>

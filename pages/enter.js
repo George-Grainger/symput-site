@@ -61,7 +61,7 @@ export default function Enter({ navbarData, footerData, pageData }) {
 
   return (
     <Layout title={title} navbarData={navbarData} footerData={footerData}>
-      <section className="pt-12 pb-24 px-8 w-full min-h-screen flex justify-center items-center bg-yellow-400 dark:bg-gray-600 transition-colors duration-300">
+      <section className="section-default pt-12 pb-24 px-8">
         <div className="card bg-gray-900 text-white loginm md:min-h-login min-w-login">
           <div>{getCurrentState()}</div>
         </div>

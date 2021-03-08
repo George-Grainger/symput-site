@@ -16,7 +16,7 @@ export default function Modal({
         } justify-center pointer-events-none items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none text-black dark:text-white`}
       >
         <div className="relative w-auto m-6 max-w-xl pointer-events-auto">
-          <div className="border-4 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 dark:border-gray-700 outline-none focus:outline-none transition-colors duration-300">
+          <div className="border-4 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 dark:border-gray-700 outline-none focus:outline-none transition-darkmode">
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
               <h3 className="text-3xl font-semibold">{title}</h3>
               <button
