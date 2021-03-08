@@ -5,7 +5,7 @@ export default function LoggedOut({
   className = 'btn hidden lg:block'
 }) {
   return (
-    <li>
+    <li className="flex justify-center">
       <Link href="/enter">
         <button className={`${className} btn-yellow lg:my-0 my-6`}>
           {loginText}

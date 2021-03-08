@@ -25,7 +25,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
         <div className="relative flex mb-4 items-start">
           {admin && (
             <Link href={`/admin/${post.slug}`}>
-              <FaEdit className="absolute right-0 h-6 w-6 text-gray-600 hover:text-yellow-800" />
+              <FaEdit className="absolute right-0 h-6 w-6 text-gray-700 hover:text-yellow-800" />
             </Link>
           )}
           <Link href={`/${post.username}`} passHref>
@@ -43,7 +43,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
                 {post.username}
               </a>
             </Link>
-            <span className="block text-sm font-light leading-snug text-gray-600">
+            <span className="block text-sm font-light leading-snug text-gray-700">
               {updatedDate.toLocaleString('en-GB', {
                 day: 'numeric',
                 month: 'short',
@@ -68,7 +68,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
             <FaHeart className="text-red-500 inline mr-2" />
             {post.heartCount || 0}
           </div>
-          <div className="ml-1 font-light text-gray-600">
+          <div className="ml-1 font-light text-gray-700">
             {wordCount} words. {minutesToRead} min read
           </div>
         </div>

@@ -166,6 +166,18 @@ input:checked ~ .toggle-path {
   @apply md:text-white md:bg-gray-900 md:border-gray-900;
 }
 
+.section-default {
+  @apply w-full min-h-screen bg-yellow-400 dark:bg-gray-700 transition-colors duration-300 flex flex-col items-center;
+}
+
+.transition-darkmode {
+  @apply transition-colors duration-300;
+}
+
+.usercontrol-button {
+  @apply flex flex-row items-center rounded-lg bg-transparent p-2 dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none;
+}
+
 .loader-dots div {
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }

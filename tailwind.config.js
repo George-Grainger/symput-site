@@ -18,8 +18,8 @@ module.exports = {
         9: '2.25rem'
       },
       minWidth: {
-        feedback: 'clamp(311px, 100%, 768px)',
-        login: 'clamp(311px, 100%, 906px)'
+        feedback: 'clamp(275px, 100%, 768px)',
+        login: 'clamp(275px, 100%, 906px)'
       },
       minHeight: {
         login: '577px',

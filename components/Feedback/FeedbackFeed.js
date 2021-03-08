@@ -42,7 +42,7 @@ export default function FeedbackFeed({ initialPosts, admin }) {
 
   if (posts) {
     return (
-      <section className="pt-12 pb-24 px-8 w-full min-h-screen flex flex-col items-center bg-yellow-400 dark:bg-gray-600 transition-colors duration-300">
+      <section className="section-default pt-12 pb-24 px-8">
         {posts.map((post) => (
           <FeedbackItem
             key={uuid()}
@@ -70,7 +70,7 @@ export default function FeedbackFeed({ initialPosts, admin }) {
   } else {
     return (
       // TODO finish this page
-      <section className="pt-12 pb-24 px-8 w-full min-h-screen flex flex-col items-center justify-center bg-yellow-400 dark:bg-gray-600 transition-colors duration-300">
+      <section className="section-default pt-12 pb-24 px-8">
         <h2 className="text-6xl mb-12">There's no feedback yet</h2>
         <p className="text-xl mb-12">
           You could be the first person to ever leave feedback - head to the

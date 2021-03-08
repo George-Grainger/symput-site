@@ -5,7 +5,7 @@ const Socials = ({ title, subtitle }) => {
   return (
     <div className="flex flex-col md:flex-auto gap-6 md:col-span-3 lg:col-span-2">
       <h4 className="text-3xl font-semibold">{title}</h4>
-      <h5 className="text-lg text-gray-700 dark:text-gray-300 transition-colors duration-300">
+      <h5 className="text-lg text-gray-700 dark:text-gray-300 transition-darkmode">
         {subtitle}
       </h5>
       <div className="flex gap-4 justify-between">

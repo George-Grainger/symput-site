@@ -8,7 +8,7 @@ const Team = ({ data }) => {
         <div className="flex flex-wrap justify-center text-center mb-24">
           <div className="w-full lg:w-6/12 px-4">
             <h2 className="text-4xl font-semibold">Our team</h2>
-            <p className="text-lg leading-relaxed m-4 text-gray-600">
+            <p className="text-lg leading-relaxed m-4 text-gray-700">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
               temporibus non eveniet omnis quibusdam quaerat optio? Similique,
               cupiditate magnam maxime vel perferendis nemo aliquid ratione

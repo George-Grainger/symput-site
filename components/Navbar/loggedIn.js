@@ -1,32 +1,22 @@
-import Link from 'next/link';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { UserContext } from '@/lib/context';
-import { auth } from '@/lib/firebase';
-import { useRouter } from 'next/router';
-import LinkableAvatar from '../LinkableAvatar';
+import Image from 'next/image';
+import UserControls from './UserControls';
 
 export default function LoggedIn() {
   const { user, username } = useContext(UserContext);
-
-  const router = useRouter();
-
-  const signOut = () => {
-    auth.signOut();
-    router.reload();
-  };
+  const [dropDownVisible, setDropDownVisible] = useState(false);
 
   return (
     <li>
-      <Link href={`/${username}`} passHref>
-        {/* next/image doesn't appear to work with photourl - would be worth looking into since domain needs to be provided. */}
-        <LinkableAvatar
-          height="40px"
-          width="40px"
-          onClick={signOut}
-          src={user?.photoURL || '/hacker.png'}
-          className="shadow-lg rounded-full max-w-full mx-auto h-12 w-12 cursor-pointer"
-        />
-      </Link>
+      <Image
+        height="40px"
+        width="40px"
+        onClick={() => setDropDownVisible(!dropDownVisible)}
+        src={user?.photoURL || '/hacker.png'}
+        className="rounded-full max-w-full mx-auto h-12 w-12 cursor-pointer"
+      />
+      <UserControls username={username} visible={dropDownVisible} />
     </li>
   );
 }
