@@ -31,7 +31,7 @@ const Login = () => {
     <div className="grid md:grid-cols-4 gap-x-10 z-10">
       <h1 className="md:col-span-4 text-3xl font-semibold w-full">Welcome</h1>
       <hr className="md:col-span-4 my-6 border-b-1 border-gray-200" />
-      <div className="grid grid-cols-1 md:col-span-2 gap-4 justify-center content-start">
+      <div className="grid grid-cols-1 md:col-span-2 gap-1 mt-3 justify-center content-start">
         <h2 className="col-span-1 font-bold">Sign in with</h2>
         <SignInWithButton
           callback={signInWithGoogle}

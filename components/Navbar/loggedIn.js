@@ -8,13 +8,13 @@ export default function LoggedIn() {
   const [dropDownVisible, setDropDownVisible] = useState(false);
 
   return (
-    <li>
+    <li className="link-standard flex p-1">
       <Image
         height="40px"
         width="40px"
         onClick={() => setDropDownVisible(!dropDownVisible)}
         src={user?.photoURL || '/hacker.png'}
-        className="rounded-full max-w-full mx-auto h-12 w-12 cursor-pointer"
+        className="rounded-full max-w-full m-auto h-12 w-12"
       />
       <UserControls username={username} visible={dropDownVisible} />
     </li>

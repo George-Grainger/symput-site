@@ -62,7 +62,7 @@ const PasswordReset = ({ email, handleReturn }) => {
 
           <a
             onClick={handleReturn}
-            className="text-white underline text-center cursor-pointer hover:text-yellow-400"
+            className="link-dark-bg justify-self-center p-2 underline"
           >
             Go back
           </a>

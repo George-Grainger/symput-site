@@ -8,11 +8,12 @@ const Icon = ({
 }) => {
   return (
     <Link href={href}>
-      <button
-        aria-label={accessibleLabel}
-        className={`${buttonColor} ${size} text-white p-3 text-center inline-flex items-center justify-center shadow-lg rounded-full hover:opacity-80`}
-      >
-        {icon}
+      <button aria-label={accessibleLabel} className="p-1 link link-standard">
+        <span
+          className={`${buttonColor} ${size} shadow-lg rounded-full text-white items-center justify-center flex dark:hover:ring-2 ring-yellow-400 transition duration-150`}
+        >
+          {icon}
+        </span>
       </button>
     </Link>
   );

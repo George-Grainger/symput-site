@@ -24,7 +24,7 @@ const ThemeChanger = ({ title }) => {
       <p className="prose-lg w-full">{title}</p>
       <label
         htmlFor="toogleButton"
-        className="flex justify-center items-center cursor-pointer w-full py-4"
+        className="flex justify-center items-center cursor-pointer py-4"
       >
         <FaSun
           className={`${

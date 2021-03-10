@@ -29,7 +29,7 @@ const Overview = ({
         <LinkCard
           title={card1Title}
           learnMore={learnMore}
-          className="card-black"
+          className="card-black dark:card-gray"
           link="/"
           icon={<GiArcheryTarget className="h-full w-full" />}
         >
@@ -49,7 +49,7 @@ const Overview = ({
         <LinkCard
           title={card3Title}
           learnMore={learnMore}
-          className="card-black md:card-yellow"
+          className="card-black dark:card-gray md:card-yellow md:dark:card-yellow"
           link="/"
           icon={<BsCalendar className="h-full w-full" />}
         >
@@ -58,7 +58,7 @@ const Overview = ({
         <LinkCard
           title={card4Title}
           learnMore={learnMore}
-          className="card-yellow md:card-black"
+          className="card-yellow dark:card-yellow md:card-black md:dark:card-gray"
           link="/"
           icon={<BiCommentCheck className="h-full w-full" />}
         >
@@ -67,9 +67,9 @@ const Overview = ({
       </div>
       <div className="flex flex-col col-span-1 md:col-span-2 lg:col-span-4 m-auto lg:ml-16 xl:ml-24 max-w-prose">
         <TextArea title={sideTextTitle} linkText={sideTextLink}>
-          <p className="mb-4">{sideTextP1}</p>
-          <p className="mb-4">{sideTextP2}</p>
-          <p className="mb-4">{sideTextP3}</p>
+          <p>{sideTextP1}</p>
+          <p>{sideTextP2}</p>
+          <p>{sideTextP3}</p>
         </TextArea>
       </div>
     </div>
