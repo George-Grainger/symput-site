@@ -7,7 +7,7 @@ const Navlink = ({ href, children, sidebar = false }) => {
         <a
           className={` ${
             sidebar ? 'text-2xl' : 'text-lg'
-          } lg:p6 p-4 flex items-center justify-center font-semibold hover:text-yellow-400`}
+          } lg:p6 p-4 flex items-center justify-center font-semibold link-standard`}
         >
           {children}
         </a>

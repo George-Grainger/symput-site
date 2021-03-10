@@ -19,10 +19,10 @@ module.exports = {
       },
       minWidth: {
         feedback: 'clamp(275px, 100%, 768px)',
-        login: 'clamp(275px, 100%, 906px)'
+        'fs-card': 'clamp(275px, 100%, 906px)'
       },
       minHeight: {
-        login: '577px',
+        'fs-card': '600px',
         '1/4v': '25vh',
         '1/2v': '50vh',
         '3/4v': '75vh',
@@ -30,16 +30,35 @@ module.exports = {
       },
       typography: (theme) => ({
         DEFAULT: {
-          css: {}
+          css: {
+            color: theme('colors.gray.900'),
+            a: {
+              color: theme('colors.gray.900')
+            },
+            'a:hover': {
+              color: theme('colors.yellow.400')
+            }
+          }
         },
         dark: {
-          css: {}
+          css: {
+            color: theme('colors.white'),
+            a: {
+              color: theme('colors.white')
+            },
+            'a:hover': {
+              color: theme('colors.yellow.400')
+            }
+          }
         }
       })
     }
   },
   variants: {
-    typography: ['dark']
+    typography: ['dark'],
+    extend: {
+      ringWidth: ['hover', 'dark']
+    }
   },
   plugins: [require('@tailwindcss/typography')]
 };

@@ -8,6 +8,10 @@ body {
   display: grid;
 }
 
+body *:focus {
+  outline: red;
+}
+
 #__next {
   height: 100%;
   grid-row: 1/-1;
@@ -39,7 +43,7 @@ input:checked ~ .toggle-path {
 }
 
 .input {
-  @apply appearance-none border border-transparent w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent;
+  @apply appearance-none border border-transparent w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent;
 }
 
 .offset-header {
@@ -47,123 +51,95 @@ input:checked ~ .toggle-path {
 }
 
 .card {
-  @apply shadow-lg rounded-lg text-center p-8 mb-8 transition-colors duration-300;
+  @apply shadow-lg rounded-lg text-center p-8 mb-8 transition-darkmode;
 }
 
-.card-yellow {
-  @apply bg-yellow-500 text-black;
+.card button {
+  @apply mt-6;
 }
 
-.card-black {
-  @apply bg-gray-900 dark:bg-gray-300 text-white dark:text-black;
+.card p {
+  @apply mt-4;
 }
 
-.card-yellow button {
-  @apply btn-black-inverted;
-}
+@responsive {
+  @variants dark {
+    .card-yellow {
+      @apply bg-yellow-500 text-black;
+    }
 
-.card-black button {
-  @apply btn-yellow-inverted dark:btn-black-inverted;
-}
+    .card-yellow button {
+      @apply btn-black-inverted;
+    }
 
-.md\:card-yellow {
-  @apply md:bg-yellow-500 md:dark:bg-yellow-500 md:text-black;
-}
+    .card-black {
+      @apply bg-gray-900 text-white;
+    }
 
-.md\:card-yellow button {
-  @apply md:btn-black-inverted;
-}
+    .card-black button {
+      @apply btn-yellow-inverted;
+    }
 
-.md\:card-black {
-  @apply md:bg-gray-900 md:dark:bg-gray-300 md:text-white md:dark:text-black;
-}
+    .card-gray {
+      @apply bg-gray-300 text-black;
+    }
 
-.md\:card-black button {
-  @apply md:btn-yellow-inverted md:dark:btn-black-inverted;
-}
+    .card-gray button {
+      @apply btn-black-inverted;
+    }
 
-.btn-sm {
-  @apply font-bold py-2 px-4 rounded transition-colors duration-100 shadow-md cursor-pointer;
-}
+    .link-standard {
+      @apply link link-light-bg dark:link-dark-bg;
+    }
 
-.btn {
-  @apply font-bold py-3 px-6 rounded transition-colors duration-100 shadow-md cursor-pointer;
-}
+    .bg-transparent .link-standard:not(.language-button) {
+      @apply link-yellow-text hover:bg-transparent focus:bg-transparent;
+    }
 
-.btn-lg {
-  @apply font-bold py-3 px-8 rounded cursor-pointer;
-}
+    .link-yellow-text {
+      @apply link hover:text-yellow-400;
+    }
 
-.btn-yellow {
-  @apply bg-yellow-400 text-black;
-}
+    .btn-sm {
+      @apply font-bold py-2 px-4 rounded transition-colors shadow-md cursor-pointer;
+    }
 
-.dark\:btn-yellow {
-  @apply dark:bg-yellow-400 dark:text-black;
-}
+    .btn {
+      @apply font-bold py-3 px-6 rounded transition-colors shadow-md cursor-pointer;
+    }
 
-.btn-black {
-  @apply text-white bg-gray-900;
-}
+    .btn-lg {
+      @apply font-bold py-3 px-8 rounded transition-colors cursor-pointer;
+    }
 
-.btn-black:hover {
-  @apply bg-gray-700;
-}
+    .btn-yellow {
+      @apply bg-yellow-400 text-black hover:text-white hover:bg-yellow-600;
+    }
 
-.btn-black-inverted {
-  @apply text-gray-900 bg-transparent border border-solid border-gray-900;
-}
+    .btn-black {
+      @apply text-white bg-gray-900 hover:bg-gray-700;
+    }
 
-.btn-black-inverted:hover {
-  @apply text-white bg-gray-900 border-gray-900;
-}
+    .btn-yellow-inverted {
+      @apply text-yellow-400 bg-transparent border border-solid border-yellow-400 hover:text-white hover:bg-yellow-600 hover:border-yellow-600;
+    }
 
-.dark\:btn-black-inverted {
-  @apply dark:text-gray-900 bg-transparent border border-solid dark:border-gray-900;
-}
+    .btn-black-inverted {
+      @apply text-gray-900 bg-transparent border border-solid border-gray-900 hover:text-white hover:bg-gray-900 hover:border-gray-900;
+    }
 
-.dark\:btn-black-inverted:hover {
-  @apply dark:text-white md:dark:bg-gray-900 dark:border-gray-900;
-}
+    .link {
+      @apply focus:outline-none transition cursor-pointer rounded-lg;
+    }
 
-.md\:dark\:btn-black-inverted {
-  @apply md:dark:text-gray-900 bg-transparent border border-solid md:dark:border-gray-900;
-}
+    .link-light-bg {
+      @apply hover:bg-gray-200 focus:bg-gray-200;
+    }
 
-.md\:dark\:btn-black-inverted:hover {
-  @apply md:dark:text-white md:dark:bg-gray-900 md:dark:border-gray-900;
-}
-
-.btn-yellow-inverted {
-  @apply text-yellow-400 bg-transparent border border-solid border-yellow-400;
-}
-
-.btn-yellow:hover {
-  @apply text-white bg-yellow-600;
-}
-
-.dark\:btn-yellow:hover {
-  @apply dark:text-white dark:bg-yellow-600;
-}
-
-.btn-yellow-inverted:hover {
-  @apply text-white bg-yellow-600 border-yellow-600;
-}
-
-.md\:btn-yellow-inverted {
-  @apply md:text-yellow-400 bg-transparent border border-solid md:border-yellow-400;
-}
-
-.md\:btn-yellow-inverted:hover {
-  @apply md:text-white md:bg-yellow-600 md:border-yellow-600;
-}
-
-.md\:btn-black-inverted {
-  @apply md:text-gray-900 bg-transparent border border-solid md:border-gray-900;
-}
-
-.md\:btn-black-inverted:hover {
-  @apply md:text-white md:bg-gray-900 md:border-gray-900;
+    .link-dark-bg {
+      @apply hover:text-yellow-400 focus:text-yellow-400 hover:bg-gray-700 focus:bg-gray-700;
+    }
+  }
 }
 
 .section-default {
@@ -175,7 +151,11 @@ input:checked ~ .toggle-path {
 }
 
 .usercontrol-button {
-  @apply flex flex-row items-center rounded-lg bg-transparent p-2 dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none;
+  @apply flex flex-row items-center bg-transparent p-2 dark:text-white link-standard;
+}
+
+.language-button {
+  @apply mx-4 p-1 flex items-center;
 }
 
 .loader-dots div {
@@ -197,6 +177,7 @@ input:checked ~ .toggle-path {
   left: 56px;
   animation: loader-dots3 0.6s infinite;
 }
+
 @keyframes loader-dots1 {
   0% {
     transform: scale(0);

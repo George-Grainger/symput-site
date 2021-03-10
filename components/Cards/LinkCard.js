@@ -12,10 +12,10 @@ const LinkCard = ({
   return (
     <div className={`${className} card`}>
       {icon && <Icon icon={icon} size="h-16 w-16" />}
-      <p className="text-2xl mt-4 font-semibold">{title}</p>
-      <p className="text-base opacity-75 mt-4">{children}</p>
+      <p className="text-2xl font-semibold">{title}</p>
+      <p className="leading-7">{children}</p>
       <Link href={link}>
-        <button className="btn mt-6 cursor-pointer">{learnMore}</button>
+        <button className="btn">{learnMore}</button>
       </Link>
     </div>
   );

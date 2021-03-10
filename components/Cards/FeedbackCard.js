@@ -2,7 +2,6 @@ import { UserContext } from '@/lib/context';
 import { firestore } from '@/lib/firebase';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useContext } from 'react';
-import FeedbackContent from '@/components/Feedback/FeedbackContent';
 import PostContent from '@/components/Feedback/FeedbackContent';
 import HeartButton from '@/components/HeartButton';
 import AuthCheck from '@/components/AuthCheck';
@@ -18,18 +17,13 @@ const FeedbackCard = (props) => {
   const { user: currentUser } = useContext(UserContext);
 
   return (
-    <>
+    <section className="section-default">
       <Metatags title={post.title} description={post.title} />
-
-      <section>
+      <div className="card card-black md:min-h-fs-card min-w-fs-card">
         <PostContent post={post} />
-      </section>
-
-      <aside className="card">
         <p>
           <strong>{post.heartCount || 0} 🤍</strong>
         </p>
-
         <AuthCheck
           fallback={
             <Link href="/enter">
@@ -39,14 +33,13 @@ const FeedbackCard = (props) => {
         >
           <HeartButton postRef={postRef} />
         </AuthCheck>
-
         {currentUser?.uid === post.uid && (
           <Link href={`/admin/${post.slug}`}>
             <button className="btn-blue">Edit Post</button>
           </Link>
         )}
-      </aside>
-    </>
+      </div>
+    </section>
   );
 };
 

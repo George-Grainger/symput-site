@@ -15,7 +15,7 @@ const Settings = ({
     <>
       <button
         aria-label="Open setttings"
-        className="cursor-pointer text-xl p-3 focus:outline-none hover:text-yellow-400"
+        className="text-xl p-3 link-standard"
         onClick={() => setShowModal(!showModal)}
       >
         <FaCog className="h-6 w-6" height="1.5rem" width="1.5rem" />

@@ -13,7 +13,7 @@ const LanguageChanger = ({ title }) => {
         <Link href={pathname} locale="en" scroll={false}>
           <button
             aria-label="Switch language to English"
-            className="mx-4 hover:opacity-80"
+            className="link-standard language-button"
           >
             <Image alt="UK" src="/uk.svg" height="40" width="40" />
           </button>
@@ -21,7 +21,7 @@ const LanguageChanger = ({ title }) => {
         <Link href={pathname} locale="ar" scroll={false}>
           <button
             aria-label="تبديل اللغة إلى العربية"
-            className="mx-4 hover:opacity-80"
+            className="link-standard language-button"
           >
             <Image alt="UAE" src="/uae.svg" height="40" width="40" />
           </button>
@@ -29,7 +29,7 @@ const LanguageChanger = ({ title }) => {
         <Link href={pathname} locale="zh-cn" scroll={false}>
           <button
             aria-label="将语言切换为中文"
-            className="mx-4 hover:opacity-80"
+            className="link-standard language-button"
           >
             <Image alt="China" src="/china.svg" height="40" width="40" />
           </button>

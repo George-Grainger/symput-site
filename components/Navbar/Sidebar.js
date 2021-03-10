@@ -16,11 +16,13 @@ const Sidebar = ({ links, open, clickHandler, closeAria }) => {
       <button
         aria-label={closeAria}
         onClick={clickHandler}
-        className="p-3 absolute top-3 right-3 cursor-pointer"
+        className={`${
+          open ? 'block' : 'hidden'
+        } p-3 absolute top-3 right-3 link-standard`}
       >
         <FaTimes className="h-8 w-8" />
       </button>
-      <ul className="grid gap-4 align-items-center">
+      <ul className={` ${open ? 'grid' : 'hidden'} gap-4 align-items-center`}>
         {links?.map(({ text, link }) => {
           return (
             <Navlink key={uuid()} href={link} sidebar>
@@ -30,7 +32,10 @@ const Sidebar = ({ links, open, clickHandler, closeAria }) => {
         })}
         {/* user is not signed OR has not created username */}
         {!username && (
-          <LoggedOut loginText={'Login'} className={'btn-lg text-2xl'} />
+          <LoggedOut
+            loginText={'Login'}
+            className={`${open ? 'block' : 'hidden'} btn-lg text-xl`}
+          />
         )}
       </ul>
     </aside>

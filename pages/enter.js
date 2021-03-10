@@ -62,7 +62,7 @@ export default function Enter({ navbarData, footerData, pageData }) {
   return (
     <Layout title={title} navbarData={navbarData} footerData={footerData}>
       <section className="section-default pt-12 pb-24 px-8">
-        <div className="card bg-gray-900 text-white loginm md:min-h-login min-w-login">
+        <div className="card bg-gray-900 text-white md:min-h-fs-card min-w-fs-card">
           <div>{getCurrentState()}</div>
         </div>
       </section>
