@@ -22,7 +22,6 @@ export const getStaticProps = async ({ locale }) => {
   const pageData = getPageData(locale, 'login');
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
-  console.log(navbarData, footerData);
 
   return {
     props: {

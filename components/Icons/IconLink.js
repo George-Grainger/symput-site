@@ -2,15 +2,16 @@ import Link from 'next/link';
 const Icon = ({
   icon,
   accessibleLabel,
-  size = 'h-16 w-16',
-  buttonColor = ' bg-white',
+  size = 'h-10 w-10',
+  buttonClasses = ' bg-white',
+  linkClasses = 'link-standard',
   href = '/'
 }) => {
   return (
     <Link href={href}>
-      <button aria-label={accessibleLabel} className="p-1 link link-standard">
+      <button aria-label={accessibleLabel} className={`${linkClasses} p-1`}>
         <span
-          className={`${buttonColor} ${size} shadow-lg rounded-full text-white items-center justify-center flex dark:hover:ring-2 ring-yellow-400 transition duration-150`}
+          className={`${buttonClasses} ${size} shadow-lg rounded-full text-white items-center justify-center flex`}
         >
           {icon}
         </span>

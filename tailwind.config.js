@@ -1,5 +1,5 @@
 const colors = require('tailwindcss/colors');
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily, outline, cursor } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -10,9 +10,6 @@ module.exports = {
       body: ['Noto Sans', fontFamily.sans]
     },
     extend: {
-      colors: {
-        orange: colors.orange
-      },
       spacing: {
         18: '4.5rem',
         9: '2.25rem'
@@ -33,10 +30,51 @@ module.exports = {
           css: {
             color: theme('colors.gray.900'),
             a: {
-              color: theme('colors.gray.900')
+              color: theme('colors.gray.900'),
+              cursor: 'pointer',
+              borderRadius: '0.5rem',
+              padding: '2px',
+              transitionProperty:
+                'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+              transitionDuration: '150ms'
             },
             'a:hover': {
-              color: theme('colors.yellow.400')
+              backgroundColor: theme('colors.gray.200')
+            },
+            'a:focus': {
+              backgroundColor: theme('colors.gray.200'),
+              outline: 'none'
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.gray.700')
+            },
+            'ul > li::before': {
+              backgroundColor: theme('colors.gray.700')
+            },
+            'ol > li::before': {
+              color: theme('colors.gray.700')
+            },
+            hr: {
+              borderColor: theme('colors.gray.700')
+            },
+            h1: {
+              fontWeight: 600
+            },
+            h2: {
+              fontWeight: 600
+            },
+            h3: {
+              fontWeight: 600
+            },
+            h4: {
+              fontWeight: 600
+            },
+            h5: {
+              fontWeight: 600
+            },
+            h6: {
+              fontWeight: 600
             }
           }
         },
@@ -44,10 +82,59 @@ module.exports = {
           css: {
             color: theme('colors.white'),
             a: {
-              color: theme('colors.white')
+              color: theme('colors.white'),
+              cursor: 'pointer',
+              borderRadius: '0.5rem',
+              padding: '2px',
+              transitionProperty:
+                'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+              transitionDuration: '150ms'
             },
             'a:hover': {
+              color: theme('colors.yellow.400'),
+              backgroundColor: theme('colors.gray.700')
+            },
+            'a:focus': {
+              color: theme('colors.yellow.400'),
+              backgroundColor: theme('colors.gray.700'),
+              outline: 'none'
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.yellow.400')
+            },
+            'ul > li::before': {
+              backgroundColor: theme('colors.yellow.400')
+            },
+            'ol > li::before': {
               color: theme('colors.yellow.400')
+            },
+            hr: {
+              borderColor: theme('colors.gray.200')
+            },
+            h1: {
+              color: theme('colors.white'),
+              fontWeight: 600
+            },
+            h2: {
+              color: theme('colors.white'),
+              fontWeight: 600
+            },
+            h3: {
+              color: theme('colors.white'),
+              fontWeight: 600
+            },
+            h4: {
+              color: theme('colors.white'),
+              fontWeight: 600
+            },
+            h5: {
+              color: theme('colors.white'),
+              fontWeight: 600
+            },
+            h6: {
+              color: theme('colors.white'),
+              fontWeight: 600
             }
           }
         }

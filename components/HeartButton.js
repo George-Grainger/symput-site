@@ -1,8 +1,9 @@
 import { firestore, auth, increment } from '@/lib/firebase';
 import { useDocument } from 'react-firebase-hooks/firestore';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 // Allows user to heart or like a post
-export default function Heart({ postRef }) {
+export default function Heart({ postRef, hc }) {
   // Listen to heart document for currently logged in user
   const heartRef = postRef.collection('hearts').doc(auth.currentUser.uid);
   const [heartDoc] = useDocument(heartRef);
@@ -29,8 +30,14 @@ export default function Heart({ postRef }) {
   };
 
   return heartDoc?.exists ? (
-    <button onClick={removeHeart}>💔 Unheart</button>
+    <button className="ml-auto link link-light-bg p-1" onClick={removeHeart}>
+      <FaHeart className="text-red-500 inline mr-4" />
+      <strong>{hc}</strong>
+    </button>
   ) : (
-    <button onClick={addHeart}>💗 Heart</button>
+    <button className="link link-light-bg p-1 ml-auto" onClick={addHeart}>
+      <FaRegHeart className="text-red-500 inline mr-4" />
+      <strong>{hc}</strong>
+    </button>
   );
 }

@@ -21,11 +21,13 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
 
   return (
     <Link href={`/${post.username}/${post.slug}`}>
-      <div className="px-5 py-4 bg-white hover:bg-gray-200 text-gray-900 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer">
+      <div className="px-5 py-4 bg-white hover:bg-gray-200 text-gray-900 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose">
         <div className="relative flex mb-4 items-start">
           {admin && (
             <Link href={`/admin/${post.slug}`}>
-              <FaEdit className="absolute right-0 h-6 w-6 text-gray-700 hover:text-yellow-800" />
+              <a>
+                <FaEdit className="absolute right-0 h-6 w-6 text-gray-700 hover:text-yellow-600" />
+              </a>
             </Link>
           )}
           <Link href={`/${post.username}`} passHref>
@@ -39,7 +41,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
           </Link>
           <div className="ml-4 mt-0.5">
             <Link href={`/${post.username}`}>
-              <a className="block font-medium text-base leading-snug hover:text-yellow-800 mb-1">
+              <a className="block leading-snug hover:text-yellow-600 mb-1">
                 {post.username}
               </a>
             </Link>
@@ -54,7 +56,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
             </span>
           </div>
         </div>
-        <ReactMarkdown>
+        <ReactMarkdown className="max-w-none">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

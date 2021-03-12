@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useModalState } from '@/lib/useModalState';
 import { FaCog } from 'react-icons/fa';
 import LanguageChanger from '../LanguageChanger';
 import Modal from '../Modal';
@@ -10,21 +10,21 @@ const Settings = ({
   darkModeTitle,
   languagesTitle
 }) => {
-  const [showModal, setShowModal] = useState(false);
+  const { isOpen, onToggle, onClose } = useModalState();
   return (
     <>
       <button
         aria-label="Open setttings"
         className="text-xl p-3 link-standard"
-        onClick={() => setShowModal(!showModal)}
+        onClick={onToggle}
       >
         <FaCog className="h-6 w-6" height="1.5rem" width="1.5rem" />
       </button>
       <Modal
-        hidden={!showModal}
+        hidden={!isOpen}
         title={settingsTitle}
         button1={exitButtonText}
-        handleClose={() => setShowModal(false)}
+        handleClose={onClose}
       >
         <div className="flex flex-wrap justify-center text-center">
           <ThemeChanger title={darkModeTitle} />
