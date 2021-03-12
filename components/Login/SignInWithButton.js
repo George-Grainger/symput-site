@@ -1,11 +1,11 @@
-import Image from 'next/image';
 import toast from 'react-hot-toast';
+import Icon from '../Icons/Icon';
 
 const SignInWithButton = ({
   callback,
   title,
-  imgSrc,
-  className = 'text-black bg-white'
+  icon,
+  className = 'text-black bg-white hover:opacity-90'
 }) => {
   const handleCallback = () =>
     toast.promise(callback(), {
@@ -20,7 +20,7 @@ const SignInWithButton = ({
       className={`btn ${className} flex items-center h-14`}
       onClick={handleCallback}
     >
-      <Image src={imgSrc} width="30" height="30" />
+      {<Icon icon={icon} />}
       <span className="ml-4">{title}</span>
     </button>
   );

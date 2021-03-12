@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from './Input';
 import { auth } from '@/lib/firebase';
-import Ellipsis from '../Loading/Ellipsis';
+import ButtonEllipsis from '../Loading/ButtonEllipsis';
 
 const PasswordReset = ({ email, handleReturn }) => {
   const [sending, setSending] = useState(false);
@@ -49,20 +49,17 @@ const PasswordReset = ({ email, handleReturn }) => {
             })}
           />
 
-          {sending ? (
-            <Ellipsis />
-          ) : (
-            <input
-              className="btn btn-yellow my-4"
-              disabled={isSubmitting}
-              type="submit"
-              value="Send reset link"
-            />
-          )}
+          <button
+            type="submit"
+            className="btn btn-yellow my-4"
+            disabled={isSubmitting}
+          >
+            {sending ? <ButtonEllipsis /> : 'Send reset link'}
+          </button>
 
           <a
             onClick={handleReturn}
-            className="link-dark-bg justify-self-center p-2 underline"
+            className="link link-dark-bg justify-self-center p-2 underline"
           >
             Go back
           </a>

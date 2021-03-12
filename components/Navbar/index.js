@@ -48,7 +48,7 @@ export default function Navbar({ data, transparent }) {
           <Link href="/">
             <a className="flex items-center text-2xl font-bold leading-relaxed p-2 whitespace-no-wrap uppercase link-standard">
               <Image
-                src="/symput-textless.png"
+                src="/favicon.ico"
                 alt="Symput logo"
                 width="48"
                 height="48"

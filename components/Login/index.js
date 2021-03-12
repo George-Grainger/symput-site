@@ -9,6 +9,9 @@ import {
   signInWithGoogle,
   signInWithTwitter
 } from '@/lib/authUtils';
+import { FaFacebook, FaGithub } from 'react-icons/fa';
+import GoogleIcon from '../Icons/GoogleIcon';
+import TwitterCircle from '../Icons/TwitterCircle';
 
 const Login = () => {
   const [openTab, setOpenTab] = useState(1);
@@ -36,24 +39,24 @@ const Login = () => {
         <SignInWithButton
           callback={signInWithGoogle}
           title="Google"
-          imgSrc="/google.png"
+          icon={<GoogleIcon className="h-8 w-8" />}
         />
         <SignInWithButton
           callback={signInWithTwitter}
           title="Twitter"
-          imgSrc="/twitter.png"
-          className="bg-blue-400 text-white"
+          icon={<TwitterCircle className="h-8 w-8" />}
+          className="bg-blue-400 text-white hover:opacity-90"
         />
         <SignInWithButton
           callback={signInWithFacebook}
           title="Facebook"
-          imgSrc="/facebook.png"
-          className="bg-blue-600 text-white"
+          icon={<FaFacebook className="h-8 w-8" />}
+          className="bg-blue-600 text-white hover:opacity-90"
         />
         <SignInWithButton
           callback={signInWithGitHub}
           title="GitHub"
-          imgSrc="/github.png"
+          icon={<FaGithub className="h-8 w-8" />}
         />
       </div>
       <div className="md:col-span-2">

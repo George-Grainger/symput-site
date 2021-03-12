@@ -2,6 +2,7 @@ import { FaFacebook, FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
 import IconLink from '@/components/Icons/IconLink';
 import Link from 'next/link';
 import LinkableAvatar from '../LinkableAvatar';
+import GoogleIcon from '../Icons/GoogleIcon';
 
 const Member = ({
   name,
@@ -21,21 +22,21 @@ const Member = ({
           alt={name}
           src={image || '/hacker.png'}
           className="rounded-full max-w-full cursor-pointer"
-          width="72"
-          height="72"
+          width="64"
+          height="64"
         />
       </Link>
       <div className="pt-6 text-center prose prose-dark prose-lg">
         <Link href={`/team/${slug}`}>
           <a className="prose-2xl link link-dark-bg">{name}</a>
         </Link>
-        <p className="mt-1 font-semibold">{children}</p>
-        <div className="mt-6 flex justify-center mb-2">
+        <p className="font-semibold prose prose-dark">{children}</p>
+        <div className="flex justify-center">
           {availableSocials.includes('twitter') && (
             <IconLink
               accessibleLabel="Twitter"
               size="h-8 w-8"
-              icon={<FaTwitter />}
+              icon={<FaTwitter className="h-5 w-5" />}
               buttonClasses="bg-red-400 mx-2"
             />
           )}
@@ -43,7 +44,7 @@ const Member = ({
             <IconLink
               accessibleLabel="Facebook"
               size="h-8 w-8"
-              icon={<FaFacebook />}
+              icon={<FaFacebook className="h-5 w-5" />}
               buttonClasses="bg-blue-600"
               linkClasses="link link-dark-bg mx-2"
             />
@@ -52,17 +53,16 @@ const Member = ({
             <IconLink
               accessibleLabel="Instagram"
               size="h-8 w-8"
-              icon={<FaInstagram />}
-              buttonClasses="bg-gray-900"
-              linkClasses="link link-dark-bg mx-2"
+              icon={<FaInstagram className="h-5 w-5 text-gray-900" />}
+              buttonClasses="bg-white"
+              linkClasses="link link-dark-bg mx-2 mt-0"
             />
           )}
           {availableSocials.includes('google') && (
             <IconLink
               accessibleLabel="Google"
               size="h-8 w-8"
-              icon={<FaGoogle />}
-              buttonClasses="bg-red-600"
+              icon={<GoogleIcon className="h-5 w-5" />}
               linkClasses="link link-dark-bg mx-2"
             />
           )}
