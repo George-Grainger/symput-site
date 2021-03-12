@@ -2,36 +2,31 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { getSortedPeopleData } from '@/lib/team';
 import Team from '@/components/Team';
+import { getFooterData, getNavbarData } from '@/lib/pageContent';
+import Layout from 'layout/Layout';
 
 export const getStaticProps = async ({ locale }) => {
   const allPeopleData = getSortedPeopleData(locale);
+  const navbarData = getNavbarData(locale);
+  const footerData = getFooterData(locale);
   return {
     props: {
-      allPeopleData
+      allPeopleData,
+      navbarData,
+      footerData
     }
   };
 };
 
-const TeamPage = ({ allPeopleData }) => {
+const TeamPage = ({ allPeopleData, navbarData, footerData }) => {
   return (
     <>
       <Head>
         <title>Meet the team</title>
       </Head>
-      <div>
+      <Layout navbarData={navbarData} footerData={footerData}>
         <Team data={allPeopleData} />
-        <ul>
-          {allPeopleData.map(({ slug, name, summary }) => (
-            <li key={slug}>
-              <Link href={`/team/${slug}`}>
-                <a>{name}</a>
-              </Link>
-              <br />
-              <small>{summary}</small>
-            </li>
-          ))}
-        </ul>
-      </div>
+      </Layout>
     </>
   );
 };

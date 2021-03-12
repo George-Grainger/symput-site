@@ -16,7 +16,6 @@ export async function getServerSideProps({ locale }) {
   const posts = (await postsQuery.get()).docs.map(postToJSON);
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
-  // console.log(navbarData, footerData);
 
   return {
     props: { posts, navbarData, footerData }

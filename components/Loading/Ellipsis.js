@@ -1,4 +1,5 @@
 const Ellipsis = () => {
+  //? May be a way of doing with inbuilt bounce class
   return (
     <div className="flex items-center justify-center">
       <div className="bg-white border py-2 px-5 rounded-lg flex items-center flex-col">

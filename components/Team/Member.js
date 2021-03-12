@@ -1,54 +1,70 @@
-import Image from 'next/image';
-import { FaFacebook } from 'react-icons/fa';
-import {
-  AiFillGoogleCircle,
-  AiFillInstagram,
-  AiFillTwitterCircle
-} from 'react-icons/ai';
+import { FaFacebook, FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
+import IconLink from '@/components/Icons/IconLink';
 import Link from 'next/link';
+import LinkableAvatar from '../LinkableAvatar';
 
-const Member = ({ name, image, slug, socials = {}, children }) => {
+const Member = ({
+  name,
+  image,
+  slug,
+  socials = {},
+  className = '',
+  children
+}) => {
   const availableSocials = Object.keys(socials);
   return (
-    <div className="flex flex-col items-center w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+    <div
+      className={`${className} flex flex-col items-center card card-black lg:card-hexagon col-span-2`}
+    >
       <Link href={`/team/${slug}`}>
-        <Image
+        <LinkableAvatar
           alt={name}
           src={image || '/hacker.png'}
           className="rounded-full max-w-full cursor-pointer"
-          width="120"
-          height="120"
+          width="72"
+          height="72"
         />
       </Link>
-      <div className="pt-6 text-center">
+      <div className="pt-6 text-center prose prose-dark prose-lg">
         <Link href={`/team/${slug}`}>
-          <h5 className="text-xl font-bold cursor-pointer hover:text-yellow-500">
-            {name}
-          </h5>
+          <a className="prose-2xl link link-dark-bg">{name}</a>
         </Link>
-        <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">
-          {children}
-        </p>
-        <div className="mt-6 flex justify-center gap-2">
+        <p className="mt-1 font-semibold">{children}</p>
+        <div className="mt-6 flex justify-center mb-2">
           {availableSocials.includes('twitter') && (
-            <Link href={socials.twitter}>
-              <AiFillTwitterCircle className="text-blue-400 h-6 w-6" />
-            </Link>
+            <IconLink
+              accessibleLabel="Twitter"
+              size="h-8 w-8"
+              icon={<FaTwitter />}
+              buttonClasses="bg-red-400 mx-2"
+            />
           )}
           {availableSocials.includes('facebook') && (
-            <Link href={socials.facebook}>
-              <FaFacebook className="text-blue-600 h-6 w-6" />
-            </Link>
+            <IconLink
+              accessibleLabel="Facebook"
+              size="h-8 w-8"
+              icon={<FaFacebook />}
+              buttonClasses="bg-blue-600"
+              linkClasses="link link-dark-bg mx-2"
+            />
           )}
           {availableSocials.includes('instagram') && (
-            <Link bg="" href={socials.instagram}>
-              <AiFillInstagram className="text-gray-900 h-6 w-6" />
-            </Link>
+            <IconLink
+              accessibleLabel="Instagram"
+              size="h-8 w-8"
+              icon={<FaInstagram />}
+              buttonClasses="bg-gray-900"
+              linkClasses="link link-dark-bg mx-2"
+            />
           )}
           {availableSocials.includes('google') && (
-            <Link href={socials.google}>
-              <AiFillGoogleCircle className="text-red-600 h-6 w-6" />
-            </Link>
+            <IconLink
+              accessibleLabel="Google"
+              size="h-8 w-8"
+              icon={<FaGoogle />}
+              buttonClasses="bg-red-600"
+              linkClasses="link link-dark-bg mx-2"
+            />
           )}
         </div>
       </div>

@@ -8,7 +8,7 @@ const TextArea = ({ title, linkText, children }) => {
     <>
       <Icon icon={<GiProgression />} height="16" width="16" />
       <h3 className="text-3xl my-4 font-semibold leading-normal">{title}</h3>
-      <div className="prose prose-lg dark:prose-dark font-light transition-darkmode">
+      <div className="prose prose-lg dark:prose-dark font-light">
         {children}
         <Link href="/">
           <a className="link">

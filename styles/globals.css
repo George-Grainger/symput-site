@@ -8,10 +8,6 @@ body {
   display: grid;
 }
 
-body *:focus {
-  outline: red;
-}
-
 #__next {
   height: 100%;
   grid-row: 1/-1;
@@ -21,9 +17,14 @@ body *:focus {
   align-content: space-between;
 }
 
-input:checked ~ .toggle-circle {
-  transform: translateX(100%);
+* {
+  @apply transition-darkmode;
 }
+
+input:checked ~ .toggle-circle {
+  @apply transform-gpu translate-x-full;
+}
+
 input:checked ~ .toggle-path {
   @apply bg-black;
 }
@@ -38,7 +39,7 @@ input:checked ~ .toggle-path {
 }
 
 .form-error::before {
-  display: inline;
+  @apply inline;
   content: '⚠ ';
 }
 
@@ -64,11 +65,16 @@ input:checked ~ .toggle-path {
 
 @responsive {
   @variants dark {
+    .bg-transparent .user-icon,
+    .yellow-ring-on-hover {
+      @apply hover:ring-2 focus:ring-2 ring-yellow-400 transition;
+    }
+
     .card-yellow {
       @apply bg-yellow-500 text-black;
     }
 
-    .card-yellow button {
+    .card-yellow > button {
       @apply btn-black-inverted;
     }
 
@@ -76,7 +82,7 @@ input:checked ~ .toggle-path {
       @apply bg-gray-900 text-white;
     }
 
-    .card-black button {
+    .card-black > button {
       @apply btn-yellow-inverted;
     }
 
@@ -84,8 +90,30 @@ input:checked ~ .toggle-path {
       @apply bg-gray-300 text-black;
     }
 
-    .card-gray button {
+    .card-gray > button {
       @apply btn-black-inverted;
+    }
+
+    .card-hexagon {
+      @apply relative bg-gray-900 px-4 rounded-none;
+      width: 480px;
+      height: 277px;
+    }
+
+    .card-hexagon::before,
+    .card-hexagon::after {
+      @apply absolute;
+      content: '';
+      border-left: 240px solid transparent;
+      border-right: 240px solid transparent;
+    }
+    .card-hexagon::before {
+      @apply bottom-full;
+      border-bottom: 138.5px solid rgba(17, 24, 39, 1);
+    }
+    .card-hexagon::after {
+      @apply top-full;
+      border-top: 138.5px solid rgba(17, 24, 39, 1);
     }
 
     .link-standard {
@@ -200,23 +228,5 @@ input:checked ~ .toggle-path {
   }
   100% {
     transform: translate(24px, 0);
-  }
-}
-
-[data-placeholder]::after {
-  content: ' ';
-  box-shadow: 0 0 50px 9px rgba(1, 1, 1);
-  position: absolute;
-  top: 0;
-  left: -100%;
-  height: 100%;
-  animation: load 1s infinite;
-}
-@keyframes load {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 150%;
   }
 }
