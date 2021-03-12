@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ChinaIcon, UAEIcon, UKIcon } from './Icons/LanguageIcons';
 
 const LanguageChanger = ({ title }) => {
   const router = useRouter();
@@ -15,7 +16,7 @@ const LanguageChanger = ({ title }) => {
             aria-label="Switch language to English"
             className="link-standard language-button"
           >
-            <Image alt="UK" src="/uk.svg" height="40" width="40" />
+            <UKIcon className="h-10 w-10" />
           </button>
         </Link>
         <Link href={pathname} locale="ar" scroll={false}>
@@ -23,7 +24,7 @@ const LanguageChanger = ({ title }) => {
             aria-label="تبديل اللغة إلى العربية"
             className="link-standard language-button"
           >
-            <Image alt="UAE" src="/uae.svg" height="40" width="40" />
+            <UAEIcon className="h-10 w-10" />
           </button>
         </Link>
         <Link href={pathname} locale="zh-cn" scroll={false}>
@@ -31,7 +32,7 @@ const LanguageChanger = ({ title }) => {
             aria-label="将语言切换为中文"
             className="link-standard language-button"
           >
-            <Image alt="China" src="/china.svg" height="40" width="40" />
+            <ChinaIcon className="h-10 w-10" />
           </button>
         </Link>
       </div>

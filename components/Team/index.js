@@ -29,9 +29,9 @@ const Team = ({ data }) => {
                 )}
                 <Member
                   className={
-                    index % 4 === 1
+                    index % 3 === 1
                       ? 'lg:justify-self-end'
-                      : index % 4 === 2
+                      : index % 3 === 2
                       ? 'lg:justify-self-start'
                       : ''
                   }

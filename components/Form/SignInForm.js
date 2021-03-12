@@ -66,7 +66,7 @@ const SignInForm = ({ handlePasswordReset }) => {
 
       <a
         onClick={() => handlePasswordReset(getValues('siemail'))}
-        className="link-dark-bg justify-self-center p-2 underline"
+        className="link link-dark-bg justify-self-center p-2 underline"
       >
         Forgot password?
       </a>

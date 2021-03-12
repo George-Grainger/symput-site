@@ -1,4 +1,5 @@
 import { FaFacebook, FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
+import GoogleIcon from '../Icons/GoogleIcon';
 import IconLink from '../Icons/IconLink';
 
 const Socials = ({ title, subtitle }) => {
@@ -9,23 +10,23 @@ const Socials = ({ title, subtitle }) => {
       <div className="flex gap-4 justify-between">
         <IconLink
           accessibleLabel="Twitter"
-          icon={<FaTwitter />}
+          icon={<FaTwitter className="h-6 w-6" />}
           buttonClasses="bg-blue-400 dark:yellow-ring-on-hover"
         />
         <IconLink
           accessibleLabel="Facebook"
-          icon={<FaFacebook />}
+          icon={<FaFacebook className="h-6 w-6" />}
           buttonClasses="bg-blue-600 dark:yellow-ring-on-hover"
         />
         <IconLink
           accessibleLabel="Instagram"
-          icon={<FaInstagram />}
+          icon={<FaInstagram className="h-6 w-6" />}
           buttonClasses="bg-gray-900 dark:yellow-ring-on-hover"
         />
         <IconLink
           accessibleLabel="Google"
-          icon={<FaGoogle />}
-          buttonClasses="bg-red-600 dark:yellow-ring-on-hover"
+          icon={<GoogleIcon className="h-6 w-6" />}
+          buttonClasses="bg-white dark:yellow-ring-on-hover"
         />
       </div>
     </div>

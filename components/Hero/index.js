@@ -5,6 +5,7 @@ const Hero = ({ title, subtitle, buttonText }) => (
   <section className="min-h-1.1v relative pt-16 pb-32 flex content-center items-center justify-center text-white font-semibold">
     <div className="absolute h-full w-full top-0">
       <Image
+        quality={25}
         alt="Hero image"
         src="/heroImage.jpg"
         layout="fill"
