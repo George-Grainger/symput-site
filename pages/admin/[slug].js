@@ -53,7 +53,7 @@ function PostManager() {
               {preview ? 'Edit' : 'Preview'}
             </button>
             <Link href={`/${post.username}/${post.slug}`}>
-              <button className="btn-blue">Live view</button>
+              <a className="btn-blue">Live view</a>
             </Link>
             <DeletePostButton postRef={postRef} />
           </aside>

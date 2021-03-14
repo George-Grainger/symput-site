@@ -20,7 +20,7 @@ const LinkCard = ({
       <p className="text-2xl font-semibold">{title}</p>
       <p className="leading-7">{children}</p>
       <Link href={link}>
-        <button className="btn">{learnMore}</button>
+        <a className="btn a-btn">{learnMore}</a>
       </Link>
     </div>
   );

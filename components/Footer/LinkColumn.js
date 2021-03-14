@@ -12,7 +12,7 @@ const LinkColumn = ({ column }) => {
           return (
             <li key={uuid()}>
               <Link href={link}>
-                <a className="text-gray-700 dark:text-gray-200 font-semibold block p-1 mb-1 text-base md:text-sm link-standard">
+                <a className="text-gray-700 dark:text-gray-200 font-semibold block p-1 mb-1 text-base md:text-sm link-standard transition-darkmode">
                   {text}
                 </a>
               </Link>

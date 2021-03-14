@@ -13,7 +13,7 @@ const Triangle = ({ color }) => {
         y="0"
       >
         <polygon
-          className={`${color} fill-current`}
+          className={`${color} fill-current transition-darkmode`}
           points="2560 0 2560 100 0 100"
         ></polygon>
       </svg>

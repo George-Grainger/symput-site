@@ -17,7 +17,7 @@ const SignInWithButton = ({
   return (
     <button
       aria-label={`Sign in with ${title}`}
-      className={`btn ${className} flex items-center h-14`}
+      className={`btn ${className} flex items-center h-14 mb-4 md:mb-6`}
       onClick={handleCallback}
     >
       {<Icon icon={icon} />}

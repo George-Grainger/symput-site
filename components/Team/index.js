@@ -3,11 +3,11 @@ import uuid from 'react-uuid';
 
 const Team = ({ data }) => {
   return (
-    <section className="section-default pt-20 pb-48">
+    <section className="section-default section-default-padding">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center text-center mb-16">
-          <div className="w-full lg:w-6/12 px-4 prose prose-2xl dark:prose-dark">
-            <h2 className="font-semibold">Our team</h2>
+          <div className="w-full lg:w-6/12 px-4 prose prose-2xl dark:prose-dark transition-darkmode">
+            <h2 className="font-semibold transition-darkmode">Our team</h2>
             <p className="text-lg leading-relaxed m-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
               temporibus non eveniet omnis quibusdam quaerat optio? Similique,
@@ -16,7 +16,7 @@ const Team = ({ data }) => {
             </p>
           </div>
         </div>
-        <div className="grid lg:gap-y-32 gap-x-8 lg:grid-cols-4 2xl:grid-cols-6 lg:mt-48 justify-items-center">
+        <div className="grid lg:gap-y-32 gap-x-8 lg:grid-cols-4 2xl:grid-cols-6 lg:mt-48 lg:mb-32 lg:justify-items-center">
           {data.map((member, index) => {
             const { name, socials, slug, summary } = member;
             return (

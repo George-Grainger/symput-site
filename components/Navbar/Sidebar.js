@@ -11,7 +11,7 @@ const Sidebar = ({ links, open, clickHandler, closeAria }) => {
     <aside
       className={` ${
         open ? 'top-0' : '-top-full'
-      } fixed z-50 w-full h-full flex bg-white dark:bg-gray-900 dark:text-white justify-center items-center transition-all duration-200`}
+      } fixed z-50 w-full h-full flex bg-white dark:bg-gray-900 dark:text-white justify-center items-center transition-all duration-200 overflow-auto`}
     >
       <button
         aria-label={closeAria}
@@ -22,7 +22,9 @@ const Sidebar = ({ links, open, clickHandler, closeAria }) => {
       >
         <FaTimes className="h-8 w-8" />
       </button>
-      <ul className={` ${open ? 'grid' : 'hidden'} gap-4 align-items-center`}>
+      <ul
+        className={` ${open ? 'grid' : 'hidden'} gap-4 align-items-center pt-8`}
+      >
         {links?.map(({ text, link }) => {
           return (
             <Navlink key={uuid()} href={link} sidebar>
