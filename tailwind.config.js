@@ -18,6 +18,9 @@ module.exports = {
         feedback: 'clamp(275px, 100%, 768px)',
         'fs-card': 'clamp(275px, 100%, 906px)'
       },
+      maxWidth: {
+        markdown: 'calc(100vw - 4rem)'
+      },
       minHeight: {
         'fs-card': '600px',
         '1/4v': '25vh',

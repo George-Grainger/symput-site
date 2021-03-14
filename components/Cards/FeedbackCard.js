@@ -16,10 +16,10 @@ const FeedbackCard = (props) => {
   const { user: currentUser, loading } = useContext(UserContext);
 
   return (
-    <section className="section-default pt-36 pb-24 px-4 sm:px-8">
+    <section className="section-default section-default-padding">
       <Metatags title={post.title} description={post.title} />
-      <div className="min-w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-300 flex flex-col items-center rounded-lg relative">
-        <div className="flex w-full sticky top-28">
+      <div className="min-w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-300 flex flex-col items-center rounded-lg relative transition-darkmode">
+        <div className="flex w-full sm:sticky top-28">
           {currentUser?.uid === post.uid && (
             <Link href={`/admin/${post.slug}`}>
               <a className=" mr-auto">

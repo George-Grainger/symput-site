@@ -1,6 +1,6 @@
 ---
-name: 'John Doe'
-summary: 'Quam et numquam aperiam vel aliquam a animi. Velit aut provident sed sunt quibusdam maiores.'
+name: 'Ali'
+summary: 'مرحبا بالعالم'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

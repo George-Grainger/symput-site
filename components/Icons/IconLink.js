@@ -9,13 +9,13 @@ const Icon = ({
 }) => {
   return (
     <Link href={href}>
-      <button aria-label={accessibleLabel} className={`${linkClasses} p-1`}>
+      <a aria-label={accessibleLabel} className={`${linkClasses} p-1`}>
         <span
           className={`${buttonClasses} ${size} shadow-lg rounded-full text-white items-center justify-center flex`}
         >
           {icon}
         </span>
-      </button>
+      </a>
     </Link>
   );
 };

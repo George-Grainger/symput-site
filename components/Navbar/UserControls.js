@@ -21,7 +21,7 @@ const UserControls = ({ username, visible }) => {
       <div className="px-2 pt-2 pb-4 text-gray-900 bg-white rounded-md shadow-lg dark:bg-gray-900">
         <div className="grid grid-cols-1 gap-4">
           <Link href={`/admin`}>
-            <a className="usercontrol-button">
+            <a className="usercontrol-button button-on-bg">
               <FaFingerprint className="h-6 w-6 ml-3" />
               <div className="ml-3">
                 <p className="font-semibold">Admin</p>
@@ -31,7 +31,7 @@ const UserControls = ({ username, visible }) => {
           </Link>
 
           <Link href={`/${username}`}>
-            <a className="usercontrol-button">
+            <a className="usercontrol-button button-on-bg">
               <FaUserCircle className="h-6 w-6 ml-3" />
               <div className="ml-3">
                 <p className="font-semibold">Profile</p>
@@ -41,7 +41,7 @@ const UserControls = ({ username, visible }) => {
           </Link>
 
           <button
-            className="usercontrol-button"
+            className="usercontrol-button button-on-bg"
             aria-label="Log out"
             onClick={signOut}
           >

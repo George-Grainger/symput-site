@@ -9,17 +9,19 @@ export default function FeedbackContent({ post }) {
       : post.updatedAt.toDate();
 
   return (
-    <div className="min-w-full">
+    <article>
       <h1 className="text-4xl text-center">{post?.title}</h1>
       <hr className="my-8 border-gray-900" />
-      <ReactMarkdown className="prose mx-auto">{post?.content}</ReactMarkdown>
+      <ReactMarkdown className="prose mx-auto max-w-markdown sm:max-w-prose">
+        {post?.content}
+      </ReactMarkdown>
       <hr className="my-8 border-gray-900" />
       <p className="text-center">
-        Written by
+        Written by&nbsp;
         <Link href={`/${post.username}/`}>
-          <a>@{post.username}</a>
+          <a className="link link-light-bg p-1">@{post.username}</a>
         </Link>
-        on
+        &nbsp;on&nbsp;
         {updatedDate.toLocaleString('en-GB', {
           day: 'numeric',
           month: 'short',
@@ -28,6 +30,6 @@ export default function FeedbackContent({ post }) {
           minute: '2-digit'
         })}
       </p>
-    </div>
+    </article>
   );
 }
