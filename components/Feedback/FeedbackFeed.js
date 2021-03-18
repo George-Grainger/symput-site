@@ -10,7 +10,6 @@ const LIMIT = 10;
 export default function FeedbackFeed({ initialPosts, admin }) {
   const [posts, setPosts] = useState(initialPosts);
   const [loading, setLoading] = useState(false);
-
   const [postsEnd, setPostsEnd] = useState(false);
 
   // Get next page in pagination query
@@ -40,7 +39,7 @@ export default function FeedbackFeed({ initialPosts, admin }) {
     }
   };
 
-  if (posts) {
+  if (posts?.length > 0) {
     return (
       <section className="section-default section-default-padding">
         {posts.map((post) => (
