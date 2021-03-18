@@ -17,7 +17,10 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
 
   const wordCount = post?.content.trim().split(/\s+/g).length;
   const minutesToRead = (wordCount / 100 + 1).toFixed(0);
-  const updatedDate = new Date(post.updatedAt);
+  const updatedDate =
+    typeof post?.updatedAt === 'number'
+      ? new Date(post.updatedAt)
+      : post.updatedAt.toDate();
 
   return (
     <Link href={`/${post.username}/${post.slug}`}>

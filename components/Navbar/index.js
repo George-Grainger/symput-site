@@ -9,6 +9,7 @@ import { FaBars } from 'react-icons/fa';
 import uuid from 'react-uuid';
 import Sidebar from './Sidebar';
 import Settings from './Settings';
+import SymputLogo from '../Icons/SymputLogo';
 
 // Top navbar
 export default function Navbar({ data, transparent }) {
@@ -47,16 +48,11 @@ export default function Navbar({ data, transparent }) {
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between xl:relative">
           <Link href="/">
             <a className="flex items-center text-2xl font-bold leading-relaxed p-2 whitespace-no-wrap uppercase link-standard">
-              <Image
-                src="/favicon.ico"
-                alt="Symput logo"
-                width="48"
-                height="48"
-                priority
-              />
+              <SymputLogo height="48" width="48" />
               Symput
             </a>
           </Link>
+
           <ul className="lg:flex hidden gap-4 xl:gap-8">
             {links?.map(({ text, link }) => {
               return (

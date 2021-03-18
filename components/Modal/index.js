@@ -13,10 +13,10 @@ export default function Modal({
       <div
         className={`${
           hidden ? 'hidden' : 'flex'
-        } justify-center pointer-events-none items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 text-black dark:text-white transition-darkmode`}
+        } justify-center pointer-events-none items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50`}
       >
         <div className="relative w-auto m-6 max-w-xl pointer-events-auto">
-          <div className="border-4 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 dark:border-gray-700 transition-darkmode">
+          <div className="border-4 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 dark:border-gray-700 text-black dark:text-white transition-darkmode">
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
               <h3 className="text-3xl font-semibold">{title}</h3>
               <button

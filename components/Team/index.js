@@ -3,8 +3,8 @@ import uuid from 'react-uuid';
 
 const Team = ({ data }) => {
   return (
-    <section className="section-default section-default-padding">
-      <div className="container mx-auto px-4">
+    <section className="section-default section-default-padding lg:px-4">
+      <div className="container mx-auto">
         <div className="flex flex-wrap justify-center text-center mb-16">
           <div className="w-full lg:w-6/12 px-4 prose prose-2xl dark:prose-dark transition-darkmode">
             <h2 className="font-semibold transition-darkmode">Our team</h2>

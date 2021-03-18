@@ -151,7 +151,7 @@ input:checked ~ .toggle-path {
     }
 
     .link {
-      @apply focus:outline-none transition cursor-pointer rounded-lg;
+      @apply focus:outline-none cursor-pointer rounded-lg;
     }
 
     .link-light-bg {

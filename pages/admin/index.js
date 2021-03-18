@@ -9,15 +9,29 @@ import { useRouter } from 'next/router';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import kebabCase from 'lodash.kebabcase';
 import toast from 'react-hot-toast';
+import { getFooterData, getNavbarData } from '@/lib/pageContent';
+import Layout from 'layout/Layout';
+import FeedbackItem from '@/components/Feedback/FeedbackItem';
 
-export default function AdminPostsPage(props) {
+export const getStaticProps = async ({ locale }) => {
+  const navbarData = getNavbarData(locale);
+  const footerData = getFooterData(locale);
+  return {
+    props: {
+      navbarData,
+      footerData
+    }
+  };
+};
+
+export default function AdminPostsPage({ navbarData, footerData }) {
   return (
-    <main>
+    <Layout navbarData={navbarData} footerData={footerData}>
       <AuthCheck>
         <PostList />
         <CreateNewPost />
       </AuthCheck>
-    </main>
+    </Layout>
   );
 }
 
@@ -31,12 +45,15 @@ function PostList() {
 
   //TODO add abilitiy to delete posts
   const posts = querySnapshot?.docs.map((doc) => doc.data());
+  console.log(posts);
 
   return (
-    <>
-      <h1>Manage your Posts</h1>
-      <PostFeed posts={posts} admin />
-    </>
+    <section className="section-default section-default-padding">
+      {posts &&
+        posts.map((post) => (
+          <FeedbackItem key={uuid()} post={post} key={post.slug} admin={true} />
+        ))}
+    </section>
   );
 }
 
