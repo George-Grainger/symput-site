@@ -12,19 +12,23 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
   useEffect(() => {
     if (user?.uid === post.uid) {
       setAdmin(true);
+    } else {
+      setAdmin(false);
     }
-  }, [loading]);
+  }, [user]);
 
   const wordCount = post?.content.trim().split(/\s+/g).length;
   const minutesToRead = (wordCount / 100 + 1).toFixed(0);
   const updatedDate =
     typeof post?.updatedAt === 'number'
       ? new Date(post.updatedAt)
-      : post.updatedAt.toDate();
+      : post.updatedAt?.toDate();
+  const published = post?.published;
+  console.log(published);
 
   return (
     <Link href={`/${post.username}/${post.slug}`}>
-      <div className="px-5 py-4 bg-white hover:bg-gray-200 text-gray-900 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose">
+      <div className="px-5 py-4 bg-white dark:bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-400 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose transition-darkmode">
         <div className="relative flex mb-4 items-start">
           {admin && (
             <Link href={`/admin/${post.slug}`}>
@@ -49,13 +53,15 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
               </a>
             </Link>
             <span className="block text-sm font-light leading-snug text-gray-700">
-              {updatedDate.toLocaleString('en-GB', {
-                day: 'numeric',
-                month: 'short',
-                year: 'numeric',
-                hour: 'numeric',
-                minute: '2-digit'
-              })}
+              {updatedDate
+                ? updatedDate.toLocaleString('en-GB', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit'
+                  })
+                : 'Just created'}
             </span>
           </div>
         </div>
@@ -73,6 +79,9 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
             <FaHeart className="text-red-500 inline mr-2" />
             {post.heartCount || 0}
           </div>
+          {!published && (
+            <p className="text-red-500 uppercase text-center">Unpublished</p>
+          )}
           <div className="ml-1 font-light text-gray-700">
             {wordCount} words. {minutesToRead} min read
           </div>

@@ -35,7 +35,7 @@ const SignInForm = () => {
         errors={errors}
         placeholder="your@email.com"
         name="suemail"
-        required
+        isrequried="true"
         ref={register({
           required: true,
           pattern: {
@@ -49,7 +49,7 @@ const SignInForm = () => {
         errors={errors}
         name="supassword"
         type="password"
-        required
+        isrequried="true"
         ref={register({
           required: true,
           minLength: {
@@ -67,7 +67,7 @@ const SignInForm = () => {
         errors={errors}
         name="supassword_repeat"
         type="password"
-        required
+        isrequried="true"
         ref={register({
           validate: (value) =>
             value === password.current || 'The passwords do not match'

@@ -6,8 +6,8 @@ const Team = ({ data }) => {
     <section className="section-default section-default-padding lg:px-4">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center text-center mb-16">
-          <div className="w-full lg:w-6/12 px-4 prose prose-2xl dark:prose-dark transition-darkmode">
-            <h2 className="font-semibold transition-darkmode">Our team</h2>
+          <div className="w-full lg:w-6/12 px-4 prose prose-lg dark:prose-dark transition-darkmode">
+            <h1 className="font-semibold transition-darkmode">Our team</h1>
             <p className="text-lg leading-relaxed m-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
               temporibus non eveniet omnis quibusdam quaerat optio? Similique,
@@ -22,10 +22,13 @@ const Team = ({ data }) => {
             return (
               <>
                 {(index === 0 || index % 5 === 0) && (
-                  <div className="hidden 2xl:block"></div>
+                  <div key={uuid()} className="hidden 2xl:block"></div>
                 )}
                 {index % 3 === 0 && (
-                  <div className="hidden lg:block 2xl:hidden"></div>
+                  <div
+                    key={uuid()}
+                    className="hidden lg:block 2xl:hidden"
+                  ></div>
                 )}
                 <Member
                   className={
@@ -42,7 +45,9 @@ const Team = ({ data }) => {
                 >
                   {summary}
                 </Member>
-                {index === 1 && <div className="hidden 2xl:block"></div>}
+                {index === 1 && (
+                  <div key={uuid()} className="hidden 2xl:block"></div>
+                )}
               </>
             );
           })}

@@ -6,16 +6,18 @@ export default function Modal({
   children,
   button1,
   button2,
-  handleClose
+  handleClose,
+  handleSave,
+  zIndex = 'z-50'
 }) {
   return (
     <>
       <div
         className={`${
           hidden ? 'hidden' : 'flex'
-        } justify-center pointer-events-none items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50`}
+        } ${zIndex} justify-center pointer-events-none items-center overflow-x-hidden overflow-y-auto fixed inset-0`}
       >
-        <div className="relative w-auto m-6 max-w-xl pointer-events-auto">
+        <div className="relative w-full m-6 max-w-xl pointer-events-auto">
           <div className="border-4 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 dark:border-gray-700 text-black dark:text-white transition-darkmode">
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
               <h3 className="text-3xl font-semibold">{title}</h3>
@@ -39,8 +41,8 @@ export default function Modal({
               )}
               {button2 && (
                 <button
-                  className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg mr-1 mb-1"
-                  onClick={handleClose}
+                  className="bg-green-500 hover:bg-green-600 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg mr-1 mb-1"
+                  onClick={handleSave}
                 >
                   {button2}
                 </button>
