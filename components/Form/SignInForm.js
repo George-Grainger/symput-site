@@ -31,6 +31,7 @@ const SignInForm = ({ handlePasswordReset }) => {
         errors={errors}
         placeholder="your@email.com"
         name="siemail"
+        isrequried="true"
         ref={register({
           required: true,
           pattern: {
@@ -44,6 +45,7 @@ const SignInForm = ({ handlePasswordReset }) => {
         errors={errors}
         name="sipassword"
         type="password"
+        isrequried="true"
         ref={register({
           required: true,
           minLength: {

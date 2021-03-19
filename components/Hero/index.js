@@ -17,9 +17,9 @@ const Hero = ({ title, subtitle, buttonText }) => (
         className="w-full h-full absolute opacity-75 bg-black"
       ></span>
     </div>
-    <div className="container relative items-center flex flex-wrap px-4">
+    <div className="container relative items-center flex flex-wrap">
       <div className="mx-auto text-center">
-        <h1 className="font-semibold text-5xl">{title}</h1>
+        <h1 className="font-semibold sm:text-4xl text-5xl">{title}</h1>
         <h2 className="mt-10 text-xl">{subtitle}</h2>
         <Link href="/aims">
           <a className="btn btn-yellow-inverted a-btn mt-10">{buttonText}</a>

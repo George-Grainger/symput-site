@@ -3,7 +3,7 @@ import FeedbackItem from '../Feedback/FeedbackItem';
 
 const UserCard = ({ user, posts }) => {
   return (
-    <section className="section-default py-32 px-4 sm:px-8">
+    <section className="section-default py-24 px-4 sm:px-8">
       <div className="min-w-fs-card px-4 sm:px-8 bg-white dark:bg-gray-300 flex flex-col items-center rounded-lg relative transition-darkmode">
         <div className="absolute transform-gpu -translate-y-1/2">
           <Image

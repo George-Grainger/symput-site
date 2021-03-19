@@ -24,7 +24,7 @@ const Person = ({ personData }) => {
       <Head>
         <title>{personData.name}</title>
       </Head>
-      <article>
+      <article className="w-full">
         <h1>{personData.name}</h1>
         <div>{personData.summary}</div>
         <div dangerouslySetInnerHTML={{ __html: personData.contentHtml }} />

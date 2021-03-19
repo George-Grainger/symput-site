@@ -6,10 +6,10 @@ export default function FeedbackContent({ post }) {
   const updatedDate =
     typeof post?.updatedAt === 'number'
       ? new Date(post.updatedAt)
-      : post.updatedAt.toDate();
+      : post.updatedAt?.toDate();
 
   return (
-    <article>
+    <article className="w-full">
       <h1 className="text-4xl text-center">{post?.title}</h1>
       <hr className="my-8 border-gray-900" />
       <ReactMarkdown className="prose mx-auto max-w-markdown sm:max-w-prose">
@@ -22,13 +22,15 @@ export default function FeedbackContent({ post }) {
           <a className="link link-light-bg p-1">@{post.username}</a>
         </Link>
         &nbsp;on&nbsp;
-        {updatedDate.toLocaleString('en-GB', {
-          day: 'numeric',
-          month: 'short',
-          year: 'numeric',
-          hour: 'numeric',
-          minute: '2-digit'
-        })}
+        {updatedDate
+          ? updatedDate.toLocaleString('en-GB', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric',
+              hour: 'numeric',
+              minute: '2-digit'
+            })
+          : 'Just updated'}
       </p>
     </article>
   );

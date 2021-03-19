@@ -77,6 +77,9 @@ const UsernameForm = () => {
     <div className="grid w-full h-full gap-x-10">
       <h1 className="text-3xl font-semibold w-full">You're In</h1>
       <hr className="my-6 border-b-1 border-gray-200" />
+      <h2 className="text-2xl font-semibold text-cente ">
+        Please choose a username
+      </h2>
       <form
         className="grid gap-4 text-left md:w-3/5 mx-auto md:pt-20"
         onSubmit={handleSubmit(onSubmit)}
@@ -106,11 +109,7 @@ const UsernameForm = () => {
             }
           })}
         />
-        <button
-          type="submit"
-          className="btn btn-yellow my-4"
-          disabled={!isValid}
-        >
+        <button type="submit" className="btn btn-yellow my-4">
           {loading ? <ButtonEllipsis /> : 'Choose'}
         </button>
 

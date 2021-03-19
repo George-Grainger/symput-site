@@ -42,6 +42,9 @@ export default function FeedbackFeed({ initialPosts, admin }) {
   if (posts?.length > 0) {
     return (
       <section className="section-default section-default-padding">
+        <h1 className="prose dark:prose-dark text-5xl font-semibold text-center mb-12">
+          Feedback
+        </h1>
         {posts.map((post) => (
           <FeedbackItem
             key={uuid()}

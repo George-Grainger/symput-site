@@ -70,7 +70,7 @@ export default function Navbar({ data, transparent }) {
             <li>
               <button
                 aria-label={sidebarOpenAria}
-                className="block lg:hidden text-xl p-3 focus:outline-none link-standard"
+                className="block lg:hidden text-xl sm:p-2 p-3 focus:outline-none link-standard"
                 onClick={() => setSidebarOpen(true)}
               >
                 <FaBars className="h-6 w-6" />
