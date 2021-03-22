@@ -1,0 +1,19 @@
+{
+  "links": [
+    { "link": "/aims", "text": "أهداف" },
+    { "link": "/team", "text": "الفريق" },
+    { "link": "/release", "text": "يوم الاصدار" },
+    { "link": "/feedback", "text": "استجابة" }
+  ],
+  "loginText": "يسجل دخول",
+  "sidebarInfo": {
+    "sidebarOpenAria": "افتح تنقل الشريط الجانبي",
+    "sidebarCloseAria": "إغلاق الشريط الجانبي"
+  },
+  "settingsInfo": {
+    "settingsTitle": "إعدادات",
+    "darkModeTitle": "تبديل الوضع الداكن",
+    "languagesTitle": "اللغات",
+    "exitButtonText": "مخرج"
+  }
+}

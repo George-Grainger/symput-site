@@ -14,7 +14,10 @@ const DeleteFeedbackButton = ({ postRef }) => {
   };
 
   return (
-    <button className="btn-red" onClick={deleteFeedback}>
+    <button
+      className="btn bg-red-500 hover:bg-red-600 mr-8 text-white"
+      onClick={deleteFeedback}
+    >
       Delete
     </button>
   );

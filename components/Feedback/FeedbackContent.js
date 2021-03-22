@@ -11,15 +11,15 @@ export default function FeedbackContent({ post }) {
   return (
     <article className="w-full">
       <h1 className="text-4xl text-center">{post?.title}</h1>
-      <hr className="my-8 border-gray-900" />
-      <ReactMarkdown className="prose mx-auto max-w-markdown sm:max-w-prose">
+      <hr className="my-8" />
+      <ReactMarkdown className="mx-auto max-w-markdown sm:max-w-prose">
         {post?.content}
       </ReactMarkdown>
-      <hr className="my-8 border-gray-900" />
+      <hr className="my-8" />
       <p className="text-center">
         Written by&nbsp;
         <Link href={`/${post.username}/`}>
-          <a className="link link-light-bg p-1">@{post.username}</a>
+          <a className="link-standard p-1">@{post.username}</a>
         </Link>
         &nbsp;on&nbsp;
         {updatedDate

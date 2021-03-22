@@ -1,0 +1,19 @@
+{
+  "links": [
+    { "link": "/aims", "text": "Aims" },
+    { "link": "/team", "text": "The Team" },
+    { "link": "/release", "text": "Release Date" },
+    { "link": "/feedback", "text": "Feedback" }
+  ],
+  "loginText": "Sign in",
+  "sidebarInfo": {
+    "sidebarOpenAria": "Open sidebar navigation",
+    "sidebarCloseAria": "Close sidebar"
+  },
+  "settingsInfo": {
+    "settingsTitle": "Settings",
+    "darkModeTitle": "Toggle dark mode",
+    "languagesTitle": "Languages",
+    "exitButtonText": "Exit"
+  }
+}

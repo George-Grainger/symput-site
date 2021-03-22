@@ -14,7 +14,7 @@ const FeedbackManager = () => {
 
   const postRef = firestore
     .collection('users')
-    .doc(auth.currentUser.uid)
+    .doc(auth.currentUser?.uid)
     .collection('posts')
     .doc(slug);
   const [post] = useDocumentDataOnce(postRef);
@@ -22,26 +22,51 @@ const FeedbackManager = () => {
   return (
     <>
       {post && (
-        <section className="section-default">
-          <h1>{post.title}</h1>
-          <p>ID: {post.slug}</p>
+        <section className="section-default section-default-padding">
+          <div className="w-fs-card bg-white px-4 sm:px-8 sm:pb-4 dark:bg-gray-900 grid grid-cols-2 relative rounded-3xl transition-darkmode">
+            <div className="sticky top-20 pt-8 bg-white dark:bg-gray-900 z-10">
+              <h1 className="prose text-3xl dark:prose-dark font-semibold mb-2">
+                Title: {post?.title}
+              </h1>
+              <p className="prose text-xl dark:prose-dark mb-8">
+                Slug: {post?.slug}
+              </p>
+            </div>
 
-          <FeedbackForm
-            postRef={postRef}
-            defaultValues={post}
-            preview={preview}
-          />
+            <aside className="sticky top-20 pt-8 bg-white dark:bg-gray-900 z-10">
+              <div className="flex">
+                <button
+                  className={
+                    'btn mr-8 flex-auto ' +
+                    (!preview
+                      ? 'btn-black dark:btn-yellow'
+                      : ' btn-black-inverted dark:btn-yellow-inverted')
+                  }
+                  onClick={() => setPreview(false)}
+                >
+                  Edit
+                </button>
+                <button
+                  className={
+                    'btn mr-8 flex-auto ' +
+                    (preview
+                      ? 'btn-black dark:btn-yellow'
+                      : ' btn-black-inverted dark:btn-yellow-inverted')
+                  }
+                  onClick={() => setPreview(true)}
+                >
+                  Preview
+                </button>
+                <DeleteFeedbackButton postRef={postRef} />
+              </div>
+            </aside>
 
-          <aside>
-            <h3>Tools</h3>
-            <button onClick={() => setPreview(!preview)}>
-              {preview ? 'Edit' : 'Preview'}
-            </button>
-            <Link href={`/${post.username}/${post.slug}`}>
-              <a className="btn-blue">Live view</a>
-            </Link>
-            <DeleteFeedbackButton postRef={postRef} />
-          </aside>
+            <FeedbackForm
+              postRef={postRef}
+              defaultValues={post}
+              preview={preview}
+            />
+          </div>
         </section>
       )}
     </>

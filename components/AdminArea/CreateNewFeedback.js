@@ -19,7 +19,6 @@ const CreateNewFeedback = () => {
 
   // Create a new post in firestore
   const createPost = async ({ feedbackTitle, feedbackSlug }) => {
-    console.log(feedbackTitle, feedbackSlug);
     const uid = auth.currentUser?.uid;
     const ref = firestore
       .collection('users')

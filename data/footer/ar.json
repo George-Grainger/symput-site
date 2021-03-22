@@ -1,0 +1,60 @@
+{
+  "socialsTitle": "تابعنا على وسائل التواصل الإجتماعي!",
+  "socialsSubtitle": "اعثر علينا على أي من هذه المنصات لتبقى على اطلاع.",
+  "columns": [
+    {
+      "title": "روابط مفيدة",
+      "links": [
+        { "link": "/aims", "text": "أهداف" },
+        { "link": "/team", "text": "الفريق" },
+        {
+          "link": "/release",
+          "text": "يوم الاصدار"
+        },
+        {
+          "link": "/feedback",
+          "text": "استجابة"
+        }
+      ]
+    },
+    {
+      "title": "روابط مفيدة",
+      "links": [
+        {
+          "link": "/updates",
+          "text": "التحديثات"
+        },
+        { "link": "/license", "text": "رخصة" },
+        {
+          "link": "/languages",
+          "text": "اللغات"
+        },
+        {
+          "link": "/accessibiity",
+          "text": "إمكانية الوصول"
+        }
+      ]
+    },
+    {
+      "title": "Other resources",
+      "links": [
+        {
+          "link": "/contact-us",
+          "text": "اتصل بنا"
+        },
+        {
+          "link": "/privacy-policy",
+          "text": "سياسة خاصة"
+        },
+        {
+          "link": "/terms",
+          "text": "شروط الخدمة"
+        },
+        {
+          "link": "/credits",
+          "text": "الاعتمادات"
+        }
+      ]
+    }
+  ]
+}

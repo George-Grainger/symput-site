@@ -1,0 +1,60 @@
+{
+  "socialsTitle": "在社交媒体上关注我们！",
+  "socialsSubtitle": "在任何这些平台上找到我们以保持更新。",
+  "columns": [
+    {
+      "title": "有用的链接",
+      "links": [
+        { "link": "/aims", "text": "目的" },
+        { "link": "/team", "text": "团队" },
+        {
+          "link": "/release",
+          "text": "发布日期"
+        },
+        {
+          "link": "/feedback",
+          "text": "回馈"
+        }
+      ]
+    },
+    {
+      "title": "有用的链接",
+      "links": [
+        {
+          "link": "/updates",
+          "text": "更新"
+        },
+        { "link": "/license", "text": "执照" },
+        {
+          "link": "/languages",
+          "text": "语言能力"
+        },
+        {
+          "link": "/accessibiity",
+          "text": "辅助功能"
+        }
+      ]
+    },
+    {
+      "title": "其他资源",
+      "links": [
+        {
+          "link": "/contact-us",
+          "text": "联系我们"
+        },
+        {
+          "link": "/privacy-policy",
+          "text": "隐私政策"
+        },
+        {
+          "link": "/terms",
+          "text": "服务条款"
+        },
+        {
+          "link": "/credits",
+          "text": "学分"
+        }
+      ]
+    }
+  ]
+}

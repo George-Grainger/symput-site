@@ -19,6 +19,29 @@ input:checked ~ .toggle-path {
   @apply bg-black;
 }
 
+.checkbox {
+  @apply cursor-pointer h-10 w-10 opacity-0 z-10;
+}
+
+.checkbox-label {
+  @apply cursor-pointer;
+}
+
+.checkbox-label::before {
+  content: '';
+  @apply border-2 border-gray-900 dark:border-gray-400 dark:bg-white h-10 w-10 absolute top-0 left-0;
+}
+
+.checkbox-label::after {
+  content: '';
+  @apply bg-transparent transform-gpu -rotate-45 h-2.5 w-5 border-gray-900 opacity-0 border-t-0 border-r-0 border-b-4 border-l-4 absolute left-2.5;
+  top: 13px;
+}
+
+.checkbox:checked + .checkbox-label::after {
+  @apply opacity-100;
+}
+
 .required::after {
   content: ' *';
   @apply text-red-500;
@@ -142,6 +165,10 @@ input:checked ~ .toggle-path {
       @apply block w-max mx-auto;
     }
 
+    .btn-green {
+      @apply bg-green-500 hover:bg-green-600 text-white;
+    }
+
     .btn-yellow {
       @apply bg-yellow-400 text-black hover:text-white hover:bg-yellow-600;
     }
@@ -174,6 +201,10 @@ input:checked ~ .toggle-path {
       @apply hover:bg-gray-700 focus:bg-gray-700;
     }
   }
+}
+
+.override-pre-styles {
+  @apply flex-1 pr-12 relative overflow-x-hidden overflow-ellipsis !important;
 }
 
 .section-default {

@@ -18,6 +18,9 @@ module.exports = {
         feedback: 'clamp(275px, 100%, 768px)',
         'fs-card': 'clamp(275px, 100%, 906px)'
       },
+      width: {
+        'fs-card': 'clamp(275px, 100%, 906px)'
+      },
       maxWidth: {
         markdown: 'calc(100vw - 4rem)'
       },
@@ -104,7 +107,8 @@ module.exports = {
               outline: 'none'
             },
             blockquote: {
-              borderLeftColor: theme('colors.yellow.400')
+              borderLeftColor: theme('colors.yellow.400'),
+              color: theme('colors.gray.100')
             },
             'ul > li::before': {
               backgroundColor: theme('colors.yellow.400')
@@ -138,6 +142,18 @@ module.exports = {
             h6: {
               color: theme('colors.white'),
               fontWeight: 600
+            },
+            pre: {
+              backgroundColor: theme('colors.gray.600')
+            },
+            'pre code': {
+              color: theme('colors.gray.200')
+            },
+            strong: {
+              color: theme('colors.yellow.400')
+            },
+            code: {
+              color: theme('colors.yellow.400')
             }
           }
         }

@@ -1,0 +1,19 @@
+{
+  "links": [
+    { "link": "/aims", "text": "目的" },
+    { "link": "/team", "text": "团队" },
+    { "link": "/release", "text": "发布日期" },
+    { "link": "/feedback", "text": "回馈" }
+  ],
+  "loginText": "登录",
+  "sidebarInfo": {
+    "sidebarOpenAria": "打开侧边栏导航",
+    "sidebarCloseAria": "关闭侧边栏"
+  },
+  "settingsInfo": {
+    "settingsTitle": "设定值",
+    "darkModeTitle": "切换暗模式",
+    "languagesTitle": "语言能力",
+    "exitButtonText": "出口"
+  }
+}

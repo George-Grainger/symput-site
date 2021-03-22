@@ -26,22 +26,23 @@ export async function getStaticProps({ params, locale }) {
   };
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   // Improve my using Admin SDK to select empty docs
   const snapshot = await firestore.collectionGroup('posts').get();
 
-  const paths = snapshot.docs.map((doc) => {
-    const { slug, username } = doc.data();
-    return {
-      params: { username, slug }
-    };
+  const paths = [];
+
+  snapshot.docs.forEach((doc) => {
+    locales.forEach((locale) => {
+      const { slug, username } = doc.data();
+      paths.push({
+        params: { username, slug },
+        locale
+      });
+    });
   });
 
   return {
-    // must be in this format:
-    // paths: [
-    //   { params: { username, slug }}
-    // ],
     paths,
     fallback: false
   };
