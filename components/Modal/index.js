@@ -40,10 +40,7 @@ export default function Modal({
                 </button>
               )}
               {button2 && (
-                <button
-                  className="bg-green-500 hover:bg-green-600 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg mr-1 mb-1"
-                  onClick={handleSave}
-                >
+                <button className="btn btn-green" onClick={handleSave}>
                   {button2}
                 </button>
               )}

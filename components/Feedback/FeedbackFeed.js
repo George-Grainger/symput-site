@@ -1,6 +1,5 @@
 import FeedbackItem from './FeedbackItem';
 import ButtonEllipsis from '@/components/Loading/ButtonEllipsis';
-import Loader from '@/components/Loader';
 import { useState } from 'react';
 import { firestore, fromMillis } from '@/lib/firebase';
 import uuid from 'react-uuid';
@@ -61,7 +60,6 @@ export default function FeedbackFeed({ initialPosts, admin }) {
             {loading ? <ButtonEllipsis color="bg-white" /> : 'Load more'}
           </button>
         )}
-        <Loader show={loading} />
         {postsEnd && (
           <div className="font-bold py-3 px-6 rounded shadow-md cursor-default bg-green-500 text-white my-4">
             You have reached the end!

@@ -18,19 +18,19 @@ const FeedbackCard = (props) => {
   return (
     <section className="section-default section-default-padding">
       <Metatags title={post.title} description={post.title} />
-      <div className="min-w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-300 flex flex-col items-center rounded-lg relative transition-darkmode">
+      <div className="min-w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-900 prose dark:prose-dark flex flex-col items-center rounded-lg relative">
         <div className="flex w-full sm:sticky top-28">
           {currentUser?.uid === post.uid && (
             <Link href={`/admin/${post.slug}`}>
-              <a className=" mr-auto">
-                <FaEdit className="h-6 w-6 text-gray-700 hover:text-yellow-700" />
+              <a className="link-standard mr-auto">
+                <FaEdit className="h-8 w-8 p-1" />
               </a>
             </Link>
           )}
           <AuthCheck
             fallback={
               <Link href="/enter">
-                <a className="link link-light-bg p-1 ml-auto">
+                <a className="link-standard p-1 ml-auto">
                   <FaRegHeart className="text-red-500 inline mr-4" />
                   {post.heartCount || 0}
                   <br />

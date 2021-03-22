@@ -31,6 +31,7 @@ const Team = ({ data }) => {
                   ></div>
                 )}
                 <Member
+                  key={uuid()}
                   className={
                     index % 3 === 1
                       ? 'lg:justify-self-end'
@@ -38,7 +39,6 @@ const Team = ({ data }) => {
                       ? 'lg:justify-self-start'
                       : ''
                   }
-                  key={uuid()}
                   name={name}
                   socials={socials}
                   slug={slug}

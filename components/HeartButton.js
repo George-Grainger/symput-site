@@ -30,12 +30,12 @@ export default function Heart({ postRef, hc }) {
   };
 
   return heartDoc?.exists ? (
-    <button className="ml-auto link link-light-bg p-1" onClick={removeHeart}>
+    <button className="ml-auto link-standard p-1" onClick={removeHeart}>
       <FaHeart className="text-red-500 inline mr-4" />
       <strong>{hc}</strong>
     </button>
   ) : (
-    <button className="link link-light-bg p-1 ml-auto" onClick={addHeart}>
+    <button className="link link-standard p-1 ml-auto" onClick={addHeart}>
       <FaRegHeart className="text-red-500 inline mr-4" />
       <strong>{hc}</strong>
     </button>

@@ -24,16 +24,15 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
       ? new Date(post.updatedAt)
       : post.updatedAt?.toDate();
   const published = post?.published;
-  console.log(published);
 
   return (
     <Link href={`/${post.username}/${post.slug}`}>
-      <div className="px-5 py-4 bg-white dark:bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-400 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose transition-darkmode">
+      <div className="px-5 py-4 bg-white dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose dark:prose-dark transition-darkmode">
         <div className="relative flex mb-4 items-start">
           {admin && (
             <Link href={`/admin/${post.slug}`}>
               <a>
-                <FaEdit className="absolute right-0 h-6 w-6 text-gray-700 hover:text-yellow-600" />
+                <FaEdit className="absolute right-0 h-6 w-6 hover:text-yellow-600 dark:hover-link-yellow-400" />
               </a>
             </Link>
           )}
@@ -48,11 +47,11 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
           </Link>
           <div className="ml-4 mt-0.5">
             <Link href={`/${post.username}`}>
-              <a className="block leading-snug hover:text-yellow-600 mb-1">
+              <a className="block leading-snug hover:text-yellow-600 dark:hover-link-yellow-400 mb-1">
                 {post.username}
               </a>
             </Link>
-            <span className="block text-sm font-light leading-snug text-gray-700">
+            <span className="block text-sm font-light leading-snug">
               {updatedDate
                 ? updatedDate.toLocaleString('en-GB', {
                     day: 'numeric',
@@ -82,7 +81,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
           {!published && (
             <p className="text-red-500 uppercase text-center">Unpublished</p>
           )}
-          <div className="ml-1 font-light text-gray-700">
+          <div className="ml-1 font-light">
             {wordCount} words. {minutesToRead} min read
           </div>
         </div>

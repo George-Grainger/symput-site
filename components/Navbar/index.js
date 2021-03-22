@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '@/lib/context';
 import LoggedIn from './loggedIn';

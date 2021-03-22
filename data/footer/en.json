@@ -1,0 +1,60 @@
+{
+  "socialsTitle": "Follow us on social media!",
+  "socialsSubtitle": "Find us on any of these platforms to stay updated.",
+  "columns": [
+    {
+      "title": "Useful links",
+      "links": [
+        { "link": "/aims", "text": "Aims" },
+        { "link": "/team", "text": "The Team" },
+        {
+          "link": "/release",
+          "text": "Release Date"
+        },
+        {
+          "link": "/feedback",
+          "text": "Feedback"
+        }
+      ]
+    },
+    {
+      "title": "Useful links",
+      "links": [
+        {
+          "link": "/updates",
+          "text": "Updates"
+        },
+        { "link": "/license", "text": "License" },
+        {
+          "link": "/languages",
+          "text": "Languages"
+        },
+        {
+          "link": "/accessibiity",
+          "text": "Accessibility"
+        }
+      ]
+    },
+    {
+      "title": "Other resources",
+      "links": [
+        {
+          "link": "/contact-us",
+          "text": "Contact Us"
+        },
+        {
+          "link": "/privacy-policy",
+          "text": "Privacy Policy"
+        },
+        {
+          "link": "/terms",
+          "text": "Terms of service"
+        },
+        {
+          "link": "/credits",
+          "text": "Credits"
+        }
+      ]
+    }
+  ]
+}
