@@ -69,6 +69,7 @@ const CreateNewFeedback = () => {
         button2="Create Post"
         handleClose={onClose}
         handleSave={handleSubmit(createPost)}
+        zIndex="z-40"
       >
         <form>
           <Input

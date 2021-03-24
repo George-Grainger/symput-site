@@ -23,21 +23,21 @@ const FeedbackManager = () => {
     <>
       {post && (
         <section className="section-default section-default-padding">
-          <div className="w-fs-card bg-white px-4 sm:px-8 sm:pb-4 dark:bg-gray-900 grid grid-cols-2 relative rounded-3xl transition-darkmode">
-            <div className="sticky top-20 pt-8 bg-white dark:bg-gray-900 z-10">
-              <h1 className="prose text-3xl dark:prose-dark font-semibold mb-2">
+          <div className="w-fs-card bg-white px-3 sm:px-8 sm:pb-4 dark:bg-gray-900 grid md:grid-cols-2 relative rounded-3xl transition-darkmode">
+            <div className="md:sticky md:top-20 pt-8 md:mb-6 md:pb-2 bg-white dark:bg-gray-900 z-10">
+              <h1 className="prose text-3xl dark:prose-dark font-semibold md:mb-2">
                 Title: {post?.title}
               </h1>
-              <p className="prose text-xl dark:prose-dark mb-8">
+              <p className="prose text-xl dark:prose-dark">
                 Slug: {post?.slug}
               </p>
             </div>
 
-            <aside className="sticky top-20 pt-8 bg-white dark:bg-gray-900 z-10">
+            <aside className="sticky top-20 pt-8 pb-2 md:pb-0 mb-6 md:my-0 bg-white dark:bg-gray-900 z-10">
               <div className="flex">
                 <button
                   className={
-                    'btn mr-8 flex-auto ' +
+                    'btn mr-2 md:mr-8 flex-auto ' +
                     (!preview
                       ? 'btn-black dark:btn-yellow'
                       : ' btn-black-inverted dark:btn-yellow-inverted')
@@ -48,7 +48,7 @@ const FeedbackManager = () => {
                 </button>
                 <button
                   className={
-                    'btn mr-8 flex-auto ' +
+                    'btn mr-2 md:mr-8 flex-auto ' +
                     (preview
                       ? 'btn-black dark:btn-yellow'
                       : ' btn-black-inverted dark:btn-yellow-inverted')
