@@ -9,13 +9,13 @@ const DeleteFeedbackButton = ({ postRef }) => {
     if (doIt) {
       await postRef.delete();
       router.push('/admin');
-      toast('post annihilated ', { icon: '🗑️' });
+      toast('Feedback annihilated ', { icon: '🗑️' });
     }
   };
 
   return (
     <button
-      className="btn bg-red-500 hover:bg-red-600 mr-8 text-white"
+      className="btn bg-red-500 hover:bg-red-600 text-white"
       onClick={deleteFeedback}
     >
       Delete
