@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function LoggedOut({
   loginText,
-  className = 'btn hidden lg:block'
+  className = 'btn hidden lg:block md:mx-3'
 }) {
   return (
     <li className="flex justify-center">

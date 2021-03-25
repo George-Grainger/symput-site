@@ -10,7 +10,7 @@ const Layout = ({ title, navbarData, footerData, children, transparent }) => {
         <link rel="manifest" href="manifest.json" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         // TODO fix some of these
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="application-name" content={title || 'Symput'} />
         <meta name="apple-mobile-web-app-capable" content="yes" />

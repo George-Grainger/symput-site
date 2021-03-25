@@ -12,12 +12,12 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-const aims = ({ navbarData, footerData }) => {
+const accessibility = ({ navbarData, footerData }) => {
   return (
     <Layout navbarData={navbarData} footerData={footerData}>
-      <p>Aims to be completed</p>
+      <p>Accessibility to be completed</p>
     </Layout>
   );
 };
 
-export default aims;
+export default accessibility;

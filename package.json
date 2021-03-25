@@ -24,6 +24,7 @@
     "react-hot-toast": "^1.0.2",
     "react-icons": "^4.2.0",
     "react-markdown": "^5.0.3",
+    "react-rotating-text": "^1.4.1",
     "react-uuid": "^1.0.2",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",

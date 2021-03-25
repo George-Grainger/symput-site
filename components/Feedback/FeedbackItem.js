@@ -32,7 +32,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
           {admin && (
             <Link href={`/admin/${post.slug}`}>
               <a>
-                <FaEdit className="absolute right-0 h-6 w-6 hover:text-yellow-600 dark:hover-link-yellow-400" />
+                <FaEdit className="absolute right-0 h-6 w-6 hover:text-yellow-600 dark:hover:text-yellow-400" />
               </a>
             </Link>
           )}

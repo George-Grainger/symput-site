@@ -52,7 +52,7 @@ export default function Navbar({ data, transparent }) {
             </a>
           </Link>
 
-          <ul className="lg:flex hidden gap-4 xl:gap-8">
+          <ul className="lg:flex hidden">
             {links?.map(({ text, link }) => {
               return (
                 <Navlink key={uuid()} href={link}>
@@ -62,11 +62,11 @@ export default function Navbar({ data, transparent }) {
             })}
           </ul>
 
-          <ul className="flex items-center gap-2 md:gap-6">
-            <li>
+          <ul className="flex items-center">
+            <li className="md:mx-3">
               <Settings {...settingsInfo} />
             </li>
-            <li>
+            <li className="md:mx-3">
               <button
                 aria-label={sidebarOpenAria}
                 className="block lg:hidden text-xl sm:p-2 p-3 focus:outline-none link-standard"
