@@ -20,7 +20,7 @@ const Member = ({
       <Link href={`/team/${slug}`}>
         <LinkableAvatar
           alt={name}
-          src={image || '/hacker.png'}
+          src={image || '/images/hacker.png'}
           className="rounded-full max-w-full cursor-pointer"
           width="64"
           height="64"
