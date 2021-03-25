@@ -40,16 +40,13 @@ const CreateNewFeedback = () => {
       heartCount: 0
     };
 
-    toast
-      .promise(ref.set(data), {
-        loading: 'Initalising feedback',
-        success: 'Feedback Initalised!',
-        error: 'Uh oh, please try again.'
-      })
-      .then(() =>
-        // Imperative navigation after doc is set
-        router.push(`/admin/${feedbackSlug}`)
-      );
+    toast.promise(ref.set(data), {
+      loading: 'Initalising feedback',
+      success: 'Feedback Initalised!',
+      error: 'Uh oh, please try again.'
+    });
+
+    await router.push(`/admin/${feedbackSlug}`);
   };
 
   return (
