@@ -41,7 +41,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
               height="50px"
               width="50px"
               className="object-cover rounded-full"
-              src={post.photoURL || '/hacker.png'}
+              src={post.photoURL || '/images/hacker.png'}
               alt="avatar"
             />
           </Link>

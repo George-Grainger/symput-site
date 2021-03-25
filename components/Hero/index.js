@@ -7,7 +7,7 @@ const Hero = ({ title, subtitle, buttonText }) => (
       <Image
         quality={25}
         alt="Hero image"
-        src="/heroImage.jpg"
+        src="/images/heroImage.jpg"
         layout="fill"
         objectFit="cover"
         priority

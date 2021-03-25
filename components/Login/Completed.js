@@ -16,7 +16,7 @@ const Completed = () => {
 
       <div className="grid gap-y-6 max-w-prose mx-auto">
         <h2 className="text-xl font-semibold">You're fully signed up.</h2>
-        <Image src="/celebration.svg" height="200px" width="392px" />
+        <Image src="/images/celebration.svg" height="200px" width="392px" />
         <p>
           Let us know your feedback through the admin area.
           <br />

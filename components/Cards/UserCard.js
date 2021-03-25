@@ -10,7 +10,7 @@ const UserCard = ({ user, posts }) => {
             className="object-cover rounded-full"
             height="100px"
             width="100px"
-            src={user.photoURL || '/hacker.png'}
+            src={user.photoURL || '/images/hacker.png'}
           />
         </div>
         <h1 className="pt-16 text-4xl font-semibold leading-normal">

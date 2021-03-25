@@ -14,7 +14,7 @@ export default function LoggedIn() {
           height="40px"
           width="40px"
           onClick={() => setDropDownVisible(!dropDownVisible)}
-          src={user?.photoURL || '/hacker.png'}
+          src={user?.photoURL || '/images/hacker.png'}
           className="rounded-full h-12 w-12"
         />
       </div>

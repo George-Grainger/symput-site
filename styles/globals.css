@@ -4,11 +4,11 @@
 
 html,
 body {
-  @apply h-full grid;
+  @apply h-full flex flex-col justify-between;
 }
 
 #__next {
-  @apply h-full grid row-span-full col-span-full content-between;
+  @apply h-full;
 }
 
 input:checked ~ .toggle-circle {
