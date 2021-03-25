@@ -4,11 +4,11 @@
 
 html,
 body {
-  @apply h-full flex flex-col justify-between;
+  @apply h-full;
 }
 
 #__next {
-  @apply h-full;
+  @apply h-full flex flex-col justify-between;
 }
 
 input:checked ~ .toggle-circle {
@@ -269,5 +269,22 @@ input:checked ~ .toggle-path {
   }
   100% {
     transform: translate(24px, 0);
+  }
+}
+
+.react-rotating-text-cursor {
+  animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s
+    infinite;
+}
+
+@keyframes blinking-cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

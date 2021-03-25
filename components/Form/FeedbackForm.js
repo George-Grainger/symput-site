@@ -86,7 +86,9 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
               ref={register}
               className="checkbox"
             />
-            <label className="text-xl checkbox-label ml-2 md:ml-4">Published</label>
+            <label className="text-xl checkbox-label ml-2 md:ml-4">
+              Published
+            </label>
           </div>
 
           <button

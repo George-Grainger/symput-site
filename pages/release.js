@@ -12,12 +12,12 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-const aims = ({ navbarData, footerData }) => {
+const release = ({ navbarData, footerData }) => {
   return (
     <Layout navbarData={navbarData} footerData={footerData}>
-      <p>Aims to be completed</p>
+      <p>Release to be completed</p>
     </Layout>
   );
 };
 
-export default aims;
+export default release;

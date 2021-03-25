@@ -1,8 +1,8 @@
 import { useModalState } from '@/lib/useModalState';
 import { FaCog } from 'react-icons/fa';
-import LanguageChanger from '../LanguageChanger';
+import LanguageChanger from './LanguageChanger';
 import Modal from '../Modal';
-import ThemeChanger from '../ThemeChanger';
+import ThemeChanger from './ThemeChanger';
 
 const Settings = ({
   settingsTitle,
