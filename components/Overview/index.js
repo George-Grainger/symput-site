@@ -30,7 +30,7 @@ const Overview = ({
           title={card1Title}
           learnMore={learnMore}
           className="card-black dark:card-gray"
-          link="/"
+          link="/aims"
           icon={<GiArcheryTarget className="h-full w-full" />}
         >
           {card1Content}
@@ -39,7 +39,7 @@ const Overview = ({
           title={card2Title}
           learnMore={learnMore}
           className="card-yellow"
-          link="/"
+          link="/team"
           icon={<AiOutlineTeam className="h-full w-full" />}
         >
           {card2Content}
@@ -50,7 +50,7 @@ const Overview = ({
           title={card3Title}
           learnMore={learnMore}
           className="card-black dark:card-gray md:card-yellow md:dark:card-yellow"
-          link="/"
+          link="/release"
           icon={<BsCalendar className="h-full w-full" />}
         >
           {card3Content}
@@ -59,7 +59,7 @@ const Overview = ({
           title={card4Title}
           learnMore={learnMore}
           className="card-yellow dark:card-yellow md:card-black md:dark:card-gray"
-          link="/"
+          link="/feedback"
           icon={<BiCommentCheck className="h-full w-full" />}
         >
           {card4Content}
