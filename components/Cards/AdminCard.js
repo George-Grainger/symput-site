@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AccountSettings from '../AdminArea/AccountSettings';
 import AdminFeedbackList from '../AdminArea/AdminFeedbackList';
 import CreateNewFeedback from '../AdminArea/CreateNewFeedback';
 
@@ -38,9 +39,16 @@ const AdminCard = () => {
             Account
           </button>
         </div>
-        <div className={openTab === 0 ? 'block' : 'hidden'}>
+        <div
+          className={
+            openTab === 0 ? 'flex flex-col items-center w-full' : 'hidden'
+          }
+        >
           <AdminFeedbackList />
           <CreateNewFeedback />
+        </div>
+        <div className={openTab === 1 ? 'block w-full' : 'hidden'}>
+          <AccountSettings />
         </div>
       </div>
     </section>

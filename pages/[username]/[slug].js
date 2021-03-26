@@ -29,7 +29,6 @@ export async function getStaticProps({ params, locale }) {
 export async function getStaticPaths({ locales }) {
   // Improve my using Admin SDK to select empty docs
   const snapshot = await firestore.collectionGroup('posts').get();
-
   const paths = [];
 
   snapshot.docs.forEach((doc) => {
@@ -44,7 +43,7 @@ export async function getStaticPaths({ locales }) {
 
   return {
     paths,
-    fallback: false
+    fallback: 'blocking'
   };
 }
 

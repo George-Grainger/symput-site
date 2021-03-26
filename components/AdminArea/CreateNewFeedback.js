@@ -52,7 +52,7 @@ const CreateNewFeedback = () => {
   return (
     <>
       <button
-        className="p-8 bg-transparent rounded-lg min-w-feedback max-w-3xl prose prose-xl dark:prose-dark border-4 border-dashed border-gray-900 dark:border-gray-300 text-center cursor-pointer"
+        className="p-8 bg-transparent rounded-lg min-w-feedback prose prose-xl dark:prose-dark border-4 border-dashed border-gray-900 dark:border-gray-300 text-center cursor-pointer max-w-none"
         onClick={onToggle}
       >
         <h3>Create Feedback</h3>
