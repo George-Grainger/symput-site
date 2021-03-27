@@ -17,7 +17,6 @@ const FeedbackCard = (props) => {
 
   return (
     <section className="section-default section-default-padding">
-      <Metatags title={post.title} description={post.title} />
       <div className="min-w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-900 prose dark:prose-dark flex flex-col items-center rounded-lg relative">
         <div className="flex w-full sm:sticky top-28">
           {currentUser?.uid === post.uid && (
@@ -29,7 +28,7 @@ const FeedbackCard = (props) => {
           )}
           <AuthCheck
             fallback={
-              <Link href="/enter">
+              <Link href="/sign-in">
                 <a className="link-standard p-1 ml-auto">
                   <FaRegHeart className="text-red-500 inline mr-4" />
                   {post.heartCount || 0}

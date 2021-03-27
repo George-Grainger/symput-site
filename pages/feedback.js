@@ -26,10 +26,12 @@ export default function FB({
   const [isEnd, setIsEnd] = useState(initialIsEnd);
 
   return (
-    <Layout navbarData={navbarData} footerData={footerData}>
-      <FeedbackContext.Provider value={{ posts, setPosts, isEnd, setIsEnd }}>
-        <FeedbackFeed />
-      </FeedbackContext.Provider>
-    </Layout>
+    <>
+      <Layout navbarData={navbarData} footerData={footerData}>
+        <FeedbackContext.Provider value={{ posts, setPosts, isEnd, setIsEnd }}>
+          <FeedbackFeed />
+        </FeedbackContext.Provider>
+      </Layout>
+    </>
   );
 }
