@@ -1,8 +1,11 @@
+import { getFeedbackPostRef } from '@/lib/db-utils';
 import { useRouter } from 'next/router';
 import toast from 'react-hot-toast';
 
-const DeleteFeedbackButton = ({ postRef }) => {
+const DeleteFeedbackButton = () => {
   const router = useRouter();
+  const { slug } = router;
+  const postRef = getFeedbackPostRef(slug);
 
   const deleteFeedback = async () => {
     const doIt = confirm('are you sure!');
@@ -14,10 +17,7 @@ const DeleteFeedbackButton = ({ postRef }) => {
   };
 
   return (
-    <button
-      className="btn bg-red-500 hover:bg-red-600 text-white"
-      onClick={deleteFeedback}
-    >
+    <button className="btn btn-red" onClick={deleteFeedback}>
       Delete
     </button>
   );

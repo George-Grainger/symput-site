@@ -39,7 +39,10 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
   };
 
   return (
-    <form className="w-full md:col-span-2" onSubmit={handleSubmit(updatePost)}>
+    <form
+      className="w-full md:col-span-2 -mt-16"
+      onSubmit={handleSubmit(updatePost)}
+    >
       <div className="prose dark:prose-dark max-w-none">
         {preview ? (
           <ReactMarkdown className="mx-auto max-w-markdown sm:max-w-prose">
