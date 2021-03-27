@@ -49,7 +49,11 @@ export async function getStaticPaths({ locales }) {
 
 export default function Post(props) {
   return (
-    <Layout navbarData={props.navbarData} footerData={props.footerData}>
+    <Layout
+      title={`Feedback - ${props.post.title}`}
+      navbarData={props.navbarData}
+      footerData={props.footerData}
+    >
       <FeedbackCard {...props} />
     </Layout>
   );

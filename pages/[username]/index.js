@@ -35,6 +35,7 @@ export async function getServerSideProps({ query, locale }) {
   return {
     props: {
       user,
+      username,
       posts,
       navbarData,
       footerData
@@ -44,12 +45,13 @@ export async function getServerSideProps({ query, locale }) {
 
 export default function UserProfilePage({
   user,
+  username,
   posts,
   navbarData,
   footerData
 }) {
   return (
-    <Layout navbarData={navbarData} footerData={footerData}>
+    <Layout title={username} navbarData={navbarData} footerData={footerData}>
       <UserCard user={user} posts={posts} />
     </Layout>
   );

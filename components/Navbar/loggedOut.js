@@ -6,7 +6,7 @@ export default function LoggedOut({
 }) {
   return (
     <li className="flex justify-center">
-      <Link href="/enter">
+      <Link href="/sign-in">
         <a className={`${className} btn-yellow lg:my-0 my-6`}>{loginText}</a>
       </Link>
     </li>

@@ -32,14 +32,8 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-export default function Enter({ navbarData, footerData, pageData }) {
-  const {
-    title,
-    loginPage,
-    usernamePage,
-    verifyPage,
-    completedPage
-  } = pageData;
+export default function SignIn({ navbarData, footerData, pageData }) {
+  const { loginPage, usernamePage, verifyPage, completedPage } = pageData;
   const {
     user,
     username,
@@ -66,7 +60,7 @@ export default function Enter({ navbarData, footerData, pageData }) {
   };
 
   return (
-    <Layout title={title} navbarData={navbarData} footerData={footerData}>
+    <Layout navbarData={navbarData} footerData={footerData}>
       <section className="section-default section-default-padding">
         <div className="card bg-gray-900 text-white md:min-h-fs-card min-w-fs-card">
           <div>{getCurrentState()}</div>
