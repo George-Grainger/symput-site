@@ -48,7 +48,9 @@ const Layout = ({ title, navbarData, footerData, children, transparent }) => {
       <header>
         <Navbar data={navbarData} transparent={transparent} />
       </header>
-      <main className={transparent ? '' : 'offset-header'}>{children}</main>
+      <main className={'flex-auto' + (transparent ? '' : ' offset-header')}>
+        {children}
+      </main>
       <Footer data={footerData} />
     </>
   );

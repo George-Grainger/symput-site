@@ -1,6 +1,5 @@
 import { UserContext } from '@/lib/context';
 import { useContext } from 'react';
-import { firestore, auth, serverTimestamp } from '@/lib/firebase';
 import { useRouter } from 'next/router';
 import kebabCase from 'lodash.kebabcase';
 import toast from 'react-hot-toast';
@@ -9,6 +8,7 @@ import Modal from '@/components/Modal';
 import { useModalState } from '@/lib/useModalState';
 import { useForm } from 'react-hook-form';
 import Input from '@/components/Form/Input';
+import { createFeedback } from '@/lib/db-utils';
 
 const CreateNewFeedback = () => {
   const router = useRouter();
@@ -17,42 +17,23 @@ const CreateNewFeedback = () => {
   const { register, errors, handleSubmit, watch } = useForm();
   const title = watch('feedbackTitle');
 
-  // Create a new post in firestore
   const createPost = async ({ feedbackTitle, feedbackSlug }) => {
-    const uid = auth.currentUser?.uid;
-    const ref = firestore
-      .collection('users')
-      .doc(uid)
-      .collection('posts')
-      .doc(feedbackSlug);
+    await toast.promise(
+      createFeedback(feedbackTitle, feedbackSlug, user, username),
+      {
+        loading: 'Initalising feedback',
+        success: 'Feedback Initalised!',
+        error: 'Uh oh, please try again.'
+      }
+    );
 
-    // Tip: give all fields a default value here
-    const data = {
-      title: feedbackTitle,
-      slug: feedbackSlug,
-      uid,
-      username,
-      photoURL: user.photoURL,
-      published: false,
-      content: '# hello world!',
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
-      heartCount: 0
-    };
-
-    toast.promise(ref.set(data), {
-      loading: 'Initalising feedback',
-      success: 'Feedback Initalised!',
-      error: 'Uh oh, please try again.'
-    });
-
-    await router.push(`/admin/${feedbackSlug}`);
+    router.push(`/admin/${feedbackSlug}`);
   };
 
   return (
     <>
       <button
-        className="p-8 bg-transparent rounded-lg min-w-feedback prose prose-xl dark:prose-dark border-4 border-dashed border-gray-900 dark:border-gray-300 text-center cursor-pointer max-w-none"
+        className="p-8 mt-6 bg-transparent rounded-lg min-w-feedback prose prose-xl dark:prose-dark border-4 border-dashed border-gray-900 dark:border-gray-300 text-center cursor-pointer max-w-none"
         onClick={onToggle}
       >
         <h3>Create Feedback</h3>

@@ -40,12 +40,19 @@ export default function Enter({ navbarData, footerData, pageData }) {
     verifyPage,
     completedPage
   } = pageData;
-  const { user, username, loading, error, verified } = useContext(UserContext);
+  const {
+    user,
+    username,
+    usernameLoading,
+    loading,
+    error,
+    verified
+  } = useContext(UserContext);
 
   const getCurrentState = () => {
     if (error) {
       return <div>Error</div>;
-    } else if (loading) {
+    } else if (loading || usernameLoading) {
       return <LoginPlaceHolder />;
     } else if (!user) {
       return <Login {...loginPage} />;

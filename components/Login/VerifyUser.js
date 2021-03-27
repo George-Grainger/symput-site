@@ -15,6 +15,8 @@ const VerifyUser = () => {
     }
   };
 
+  useEffect(sendEmail, []);
+
   return (
     <div className="grid md:grid-cols-5 w-full h-full">
       <h1 className="md:col-span-5 text-3xl font-semibold w-full">

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
-import { firestore, auth } from '@/lib/firebase';
-import Link from 'next/link';
 import FeedbackForm from '../Form/FeedbackForm';
 import DeleteFeedbackButton from './DeleteFeedbackButton';
+import { getFeedbackPostRef } from '@/lib/db-utils';
 
 const FeedbackManager = () => {
   const [preview, setPreview] = useState(false);
@@ -12,11 +11,7 @@ const FeedbackManager = () => {
   const router = useRouter();
   const { slug } = router.query;
 
-  const postRef = firestore
-    .collection('users')
-    .doc(auth.currentUser?.uid)
-    .collection('posts')
-    .doc(slug);
+  const postRef = getFeedbackPostRef(slug);
   const [post] = useDocumentDataOnce(postRef);
 
   return (
@@ -24,7 +19,7 @@ const FeedbackManager = () => {
       {post && (
         <section className="section-default section-default-padding">
           <div className="w-fs-card bg-white px-3 sm:px-8 sm:pb-4 dark:bg-gray-900 grid md:grid-cols-2 relative rounded-3xl transition-darkmode p-2">
-            <div className="md:sticky md:top-20 pt-6 md:mb-6 md:pb-2 bg-white dark:bg-gray-900 z-10">
+            <div className="md:sticky md:top-20 pt-6 md:mb-24 md:pb-2 bg-white dark:bg-gray-900 z-10">
               <h1 className="prose text-3xl dark:prose-dark font-semibold md:mb-2">
                 Title: {post?.title}
               </h1>
@@ -33,7 +28,7 @@ const FeedbackManager = () => {
               </p>
             </div>
 
-            <aside className="sticky top-20 pt-8 pb-2 md:pb-0 mb-6 md:my-0 bg-white dark:bg-gray-900 z-10">
+            <aside className="sticky top-20 pt-8 pb-2 md:pb-0 mb-24 bg-white dark:bg-gray-900 z-10">
               <div className="flex">
                 <button
                   className={
@@ -57,7 +52,7 @@ const FeedbackManager = () => {
                 >
                   Preview
                 </button>
-                <DeleteFeedbackButton postRef={postRef} />
+                <DeleteFeedbackButton />
               </div>
             </aside>
 

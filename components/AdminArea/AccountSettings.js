@@ -44,10 +44,7 @@ const AccountSettings = () => {
       <button className="btn btn-yellow mx-auto block my-8">
         Update password
       </button>
-      <button
-        onClick={handleDelete}
-        className="btn bg-red-500 hover:bg-red-600 text-white mx-auto block"
-      >
+      <button onClick={handleDelete} className="btn btn-red mx-auto block">
         Delete account
       </button>
     </>
