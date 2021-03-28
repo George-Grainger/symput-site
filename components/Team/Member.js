@@ -1,4 +1,4 @@
-import { FaFacebook, FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import IconLink from '@/components/Icons/IconLink';
 import Link from 'next/link';
 import LinkableAvatar from '../LinkableAvatar';

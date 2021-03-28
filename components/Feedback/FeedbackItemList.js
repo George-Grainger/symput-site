@@ -4,9 +4,14 @@ import uuid from 'react-uuid';
 import { useAsync } from '@/lib/useAsync';
 import { useContext, useEffect } from 'react';
 import FeedbackPlaceholder from '../Loading/FeedbackPlaceHolder';
+import { FeedbackItemListContext } from '@/lib/context';
 
 const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   const { posts, setPosts, isEnd, setIsEnd } = useContext(context);
+  const { loadMore_i18n, reachedEnd_i18n, error_i18n } = useContext(
+    FeedbackItemListContext
+  );
+
   const getMoreFeedback = async (last) => {
     const [newPosts, nowIsEnd] = await getMore(last);
     setPosts(posts.concat(newPosts));
@@ -46,17 +51,17 @@ const FeedbackItemList = ({ getMore, context, trigger = false }) => {
             } my-4`}
           >
             {error ? (
-              'Please try again'
+              error_i18n
             ) : loading ? (
               <ButtonEllipsis color="bg-white" />
             ) : (
-              'Load more'
+              loadMore_i18n
             )}
           </button>
         )}
         {isEnd && (
           <div className="font-bold py-3 px-6 rounded shadow-md cursor-default bg-green-500 text-white my-4">
-            You have reached the end!
+            {reachedEnd_i18n}
           </div>
         )}
       </>

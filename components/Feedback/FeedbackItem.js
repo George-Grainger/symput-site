@@ -1,13 +1,18 @@
 import Link from 'next/link';
-import { UserContext } from '@/lib/context';
+import { FeedbackItemListContext, UserContext } from '@/lib/context';
 import { useState, useEffect, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import LinkableAvatar from '../LinkableAvatar';
 import { FaEdit, FaHeart } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
 export default function FeedbackItem({ post, initialAdmin = false }) {
+  const { locale } = useRouter();
   const [admin, setAdmin] = useState(initialAdmin);
   const { user, loading } = useContext(UserContext);
+  const { words_i18n, minRead_i18n, unpublished_i18n } = useContext(
+    FeedbackItemListContext
+  );
 
   useEffect(() => {
     if (user?.uid === post.uid) {
@@ -79,10 +84,14 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
             {post.heartCount || 0}
           </div>
           {!published && (
-            <p className="text-red-500 uppercase text-center">Unpublished</p>
+            <p className="text-red-500 uppercase text-center">
+              {unpublished_i18n}
+            </p>
           )}
           <div className="ml-1 font-light">
-            {wordCount} words. {minutesToRead} min read
+            {locale === 'ar'
+              ? `${minRead_i18n} ${minutesToRead} ${words_i18n} ${wordCount}`
+              : `${wordCount} ${words_i18n} ${minutesToRead} ${minRead_i18n}`}
           </div>
         </div>
       </div>
