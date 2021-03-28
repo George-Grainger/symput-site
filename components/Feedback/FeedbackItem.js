@@ -58,7 +58,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
             </Link>
             <span className="block text-sm font-light leading-snug">
               {updatedDate
-                ? updatedDate.toLocaleString('en-GB', {
+                ? updatedDate.toLocaleString(locale, {
                     day: 'numeric',
                     month: 'short',
                     year: 'numeric',

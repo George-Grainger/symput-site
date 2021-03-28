@@ -1,53 +1,52 @@
 {
   "loginPage_i18n": {
-    "heading_i18n": "Welcome",
-    "signInWith_i18n": "Sign in with",
-    "credentials_i18n": "Or through credentials",
-    "signIn_i18n": "Sign in",
-    "signUp_i18n": "Sign up",
-    "email_i18n": "Email",
+    "heading_i18n": "أهلا بك",
+    "signInWith_i18n": "تسجيل الدخول مع",
+    "credentials_i18n": "أو من خلال أوراق الاعتماد",
+    "signIn_i18n": "يسجل دخول",
+    "signUp_i18n": "إنشاء حساب",
+    "email_i18n": "عنوان بريد الكتروني",
     "emailEG_i18n": "your@email.com",
-    "password_i18n": "Password",
-    "reminder_i18n": "Forgot password?",
-    "repeatPassword_i18n": "Repeat password",
-    "resetLink_i18n": "Send reset link",
-    "goBack_i18n": "Go back",
-    "signInSuccess_i18n": "Logged in sucessfully",
-    "signUpSuccess_i18n": "Account registered"
+    "password_i18n": "كلمة المرور",
+    "reminder_i18n": "هل نسيت كلمة السر؟",
+    "repeatPassword_i18n": "اعد كلمة السر",
+    "resetLink_i18n": "أرسل رابط إعادة التعيين",
+    "goBack_i18n": "العودة",
+    "signInSuccess_i18n": "تم تسجيل الدخول بنجاح",
+    "signUpSuccess_i18n": "تم تسجيل الحساب"
   },
 
   "usernameForm_i18n": {
-    "heading_i18n": "You're in",
-    "subheading_i18n": "Please choose a username",
-    "username_i18n": "Username",
-    "button_i18n": "choose",
+    "heading_i18n": "كنت قد مرت",
+    "subheading_i18n": "يرجى اختيار اسم المستخدم",
+    "username_i18n": "اسم المستخدم",
+    "button_i18n": "أختر",
     "toast_i18n": {
-      "loading": "Reserving your name",
-      "success": "Username saved",
-      "error": "Uh oh, something went wrong, please try again."
+      "loading": "الحجز قيد التقدم",
+      "success": "تم حفظ اسم المستخدم",
+      "error": "عذرًا ، حدث خطأ ما ، يرجى المحاولة مرة أخرى."
     }
   },
 
   "verifyPage_i18n": {
-    "heading_i18n": "Please verify your email",
-    "p1Subtitle_i18n": "If you signed up through Facebook, Twitter, GitHub or Google",
-    "p1Content_i18n": "The link will be sent to the email address associated with the account you signed in with.",
-    "p2Subtitle_i18n": "If you signed up through credentials",
-    "p2Content_i18n": "The link will be sent to the email you registered the account with.",
-    "button_i18n": "Resend the verification email",
+    "heading_i18n": "يرجى التحقق من بريدك الإلكتروني",
+    "p1Subtitle_i18n": "إذا قمت بالتسجيل من خلال Facebook أو Twitter أو GitHub أو Google",
+    "p1Content_i18n": "سيتم إرسال الرابط إلى عنوان البريد الإلكتروني المرتبط بالحساب الذي سجلت الدخول به.",
+    "p2Subtitle_i18n": "إذا قمت بالتسجيل من خلال اسم المستخدم وكلمة المرور",
+    "p2Content_i18n": "سيتم إرسال الرابط إلى البريد الإلكتروني الذي قمت بتسجيل الحساب به.",
+    "button_i18n": "أعد إرسال رسالة التحقق",
     "toast_i18n": {
-      "loading": "Sending email",
-      "success": "Email sent",
-      "error": "Email failed to send, please try again"
+      "loading": "معالجة البريد الإلكتروني",
+      "success": "تم إرسال البريد الإلكتروني",
+      "error": "فشل إرسال البريد الإلكتروني ، يرجى المحاولة مرة أخرى"
     }
   },
 
   "completedPage_i18n": {
-    "heading_i18n": "Congratulations",
-    "subheading_i18n": "You're fully signed up",
-    "p1_i18n": "Let us know your feedback through the admin area.",
-    "p2_i18n": "We'd love to know what you think",
-    "button_i18n": "Take a look round",
-    "imgAlt_i18n": "Congratulations!"
+    "heading_i18n": "تهانينا",
+    "subheading_i18n": "أنت مسجل بالكامل",
+    "p1_i18n": "دعنا نعرف ملاحظاتك من خلال منطقة الإدارة.",
+    "p2_i18n": "نود أن نعرف رأيك",
+    "button_i18n": "اذهب إلى منطقة الإدارة"
   }
 }

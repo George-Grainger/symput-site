@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { UserContext, SignInContext } from '@/lib/context';
+import { SignInContext } from '@/lib/context';
 import SignInForm from '@/components/Form/SignInForm';
 import SignUpForm from '@/components/Form/SignUpForm';
 import PasswordReset from '../Form/PasswordReset';

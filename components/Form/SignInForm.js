@@ -15,7 +15,7 @@ const SignInForm = ({ handlePasswordReset }) => {
     signIn_i18n,
     signInSuccess_i18n
   } = loginPage_i18n;
-  const { usernameErrors_i18n } = useContext(ErrorsContext);
+  const { signInErrors_i18n } = useContext(ErrorsContext);
 
   const {
     register,
@@ -49,7 +49,7 @@ const SignInForm = ({ handlePasswordReset }) => {
           required: true,
           pattern: {
             value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-            message: usernameErrors_i18n.validEmail_i18n
+            message: signInErrors_i18n.validEmail_i18n
           }
         })}
       />
@@ -63,11 +63,11 @@ const SignInForm = ({ handlePasswordReset }) => {
           required: true,
           minLength: {
             value: 8,
-            message: usernameErrors_i18n.minLength_i18n
+            message: signInErrors_i18n.minLength_i18n
           },
           maxLength: {
             value: 40,
-            message: usernameErrors_i18n.maxLength_i18n
+            message: signInErrors_i18n.maxLength_i18n
           }
         })}
       />

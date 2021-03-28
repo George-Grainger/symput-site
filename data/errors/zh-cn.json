@@ -1,32 +1,32 @@
 {
   "signInErrors_i18n": {
-    "validEmail_i18n": "Please enter a valid email address",
-    "minLength_i18n": "Password must be 8 characters or more",
-    "maxLength_i18n": "Password must be 40 characters or less",
-    "passwordMatch_i18n": "The passwords do not match"
+    "validEmail_i18n": "请输入有效的电子邮件地址",
+    "minLength_i18n": "密码必须是8个字符或更多",
+    "maxLength_i18n": "密码不得超过40个字符",
+    "passwordMatch_i18n": "密码不匹配"
   },
 
   "usernameErrors_i18n": {
-    "minLength_i18n": "Username must be 3 characters or more",
-    "maxLength_i18n": "Usernames must be 20 characters or less",
-    "pattern_i18n": "Username is invalid",
-    "inUse_i18n": "Username is already in use",
-    "checking_i18n": "Checking...",
-    "nearLim_i18n": "20 characters is the max limit - checking",
-    "isAvailable_i18n": "is available"
+    "minLength_i18n": "用户名必须是3个字符或更多",
+    "maxLength_i18n": "用户名不得超过20个字符",
+    "pattern_i18n": "无效的用户名",
+    "inUse_i18n": "用户名已经存在",
+    "checking_i18n": "检查...",
+    "nearLim_i18n": "20个字符是最大限制。 验证中...",
+    "isAvailable_i18n": "可用"
   },
 
   "createFeedbackErrors": {
-    "minLengthTitle_i18n": "Your title must be 5 charcters or more",
-    "maxLengthtitle_i18n": "Your title must be 20 characters or less",
-    "minLengthSlug_i18n": "Your slug must be 3 characters or more",
-    "maxLengthSlug_i18n": "Your slug must be 50 characters or less",
-    "invallidSlug": "The format of your slug is not valid"
+    "minLengthTitle_i18n": "您的标题必须是5个字符或更多",
+    "maxLengthtitle_i18n": "您的标题不得超过20个字符",
+    "minLengthSlug_i18n": "您的路径必须是3个或更多字符",
+    "maxLengthSlug_i18n": "您的路径不得超过50个字符",
+    "invallidSlug": "您的路径格式无效"
   },
 
   "genericErrors_i18n": {
-    "required_i18n": "This is a required field",
-    "signInFailure_i18n": "Username or password incorrect",
-    "alreadyExists_i18n": "This user already exists, sign in or reset your password."
+    "required_i18n": "这是一个必填字段",
+    "signInFailure_i18n": "用户名或密码不正确",
+    "alreadyExists_i18n": "该用户已经存在，请登录或重置您的密码。"
   }
 }

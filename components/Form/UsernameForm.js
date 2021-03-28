@@ -27,7 +27,9 @@ const UsernameForm = () => {
   const re = /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 
   const onSubmit = async () => {
-    toast.promise(updateUsername(formValue), toast_i18n);
+    if (isValid) {
+      toast.promise(updateUsername(formValue), toast_i18n);
+    }
   };
 
   const onChange = (e) => {

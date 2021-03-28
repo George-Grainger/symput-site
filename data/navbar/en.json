@@ -21,8 +21,8 @@
   "profileTagline_i18n": "View your current profile",
   "signOut_i18n": "Sign out",
   "signOutToast_i18n": {
-    "loading": "Logging out",
-    "success": "Logged out successfully",
-    "error": "Uh oh, something went wrong, please try again."
+    "loading": "Signing out",
+    "success": "Signed out successfully",
+    "error": "Sorry, something went wrong, please try again."
   }
 }

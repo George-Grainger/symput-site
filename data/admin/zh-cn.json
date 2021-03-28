@@ -1,37 +1,37 @@
 {
-  "title_i18n": "Admin en",
-  "subtitle_i18n": "Create posts or manage your account below.",
-  "posts_i18n": "Posts",
-  "account_i18n": "Account",
+  "title_i18n": "管理区",
+  "subtitle_i18n": "在下面提供反馈或管理您的帐户。",
+  "posts_i18n": "帖子",
+  "account_i18n": "帐户",
 
   "createFeedback_i18n": {
-    "title_i18n": "Create Feedback",
-    "letUsKnow_i18n": "Let us know what else you have to say",
-    "modalTitle_i18n": "Create A New Post",
-    "modalButton1_i18n": "Later",
-    "modalButton2_i18n": "Create Post",
-    "titleInputLabel_i18n": "Title",
-    "titleInputPlaceholder_i18n": "My interesting title",
-    "slugInputLabel_i18n": "Slug",
+    "title_i18n": "建立意见回馈",
+    "letUsKnow_i18n": "让我们知道您还有什么要说的",
+    "modalTitle_i18n": "建立新文章",
+    "modalButton1_i18n": "下一次",
+    "modalButton2_i18n": "建立讯息",
+    "titleInputLabel_i18n": "标题",
+    "titleInputPlaceholder_i18n": "我有趣的标题",
+    "slugInputLabel_i18n": "小路",
     "toast_i18n": {
-      "loading": "Initalising feedback",
-      "success": "Feedback Initalised!",
-      "error": "Uh oh, please try again."
+      "loading": "初始化中",
+      "success": "反馈已初始化",
+      "error": "抱歉，发生错误，请重试。"
     }
   },
 
   "accountSettings_i18n": {
-    "info_i18n": "Info",
-    "add_i18n": "Add",
-    "update_i18n": "Update",
-    "loading_i18n": "Loading...",
-    "describeYourself_i18n": "Describe yourself...",
-    "email": "Email",
-    "addEmail_i18n": "Please add an email",
-    "verfied_i18n": "Verified",
-    "isVerified_i18n": "You're verified",
-    "verifyNow_i18n": "Verify now",
-    "updatePassword_i18n": "Update password",
-    "deleteAccount_i18n": "Delete Account"
+    "info_i18n": "帐户信息",
+    "add_i18n": "添加",
+    "update_i18n": "更新",
+    "loading_i18n": "载入中...",
+    "describeYourself_i18n": "描述你自己...",
+    "email": "电邮地址",
+    "addEmail_i18n": "请添加一个电子邮件地址",
+    "verfied_i18n": "已验证",
+    "isVerified_i18n": "您已通过验证",
+    "verifyNow_i18n": "立即验证",
+    "updatePassword_i18n": "更新密码",
+    "deleteAccount_i18n": "删除帐户"
   }
 }

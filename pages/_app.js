@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import { UserContext, NavContext, FooterContext } from '@/lib/context';
+import { UserContext } from '@/lib/context';
 import { useUserData } from '@/lib/hooks';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'react-hot-toast';
