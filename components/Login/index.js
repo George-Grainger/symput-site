@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { UserContext, SignInContext } from '@/lib/context';
 import SignInForm from '@/components/Form/SignInForm';
 import SignUpForm from '@/components/Form/SignUpForm';
 import PasswordReset from '../Form/PasswordReset';
@@ -14,6 +15,7 @@ import GoogleIcon from '../Icons/GoogleIcon';
 import TwitterCircle from '../Icons/TwitterCircle';
 
 const Login = () => {
+  const { loginPage } = useContext(SignInContext);
   const [openTab, setOpenTab] = useState(1);
   const [resettingPassword, setResettingPassword] = useState(false);
   const [email, setEmail] = useState('');

@@ -1,19 +1,17 @@
 {
-  "links": [
-    { "link": "/aims", "text": "أهداف" },
-    { "link": "/team", "text": "الفريق" },
-    { "link": "/release", "text": "يوم الاصدار" },
-    { "link": "/feedback", "text": "استجابة" }
+  "links_i18n": [
+    { "link_i18n": "/aims", "text_i18n": "أهداف" },
+    { "link_i18n": "/team", "text_i18n": "الفريق" },
+    { "link_i18n": "/release", "text_i18n": "يوم الاصدار" },
+    { "link_i18n": "/feedback", "text_i18n": "استجابة" }
   ],
-  "loginText": "يسجل دخول",
-  "sidebarInfo": {
-    "sidebarOpenAria": "افتح تنقل الشريط الجانبي",
-    "sidebarCloseAria": "إغلاق الشريط الجانبي"
-  },
-  "settingsInfo": {
-    "settingsTitle": "إعدادات",
-    "darkModeTitle": "تبديل الوضع الداكن",
-    "languagesTitle": "اللغات",
-    "exitButtonText": "مخرج"
-  }
+  "loginText_i18n": "يسجل دخول",
+
+  "sidebarOpenAria_i18n": "افتح تنقل الشريط الجانبي",
+  "sidebarCloseAria_i18n": "إغلاق الشريط الجانبي",
+
+  "settingsTitle_i18n": "إعدادات",
+  "darkModeTitle_i18n": "تبديل الوضع الداكن",
+  "languagesTitle_i18n": "اللغات",
+  "exitButtonText_i18n": "مخرج"
 }

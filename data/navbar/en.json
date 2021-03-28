@@ -1,19 +1,17 @@
 {
-  "links": [
-    { "link": "/aims", "text": "Aims" },
-    { "link": "/team", "text": "The Team" },
-    { "link": "/release", "text": "Release Date" },
-    { "link": "/feedback", "text": "Feedback" }
+  "links_i18n": [
+    { "link_i18n": "/aims", "text_i18n": "Aims" },
+    { "link_i18n": "/team", "text_i18n": "The Team" },
+    { "link_i18n": "/release", "text_i18n": "Release Date" },
+    { "link_i18n": "/feedback", "text_i18n": "Feedback" }
   ],
-  "loginText": "Sign in",
-  "sidebarInfo": {
-    "sidebarOpenAria": "Open sidebar navigation",
-    "sidebarCloseAria": "Close sidebar"
-  },
-  "settingsInfo": {
-    "settingsTitle": "Settings",
-    "darkModeTitle": "Toggle dark mode",
-    "languagesTitle": "Languages",
-    "exitButtonText": "Exit"
-  }
+  "loginText_i18n": "Sign in",
+
+  "sidebarOpenAria_i18n": "Open sidebar navigation",
+  "sidebarCloseAria_i18n": "Close sidebar",
+
+  "settingsTitle_i18n": "Settings",
+  "darkModeTitle_i18n": "Toggle dark mode",
+  "languagesTitle_i18n": "Languages",
+  "exitButtonText_i18n": "Exit"
 }

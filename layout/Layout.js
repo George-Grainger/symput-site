@@ -2,6 +2,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
+import { NavContext, FooterContext } from '@/lib/context';
 
 const Layout = ({ title, navbarData, footerData, children, transparent }) => {
   const { pathname } = useRouter();
@@ -18,13 +19,15 @@ const Layout = ({ title, navbarData, footerData, children, transparent }) => {
   return (
     <>
       <NextSeo title={name} canonical={url} openGraph={{ url, title }} />
-      <header>
-        <Navbar data={navbarData} transparent={transparent} />
-      </header>
+      <NavContext.Provider value={navbarData}>
+        <Navbar transparent={transparent} />
+      </NavContext.Provider>
       <main className={'flex-auto' + (transparent ? '' : ' offset-header')}>
         {children}
       </main>
-      <Footer data={footerData} />
+      <FooterContext.Provider value={footerData}>
+        <Footer />
+      </FooterContext.Provider>
     </>
   );
 };

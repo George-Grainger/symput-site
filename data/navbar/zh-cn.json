@@ -1,19 +1,17 @@
 {
-  "links": [
-    { "link": "/aims", "text": "目的" },
-    { "link": "/team", "text": "团队" },
-    { "link": "/release", "text": "发布日期" },
-    { "link": "/feedback", "text": "回馈" }
+  "links_i18n": [
+    { "link_i18n": "/aims", "text_i18n": "目的" },
+    { "link_i18n": "/team", "text_i18n": "团队" },
+    { "link_i18n": "/release", "text_i18n": "发布日期" },
+    { "link_i18n": "/feedback", "text_i18n": "回馈" }
   ],
-  "loginText": "登录",
-  "sidebarInfo": {
-    "sidebarOpenAria": "打开侧边栏导航",
-    "sidebarCloseAria": "关闭侧边栏"
-  },
-  "settingsInfo": {
-    "settingsTitle": "设定值",
-    "darkModeTitle": "切换暗模式",
-    "languagesTitle": "语言能力",
-    "exitButtonText": "出口"
-  }
+  "loginText_i18n": "登录",
+
+  "sidebarOpenAria_i18n": "打开侧边栏导航",
+  "sidebarCloseAria_i18n": "关闭侧边栏",
+
+  "settingsTitle_i18n": "设定值",
+  "darkModeTitle_i18n": "切换暗模式",
+  "languagesTitle_i18n": "语言能力",
+  "exitButtonText_i18n": "出口"
 }

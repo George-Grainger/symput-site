@@ -1,58 +1,58 @@
 {
-  "socialsTitle": "تابعنا على وسائل التواصل الإجتماعي!",
-  "socialsSubtitle": "اعثر علينا على أي من هذه المنصات لتبقى على اطلاع.",
-  "columns": [
+  "title_i18n": "تابعنا على وسائل التواصل الإجتماعي!",
+  "subtitle_i18n": "اعثر علينا على أي من هذه المنصات لتبقى على اطلاع.",
+  "columns_i18n": [
     {
-      "title": "روابط مفيدة",
-      "links": [
-        { "link": "/aims", "text": "أهداف" },
-        { "link": "/team", "text": "الفريق" },
+      "title_i18n": "روابط مفيدة",
+      "links_i18n": [
+        { "link_i18n": "/aims", "text_i18n": "أهداف" },
+        { "link_i18n": "/team", "text_i18n": "الفريق" },
         {
-          "link": "/release",
-          "text": "يوم الاصدار"
+          "link_i18n": "/release",
+          "text_i18n": "يوم الاصدار"
         },
         {
-          "link": "/feedback",
-          "text": "استجابة"
+          "link_i18n": "/feedback",
+          "text_i18n": "استجابة"
         }
       ]
     },
     {
-      "title": "روابط مفيدة",
-      "links": [
+      "title_i18n": "روابط مفيدة",
+      "links_i18n": [
         {
-          "link": "/updates",
-          "text": "التحديثات"
+          "link_i18n": "/updates",
+          "text_i18n": "التحديثات"
         },
-        { "link": "/license", "text": "رخصة" },
+        { "link_i18n": "/license", "text_i18n": "رخصة" },
         {
-          "link": "/languages",
-          "text": "اللغات"
+          "link_i18n": "/languages",
+          "text_i18n": "اللغات"
         },
         {
-          "link": "/accessibility",
-          "text": "إمكانية الوصول"
+          "link_i18n": "/accessibility",
+          "text_i18n": "إمكانية الوصول"
         }
       ]
     },
     {
-      "title": "Other resources",
-      "links": [
+      "title_i18n": "Other resources",
+      "links_i18n": [
         {
-          "link": "/contact-us",
-          "text": "اتصل بنا"
+          "link_i18n": "/contact-us",
+          "text_i18n": "اتصل بنا"
         },
         {
-          "link": "/privacy-policy",
-          "text": "سياسة خاصة"
+          "link_i18n": "/privacy-policy",
+          "text_i18n": "سياسة خاصة"
         },
         {
-          "link": "/terms",
-          "text": "شروط الخدمة"
+          "link_i18n": "/terms",
+          "text_i18n": "شروط الخدمة"
         },
         {
-          "link": "/credits",
-          "text": "الاعتمادات"
+          "link_i18n": "/credits",
+          "text_i18n": "الاعتمادات"
         }
       ]
     }

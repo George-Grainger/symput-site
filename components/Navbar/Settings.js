@@ -3,13 +3,16 @@ import { FaCog } from 'react-icons/fa';
 import LanguageChanger from './LanguageChanger';
 import Modal from '../Modal';
 import ThemeChanger from './ThemeChanger';
+import { useContext } from 'react';
+import { NavContext } from '@/lib/context';
 
-const Settings = ({
-  settingsTitle,
-  exitButtonText,
-  darkModeTitle,
-  languagesTitle
-}) => {
+const Settings = () => {
+  const {
+    settingsTitle_i18n,
+    exitButtonText_i18n,
+    darkModeTitle_i18n,
+    languagesTitle_i18n
+  } = useContext(NavContext);
   const { isOpen, onToggle, onClose } = useModalState();
   return (
     <>
@@ -22,13 +25,13 @@ const Settings = ({
       </button>
       <Modal
         hidden={!isOpen}
-        title={settingsTitle}
-        button1={exitButtonText}
+        title={settingsTitle_i18n}
+        button1={exitButtonText_i18n}
         handleClose={onClose}
       >
         <div className="flex flex-wrap justify-center text-center">
-          <ThemeChanger title={darkModeTitle} />
-          <LanguageChanger title={languagesTitle} />
+          <ThemeChanger title={darkModeTitle_i18n} />
+          <LanguageChanger title={languagesTitle_i18n} />
         </div>
       </Modal>
     </>

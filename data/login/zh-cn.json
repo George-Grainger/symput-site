@@ -1,58 +1,58 @@
 {
-  "title": "Sign in to Symput",
-  "loginPage": {
-    "heading": "Welcome",
-    "signInWith": "Sign in with",
-    "credentials": "Or through credentials",
-    "signIn": "Sign in",
-    "signUp": "Sign up",
-    "email": "Email",
-    "emailEG": "your@email.com",
-    "password": "Password",
-    "reminder": "Forgot password?",
-    "repeatPassword": "Repeat password"
+  "title_i18n": "Sign in to Symput",
+  "loginPage_i18n": {
+    "heading_i18n": "Welcome",
+    "signInWith_i18n": "Sign in with",
+    "credentials_i18n": "Or through credentials",
+    "signIn_i18n": "Sign in",
+    "signUp_i18n": "Sign up",
+    "email_i18n": "Email",
+    "emailEG_i18n": "your@email.com",
+    "password_i18n": "Password",
+    "reminder_i18n": "Forgot password?",
+    "repeatPassword_i18n": "Repeat password"
   },
 
-  "usernameForm": {
-    "heading": "You're in",
-    "username": "Username",
-    "button": "choose",
-    "toast": {
-      "loading": "Reserving your name",
-      "success": "Username saved",
-      "error": "Uh oh, something went wrong, please try again."
+  "usernameForm_i18n": {
+    "heading_i18n": "You're in",
+    "username_i18n": "Username",
+    "button_i18n": "choose",
+    "toast_i18n": {
+      "loading_i18n": "Reserving your name",
+      "success_i18n": "Username saved",
+      "error_i18n": "Uh oh, something went wrong, please try again."
     },
-    "errors": {
-      "minLength": "Username must be 3 characters or more",
-      "maxLength": "Usernames must be 20 characters or less",
-      "pattern": "Username is invalid",
-      "inUse": "Username is already in use",
-      "checking": "Checking...",
-      "nearLim": "20 characters is the max limit - checking",
-      "isAvailable": "is available"
+    "errors_i18n": {
+      "minLength_i18n": "Username must be 3 characters or more",
+      "maxLength_i18n": "Usernames must be 20 characters or less",
+      "pattern_i18n": "Username is invalid",
+      "inUse_i18n": "Username is already in use",
+      "checking_i18n": "Checking...",
+      "nearLim_i18n": "20 characters is the max limit - checking",
+      "isAvailable_i18n": "is available"
     }
   },
 
-  "verifyPage": {
-    "heading": "Please verify your email",
-    "p1Subtitle": "If you signed up through Facebook, Twitter, GitHub or Google",
-    "p1Content": "The link will be sent to the email address associated with the account you signed in with.",
-    "p2Subtitle": "If you signed up through credentials",
-    "p2Content": "The link will be sent to the email you registered the account with.",
-    "button": "Resent the verification email",
-    "toast": {
+  "verifyPage_i18n": {
+    "heading_i18n": "Please verify your email",
+    "p1Subtitle_i18n": "If you signed up through Facebook, Twitter, GitHub or Google",
+    "p1Content_i18n": "The link will be sent to the email address associated with the account you signed in with.",
+    "p2Subtitle_i18n": "If you signed up through credentials",
+    "p2Content_i18n": "The link will be sent to the email you registered the account with.",
+    "button_i18n": "Resent the verification email",
+    "toast_i18n": {
       "loading": "Sending email",
       "success": "Email sent",
       "error": "Email failed to send, please try again"
     }
   },
 
-  "completedPage": {
-    "heading": "Congratulations",
-    "subheading": "You're fully signed up",
-    "p1": "Let us know your feedback through the admin area.",
-    "p2": "We'd love to know what you think",
-    "button": "Take a look round",
-    "imgAlt": "Congratulations!"
+  "completedPage_i18n": {
+    "heading_i18n": "Congratulations",
+    "subheading_i18n": "You're fully signed up",
+    "p1_i18n": "Let us know your feedback through the admin area.",
+    "p2_i18n": "We'd love to know what you think",
+    "button_i18n": "Take a look round",
+    "imgAlt_i18n": "Congratulations!"
   }
 }

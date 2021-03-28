@@ -51,7 +51,11 @@ export default function UserProfilePage({
   footerData
 }) {
   return (
-    <Layout title={username} navbarData={navbarData} footerData={footerData}>
+    <Layout
+      title={`Symput - ${username}`}
+      navbarData={navbarData}
+      footerData={footerData}
+    >
       <UserCard user={user} posts={posts} />
     </Layout>
   );

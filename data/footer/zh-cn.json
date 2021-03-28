@@ -1,58 +1,58 @@
 {
-  "socialsTitle": "在社交媒体上关注我们！",
-  "socialsSubtitle": "在任何这些平台上找到我们以保持更新。",
-  "columns": [
+  "title_i18n": "在社交媒体上关注我们！",
+  "subtitle_i18n": "在任何这些平台上找到我们以保持更新。",
+  "columns_i18n": [
     {
-      "title": "有用的链接",
-      "links": [
-        { "link": "/aims", "text": "目的" },
-        { "link": "/team", "text": "团队" },
+      "title_i18n": "有用的链接",
+      "links_i18n": [
+        { "link_i18n": "/aims", "text_i18n": "目的" },
+        { "link_i18n": "/team", "text_i18n": "团队" },
         {
-          "link": "/release",
-          "text": "发布日期"
+          "link_i18n": "/release",
+          "text_i18n": "发布日期"
         },
         {
-          "link": "/feedback",
-          "text": "回馈"
+          "link_i18n": "/feedback",
+          "text_i18n": "回馈"
         }
       ]
     },
     {
-      "title": "有用的链接",
-      "links": [
+      "title_i18n": "有用的链接",
+      "links_i18n": [
         {
-          "link": "/updates",
-          "text": "更新"
+          "link_i18n": "/updates",
+          "text_i18n": "更新"
         },
-        { "link": "/license", "text": "执照" },
+        { "link_i18n": "/license", "text_i18n": "执照" },
         {
-          "link": "/languages",
-          "text": "语言能力"
+          "link_i18n": "/languages",
+          "text_i18n": "语言能力"
         },
         {
-          "link": "/accessibility",
-          "text": "辅助功能"
+          "link_i18n": "/accessibility",
+          "text_i18n": "辅助功能"
         }
       ]
     },
     {
-      "title": "其他资源",
-      "links": [
+      "title_i18n": "其他资源",
+      "links_i18n": [
         {
-          "link": "/contact-us",
-          "text": "联系我们"
+          "link_i18n": "/contact-us",
+          "text_i18n": "联系我们"
         },
         {
-          "link": "/privacy-policy",
-          "text": "隐私政策"
+          "link_i18n": "/privacy-policy",
+          "text_i18n": "隐私政策"
         },
         {
-          "link": "/terms",
-          "text": "服务条款"
+          "link_i18n": "/terms",
+          "text_i18n": "服务条款"
         },
         {
-          "link": "/credits",
-          "text": "学分"
+          "link_i18n": "/credits",
+          "text_i18n": "学分"
         }
       ]
     }
