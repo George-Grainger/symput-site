@@ -12,7 +12,7 @@
     "repeatPassword_i18n": "Repeat password",
     "resetLink_i18n": "Send reset link",
     "goBack_i18n": "Go back",
-    "signInSuccess_i18n": "Logged in sucessfully",
+    "signInSuccess_i18n": "Sign in successful",
     "signUpSuccess_i18n": "Account registered"
   },
 
@@ -24,7 +24,7 @@
     "toast_i18n": {
       "loading": "Reserving your name",
       "success": "Username saved",
-      "error": "Uh oh, something went wrong, please try again."
+      "error": "Sorry, something went wrong, please try again."
     }
   },
 
@@ -33,7 +33,7 @@
     "p1Subtitle_i18n": "If you signed up through Facebook, Twitter, GitHub or Google",
     "p1Content_i18n": "The link will be sent to the email address associated with the account you signed in with.",
     "p2Subtitle_i18n": "If you signed up through credentials",
-    "p2Content_i18n": "The link will be sent to the email you registered the account with.",
+    "p2Content_i18n": "The link will be sent to the email with which you registered the account.",
     "button_i18n": "Resend the verification email",
     "toast_i18n": {
       "loading": "Sending email",
@@ -47,7 +47,6 @@
     "subheading_i18n": "You're fully signed up",
     "p1_i18n": "Let us know your feedback through the admin area.",
     "p2_i18n": "We'd love to know what you think",
-    "button_i18n": "Take a look round",
-    "imgAlt_i18n": "Congratulations!"
+    "button_i18n": "Take a look round the admin area"
   }
 }

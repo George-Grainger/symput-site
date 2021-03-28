@@ -15,14 +15,14 @@
   "languagesTitle_i18n": "语言能力",
   "exitButtonText_i18n": "出口",
 
-  "admin_i18n": "Admin",
-  "adminTagline_i18n": "View the admin area",
-  "profile_i18n": "Profile",
-  "profileTagline_i18n": "View your current profile",
-  "signOut_i18n": "Sign out",
+  "admin_i18n": "行政",
+  "adminTagline_i18n": "查看管理区",
+  "profile_i18n": "个人资料",
+  "profileTagline_i18n": "查看您当前的个人资料",
+  "signOut_i18n": "登出",
   "signOutToast_i18n": {
-    "loading": "Logging out",
-    "success": "Logged out successfully",
-    "error": "Uh oh, something went wrong, please try again."
+    "loading": "退出中",
+    "success": "成功退出",
+    "error": "抱歉，出了点问题，请重试。"
   }
 }

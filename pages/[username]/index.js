@@ -1,7 +1,10 @@
-import { getUserWithUsername, postToJSON } from '@/lib/firebase';
+import { getUserWithUsername } from '@/lib/firebase';
 import Layout from 'layout/Layout';
-import { getFooterData, getNavbarData } from '@/lib/pageContent';
+import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import UserCard from '@/components/Cards/UserCard';
+import { getMoreUserPublishedPosts } from '@/lib/db-utils';
+import { useState } from 'react';
+import { UserPostsContext } from '@/lib/context';
 
 export async function getServerSideProps({ query, locale }) {
   const { username } = query;
@@ -16,19 +19,11 @@ export async function getServerSideProps({ query, locale }) {
   }
 
   // JSON serializable data
-  let user = null;
-  let posts = null;
+  const user = userDoc.data();
+  const [initialPosts, initialIsEnd] = await getMoreUserPublishedPosts(userDoc);
 
-  if (userDoc) {
-    user = userDoc.data();
-    const postsQuery = userDoc.ref
-      .collection('posts')
-      .where('published', '==', true)
-      .orderBy('createdAt', 'desc')
-      .limit(5);
-    posts = (await postsQuery.get()).docs.map(postToJSON);
-  }
-
+  const itemListData = getPageData(locale, 'feedback-itemlist');
+  const pageData = getPageData(locale, 'user-profile');
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
 
@@ -36,7 +31,10 @@ export async function getServerSideProps({ query, locale }) {
     props: {
       user,
       username,
-      posts,
+      pageData,
+      initialPosts,
+      initialIsEnd,
+      itemListData,
       navbarData,
       footerData
     } // will be passed to the page component as props
@@ -46,17 +44,24 @@ export async function getServerSideProps({ query, locale }) {
 export default function UserProfilePage({
   user,
   username,
-  posts,
+  pageData,
+  initialPosts,
+  initialIsEnd,
+  itemListData,
   navbarData,
   footerData
 }) {
+  const [posts, setPosts] = useState(initialPosts);
+  const [isEnd, setIsEnd] = useState(initialIsEnd);
   return (
     <Layout
       title={`Symput - ${username}`}
       navbarData={navbarData}
       footerData={footerData}
     >
-      <UserCard user={user} posts={posts} />
+      <UserPostsContext.Provider value={{ posts, setPosts, isEnd, setIsEnd }}>
+        <UserCard user={user} itemListData={itemListData} {...pageData} />
+      </UserPostsContext.Provider>
     </Layout>
   );
 }

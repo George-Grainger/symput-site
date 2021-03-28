@@ -40,7 +40,6 @@ export default function SignIn({
   pageData,
   errorsData
 }) {
-  console.log(errorsData);
   const {
     user,
     username,

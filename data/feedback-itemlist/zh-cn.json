@@ -1,8 +1,8 @@
 {
-  "more_i18n": "Load more",
-  "reachedEnd_i18n": "You've reached the end",
-  "error_i18n": "Please try again",
-  "words_i18n": "words",
-  "minRead_i18n": "min read",
-  "unpublished_i18n": "Unpublished"
+  "loadMore_i18n": "查看更多",
+  "reachedEnd_i18n": "你到了尽头",
+  "error_i18n": "发生错误，请重试",
+  "words_i18n": "字",
+  "minRead_i18n": "分钟阅读",
+  "unpublished_i18n": "未发表"
 }

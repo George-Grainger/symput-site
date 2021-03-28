@@ -1,6 +1,6 @@
 {
   "title_i18n": "Admin en",
-  "subtitle_i18n": "Create posts or manage your account below.",
+  "subtitle_i18n": "Give feedback or manage your account below.",
   "posts_i18n": "Posts",
   "account_i18n": "Account",
 
@@ -15,13 +15,13 @@
     "slugInputLabel_i18n": "Slug",
     "toast_i18n": {
       "loading": "Initalising feedback",
-      "success": "Feedback Initalised!",
-      "error": "Uh oh, please try again."
+      "success": "Feedback Initalised",
+      "error": "Sorry, an error occurred, please try again."
     }
   },
 
   "accountSettings_i18n": {
-    "info_i18n": "Info",
+    "info_i18n": "Account information",
     "add_i18n": "Add",
     "update_i18n": "Update",
     "loading_i18n": "Loading...",

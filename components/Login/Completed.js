@@ -11,8 +11,7 @@ const Completed = () => {
     subheading_i18n,
     p1_i18n,
     p2_i18n,
-    button_i18n,
-    imgAlt_i18n
+    button_i18n
   } = completedPage_i18n;
   const { username } = useContext(UserContext);
   return (
@@ -28,7 +27,7 @@ const Completed = () => {
           src="/images/celebration.svg"
           height="200px"
           width="392px"
-          alt={imgAlt_i18n}
+          alt={heading_i18n}
         />
         <p>
           {p1_i18n}
@@ -37,7 +36,7 @@ const Completed = () => {
         </p>
         <button
           onClick={() => router.push('/admin')}
-          className="btn btn-yellow w-3/4 mx-auto"
+          className="btn btn-yellow mx-auto"
         >
           {button_i18n}
         </button>

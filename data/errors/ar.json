@@ -1,32 +1,32 @@
 {
   "signInErrors_i18n": {
-    "validEmail_i18n": "Please enter a valid email address",
-    "minLength_i18n": "Password must be 8 characters or more",
-    "maxLength_i18n": "Password must be 40 characters or less",
-    "passwordMatch_i18n": "The passwords do not match"
+    "validEmail_i18n": "يرجى إدخال عنوان بريد إلكتروني صالح",
+    "minLength_i18n": "يجب أن تتكون كلمة المرور من 8 أحرف أو أكثر",
+    "maxLength_i18n": "يجب أن تكون كلمة المرور 40 حرفًا أو أقل",
+    "passwordMatch_i18n": "كلمات السر لا تتطابق"
   },
 
   "usernameErrors_i18n": {
-    "minLength_i18n": "Username must be 3 characters or more",
-    "maxLength_i18n": "Usernames must be 20 characters or less",
-    "pattern_i18n": "Username is invalid",
-    "inUse_i18n": "Username is already in use",
-    "checking_i18n": "Checking...",
-    "nearLim_i18n": "20 characters is the max limit - checking",
-    "isAvailable_i18n": "is available"
+    "minLength_i18n": "يجب أن يتكون اسم المستخدم من 3 أحرف أو أكثر",
+    "maxLength_i18n": "يجب أن تكون أسماء المستخدمين 20 حرفًا أو أقل",
+    "pattern_i18n": "إسم المستخدم غير صحيح",
+    "inUse_i18n": "هذا الاسم مستخدم من قبل شخص ما",
+    "checking_i18n": "جاري التحقق ...",
+    "nearLim_i18n": "20 حرفًا هو الحد الأقصى. جارٍ التحقق ...",
+    "isAvailable_i18n": "متاح"
   },
 
   "createFeedbackErrors": {
-    "minLengthTitle_i18n": "Your title must be 5 charcters or more",
-    "maxLengthtitle_i18n": "Your title must be 20 characters or less",
-    "minLengthSlug_i18n": "Your slug must be 3 characters or more",
-    "maxLengthSlug_i18n": "Your slug must be 50 characters or less",
-    "invallidSlug": "The format of your slug is not valid"
+    "minLengthTitle_i18n": "يجب أن يتكون عنوانك من 5 أحرف أو أكثر",
+    "maxLengthtitle_i18n": "يجب أن يكون عنوانك 20 حرفًا أو أقل",
+    "minLengthSlug_i18n": "يجب أن يتكون مسارك من 3 أحرف أو أكثر",
+    "maxLengthSlug_i18n": "يجب أن يتكون مسارك من 50 حرفًا أو أقل",
+    "invallidSlug": "تنسيق المسار الخاص بك غير صالح"
   },
 
   "genericErrors_i18n": {
-    "required_i18n": "This is a required field",
-    "signInFailure_i18n": "Username or password incorrect",
-    "alreadyExists_i18n": "This user already exists, sign in or reset your password."
+    "required_i18n": "هذا مجال مطلوب",
+    "signInFailure_i18n": "اسم المستخدم أو كلمة المرور غير صحيحة",
+    "alreadyExists_i18n": "هذا المستخدم موجود بالفعل ، قم بتسجيل الدخول أو إعادة تعيين كلمة المرور الخاصة بك."
   }
 }

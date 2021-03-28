@@ -28,7 +28,7 @@ const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   const { loading, error, execute } = useAsync({
     asyncFunction: () => getMoreFeedback(posts[posts.length - 1] || -1)
   });
-  if (posts?.length == 0 && loading) {
+  if (posts?.length === 0 && loading) {
     return (
       <>
         <FeedbackPlaceholder />
@@ -39,8 +39,8 @@ const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   } else {
     return (
       <>
-        {posts.map((post) => (
-          <FeedbackItem key={uuid()} post={post} key={post.slug} />
+        {posts?.map((post) => (
+          <FeedbackItem key={uuid()} post={post} />
         ))}
         {!isEnd && (
           <button
@@ -59,7 +59,7 @@ const FeedbackItemList = ({ getMore, context, trigger = false }) => {
             )}
           </button>
         )}
-        {isEnd && (
+        {posts.length > 0 && isEnd && (
           <div className="font-bold py-3 px-6 rounded shadow-md cursor-default bg-green-500 text-white my-4">
             {reachedEnd_i18n}
           </div>
