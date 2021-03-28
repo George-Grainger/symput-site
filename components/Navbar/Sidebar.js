@@ -2,10 +2,11 @@ import uuid from 'react-uuid';
 import LoggedOut from './loggedOut';
 import Navlink from './Navlink';
 import { useContext } from 'react';
-import { UserContext } from '@/lib/context';
+import { UserContext, NavContext } from '@/lib/context';
 import { FaTimes } from 'react-icons/fa';
 
-const Sidebar = ({ links, open, clickHandler, closeAria }) => {
+const Sidebar = ({ open, clickHandler }) => {
+  const { links_i18n, closeAria_i18n } = useContext(NavContext);
   const { username } = useContext(UserContext);
   return (
     <aside
@@ -14,7 +15,7 @@ const Sidebar = ({ links, open, clickHandler, closeAria }) => {
       } fixed z-50 w-full h-full flex bg-white dark:bg-gray-900 dark:text-white justify-center items-center transition-all duration-200 overflow-auto`}
     >
       <button
-        aria-label={closeAria}
+        aria-label={closeAria_i18n}
         onClick={clickHandler}
         className={`${
           open ? 'block' : 'hidden'
@@ -25,10 +26,10 @@ const Sidebar = ({ links, open, clickHandler, closeAria }) => {
       <ul
         className={` ${open ? 'grid' : 'hidden'} gap-4 align-items-center pt-8`}
       >
-        {links?.map(({ text, link }) => {
+        {links_i18n?.map(({ text_i18n, link_i18n }) => {
           return (
-            <Navlink key={uuid()} href={link} sidebar>
-              {text}
+            <Navlink key={uuid()} href={link_i18n} sidebar>
+              {text_i18n}
             </Navlink>
           );
         })}

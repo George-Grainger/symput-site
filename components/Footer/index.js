@@ -2,16 +2,18 @@ import Triangle from '../Triangle';
 import LinkColumn from './LinkColumn';
 import Socials from './Socials';
 import uuid from 'react-uuid';
+import { useContext } from 'react';
+import { FooterContext } from '@/lib/context';
 
-const Footer = ({ data }) => {
-  const { socialsTitle, columns, socialsSubtitle } = data;
+const Footer = () => {
+  const { columns_i18n } = useContext(FooterContext);
   return (
     <footer className="relative bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white pt-8 pb-6 transition-darkmode">
       <Triangle color="text-gray-300 dark:text-gray-700" top />
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-y-8 justify-items-center text-center lg:text-left">
-        <Socials title={socialsTitle} subtitle={socialsSubtitle} />
-        {columns &&
-          columns.map((column) => {
+        <Socials />
+        {columns_i18n &&
+          columns_i18n?.map((column) => {
             return <LinkColumn key={uuid()} column={column} />;
           })}
       </div>

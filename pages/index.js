@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import Overview from '@/components/Overview';
 import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
+import { LandingConext } from '@/lib/context';
 
 export const getStaticProps = async ({ locale }) => {
   const pageData = getPageData(locale, 'landing');
@@ -17,7 +18,6 @@ export const getStaticProps = async ({ locale }) => {
 };
 
 const IndexPage = ({ pageData, navbarData, footerData }) => {
-  const { hero, overview } = pageData;
   return (
     <Layout
       title="Symput"
@@ -25,8 +25,10 @@ const IndexPage = ({ pageData, navbarData, footerData }) => {
       navbarData={navbarData}
       footerData={footerData}
     >
-      <Hero {...hero} />
-      <Overview {...overview} />
+      <LandingConext.Provider value={pageData}>
+        <Hero />
+        <Overview />
+      </LandingConext.Provider>
     </Layout>
   );
 };

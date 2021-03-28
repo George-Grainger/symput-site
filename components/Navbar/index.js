@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useContext, useState, useEffect } from 'react';
-import { UserContext } from '@/lib/context';
+import { NavContext, UserContext } from '@/lib/context';
 import LoggedIn from './loggedIn';
 import LoggedOut from './loggedOut';
 import Navlink from './Navlink';
@@ -11,9 +11,8 @@ import Settings from './Settings';
 import SymputLogo from '../Icons/SymputLogo';
 
 // Top navbar
-export default function Navbar({ data, transparent }) {
-  const { links, loginText, sidebarInfo, settingsInfo } = data;
-  const { sidebarOpenAria, sidebarCloseAria } = sidebarInfo;
+export default function Navbar({ transparent }) {
+  const { links_i18n, sidebarOpenAria_i18n } = useContext(NavContext);
   const { user, username, loading, error } = useContext(UserContext);
   const [navScrolled, setNavScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -35,7 +34,7 @@ export default function Navbar({ data, transparent }) {
   }, []);
 
   return (
-    <>
+    <header>
       <nav
         className={
           (transparent && !navScrolled
@@ -53,10 +52,10 @@ export default function Navbar({ data, transparent }) {
           </Link>
 
           <ul className="lg:flex hidden">
-            {links?.map(({ text, link }) => {
+            {links_i18n?.map(({ text_i18n, link_i18n }) => {
               return (
-                <Navlink key={uuid()} href={link}>
-                  {text}
+                <Navlink key={uuid()} href={link_i18n}>
+                  {text_i18n}
                 </Navlink>
               );
             })}
@@ -64,11 +63,11 @@ export default function Navbar({ data, transparent }) {
 
           <ul className="flex items-center">
             <li className="md:mx-3">
-              <Settings {...settingsInfo} />
+              <Settings />
             </li>
             <li className="md:mx-3">
               <button
-                aria-label={sidebarOpenAria}
+                aria-label={sidebarOpenAria_i18n}
                 className="block lg:hidden text-xl sm:p-2 p-3 focus:outline-none link-standard"
                 onClick={() => setSidebarOpen(true)}
               >
@@ -77,19 +76,14 @@ export default function Navbar({ data, transparent }) {
             </li>
 
             {/* user is not signed OR has not created username */}
-            {!username && <LoggedOut loginText={loginText} />}
+            {!username && <LoggedOut />}
 
             {/* user is signed-in and has username */}
             {username && <LoggedIn />}
           </ul>
         </div>
       </nav>
-      <Sidebar
-        closeAria={sidebarCloseAria}
-        links={links}
-        open={sidebarOpen}
-        clickHandler={() => setSidebarOpen(false)}
-      />
-    </>
+      <Sidebar open={sidebarOpen} clickHandler={() => setSidebarOpen(false)} />
+    </header>
   );
 }

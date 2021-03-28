@@ -1,4 +1,4 @@
-import { UserContext } from '@/lib/context';
+import { UserContext, SignInContext } from '@/lib/context';
 import { useContext } from 'react';
 import dynamic from 'next/dynamic';
 import Layout from 'layout/Layout';
@@ -63,7 +63,11 @@ export default function SignIn({ navbarData, footerData, pageData }) {
     <Layout navbarData={navbarData} footerData={footerData}>
       <section className="section-default section-default-padding">
         <div className="card bg-gray-900 text-white md:min-h-fs-card min-w-fs-card">
-          <div>{getCurrentState()}</div>
+          <div>
+            <SignInContext.Provider value={pageData}>
+              {getCurrentState()}
+            </SignInContext.Provider>
+          </div>
         </div>
       </section>
     </Layout>

@@ -1,23 +1,23 @@
 {
-  "hero": {
-    "title": "Simplifying the communication of maths",
-    "subtitle": "It's logical",
-    "buttonText": "See an overview"
+  "hero_i18n": {
+    "title_i18n": "Simplifying the communication of maths",
+    "subtitle_i18n": "It's logical",
+    "buttonText_i18n": "See an overview"
   },
-  "overview": {
-    "card1Title": "Aims",
-    "card1Content": "Through our new keyboard, we aim to make it possible to easily communicate maths over all the popular messaging apps, while still providing a product which is comfortable for every day use.",
-    "card2Title": "The Team",
-    "card2Content": "Through our new keyboard, we aim to make it possible to easily communicate maths over all the popular messaging apps, while still providing a product which is comfortable for every day use.",
-    "card3Title": "Release Date",
-    "card3Content": "Through our new keyboard, we aim to make it possible to easily communicate maths over all the popular messaging apps, while still providing a product which is comfortable for every day use.",
-    "card4Title": "Feedback",
-    "card4Content": "Through our new keyboard, we aim to make it possible to easily communicate maths over all the popular messaging apps, while still providing a product which is comfortable for every day use.",
-    "learnMore": "Learn more",
-    "sideTextTitle": "Our Progress",
-    "sideTextP1": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextP2": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextP3": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextLink": "Recent Updates"
+  "overview_i18n": {
+    "card1Title_i18n": "Aims",
+    "card1Content_i18n": "Through our new keyboard, we aim to make it possible to easily communicate maths over all the popular messaging apps, while still providing a product which is comfortable for every day use.",
+    "card2Title_i18n": "The Team",
+    "card2Content_i18n": "Through our new keyboard, we aim to make it possible to easily communicate maths over all the popular messaging apps, while still providing a product which is comfortable for every day use.",
+    "card3Title_i18n": "Release Date",
+    "card3Content_i18n": "Through our new keyboard, we aim to make it possible to easily communicate maths over all the popular messaging apps, while still providing a product which is comfortable for every day use.",
+    "card4Title_i18n": "Feedback",
+    "card4Content_i18n": "Through our new keyboard, we aim to make it possible to easily communicate maths over all the popular messaging apps, while still providing a product which is comfortable for every day use.",
+    "learnMore_i18n": "Learn more",
+    "sideTextTitle_i18n": "Our Progress",
+    "sideTextP1_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
+    "sideTextP2_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
+    "sideTextP3_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
+    "sideTextLink_i18n": "Recent Updates"
   }
 }

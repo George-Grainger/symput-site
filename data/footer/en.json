@@ -1,58 +1,58 @@
 {
-  "socialsTitle": "Follow us on social media!",
-  "socialsSubtitle": "Find us on any of these platforms to stay updated.",
-  "columns": [
+  "title_i18n": "Follow us on social media!",
+  "subtitle_i18n": "Find us on any of these platforms to stay updated.",
+  "columns_i18n": [
     {
-      "title": "Useful links",
-      "links": [
-        { "link": "/aims", "text": "Aims" },
-        { "link": "/team", "text": "The Team" },
+      "title_i18n": "Useful links",
+      "links_i18n": [
+        { "link_i18n": "/aims", "text_i18n": "Aims" },
+        { "link_i18n": "/team", "text_i18n": "The Team" },
         {
-          "link": "/release",
-          "text": "Release Date"
+          "link_i18n": "/release",
+          "text_i18n": "Release Date"
         },
         {
-          "link": "/feedback",
-          "text": "Feedback"
+          "link_i18n": "/feedback",
+          "text_i18n": "Feedback"
         }
       ]
     },
     {
-      "title": "Useful links",
-      "links": [
+      "title_i18n": "Useful links",
+      "links_i18n": [
         {
-          "link": "/updates",
-          "text": "Updates"
+          "link_i18n": "/updates",
+          "text_i18n": "Updates"
         },
-        { "link": "/license", "text": "License" },
+        { "link_i18n": "/license", "text_i18n": "License" },
         {
-          "link": "/languages",
-          "text": "Languages"
+          "link_i18n": "/languages",
+          "text_i18n": "Languages"
         },
         {
-          "link": "/accessibility",
-          "text": "Accessibility"
+          "link_i18n": "/accessibility",
+          "text_i18n": "Accessibility"
         }
       ]
     },
     {
-      "title": "Other resources",
-      "links": [
+      "title_i18n": "Other resources",
+      "links_i18n": [
         {
-          "link": "/contact-us",
-          "text": "Contact Us"
+          "link_i18n": "/contact-us",
+          "text_i18n": "Contact Us"
         },
         {
-          "link": "/privacy-policy",
-          "text": "Privacy Policy"
+          "link_i18n": "/privacy-policy",
+          "text_i18n": "Privacy Policy"
         },
         {
-          "link": "/terms",
-          "text": "Terms of service"
+          "link_i18n": "/terms",
+          "text_i18n": "Terms of service"
         },
         {
-          "link": "/credits",
-          "text": "Credits"
+          "link_i18n": "/credits",
+          "text_i18n": "Credits"
         }
       ]
     }
