@@ -1,4 +1,4 @@
-import { UserContext, SignInContext } from '@/lib/context';
+import { UserContext, SignInContext, ErrorsContext } from '@/lib/context';
 import { useContext } from 'react';
 import dynamic from 'next/dynamic';
 import Layout from 'layout/Layout';
@@ -19,7 +19,8 @@ const VerifyUser = dynamic(() => import('@/components/Login/VerifyUser'), {
 });
 
 export const getStaticProps = async ({ locale }) => {
-  const pageData = getPageData(locale, 'login');
+  const pageData = getPageData(locale, 'sign-in');
+  const errorsData = getPageData(locale, 'errors');
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
 
@@ -27,13 +28,19 @@ export const getStaticProps = async ({ locale }) => {
     props: {
       navbarData,
       footerData,
-      pageData
+      pageData,
+      errorsData
     }
   };
 };
 
-export default function SignIn({ navbarData, footerData, pageData }) {
-  const { loginPage, usernamePage, verifyPage, completedPage } = pageData;
+export default function SignIn({
+  navbarData,
+  footerData,
+  pageData,
+  errorsData
+}) {
+  console.log(errorsData);
   const {
     user,
     username,
@@ -49,13 +56,13 @@ export default function SignIn({ navbarData, footerData, pageData }) {
     } else if (loading || usernameLoading) {
       return <LoginPlaceHolder />;
     } else if (!user) {
-      return <Login {...loginPage} />;
+      return <Login />;
     } else if (!username) {
-      return <UsernameForm {...usernamePage} />;
+      return <UsernameForm />;
     } else if (!verified) {
-      return <VerifyUser {...verifyPage} />;
+      return <VerifyUser />;
     } else {
-      return <Completed {...completedPage} />;
+      return <Completed />;
     }
   };
 
@@ -65,7 +72,9 @@ export default function SignIn({ navbarData, footerData, pageData }) {
         <div className="card bg-gray-900 text-white md:min-h-fs-card min-w-fs-card">
           <div>
             <SignInContext.Provider value={pageData}>
-              {getCurrentState()}
+              <ErrorsContext.Provider value={errorsData}>
+                {getCurrentState()}
+              </ErrorsContext.Provider>
             </SignInContext.Provider>
           </div>
         </div>

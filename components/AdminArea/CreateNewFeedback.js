@@ -1,4 +1,4 @@
-import { UserContext } from '@/lib/context';
+import { UserContext, ErrorsContext, AdminContext } from '@/lib/context';
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import kebabCase from 'lodash.kebabcase';
@@ -13,6 +13,8 @@ import { createFeedback } from '@/lib/db-utils';
 const CreateNewFeedback = () => {
   const router = useRouter();
   const { user, username } = useContext(UserContext);
+  const { createFeedbackErrors } = useContext(ErrorsContext);
+  const { createFeedback_i18n } = useContext(AdminContext);
   const { isOpen, onToggle, onClose } = useModalState();
   const { register, errors, handleSubmit, watch } = useForm();
   const title = watch('feedbackTitle');
@@ -20,11 +22,7 @@ const CreateNewFeedback = () => {
   const createPost = async ({ feedbackTitle, feedbackSlug }) => {
     await toast.promise(
       createFeedback(feedbackTitle, feedbackSlug, user, username),
-      {
-        loading: 'Initalising feedback',
-        success: 'Feedback Initalised!',
-        error: 'Uh oh, please try again.'
-      }
+      createFeedback_i18n.toast_i18n
     );
 
     router.push(`/admin/${feedbackSlug}`);
@@ -36,15 +34,15 @@ const CreateNewFeedback = () => {
         className="p-8 mt-6 bg-transparent rounded-lg min-w-feedback prose prose-xl dark:prose-dark border-4 border-dashed border-gray-900 dark:border-gray-300 text-center cursor-pointer max-w-none"
         onClick={onToggle}
       >
-        <h3>Create Feedback</h3>
-        <p>Let us know what else you have to say</p>
+        <h3>{createFeedback_i18n.title_i18n}</h3>
+        <p>{createFeedback_i18n.letUsKnow_i18n}</p>
         <FaPlusCircle className="h-10 w-10 mx-auto" />
       </button>
       <Modal
         hidden={!isOpen}
-        title="Create A New Post"
-        button1="Later"
-        button2="Create Post"
+        title={createFeedback_i18n.modalTitle_i18n}
+        button1={createFeedback_i18n.modalButton1_i18n}
+        button2={createFeedback_i18n.modalButton2_i18n}
         handleClose={onClose}
         handleSave={handleSubmit(createPost)}
         zIndex="z-40"
@@ -54,19 +52,19 @@ const CreateNewFeedback = () => {
             className="input-bg-toggle mb-4"
             labelclassname="font-semibold text-lg"
             required
-            label="Title"
+            label={createFeedback_i18n.titleInputLabel_i18n}
             errors={errors}
-            placeholder="My interesting title"
+            placeholder={createFeedback_i18n.titleInputPlaceholder_i18n}
             name="feedbackTitle"
             ref={register({
               required: true,
               minLength: {
                 value: 5,
-                message: 'Your title must be 5 charcters or more'
+                message: createFeedbackErrors.minLengthTitle_i18n
               },
               maxLength: {
                 value: 20,
-                message: 'Your title must be 20 characters or less'
+                message: createFeedbackErrors.maxLengthtitle_i18n
               }
             })}
           />
@@ -74,7 +72,7 @@ const CreateNewFeedback = () => {
             className="input-bg-toggle mb-4"
             labelclassname="font-semibold text-lg"
             required
-            label="Slug"
+            label={createFeedback_i18n.slugInputLabel_i18n}
             errors={errors}
             defaultValue={encodeURI(kebabCase(title))}
             name="feedbackSlug"
@@ -82,15 +80,15 @@ const CreateNewFeedback = () => {
               required: true,
               pattern: {
                 value: /^(?=[a-zA-Z0-9._-]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
-                message: 'The format of your slug is not valid'
+                message: createFeedbackErrors.minLengthSlug_i18n
               },
               minLength: {
                 value: 3,
-                message: 'Your slug must be 3 characters or more'
+                message: createFeedbackErrors.maxLengthSlug_i18n
               },
               maxLength: {
                 value: 50,
-                message: 'Your slug must be 50 characters or less'
+                message: createFeedbackErrors.invallidSlug
               }
             })}
           />

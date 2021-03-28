@@ -1,4 +1,28 @@
+import { useContext } from 'react';
+import { ErrorsContext } from '@/lib/context';
+
 export default function ErrorMessage({ error, className = '' }) {
+  const { genericErrors_i18n } = useContext(ErrorsContext);
+  const {
+    required_i18n,
+    signInFailure_i18n,
+    alreadyExists_i18n
+  } = genericErrors_i18n;
+
+  const errorCases = (error) => {
+    switch (error.type) {
+      case 'required':
+        return required_i18n;
+      case 'auth/user-not-found':
+      case 'auth/auth/wrong-password':
+        return signInFailure_i18n;
+      case 'auth/account-exists-with-different-credential':
+        return alreadyExists_i18n;
+      default:
+        return error.message;
+    }
+  };
+
   if (error) {
     return (
       <p role="alert" className={`${className} form-error`}>
@@ -9,17 +33,3 @@ export default function ErrorMessage({ error, className = '' }) {
 
   return null;
 }
-
-const errorCases = (error) => {
-  switch (error.type) {
-    case 'required':
-      return 'This is a required field';
-    case 'auth/user-not-found':
-    case 'auth/auth/wrong-password':
-      return 'Incorrect username or password';
-    case 'auth/account-exists-with-different-credential':
-      return 'This user already exists, sign in or reset your password.';
-    default:
-      return error.message;
-  }
-};

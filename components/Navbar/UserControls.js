@@ -1,15 +1,21 @@
 import Link from 'next/link';
+import { useContext } from 'react';
 import { FaFingerprint, FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
 import { auth } from '@/lib/firebase';
 import toast from 'react-hot-toast';
+import { NavContext } from '@/lib/context';
 
 const UserControls = ({ username, visible }) => {
+  const {
+    admin_i18n,
+    adminTagline_i18n,
+    profile_i18n,
+    profileTagline_i18n,
+    signOut_i18n,
+    signOutToast_i18n
+  } = useContext(NavContext);
   const signOut = () => {
-    toast.promise(auth.signOut(), {
-      loading: 'Logging out',
-      success: <b>Logged out successfully</b>,
-      error: <b>Uh oh, something went wrong, please try again.</b>
-    });
+    toast.promise(auth.signOut(), signOutToast_i18n);
   };
 
   return (
@@ -24,8 +30,8 @@ const UserControls = ({ username, visible }) => {
             <a className="usercontrol-button button-on-bg">
               <FaFingerprint className="h-6 w-6 ml-3" />
               <div className="ml-3">
-                <p className="font-semibold">Admin</p>
-                <p className="text-sm">View the admin area</p>
+                <p className="font-semibold">{admin_i18n}</p>
+                <p className="text-sm">{adminTagline_i18n}</p>
               </div>
             </a>
           </Link>
@@ -34,20 +40,20 @@ const UserControls = ({ username, visible }) => {
             <a className="usercontrol-button button-on-bg">
               <FaUserCircle className="h-6 w-6 ml-3" />
               <div className="ml-3">
-                <p className="font-semibold">Profile</p>
-                <p className="text-sm">View your current profile</p>
+                <p className="font-semibold">{profile_i18n}</p>
+                <p className="text-sm">{profileTagline_i18n}</p>
               </div>
             </a>
           </Link>
 
           <button
             className="usercontrol-button button-on-bg"
-            aria-label="Log out"
+            aria-label={signOut_i18n}
             onClick={signOut}
           >
             <FaSignOutAlt className="h-6 w-6 ml-3" />
             <div className="ml-3">
-              <p className="font-semibold">Log out</p>
+              <p className="font-semibold">{signOut_i18n}</p>
             </div>
           </button>
         </div>
