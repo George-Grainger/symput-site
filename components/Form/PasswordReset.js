@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from './Input';
 import { auth } from '@/lib/firebase';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
+import { SignInContext } from '@/lib/context';
 
 const PasswordReset = ({ email, handleReturn }) => {
+  const { loginPage_i18n } = useContext(SignInContext);
+  const { email_i18n, resetLink_i18n, goBack_i18n } = loginPage_i18n;
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -32,6 +35,7 @@ const PasswordReset = ({ email, handleReturn }) => {
   return (
     <>
       {success ? (
+        // TODO change this page
         <div>Success</div>
       ) : (
         <form
@@ -39,7 +43,7 @@ const PasswordReset = ({ email, handleReturn }) => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <Input
-            label="Email"
+            label={email_i18n}
             errors={errors}
             defaultValue={email}
             name="resetemail"
@@ -54,14 +58,14 @@ const PasswordReset = ({ email, handleReturn }) => {
             className="btn btn-yellow my-4"
             disabled={isSubmitting}
           >
-            {sending ? <ButtonEllipsis /> : 'Send reset link'}
+            {sending ? <ButtonEllipsis /> : resetLink_i18n}
           </button>
 
           <a
             onClick={handleReturn}
             className="link link-dark-bg justify-self-center p-2 underline"
           >
-            Go back
+            {goBack_i18n}
           </a>
         </form>
       )}

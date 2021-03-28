@@ -13,5 +13,16 @@
   "settingsTitle_i18n": "إعدادات",
   "darkModeTitle_i18n": "تبديل الوضع الداكن",
   "languagesTitle_i18n": "اللغات",
-  "exitButtonText_i18n": "مخرج"
+  "exitButtonText_i18n": "مخرج",
+
+  "admin_i18n": "Admin",
+  "adminTagline_i18n": "View the admin area",
+  "profile_i18n": "Profile",
+  "profileTagline_i18n": "View your current profile",
+  "signOut_i18n": "Sign out",
+  "signOutToast_i18n": {
+    "loading": "Logging out",
+    "success": "Logged out successfully",
+    "error": "Uh oh, something went wrong, please try again."
+  }
 }

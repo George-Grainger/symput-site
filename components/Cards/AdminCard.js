@@ -1,19 +1,23 @@
-import { useState } from 'react';
+import { AdminContext, ErrorsContext } from '@/lib/context';
+import { useState, useContext } from 'react';
 import AccountSettings from '../AdminArea/AccountSettings';
 import AdminFeedbackList from '../AdminArea/AdminFeedbackList';
 import CreateNewFeedback from '../AdminArea/CreateNewFeedback';
 
-const AdminCard = () => {
+const AdminCard = ({ errorsData }) => {
+  const { title_i18n, subtitle_i18n, posts_i18n, account_i18n } = useContext(
+    AdminContext
+  );
   const [openTab, setOpenTab] = useState(0);
 
   return (
     <section className="section-default section-default-padding ">
       <h1 className="prose dark:prose-dark text-5xl font-semibold text-center mb-12">
-        Admin
+        {title_i18n}
       </h1>
       <div className="min-w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode">
         <h2 className="prose text-3xl dark:prose-dark mb-8 font-semibold">
-          Create posts or manage your account below.
+          {subtitle_i18n}
         </h2>
         <div className="flex w-full md:w-1/2 mb-8">
           <button
@@ -25,7 +29,7 @@ const AdminCard = () => {
             }
             onClick={() => setOpenTab(0)}
           >
-            Posts
+            {posts_i18n}
           </button>
           <button
             className={
@@ -36,7 +40,7 @@ const AdminCard = () => {
             }
             onClick={() => setOpenTab(1)}
           >
-            Account
+            {account_i18n}
           </button>
         </div>
         <div
@@ -45,7 +49,9 @@ const AdminCard = () => {
           }
         >
           <AdminFeedbackList />
-          <CreateNewFeedback />
+          <ErrorsContext.Provider value={errorsData}>
+            <CreateNewFeedback />
+          </ErrorsContext.Provider>
         </div>
         <div className={openTab === 1 ? 'block w-full' : 'hidden'}>
           <AccountSettings />

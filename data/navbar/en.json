@@ -13,5 +13,16 @@
   "settingsTitle_i18n": "Settings",
   "darkModeTitle_i18n": "Toggle dark mode",
   "languagesTitle_i18n": "Languages",
-  "exitButtonText_i18n": "Exit"
+  "exitButtonText_i18n": "Exit",
+
+  "admin_i18n": "Admin",
+  "adminTagline_i18n": "View the admin area",
+  "profile_i18n": "Profile",
+  "profileTagline_i18n": "View your current profile",
+  "signOut_i18n": "Sign out",
+  "signOutToast_i18n": {
+    "loading": "Logging out",
+    "success": "Logged out successfully",
+    "error": "Uh oh, something went wrong, please try again."
+  }
 }

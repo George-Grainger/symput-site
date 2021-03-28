@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AdminContext } from '@/lib/context';
+import { AdminPostsContext } from '@/lib/context';
 import { getPosts } from '@/lib/db-utils';
 import FeedbackItemList from '../Feedback/FeedbackItemList';
 
@@ -9,9 +9,13 @@ const AdminFeedbackList = () => {
 
   return (
     <>
-      <AdminContext.Provider value={{ posts, setPosts, isEnd, setIsEnd }}>
-        <FeedbackItemList getMore={getPosts} context={AdminContext} trigger />
-      </AdminContext.Provider>
+      <AdminPostsContext.Provider value={{ posts, setPosts, isEnd, setIsEnd }}>
+        <FeedbackItemList
+          getMore={getPosts}
+          context={AdminPostsContext}
+          trigger
+        />
+      </AdminPostsContext.Provider>
     </>
   );
 };

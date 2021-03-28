@@ -1,0 +1,37 @@
+{
+  "title_i18n": "Admin en",
+  "subtitle_i18n": "Create posts or manage your account below.",
+  "posts_i18n": "Posts",
+  "account_i18n": "Account",
+
+  "createFeedback_i18n": {
+    "title_i18n": "Create Feedback",
+    "letUsKnow_i18n": "Let us know what else you have to say",
+    "modalTitle_i18n": "Create A New Post",
+    "modalButton1_i18n": "Later",
+    "modalButton2_i18n": "Create Post",
+    "titleInputLabel_i18n": "Title",
+    "titleInputPlaceholder_i18n": "My interesting title",
+    "slugInputLabel_i18n": "Slug",
+    "toast_i18n": {
+      "loading": "Initalising feedback",
+      "success": "Feedback Initalised!",
+      "error": "Uh oh, please try again."
+    }
+  },
+
+  "accountSettings_i18n": {
+    "info_i18n": "Info",
+    "add_i18n": "Add",
+    "update_i18n": "Update",
+    "loading_i18n": "Loading...",
+    "describeYourself_i18n": "Describe yourself...",
+    "email": "Email",
+    "addEmail_i18n": "Please add an email",
+    "verfied_i18n": "Verified",
+    "isVerified_i18n": "You're verified",
+    "verifyNow_i18n": "Verify now",
+    "updatePassword_i18n": "Update password",
+    "deleteAccount_i18n": "Delete Account"
+  }
+}

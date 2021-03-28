@@ -1,10 +1,22 @@
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import CustomInput from './Input';
 import { auth } from '@/lib/firebase';
 import toast from 'react-hot-toast';
+import { SignInContext, ErrorsContext } from '@/lib/context';
 
 const SignInForm = () => {
+  const { loginPage_i18n } = useContext(SignInContext);
+  const {
+    email_i18n,
+    emailEG_i18n,
+    password_i18n,
+    signUp_i18n,
+    repeatPassword_i18n,
+    signUpSuccess_i18n
+  } = loginPage_i18n;
+  const { usernameErrors_i18n } = useContext(ErrorsContext);
+
   const {
     register,
     handleSubmit,
@@ -21,7 +33,7 @@ const SignInForm = () => {
     auth
       .createUserWithEmailAndPassword(data.suemail, data.supassword)
       .then(() => {
-        toast.success('Account registered');
+        toast.success(signUpSuccess_i18n);
       })
       .catch((error) => {
         setError('suemail', { type: error.code, message: error.message });
@@ -31,21 +43,21 @@ const SignInForm = () => {
   return (
     <form className="grid gap-4 text-left" onSubmit={handleSubmit(onSubmit)}>
       <CustomInput
-        label="Email"
+        label={email_i18n}
         errors={errors}
-        placeholder="your@email.com"
+        placeholder={emailEG_i18n}
         name="suemail"
         isrequried="true"
         ref={register({
           required: true,
           pattern: {
             value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-            message: 'Please enter a valid email address'
+            message: usernameErrors_i18n.validEmail_i18n
           }
         })}
       />
       <CustomInput
-        label="Password"
+        label={password_i18n}
         errors={errors}
         name="supassword"
         type="password"
@@ -54,23 +66,23 @@ const SignInForm = () => {
           required: true,
           minLength: {
             value: 8,
-            message: 'Password must be 8 characters or more'
+            message: usernameErrors_i18n.minLength_i18n
           },
           maxLength: {
             value: 40,
-            message: 'Password must be 40 characters or less'
+            message: usernameErrors_i18n.maxLength_i18n
           }
         })}
       />
       <CustomInput
-        label="Repeat password"
+        label={repeatPassword_i18n}
         errors={errors}
         name="supassword_repeat"
         type="password"
         isrequried="true"
         ref={register({
           validate: (value) =>
-            value === password.current || 'The passwords do not match'
+            value === password.current || usernameErrors_i18n.passwordMatch_i18n
         })}
       />
 
@@ -78,7 +90,7 @@ const SignInForm = () => {
         className="btn btn-yellow mt-4"
         disabled={isSubmitting}
         type="submit"
-        value="Sign up"
+        value={signUp_i18n}
       />
     </form>
   );

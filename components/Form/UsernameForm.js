@@ -1,13 +1,25 @@
 import { useForm } from 'react-hook-form';
 import { firestore } from '@/lib/firebase';
 import debounce from 'lodash.debounce';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useContext } from 'react';
 import UsernameMessage from '@/components/Form/UsernameMessage';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import toast from 'react-hot-toast';
 import { updateUsername } from '@/lib/db-utils';
+import { SignInContext, ErrorsContext } from '@/lib/context';
 
 const UsernameForm = () => {
+  const { usernameForm_i18n } = useContext(SignInContext);
+  const {
+    heading_i18n,
+    subheading_i18n,
+    username_i18n,
+    button_i18n,
+    toast_i18n
+  } = usernameForm_i18n;
+
+  const { usernameErrors_i18n } = useContext(ErrorsContext);
+
   const [formValue, setFormValue] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -15,11 +27,7 @@ const UsernameForm = () => {
   const re = /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 
   const onSubmit = async () => {
-    toast.promise(updateUsername(formValue), {
-      loading: 'Reserving your name',
-      success: <b>Username saved</b>,
-      error: <b>Uh oh, something went wrong, please try again.</b>
-    });
+    toast.promise(updateUsername(formValue), toast_i18n);
   };
 
   const onChange = (e) => {
@@ -60,17 +68,15 @@ const UsernameForm = () => {
 
   return (
     <div className="grid w-full h-full gap-x-10">
-      <h1 className="text-3xl font-semibold w-full">You're In</h1>
+      <h1 className="text-3xl font-semibold w-full">{heading_i18n}</h1>
       <hr className="my-6 border-b-1 border-gray-200" />
-      <h2 className="text-2xl font-semibold text-cente ">
-        Please choose a username
-      </h2>
+      <h2 className="text-2xl font-semibold text-cente ">{subheading_i18n}</h2>
       <form
         className="grid gap-4 text-left md:w-3/5 mx-auto md:pt-20"
         onSubmit={handleSubmit(onSubmit)}
       >
         <label htmlFor="username" className="required font-bold text-lg">
-          Username
+          {username_i18n}
         </label>
         <input
           className="input"
@@ -82,20 +88,20 @@ const UsernameForm = () => {
             required: true,
             minLength: {
               value: 3,
-              message: 'Usernames must be 3 characters or more'
+              message: usernameErrors_i18n.minLength_i18n
             },
             maxLength: {
               value: 20,
-              message: 'Usernames must be 20 characters or less'
+              message: usernameErrors_i18n.maxLength_i18n
             },
             pattern: {
               value: re,
-              message: 'Username is invalid'
+              message: usernameErrors_i18n.pattern_i18n
             }
           })}
         />
         <button type="submit" className="btn btn-yellow my-4">
-          {loading ? <ButtonEllipsis /> : 'Choose'}
+          {loading ? <ButtonEllipsis /> : button_i18n}
         </button>
 
         <UsernameMessage

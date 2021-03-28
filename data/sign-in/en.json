@@ -1,5 +1,4 @@
 {
-  "title_i18n": "Sign in to Symput",
   "loginPage_i18n": {
     "heading_i18n": "Welcome",
     "signInWith_i18n": "Sign in with",
@@ -10,26 +9,22 @@
     "emailEG_i18n": "your@email.com",
     "password_i18n": "Password",
     "reminder_i18n": "Forgot password?",
-    "repeatPassword_i18n": "Repeat password"
+    "repeatPassword_i18n": "Repeat password",
+    "resetLink_i18n": "Send reset link",
+    "goBack_i18n": "Go back",
+    "signInSuccess_i18n": "Logged in sucessfully",
+    "signUpSuccess_i18n": "Account registered"
   },
 
   "usernameForm_i18n": {
     "heading_i18n": "You're in",
+    "subheading_i18n": "Please choose a username",
     "username_i18n": "Username",
     "button_i18n": "choose",
     "toast_i18n": {
       "loading": "Reserving your name",
       "success": "Username saved",
       "error": "Uh oh, something went wrong, please try again."
-    },
-    "errors_i18n": {
-      "minLength_i18n": "Username must be 3 characters or more",
-      "maxLength_i18n": "Usernames must be 20 characters or less",
-      "pattern_i18n": "Username is invalid",
-      "inUse_i18n": "Username is already in use",
-      "checking_i18n": "Checking...",
-      "nearLim_i18n": "20 characters is the max limit - checking",
-      "isAvailable_i18n": "is available"
     }
   },
 
@@ -39,11 +34,11 @@
     "p1Content_i18n": "The link will be sent to the email address associated with the account you signed in with.",
     "p2Subtitle_i18n": "If you signed up through credentials",
     "p2Content_i18n": "The link will be sent to the email you registered the account with.",
-    "button_i18n": "Resent the verification email",
+    "button_i18n": "Resend the verification email",
     "toast_i18n": {
-      "loading_i18n": "Sending email",
-      "success_i18n": "Email sent",
-      "error_i18n": "Email failed to send, please try again"
+      "loading": "Sending email",
+      "success": "Email sent",
+      "error": "Email failed to send, please try again"
     }
   },
 

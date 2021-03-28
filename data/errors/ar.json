@@ -1,0 +1,32 @@
+{
+  "signInErrors_i18n": {
+    "validEmail_i18n": "Please enter a valid email address",
+    "minLength_i18n": "Password must be 8 characters or more",
+    "maxLength_i18n": "Password must be 40 characters or less",
+    "passwordMatch_i18n": "The passwords do not match"
+  },
+
+  "usernameErrors_i18n": {
+    "minLength_i18n": "Username must be 3 characters or more",
+    "maxLength_i18n": "Usernames must be 20 characters or less",
+    "pattern_i18n": "Username is invalid",
+    "inUse_i18n": "Username is already in use",
+    "checking_i18n": "Checking...",
+    "nearLim_i18n": "20 characters is the max limit - checking",
+    "isAvailable_i18n": "is available"
+  },
+
+  "createFeedbackErrors": {
+    "minLengthTitle_i18n": "Your title must be 5 charcters or more",
+    "maxLengthtitle_i18n": "Your title must be 20 characters or less",
+    "minLengthSlug_i18n": "Your slug must be 3 characters or more",
+    "maxLengthSlug_i18n": "Your slug must be 50 characters or less",
+    "invallidSlug": "The format of your slug is not valid"
+  },
+
+  "genericErrors_i18n": {
+    "required_i18n": "This is a required field",
+    "signInFailure_i18n": "Username or password incorrect",
+    "alreadyExists_i18n": "This user already exists, sign in or reset your password."
+  }
+}
