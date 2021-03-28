@@ -1,7 +1,8 @@
 import { firestore, getUserWithUsername, postToJSON } from '@/lib/firebase';
 import Layout from 'layout/Layout';
-import { getFooterData, getNavbarData } from '@/lib/pageContent';
+import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import FeedbackCard from '@/components/Cards/FeedbackCard';
+import { FeedbackItemContext } from '@/lib/context';
 
 export async function getStaticProps({ params, locale }) {
   const { username, slug } = params;
@@ -17,11 +18,12 @@ export async function getStaticProps({ params, locale }) {
     path = postRef.path;
   }
 
+  const pageData = getPageData(locale, 'feedback-post');
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
 
   return {
-    props: { post, path, navbarData, footerData },
+    props: { post, path, navbarData, footerData, pageData },
     revalidate: 100
   };
 }
@@ -47,14 +49,16 @@ export async function getStaticPaths({ locales }) {
   };
 }
 
-export default function Post(props) {
+export default function Post({ post, path, navbarData, footerData, pageData }) {
   return (
     <Layout
-      title={`Feedback - ${props.post.title}`}
-      navbarData={props.navbarData}
-      footerData={props.footerData}
+      title={`Feedback - ${post.title}`}
+      navbarData={navbarData}
+      footerData={footerData}
     >
-      <FeedbackCard {...props} />
+      <FeedbackItemContext.Provider value={pageData}>
+        <FeedbackCard passedPost={post} path={path} />
+      </FeedbackItemContext.Provider>
     </Layout>
   );
 }

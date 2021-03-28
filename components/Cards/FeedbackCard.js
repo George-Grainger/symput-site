@@ -1,19 +1,19 @@
-import { UserContext } from '@/lib/context';
+import { UserContext, FeedbackItemContext } from '@/lib/context';
 import { firestore } from '@/lib/firebase';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useContext } from 'react';
 import PostContent from '@/components/Feedback/FeedbackContent';
 import HeartButton from '@/components/HeartButton';
 import AuthCheck from '@/components/AuthCheck';
-import Metatags from '@/components/Metatags';
 import Link from 'next/link';
 import { FaEdit, FaRegHeart } from 'react-icons/fa';
 
-const FeedbackCard = (props) => {
-  const postRef = firestore.doc(props.path);
+const FeedbackCard = ({ path, passedPost }) => {
+  const postRef = firestore.doc(path);
   const [realtimePost] = useDocumentData(postRef);
-  const post = realtimePost || props.post;
+  const post = realtimePost || passedPost;
   const { user: currentUser, loading } = useContext(UserContext);
+  const { signUp_i18n } = useContext(FeedbackItemContext);
 
   return (
     <section className="section-default section-default-padding">
@@ -33,7 +33,7 @@ const FeedbackCard = (props) => {
                   <FaRegHeart className="text-red-500 inline mr-4" />
                   {post.heartCount || 0}
                   <br />
-                  <span>Sign Up</span>
+                  <span>{signUp_i18n}</span>
                 </a>
               </Link>
             }
