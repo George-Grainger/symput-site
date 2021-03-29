@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { FeedbackItemListContext, UserContext } from '@/lib/context';
 import { useState, useEffect, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
-import LinkableAvatar from '../LinkableAvatar';
 import { FaEdit, FaHeart } from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 export default function FeedbackItem({ post, initialAdmin = false }) {
   const { locale } = useRouter();
@@ -42,13 +42,15 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
             </Link>
           )}
           <Link href={`/${post.username}`} passHref>
-            <LinkableAvatar
-              height="50px"
-              width="50px"
-              className="object-cover rounded-full"
-              src={post.photoURL || '/images/hacker.png'}
-              alt="avatar"
-            />
+            <a className="flex items-center">
+              <Image
+                height="50px"
+                width="50px"
+                className="object-cover rounded-full"
+                src={post.photoURL || '/images/hacker.png'}
+                alt={`${post.username} avatar`}
+              />
+            </a>
           </Link>
           <div className="ml-4 mt-0.5">
             <Link href={`/${post.username}`}>

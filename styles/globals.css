@@ -99,7 +99,7 @@ input:checked ~ .toggle-path {
       @apply bg-yellow-500 text-black;
     }
 
-    .card-yellow > a {
+    .card-yellow a {
       @apply btn-black-inverted;
     }
 
@@ -107,7 +107,7 @@ input:checked ~ .toggle-path {
       @apply bg-gray-900 text-white;
     }
 
-    .card-black > a {
+    .card-black:not(.lg\:card-hexagon) a {
       @apply btn-yellow-inverted;
     }
 
@@ -115,7 +115,7 @@ input:checked ~ .toggle-path {
       @apply bg-gray-300 text-black;
     }
 
-    .card-gray > a {
+    .card-gray a {
       @apply btn-black-inverted;
     }
 

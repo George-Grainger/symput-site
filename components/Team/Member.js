@@ -1,8 +1,8 @@
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import IconLink from '@/components/Icons/IconLink';
 import Link from 'next/link';
-import LinkableAvatar from '../LinkableAvatar';
 import GoogleIcon from '../Icons/GoogleIcon';
+import Image from 'next/image';
 
 const Member = ({
   name,
@@ -18,13 +18,15 @@ const Member = ({
       className={`${className} flex flex-col items-center card card-black lg:card-hexagon col-span-2`}
     >
       <Link href={`/team/${slug}`}>
-        <LinkableAvatar
-          alt={name}
-          src={image || '/images/hacker.png'}
-          className="rounded-full max-w-full cursor-pointer"
-          width="64"
-          height="64"
-        />
+        <a className="flex items-center rounded-lg link-dark-bg">
+          <Image
+            alt={name}
+            src={image || '/images/hacker.png'}
+            className="rounded-full max-w-full cursor-pointer"
+            width="64"
+            height="64"
+          />
+        </a>
       </Link>
       <div className="pt-6 text-center prose prose-dark prose-lg">
         <Link href={`/team/${slug}`}>

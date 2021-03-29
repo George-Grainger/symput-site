@@ -11,6 +11,7 @@ export default function LoggedIn() {
     <li className="link-standard flex p-1 md:mx-3">
       <div className="rounded-full user-icon h-10 w-10">
         <Image
+          alt={`${username} avatar`}
           height="40px"
           width="40px"
           onClick={() => setDropDownVisible(!dropDownVisible)}
