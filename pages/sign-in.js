@@ -52,7 +52,7 @@ export default function SignIn({
   const getCurrentState = () => {
     if (error) {
       return <div>Error</div>;
-    } else if (loading || usernameLoading) {
+    } else if (loading || (user && usernameLoading)) {
       return <LoginPlaceHolder />;
     } else if (!user) {
       return <Login />;
