@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
-import { auth, storage, STATE_CHANGED } from '@/lib/firebase';
+import { auth } from '@/lib/authUtils';
+import { storage, STATE_CHANGED } from '@/lib/storage';
 import { FaCopy, FaPlusSquare } from 'react-icons/fa';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import toast from 'react-hot-toast';

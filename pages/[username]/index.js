@@ -1,8 +1,7 @@
-import { getUserWithUsername } from '@/lib/firebase';
 import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import UserCard from '@/components/Cards/UserCard';
-import { getMoreUserPublishedPosts } from '@/lib/db-utils';
+import { getMoreUserPublishedPosts, getUserWithUsername } from '@/lib/dbUtils';
 import { useState } from 'react';
 import { UserPostsContext } from '@/lib/context';
 

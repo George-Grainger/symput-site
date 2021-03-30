@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { AdminContext, UserContext } from '@/lib/context';
 import { FaCheckCircle } from 'react-icons/fa';
 import SignInForm from '../Form/SignInForm';
-import { auth, emailAuthProvider, googleAuthProvider } from '@/lib/firebase';
 import toast from 'react-hot-toast';
 
 const AccountSettings = () => {

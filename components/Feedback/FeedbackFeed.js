@@ -1,4 +1,4 @@
-import { getMorePublishedPosts } from '@/lib/db-utils';
+import { getMorePublishedPosts } from '@/lib/dbUtils';
 import { useContext } from 'react';
 import { FeedbackPostsContext, FeedbackItemListContext } from '@/lib/context';
 import FeedbackItemList from './FeedbackItemList';

@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from './Input';
-import { auth } from '@/lib/firebase';
+import { auth } from '@/lib/authUtils';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import { SignInContext } from '@/lib/context';
 

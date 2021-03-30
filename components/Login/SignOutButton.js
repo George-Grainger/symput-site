@@ -1,4 +1,4 @@
-import { auth } from '@/lib/firebase';
+import { auth } from '@/lib/authUtils';
 const SignOutButton = () => {
   return <button onClick={() => auth.signOut()}>Sign Out</button>;
 };

@@ -1,7 +1,7 @@
 import FeedbackFeed from '@/components/Feedback/FeedbackFeed';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import Layout from 'layout/Layout';
-import { getMorePublishedPosts } from '@/lib/db-utils';
+import { getMorePublishedPosts } from '@/lib/dbUtils';
 import { FeedbackPostsContext } from '@/lib/context';
 import { useState } from 'react';
 

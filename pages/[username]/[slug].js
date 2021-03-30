@@ -1,4 +1,5 @@
-import { firestore, getUserWithUsername, postToJSON } from '@/lib/firebase';
+import { firestore } from '@/lib/dbUtils';
+import { getUserWithUsername, postToJSON } from '@/lib/dbUtils';
 import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import FeedbackCard from '@/components/Cards/FeedbackCard';

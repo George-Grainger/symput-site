@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useContext } from 'react';
 import { FaFingerprint, FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
-import { auth } from '@/lib/firebase';
+import { auth } from '@/lib/authUtils';
 import toast from 'react-hot-toast';
 import { NavContext } from '@/lib/context';
 
