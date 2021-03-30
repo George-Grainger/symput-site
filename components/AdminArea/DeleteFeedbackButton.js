@@ -4,7 +4,8 @@ import toast from 'react-hot-toast';
 
 const DeleteFeedbackButton = () => {
   const router = useRouter();
-  const { slug } = router;
+  const { slug } = router.query;
+
   const postRef = getFeedbackPostRef(slug);
 
   const deleteFeedback = async () => {
