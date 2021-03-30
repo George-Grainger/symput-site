@@ -1,11 +1,11 @@
 import { useForm } from 'react-hook-form';
-import { firestore } from '@/lib/firebase';
+import { firestore } from '@/lib/dbUtils';
 import debounce from 'lodash.debounce';
 import { useEffect, useState, useCallback, useContext } from 'react';
 import UsernameMessage from '@/components/Form/UsernameMessage';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import toast from 'react-hot-toast';
-import { updateUsername } from '@/lib/db-utils';
+import { updateUsername } from '@/lib/dbUtils';
 import { SignInContext, ErrorsContext } from '@/lib/context';
 
 const UsernameForm = () => {

@@ -1,4 +1,4 @@
-import { serverTimestamp } from '@/lib/firebase';
+import { serverTimestamp } from '@/lib/dbUtils';
 import ImageUploader from '@/components/AdminArea/ImageUploader';
 import { useRef, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';

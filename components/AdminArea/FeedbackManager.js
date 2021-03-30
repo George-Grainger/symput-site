@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
 import FeedbackForm from '../Form/FeedbackForm';
 import DeleteFeedbackButton from './DeleteFeedbackButton';
-import { getFeedbackPostRef } from '@/lib/db-utils';
+import { getFeedbackPostRef } from '@/lib/dbUtils';
 
 const FeedbackManager = () => {
   const [preview, setPreview] = useState(false);

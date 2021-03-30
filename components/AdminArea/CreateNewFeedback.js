@@ -8,7 +8,7 @@ import Modal from '@/components/Modal';
 import { useModalState } from '@/lib/useModalState';
 import { useForm } from 'react-hook-form';
 import Input from '@/components/Form/Input';
-import { createFeedback } from '@/lib/db-utils';
+import { createFeedback } from '@/lib/dbUtils';
 
 const CreateNewFeedback = () => {
   const router = useRouter();

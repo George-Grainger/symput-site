@@ -1,6 +1,5 @@
 import { FeedbackItemListContext, UserPostsContext } from '@/lib/context';
-import { getMoreUserPublishedPosts } from '@/lib/db-utils';
-import { getUserWithUsername } from '@/lib/firebase';
+import { getMoreUserPublishedPosts, getUserWithUsername } from '@/lib/dbUtils';
 import Image from 'next/image';
 import FeedbackItemList from '../Feedback/FeedbackItemList';
 

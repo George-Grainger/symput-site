@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AdminPostsContext } from '@/lib/context';
-import { getPosts } from '@/lib/db-utils';
+import { getPosts } from '@/lib/dbUtils';
 import FeedbackItemList from '../Feedback/FeedbackItemList';
 
 const AdminFeedbackList = () => {

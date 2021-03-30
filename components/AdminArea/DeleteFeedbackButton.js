@@ -1,4 +1,4 @@
-import { getFeedbackPostRef } from '@/lib/db-utils';
+import { getFeedbackPostRef } from '@/lib/dbUtils';
 import { useRouter } from 'next/router';
 import toast from 'react-hot-toast';
 

@@ -1,5 +1,5 @@
-import { incrementHeart } from '@/lib/db-utils';
-import { auth } from '@/lib/firebase';
+import { incrementHeart } from '@/lib/dbUtils';
+import { auth } from '@/lib/authUtils';
 import { useDocument } from 'react-firebase-hooks/firestore';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 

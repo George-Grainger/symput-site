@@ -1,5 +1,5 @@
 import { UserContext, FeedbackItemContext } from '@/lib/context';
-import { firestore } from '@/lib/firebase';
+import { firestore } from '@/lib/dbUtils';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useContext } from 'react';
 import PostContent from '@/components/Feedback/FeedbackContent';

@@ -1,7 +1,7 @@
 import { useRef, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import CustomInput from './Input';
-import { auth } from '@/lib/firebase';
+import { auth } from '@/lib/authUtils';
 import toast from 'react-hot-toast';
 import { SignInContext, ErrorsContext } from '@/lib/context';
 
