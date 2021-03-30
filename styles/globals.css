@@ -216,7 +216,7 @@ input:checked ~ .toggle-path {
 }
 
 .section-default {
-  @apply w-full bg-yellow-400 dark:bg-gray-700 transition-colors duration-300 flex flex-col items-center h-full;
+  @apply w-full bg-yellow-400 dark:bg-gray-700 transition-colors duration-300 flex flex-col items-center min-h-screen;
 }
 
 .section-default-padding {

@@ -5,6 +5,7 @@ import { useAsync } from '@/lib/useAsync';
 import { useContext, useEffect } from 'react';
 import FeedbackPlaceholder from '../Loading/FeedbackPlaceHolder';
 import { FeedbackItemListContext } from '@/lib/context';
+import { FaRegFrown } from 'react-icons/fa';
 
 const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   const { posts, setPosts, isEnd, setIsEnd } = useContext(context);
@@ -32,9 +33,14 @@ const FeedbackItemList = ({ getMore, context, trigger = false }) => {
     return (
       <>
         <FeedbackPlaceholder />
-        <FeedbackPlaceholder />
-        <FeedbackPlaceholder />
       </>
+    );
+  } else if (posts?.length === 0) {
+    return (
+      <div className="prose prose-xl dark:prose-dark my-8">
+        <FaRegFrown className="mx-auto h-16 w-16" />
+        <p>Yet to provide feedback</p>
+      </div>
     );
   } else {
     return (
