@@ -25,7 +25,7 @@ export async function getStaticProps({ params, locale }) {
 
   return {
     props: { post, path, navbarData, footerData, pageData },
-    revalidate: 100
+    revalidate: 120
   };
 }
 
@@ -35,8 +35,8 @@ export async function getStaticPaths({ locales }) {
   const paths = [];
 
   snapshot.docs.forEach((doc) => {
+    const { slug, username } = doc.data();
     locales.forEach((locale) => {
-      const { slug, username } = doc.data();
       paths.push({
         params: { username, slug },
         locale

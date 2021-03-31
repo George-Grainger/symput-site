@@ -22,8 +22,6 @@ const CreateNewFeedback = () => {
   const { register, errors, handleSubmit, watch } = useForm();
   const title = watch('feedbackTitle');
 
-  console.log(verified, user?.emailVerified, auth?.currentUser?.emailVerified);
-
   const handleToggle = () => {
     if (user && !verified) {
       let firstClick = true;
