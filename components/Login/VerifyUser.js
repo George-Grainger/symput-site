@@ -13,11 +13,13 @@ const VerifyUser = () => {
     button_i18n,
     toast_i18n
   } = verifyPage_i18n;
-  const { user, username, loading } = useContext(UserContext);
+  const { user, username, loading, handleVerification } = useContext(
+    UserContext
+  );
 
   const sendEmail = async (firstLoad = false) => {
     if (firstLoad) {
-      user?.sendEmailVerification();
+      handleVerification();
     } else if (!loading) {
       toast.promise(user?.sendEmailVerification(), toast_i18n);
     }

@@ -35,6 +35,7 @@ const Overview = () => {
             title={card1Title_i18n}
             learnMore={learnMore_i18n}
             className="card-black dark:card-gray"
+            btnClass="btn-yellow-inverted dark:btn-black-inverted"
             link="/aims"
             icon={<GiArcheryTarget className="h-full w-full" />}
           >
@@ -44,6 +45,7 @@ const Overview = () => {
             title={card2Title_i18n}
             learnMore={learnMore_i18n}
             className="card-yellow"
+            btnClass="btn-black-inverted"
             link="/team"
             icon={<AiOutlineTeam className="h-full w-full" />}
           >
@@ -55,6 +57,7 @@ const Overview = () => {
             title={card3Title_i18n}
             learnMore={learnMore_i18n}
             className="card-black dark:card-gray md:card-yellow md:dark:card-yellow"
+            btnClass="btn-yellow-inverted dark:btn-black-inverted md:btn-black-inverted md:dark:btn-black-inverted"
             link="/release"
             icon={<BsCalendar className="h-full w-full" />}
           >
@@ -64,6 +67,7 @@ const Overview = () => {
             title={card4Title_i18n}
             learnMore={learnMore_i18n}
             className="card-yellow dark:card-yellow md:card-black md:dark:card-gray"
+            btnClass="btn-black-inverted dark:btn-black-inverted md:btn-yellow-inverted md:btn-yellow-inverted"
             link="/feedback"
             icon={<BiCommentCheck className="h-full w-full" />}
           >

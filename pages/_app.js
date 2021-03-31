@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
         <Toaster
           toastOptions={{
             style: {
-              margin: '100px'
+              marginTop: '100px'
             }
           }}
         />
