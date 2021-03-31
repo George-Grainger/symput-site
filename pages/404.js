@@ -24,7 +24,9 @@ const Custom404 = ({ navbarData, footerData, pageData }) => {
         <h1 className="text-6xl font-semibold mb-8">{title_i18n}</h1>
         <p className="text-2xl mb-8">{paragraph_i18n}</p>
         <Link href="/">
-          <a className="btn btn-black-inverted">{returnHome_i18n}</a>
+          <a className="btn btn-black-inverted dark:btn-yellow-inverted">
+            {returnHome_i18n}
+          </a>
         </Link>
       </section>
     </Layout>

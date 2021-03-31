@@ -5,7 +5,7 @@ import { getMorePublishedPosts } from '@/lib/dbUtils';
 import { FeedbackPostsContext } from '@/lib/context';
 import { useState } from 'react';
 
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   const [initialPosts, initialIsEnd] = await getMorePublishedPosts(-1);
   const pageData = getPageData(locale, 'feedback');
   const itemListData = getPageData(locale, 'feedback-itemlist');
@@ -20,7 +20,8 @@ export async function getServerSideProps({ locale }) {
       itemListData,
       navbarData,
       footerData
-    }
+    },
+    revalidate: 30
   };
 }
 
