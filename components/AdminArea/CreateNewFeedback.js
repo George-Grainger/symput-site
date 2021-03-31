@@ -3,28 +3,75 @@ import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import kebabCase from 'lodash.kebabcase';
 import toast from 'react-hot-toast';
-import { FaPlusCircle } from 'react-icons/fa';
+import { FaPlusCircle, FaTimes } from 'react-icons/fa';
 import Modal from '@/components/Modal';
 import { useModalState } from '@/lib/useModalState';
 import { useForm } from 'react-hook-form';
 import Input from '@/components/Form/Input';
 import { createFeedback } from '@/lib/dbUtils';
+import { auth } from '@/lib/authUtils';
 
 const CreateNewFeedback = () => {
   const router = useRouter();
-  const { user, username } = useContext(UserContext);
+  const { user, username, verified, handleVerification } = useContext(
+    UserContext
+  );
   const { createFeedbackErrors } = useContext(ErrorsContext);
   const { createFeedback_i18n } = useContext(AdminContext);
   const { isOpen, onToggle, onClose } = useModalState();
   const { register, errors, handleSubmit, watch } = useForm();
   const title = watch('feedbackTitle');
 
+  console.log(verified, user?.emailVerified, auth?.currentUser?.emailVerified);
+
+  const handleToggle = () => {
+    if (user && !verified) {
+      let firstClick = true;
+      toast(
+        (t) => (
+          <div className="flex flex-wrap text-center">
+            <button className="absolute right-4">
+              <FaTimes
+                onClick={() => toast.dismiss(t.id)}
+                className=" h-6 w-6 link link-light-bg"
+              />
+            </button>
+            <span className="font-semibold text-xl flex-auto">
+              Verification Reminder
+            </span>
+            <span className="mt-4">
+              You cannot create feedback until your account is verified
+            </span>
+            <button
+              onClick={() => {
+                if (firstClick) {
+                  firstClick = false;
+                  handleVerification(() => {
+                    toast.dismiss(t.id);
+                    toast.success('Successfully verified');
+                  });
+                } else {
+                  user?.sendEmailVerification();
+                }
+              }}
+              className="btn btn-black-inverted mt-4 w-full"
+            >
+              Resend verification
+            </button>
+          </div>
+        ),
+        { duration: 40000000, position: 'top-left' }
+      );
+    } else {
+      onToggle();
+    }
+  };
+
   const createPost = async ({ feedbackTitle, feedbackSlug }) => {
     await toast.promise(
       createFeedback(feedbackTitle, feedbackSlug, user, username),
       createFeedback_i18n.toast_i18n
     );
-
     router.push(`/admin/${feedbackSlug}`);
   };
 
@@ -32,7 +79,7 @@ const CreateNewFeedback = () => {
     <>
       <button
         className="p-8 mt-6 bg-transparent rounded-lg min-w-feedback prose prose-xl dark:prose-dark border-4 border-dashed border-gray-900 dark:border-gray-300 text-center cursor-pointer max-w-none"
-        onClick={onToggle}
+        onClick={handleToggle}
       >
         <h3>{createFeedback_i18n.title_i18n}</h3>
         <p>{createFeedback_i18n.letUsKnow_i18n}</p>

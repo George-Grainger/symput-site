@@ -3,6 +3,7 @@ import Icon from '../Icons/Icon';
 
 const LinkCard = ({
   className,
+  btnClass,
   learnMore,
   icon,
   title,
@@ -20,7 +21,7 @@ const LinkCard = ({
       <p className="text-2xl font-semibold">{title}</p>
       <p className="leading-7">{children}</p>
       <Link href={link}>
-        <a className="btn a-btn">{learnMore}</a>
+        <a className={`${btnClass} btn a-btn mt-6`}>{learnMore}</a>
       </Link>
     </div>
   );

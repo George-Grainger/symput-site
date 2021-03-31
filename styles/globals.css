@@ -80,10 +80,6 @@ input:checked ~ .toggle-path {
   @apply shadow-lg rounded-lg text-center p-8 mb-8 transition-darkmode;
 }
 
-.card:not(.lg\:card-hexagon) a {
-  @apply mt-6;
-}
-
 .card p {
   @apply mt-4;
 }
@@ -99,16 +95,8 @@ input:checked ~ .toggle-path {
       @apply bg-yellow-500 text-black;
     }
 
-    .card-yellow a {
-      @apply btn-black-inverted;
-    }
-
     .card-black {
       @apply bg-gray-900 text-white;
-    }
-
-    .card-black:not(.lg\:card-hexagon) a {
-      @apply btn-yellow-inverted;
     }
 
     .card-gray {
