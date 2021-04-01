@@ -43,19 +43,20 @@ const AdminCard = ({ errorsData }) => {
             {account_i18n}
           </button>
         </div>
-        <div
-          className={
-            openTab === 0 ? 'flex flex-col items-center w-full' : 'hidden'
-          }
-        >
-          <AdminFeedbackList />
-          <ErrorsContext.Provider value={errorsData}>
+        <ErrorsContext.Provider value={errorsData}>
+          <div
+            className={
+              openTab === 0 ? 'flex flex-col items-center w-full' : 'hidden'
+            }
+          >
+            <AdminFeedbackList />
+
             <CreateNewFeedback />
-          </ErrorsContext.Provider>
-        </div>
-        <div className={openTab === 1 ? 'block w-full' : 'hidden'}>
-          <AccountSettings />
-        </div>
+          </div>
+          <div className={openTab === 1 ? 'block w-full' : 'hidden'}>
+            <AccountSettings />
+          </div>
+        </ErrorsContext.Provider>
       </div>
     </section>
   );

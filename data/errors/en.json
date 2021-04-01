@@ -27,6 +27,7 @@
   "genericErrors_i18n": {
     "required_i18n": "This is a required field",
     "signInFailure_i18n": "Incorrect username or password",
-    "alreadyExists_i18n": "This user already exists, sign in or reset your password."
+    "alreadyExists_i18n": "This user already exists, sign in or reset your password.",
+    "passwordIncorrect_i18n": "The password is incorrect"
   }
 }

@@ -27,6 +27,7 @@
   "genericErrors_i18n": {
     "required_i18n": "这是一个必填字段",
     "signInFailure_i18n": "用户名或密码不正确",
-    "alreadyExists_i18n": "该用户已经存在，请登录或重置您的密码。"
+    "alreadyExists_i18n": "该用户已经存在，请登录或重置您的密码。",
+    "passwordIncorrect_i18n": "The password is incorrect"
   }
 }
