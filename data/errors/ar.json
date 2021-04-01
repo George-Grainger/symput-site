@@ -27,6 +27,7 @@
   "genericErrors_i18n": {
     "required_i18n": "هذا مجال مطلوب",
     "signInFailure_i18n": "اسم المستخدم أو كلمة المرور غير صحيحة",
-    "alreadyExists_i18n": "هذا المستخدم موجود بالفعل ، قم بتسجيل الدخول أو إعادة تعيين كلمة المرور الخاصة بك."
+    "alreadyExists_i18n": "هذا المستخدم موجود بالفعل ، قم بتسجيل الدخول أو إعادة تعيين كلمة المرور الخاصة بك.",
+    "passwordIncorrect_i18n": "The password is incorrect"
   }
 }

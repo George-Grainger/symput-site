@@ -58,7 +58,7 @@ const CreateNewFeedback = () => {
             </button>
           </div>
         ),
-        { duration: 40000000, position: 'top-left' }
+        { duration: 40000000 }
       );
     } else {
       onToggle();

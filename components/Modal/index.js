@@ -6,6 +6,8 @@ export default function Modal({
   children,
   button1,
   button2,
+  button1Classes = 'text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm mb-1 link link-light-bg dark:link-dark-bg-no-text',
+  button2Classes = 'btn btn-green ml-4',
   handleClose,
   handleSave,
   zIndex = 'z-50'
@@ -17,7 +19,9 @@ export default function Modal({
           hidden ? 'hidden' : 'flex'
         } z-10 justify-center pointer-events-none items-center overflow-x-hidden overflow-y-auto fixed inset-0`}
       >
-        <div className={`${zIndex} relative w-full m-6 max-w-xl pointer-events-auto`}>
+        <div
+          className={`${zIndex} relative w-full m-6 max-w-xl pointer-events-auto`}
+        >
           <div className="border-4 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 dark:border-gray-700 text-black dark:text-white transition-darkmode">
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
               <h3 className="text-3xl font-semibold">{title}</h3>
@@ -32,15 +36,12 @@ export default function Modal({
             <div className="relative p-6 flex-auto">{children}</div>
             <div className="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
               {button1 && (
-                <button
-                  className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm mr-1 mb-1 link link-light-bg dark:link-dark-bg-no-text"
-                  onClick={handleClose}
-                >
+                <button className={button1Classes} onClick={handleClose}>
                   {button1}
                 </button>
               )}
               {button2 && (
-                <button className="btn btn-green" onClick={handleSave}>
+                <button className={button2Classes} onClick={handleSave}>
                   {button2}
                 </button>
               )}
