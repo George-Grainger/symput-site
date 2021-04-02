@@ -1,11 +1,11 @@
 import { useRef, useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import CustomInput from './Input';
+import Input from './Input';
 import { auth } from '@/lib/authUtils';
 import toast from 'react-hot-toast';
 import { SignInContext, ErrorsContext } from '@/lib/context';
 
-const SignInForm = () => {
+const SignUpForm = () => {
   const { loginPage_i18n } = useContext(SignInContext);
   const {
     email_i18n,
@@ -42,12 +42,11 @@ const SignInForm = () => {
 
   return (
     <form className="grid gap-4 text-left" onSubmit={handleSubmit(onSubmit)}>
-      <CustomInput
+      <Input
         label={email_i18n}
         errors={errors}
         placeholder={emailEG_i18n}
         name="suemail"
-        isrequried="true"
         ref={register({
           required: true,
           pattern: {
@@ -56,12 +55,12 @@ const SignInForm = () => {
           }
         })}
       />
-      <CustomInput
+      <Input
         label={password_i18n}
         errors={errors}
         name="supassword"
         type="password"
-        isrequried="true"
+        placeholder="••••••••••••"
         ref={register({
           required: true,
           minLength: {
@@ -74,12 +73,12 @@ const SignInForm = () => {
           }
         })}
       />
-      <CustomInput
+      <Input
         label={repeatPassword_i18n}
         errors={errors}
         name="supassword_repeat"
         type="password"
-        isrequried="true"
+        placeholder="••••••••••••"
         ref={register({
           validate: (value) =>
             value === password.current || signInErrors_i18n.passwordMatch_i18n
@@ -96,4 +95,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default SignUpForm;

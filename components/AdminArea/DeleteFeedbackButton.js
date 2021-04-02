@@ -9,12 +9,33 @@ const DeleteFeedbackButton = () => {
   const postRef = getFeedbackPostRef(slug);
 
   const deleteFeedback = async () => {
-    const doIt = confirm('are you sure!');
-    if (doIt) {
-      await postRef.delete();
-      router.push('/admin');
-      toast('Feedback annihilated ', { icon: '🗑️' });
-    }
+    toast(
+      (t) => (
+        <div className="grid grid-cols-2 gap-4">
+          <span className="text-center text-xl font-semibold col-span-2">
+            Are you sure?
+          </span>
+          <button
+            onClick={async () => {
+              await postRef.delete();
+              toast.dismiss(t.id);
+              router.push('/admin');
+              toast('Feedback annihilated ', { icon: '🗑️' });
+            }}
+            className="btn btn-black-inverted"
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className="btn btn-black-inverted"
+          >
+            No
+          </button>
+        </div>
+      ),
+      { duration: 4000000 }
+    );
   };
 
   return (

@@ -52,7 +52,7 @@ export default function ImageUploader() {
   };
 
   return (
-    <div className="mb-8">
+    <div className="my-8">
       {!uploading ? (
         <label className="btn btn-black-inverted dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black flex items-center justify-between">
           <span>Upload image</span>

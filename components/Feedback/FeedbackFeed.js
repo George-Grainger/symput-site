@@ -26,7 +26,6 @@ export default function FeedbackFeed({
     );
   } else {
     return (
-      // TODO finish this page
       <section className="section-default section-default-padding justify-center">
         <div className=" prose prose-2xl dark:prose-dark text-center mb-12">
           <h2 className="text-6xl">{noFeedbackTitle_i18n}</h2>

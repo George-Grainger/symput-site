@@ -1,29 +1,22 @@
 import { serverTimestamp } from '@/lib/dbUtils';
 import ImageUploader from '@/components/AdminArea/ImageUploader';
-import { useRef, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
 import toast from 'react-hot-toast';
+import ResizingTextArea from './ResizingTextArea';
 
 const FeedbackForm = ({ defaultValues, postRef, preview }) => {
   const { register, errors, handleSubmit, formState, reset, watch } = useForm({
     defaultValues,
     mode: 'onChange'
   });
-  const parentRef = useRef(null);
-  const [parentHeight, setParentHeight] = useState('auto');
-  const [textAreaHeight, setTextAreaHeight] = useState('auto');
-
-  useEffect(() => {
-    setParentHeight(`${parentRef.current.firstChild.scrollHeight}px`);
-    setTextAreaHeight(`${parentRef.current.firstChild.scrollHeight}px`);
-  }, [textAreaHeight]);
 
   const { isValid, isDirty } = formState;
 
-  const updatePost = async ({ content, published }) => {
+  const updatePost = async ({ summary, content, published }) => {
     toast.promise(
       postRef.update({
+        summary,
         content,
         published,
         updatedAt: serverTimestamp()
@@ -35,7 +28,7 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
       }
     );
 
-    reset({ content, published });
+    reset({ summary, content, published });
   };
 
   return (
@@ -44,6 +37,20 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
       onSubmit={handleSubmit(updatePost)}
     >
       <div className="prose dark:prose-dark max-w-none">
+        <ResizingTextArea
+          label="Summary"
+          errors={errors}
+          className="w-full mt-2 mb-4 dark:bg-gray-900"
+          parentClassName={`${
+            preview ? 'hidden' : ''
+          } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
+          labelclassname={`${preview ? 'hidden' : ''} text-xl label`}
+          name="summary"
+          ref={register({
+            maxLength: { value: 1000, message: 'Summary is too long' }
+          })}
+        />
+
         {preview ? (
           <ReactMarkdown className="mx-auto max-w-markdown sm:max-w-prose">
             {watch('content')}
@@ -51,34 +58,24 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
         ) : (
           <>
             <ImageUploader />
-            <label htmlFor="content" className="label required text-xl">
-              Main content:
-            </label>
           </>
         )}
 
-        <div
-          ref={parentRef}
-          style={{ minHeight: parentHeight }}
-          className={`${
+        <ResizingTextArea
+          label="Main Content"
+          errors={errors}
+          className="w-full mt-2 mb-4 dark:bg-gray-900"
+          parentClassName={`${
             preview ? 'hidden' : ''
           } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
-        >
-          <textarea
-            style={{
-              height: textAreaHeight,
-              resize: 'none'
-            }}
-            className="w-full mt-2 mb-4 dark:bg-gray-900"
-            name="content"
-            onChange={() => setTextAreaHeight('auto')}
-            ref={register({
-              maxLength: { value: 20000, message: 'content is too long' },
-              minLength: { value: 10, message: 'content is too short' },
-              required: { value: true, message: 'content is required' }
-            })}
-          />
-        </div>
+          labelclassname={`${preview ? 'hidden' : ''} text-xl label required`}
+          name="content"
+          ref={register({
+            maxLength: { value: 20000, message: 'content is too long' },
+            minLength: { value: 10, message: 'content is too short' },
+            required: { value: true, message: 'content is required' }
+          })}
+        />
 
         {errors.content && (
           <p className="text-danger">{errors.content.message}</p>

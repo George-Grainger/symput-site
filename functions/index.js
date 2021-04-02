@@ -13,16 +13,22 @@ exports.moderateFeedback = functions.firestore
     if (postData) {
       const title = postData.title;
       const moderatedTitle = moderateMessage(title);
+      const summary = postData.summary;
+      const moderatedSummary = moderateMessage(summary);
       const content = postData.content;
       const moderatedConent = moderateMessage(content);
-      if (title === moderatedTitle && content === moderatedConent) {
+      if (
+        title === moderatedTitle &&
+        content === moderatedConent &&
+        summary === moderatedSummary
+      ) {
         console.log('nothing left to do');
         return null;
       }
       return change.after.ref.update({
         title: moderatedTitle,
+        summary: moderatedSummary,
         content: moderatedConent,
-        sanitized: true,
         moderated: title !== moderatedTitle || content !== moderatedConent
       });
     } else {

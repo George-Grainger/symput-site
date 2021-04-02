@@ -43,7 +43,8 @@ module.exports = {
               transitionProperty:
                 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
               transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-              transitionDuration: '150ms'
+              transitionDuration: '150ms',
+              textDecoration: 'underline'
             },
             'a:hover': {
               backgroundColor: theme('colors.gray.200')
@@ -95,7 +96,8 @@ module.exports = {
               transitionProperty:
                 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
               transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-              transitionDuration: '150ms'
+              transitionDuration: '150ms',
+              textDecoration: 'underline'
             },
             'a:hover': {
               color: theme('colors.yellow.400'),

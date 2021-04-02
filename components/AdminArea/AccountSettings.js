@@ -5,12 +5,13 @@ import toast from 'react-hot-toast';
 import { useModalState } from '@/lib/useModalState';
 import Modal from '../Modal';
 import { getProvider } from '@/lib/authUtils';
-import PasswordAccountDeleteForm from '@/components/Form/PasswordAccountDeleteForm';
+import AccountDeleteForm from '@/components/Form/AccountDeleteForm';
 import UpdatePasswordForm from '@/components/Form/UpdatePasswordForm';
 import UpdateEmailForm from '../Form/UpdateEmailForm';
+import { HiChevronDoubleRight } from 'react-icons/hi';
 
 const AccountSettings = () => {
-  const { user, loading } = useContext(UserContext);
+  const { user, loading, verified } = useContext(UserContext);
   const { accountSettings_i18n } = useContext(AdminContext);
   const providerId = user?.providerData[0]?.providerId;
 
@@ -39,6 +40,42 @@ const AccountSettings = () => {
     onUpdatePassordFormClose();
   };
 
+  const triggerVerification = () => {
+    toast(
+      (t) => (
+        <div className="flex flex-wrap text-center">
+          <button className="absolute right-4">
+            <FaTimes
+              onClick={() => toast.dismiss(t.id)}
+              className=" h-6 w-6 link link-light-bg"
+            />
+          </button>
+          <span className="font-semibold text-xl flex-auto">Verification</span>
+          <span className="mt-4">
+            Press the link to send a verification email to {email}
+          </span>
+          <button
+            onClick={() => {
+              if (firstClick) {
+                firstClick = false;
+                handleVerification(() => {
+                  toast.dismiss(t.id);
+                  toast.success('Successfully verified');
+                });
+              } else {
+                user?.sendEmailVerification();
+              }
+            }}
+            className="btn btn-black-inverted mt-4 w-full"
+          >
+            Resend verification
+          </button>
+        </div>
+      ),
+      { duration: 40000000 }
+    );
+  };
+
   const handleProviderReauth = () => {
     if (providerId) {
       const provider = getProvider(providerId);
@@ -65,9 +102,7 @@ const AccountSettings = () => {
                   .then(() => {
                     toast.dismiss(t.id);
                     user?.delete();
-                    // user.updateEmail('georgegrainger1008@gmail.com');
                   });
-                // .then(() => setEmail('georgegrainger1008@gmail.com'))
               }}
               className="btn btn-black-inverted mt-4 w-full"
             >
@@ -84,10 +119,11 @@ const AccountSettings = () => {
     <>
       <div className="prose prose-xl dark:prose-dark mx-auto flex flex-wrap justify-between items-end">
         <h3 className="flex-auto">{accountSettings_i18n.info_i18n}</h3>
-        <button className="link-standard px-2 text-yellow-400">
+        <button className="mb-5 link-standard underline px-2">
           {user?.info
             ? accountSettings_i18n.update_i18n
             : accountSettings_i18n.add_i18n}
+          <HiChevronDoubleRight className="ml-1 inline" />
         </button>
         <p className="text-center w-full">
           {loading
@@ -100,11 +136,12 @@ const AccountSettings = () => {
             shutAllModals();
             onUpdateEmailFormToggle();
           }}
-          className="link-standard px-2 text-yellow-400"
+          className="mb-5 link-standard underline px-2"
         >
           {user?.email
             ? accountSettings_i18n.update_i18n
             : accountSettings_i18n.add_i18n}
+          <HiChevronDoubleRight className="ml-1 inline" />
         </button>
         <p className="text-center w-full">
           {loading
@@ -113,19 +150,23 @@ const AccountSettings = () => {
         </p>
         <div className="w-full flex items-end">
           <h3 className="flex-auto">{accountSettings_i18n.verfied_i18n}</h3>
-          {user?.emailVerified ? (
+          {verified ? (
             <p className="flex items-center">
               {accountSettings_i18n.isVerified_i18n}
               <FaCheckCircle className="text-green-500 ml-2 dark:bg-white bg-gray-900 rounded-full" />
             </p>
           ) : (
-            <button className="link-standard px-2 text-yellow-400">
+            <button
+              onClick={triggerVerification}
+              className="mb-5 link-standard underline px-2"
+            >
               {accountSettings_i18n.verifyNow_i18n}
+              <HiChevronDoubleRight className="ml-1 inline" />
             </button>
           )}
         </div>
-        {/* <h3 className="flex-auto">Related services</h3> */}
       </div>
+
       {providerId === 'password' && (
         <>
           <button
@@ -173,6 +214,7 @@ const AccountSettings = () => {
       >
         {accountSettings_i18n.deleteAccount_i18n}
       </button>
+
       <Modal
         hidden={!deleteFromOpen}
         title="Update password"
@@ -182,7 +224,7 @@ const AccountSettings = () => {
         <p className="font-semibold text-xl pb-8">
           This will delete your account and all associated feedback
         </p>
-        <PasswordAccountDeleteForm />
+        <AccountDeleteForm />
       </Modal>
     </>
   );

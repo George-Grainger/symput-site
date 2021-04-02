@@ -14,10 +14,12 @@ export default function ErrorMessage({ error, className = '' }) {
       case 'required':
         return required_i18n;
       case 'auth/user-not-found':
-      case 'auth/auth/wrong-password':
+      case 'auth/wrong-password':
         return signInFailure_i18n;
       case 'auth/account-exists-with-different-credential':
         return alreadyExists_i18n;
+      case 'auth/requires-recent-login':
+        return 'You must reauthenticate before this operation can be done.';
       default:
         return error.message;
     }

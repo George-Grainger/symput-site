@@ -35,12 +35,12 @@ const PasswordAccountDeleteForm = () => {
     >
       <Input
         className="input-bg-toggle mb-4"
-        labelclassname="font-semibold text-lg"
+        labelclassname="font-semibold text-lg required"
         label="Password"
         errors={errors}
         name="verifypassword"
         type="password"
-        isrequried="true"
+        placeholder="••••••••••••"
         ref={register({
           required: true,
           minLength: {
