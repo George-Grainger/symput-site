@@ -5,14 +5,13 @@ const Input = forwardRef((props, ref) => {
   const {
     label,
     className = 'input',
-    labelclassname = '',
+    labelclassname = 'required',
     name,
-    errors,
-    isrequried = 'false'
+    errors
   } = props;
   return (
     <div className="grid gap-1">
-      <label className={`${isrequried ? 'required' : ''} ${labelclassname}`}>
+      <label htmlFor={name} className={labelclassname}>
         {label}
       </label>
       <input {...props} className={`${className}`} errors="" ref={ref} />

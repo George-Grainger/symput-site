@@ -4,6 +4,7 @@ import Input from './Input';
 import { auth } from '@/lib/authUtils';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import { SignInContext } from '@/lib/context';
+import ResetSVG from '../Icons/ResetSVG';
 
 const PasswordReset = ({ email, handleReturn }) => {
   const { loginPage_i18n } = useContext(SignInContext);
@@ -35,8 +36,12 @@ const PasswordReset = ({ email, handleReturn }) => {
   return (
     <>
       {success ? (
-        // TODO change this page
-        <div>Success</div>
+        <>
+          <ResetSVG className="mb-8" />
+          <p className="font-semibold">
+            The reset email has been sent sucessefully
+          </p>
+        </>
       ) : (
         <form
           className="grid gap-4 text-left"

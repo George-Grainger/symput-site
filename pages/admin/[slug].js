@@ -10,30 +10,44 @@ import navbarZhCn from '@/data/navbar/zh-cn';
 import footerEn from '@/data/footer/en';
 import footerAr from '@/data/footer/ar';
 import footerZhCn from '@/data/footer/zh-cn';
+import errorsEn from '@/data/errors/en';
+import errorsAr from '@/data/errors/ar';
+import errorsZhCn from '@/data/errors/zh-cn';
+import { ErrorsContext } from '@/lib/context';
 
 export default function AdminPostEdit() {
   const { locale } = useRouter();
   let navbarData;
   let footerData;
+  let errorsData;
 
   switch (locale) {
     case 'ar':
       navbarData = navbarAr;
       footerData = footerAr;
+      errorsData = errorsAr;
       break;
     case 'zh-cn':
       navbarData = navbarZhCn;
       footerData = footerZhCn;
+      errorsData = errorsZhCn;
       break;
     default:
       navbarData = navbarEn;
       footerData = footerEn;
+      errorsData = errorsEn;
   }
 
   return (
-    <Layout navbarData={navbarData} footerData={footerData}>
+    <Layout
+      title="Symput - Provide feedback"
+      navbarData={navbarData}
+      footerData={footerData}
+    >
       <AuthCheck>
-        <FeedbackManager />
+        <ErrorsContext.Provider value={errorsData}>
+          <FeedbackManager />
+        </ErrorsContext.Provider>
       </AuthCheck>
     </Layout>
   );

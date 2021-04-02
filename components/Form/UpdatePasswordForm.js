@@ -48,12 +48,12 @@ const UpdatePasswordForm = ({ closeModal }) => {
     >
       <Input
         className="input-bg-toggle mb-4"
-        labelclassname="font-semibold text-lg"
+        labelclassname="font-semibold text-lg required"
         label="Previous password"
         errors={errors}
         name="verifypassword"
         type="password"
-        isrequried="true"
+        placeholder="••••••••••••"
         ref={register({
           required: true,
           minLength: {
@@ -69,12 +69,12 @@ const UpdatePasswordForm = ({ closeModal }) => {
 
       <Input
         className="input-bg-toggle mb-4"
-        labelclassname="font-semibold text-lg"
+        labelclassname="font-semibold text-lg required"
         label="New password"
         errors={errors}
         name="newpassword"
         type="password"
-        isrequried="true"
+        placeholder="••••••••••••"
         ref={register({
           required: true,
           minLength: {
@@ -90,12 +90,12 @@ const UpdatePasswordForm = ({ closeModal }) => {
 
       <Input
         className="input-bg-toggle mb-4"
-        labelclassname="font-semibold text-lg"
+        labelclassname="font-semibold text-lg required"
         label="Repeat new password"
         errors={errors}
         name="newpassword_repeat"
         type="password"
-        isrequried="true"
+        placeholder="••••••••••••"
         ref={register({
           validate: (value) =>
             value === password.current || signInErrors_i18n.passwordMatch_i18n

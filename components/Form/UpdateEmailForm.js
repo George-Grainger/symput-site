@@ -28,7 +28,7 @@ const UpdateEmailForm = ({ closeModal, providerId }) => {
     } else {
       isValid = true;
     }
-    console.log(isValid);
+
     if (isValid) {
       toast
         .promise(user.updateEmail(newemail), {
@@ -39,6 +39,13 @@ const UpdateEmailForm = ({ closeModal, providerId }) => {
         .then(() => {
           reset();
           closeModal();
+        })
+        .catch((e) => {
+          setError('newemail', {
+            type: e.code,
+            message: e.message
+          });
+          doRefresh({});
         });
     } else {
       setError('verifypassword', {
@@ -57,12 +64,12 @@ const UpdateEmailForm = ({ closeModal, providerId }) => {
       {providerId === 'password' ? (
         <Input
           className="input-bg-toggle mb-4"
-          labelclassname="font-semibold text-lg"
+          labelclassname="font-semibold text-lg required"
           label="Previous password"
           errors={errors}
           name="verifypassword"
           type="password"
-          isrequried="true"
+          placeholder="••••••••••••"
           ref={register({
             required: true,
             minLength: {
@@ -81,12 +88,11 @@ const UpdateEmailForm = ({ closeModal, providerId }) => {
 
       <Input
         className="input-bg-toggle mb-4"
-        labelclassname="font-semibold text-lg"
+        labelclassname="font-semibold text-lg required"
         label="New email"
         errors={errors}
         placeholder="user@email.com"
         name="newemail"
-        isrequried="true"
         ref={register({
           required: true,
           pattern: {

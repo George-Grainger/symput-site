@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { FeedbackItemContext } from '@/lib/context';
+import toast from 'react-hot-toast';
+import { FaInfoCircle } from 'react-icons/fa';
 
 // UI component for main post content
 export default function FeedbackContent({ post }) {
@@ -12,6 +14,20 @@ export default function FeedbackContent({ post }) {
     typeof post?.updatedAt === 'number'
       ? new Date(post.updatedAt)
       : post.updatedAt?.toDate();
+
+  useEffect(() => {
+    if (post?.moderated) {
+      toast(
+        <span>
+          This post has been moderated in line with our terms of service&nbsp;
+          <Link href="/terms">
+            <a className="link link-light-bg underline">located here</a>
+          </Link>
+        </span>,
+        { icon: <FaInfoCircle /> }
+      );
+    }
+  }, []);
 
   const localisedDate = updatedDate?.toLocaleString(locale, {
     day: 'numeric',

@@ -95,8 +95,7 @@ const CreateNewFeedback = () => {
         <form>
           <Input
             className="input-bg-toggle mb-4"
-            labelclassname="font-semibold text-lg"
-            required
+            labelclassname="font-semibold text-lg required"
             label={createFeedback_i18n.titleInputLabel_i18n}
             errors={errors}
             placeholder={createFeedback_i18n.titleInputPlaceholder_i18n}
@@ -115,8 +114,7 @@ const CreateNewFeedback = () => {
           />
           <Input
             className="input-bg-toggle mb-4"
-            labelclassname="font-semibold text-lg"
-            required
+            labelclassname="font-semibold text-lg required"
             label={createFeedback_i18n.slugInputLabel_i18n}
             errors={errors}
             defaultValue={encodeURI(kebabCase(title))}

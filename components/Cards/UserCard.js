@@ -11,7 +11,7 @@ const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
 
   return (
     <section className="section-default pt-24 pb-36 px-4 sm:px-8">
-      <div className="min-w-fs-card px-4 sm:px-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode">
+      <div className="w-fs-card px-4 sm:px-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode">
         <div className="absolute transform-gpu -translate-y-1/2">
           <Image
             className="object-cover rounded-full"

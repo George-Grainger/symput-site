@@ -15,6 +15,7 @@ const UserControls = ({ username, visible }) => {
     signOutToast_i18n
   } = useContext(NavContext);
   const signOut = () => {
+    toast.dismiss();
     toast.promise(auth.signOut(), signOutToast_i18n);
   };
 
