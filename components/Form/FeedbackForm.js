@@ -54,28 +54,31 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
             <label htmlFor="content" className="label required text-xl">
               Main content:
             </label>
-            <div
-              ref={parentRef}
-              style={{ minHeight: parentHeight }}
-              className="border-t border-b border-gray-900 dark:border-gray-200 my-2"
-            >
-              <textarea
-                style={{
-                  height: textAreaHeight,
-                  resize: 'none'
-                }}
-                className="w-full mt-2 mb-4 dark:bg-gray-900"
-                name="content"
-                onChange={() => setTextAreaHeight('auto')}
-                ref={register({
-                  maxLength: { value: 20000, message: 'content is too long' },
-                  minLength: { value: 10, message: 'content is too short' },
-                  required: { value: true, message: 'content is required' }
-                })}
-              />
-            </div>
           </>
         )}
+
+        <div
+          ref={parentRef}
+          style={{ minHeight: parentHeight }}
+          className={`${
+            preview ? 'hidden' : ''
+          } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
+        >
+          <textarea
+            style={{
+              height: textAreaHeight,
+              resize: 'none'
+            }}
+            className="w-full mt-2 mb-4 dark:bg-gray-900"
+            name="content"
+            onChange={() => setTextAreaHeight('auto')}
+            ref={register({
+              maxLength: { value: 20000, message: 'content is too long' },
+              minLength: { value: 10, message: 'content is too short' },
+              required: { value: true, message: 'content is required' }
+            })}
+          />
+        </div>
 
         {errors.content && (
           <p className="text-danger">{errors.content.message}</p>

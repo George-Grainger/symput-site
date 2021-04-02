@@ -15,19 +15,15 @@ const PasswordAccountDeleteForm = () => {
   const { signInErrors_i18n, genericErrors_i18n } = useContext(ErrorsContext);
   const { user } = useContext(UserContext);
 
-  const handleDelete = () => {
-    user?.delete();
-  };
-
   const handlePasswordReauth = async ({ verifypassword }) => {
     revalidateUser(verifypassword).then((isValid) => {
-      if (!isValid) {
+      if (isValid) {
+        user?.delete();
+      } else {
         setError('verifypassword', {
           type: 'auth/incorrect-details',
           message: genericErrors_i18n.passwordIncorrect_i18n
         });
-      } else {
-        handleDelete();
       }
     });
   };
