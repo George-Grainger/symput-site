@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import Input from './Input';
 
-const UpdateEmailForm = ({ closeModal, providerId }) => {
+const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
   const {
     register,
     handleSubmit,
@@ -37,6 +37,7 @@ const UpdateEmailForm = ({ closeModal, providerId }) => {
           error: "Email couldn't be upated, please try again."
         })
         .then(() => {
+          setEmail(newemail);
           reset();
           closeModal();
         })
@@ -141,7 +142,10 @@ const ReauthButton = ({ providerId }) => {
     );
   } else {
     return (
-      <button onClick={execute} className="btn btn-black-inverted w-full mb-4">
+      <button
+        onClick={execute}
+        className="btn btn-black-inverted dark:btn-yellow-inverted w-full mb-4"
+      >
         Verify through auth provider
       </button>
     );

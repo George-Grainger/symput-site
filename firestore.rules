@@ -3,16 +3,15 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /{document=**} {
 
-      
       // Required for collection group queries
       match /posts/{postId} {
       	allow read;
       }
       
-      
       match /users/{userId} {
       	allow read;
         allow create: if isValidUser(userId);
+        allow update: if isValidUserUpdate(userId)
       }
       
       match /usernames/{username} {
@@ -33,25 +32,25 @@ service cloud.firestore {
         	allow write: if request.auth.uid == heartId;
       }
 
-      
-      
       function canCreatePost(userId) {
         let isOwner = request.auth.uid == userId;
+        let isVerified = request.auth.token.email_verified == true;
         let isNow = request.time == request.resource.data.createdAt;
-        let isValidContent = request.resource.data.content.size() < 20000 && request.resource.data.heartCount == 0;
+        let isValidContent = request.resource.data.content.size() < 20000 && request.resource.data.heartCount == 0 && request.resource.data.summary.size() < 10000;
         let username = get(/databases/$(database)/documents/users/$(request.auth.uid)).data.username;
         let usernameMatches = username == request.resource.data.username;
 
-      	return isOwner && isNow && isValidContent && usernameMatches;
+      	return isOwner && isVerified && isNow && isValidContent && usernameMatches;
       }
       
       function canUpdatePost(userId) {
         let isOwner = request.auth.uid == userId;
+        let isVerified = request.auth.token.email_verified == true;
       	let isNow = request.time == request.resource.data.updatedAt;
-        let isValidContent = request.resource.data.content.size() < 20000;
+        let isValidContent = request.resource.data.content.size() < 20000 && request.resource.data.summary.size() < 10000;
         let doesNotUpdateForbidden = !request.resource.data.diff(resource.data).affectedKeys().hasAny(['uid', 'username', 'heartCount']);
         
-        return isOwner && isNow && isValidContent && doesNotUpdateForbidden;
+        return isOwner && isVerified && isNow && isValidContent && doesNotUpdateForbidden;
       }
       
       function canIncrementHearts(userId, postId) {
@@ -66,29 +65,50 @@ service cloud.firestore {
         
         let countChange = request.resource.data.heartCount - resource.data.heartCount;
         let validChange = countChange == 1 || countChange == -1;
-
-        return hasValidFields && validChange && ( countChange == 1 ? heartDocAdded : heartDocRemoved );
+				let isVerified = request.auth.token.email_verified == true;
+        
+        return hasValidFields && isVerified && validChange && ( countChange == 1 ? heartDocAdded : heartDocRemoved );
       }
       
-  
+      function hasCorrectUserKeys(){
+      	return request.resource.data.keys().hasOnly(["aboutInfo", "displayName", "email", "moderated", "photoURL", "provider", "uid", "username"]);
+      }
       
       function isValidUser(userId) {
         let isOwner = request.auth.uid == userId;
       	let username = request.resource.data.username;
         let createdValidUsername = existsAfter(/databases/$(database)/documents/usernames/$(username));
         
-        return isOwner && createdValidUsername;
+        return isOwner && createdValidUsername && hasCorrectUserKeys();
+      }
+      
+      function isValidUserUpdate(userId) {
+				let isOwner = request.auth.uid == request.resource.data.uid && request.auth.uid == userId;
+        let username = request.resource.data.username;
+        let createdValidUsername = exists(/databases/$(database)/documents/usernames/$(username));
+       	let isValidAboutInfo = request.resource.data.aboutInfo.size() < 1000;
+        return isOwner && createdValidUsername && isValidAboutInfo && hasCorrectUserKeys(); 
       }
       
       function isValidUsername(username) {
 				let isOwner = request.auth.uid == request.resource.data.uid;
         let isValidLength = username.size() >= 3 && username.size() <= 20;
-        let isValidUserDoc = getAfter(/databases/$(database)/documents/users/$(request.auth.uid)).data.username == username;
+        let isValidUserDoc = getAfter(/databases/$(database)/documents/users/$(request.auth.uid)).data.username == username;	
         
         return isOwner && isValidLength && isValidUserDoc;     
       }
       
     }
     
+  }
+}
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /images/{imageId} {
+      // Only allow uploads of any image file that's less than 5MB
+      allow write: if request.resource.size < 5 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+    }
   }
 }

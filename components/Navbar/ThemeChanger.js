@@ -31,11 +31,11 @@ const ThemeChanger = ({ title }) => {
             theme === 'light' ? 'text-yellow-400' : 'text-gray-400'
           } h-6 w-6 mx-4 transition duration-300`}
         />
-        <div className="relative">
+        <div className="relative focus-within:ring-2 ring-yellow-400 ring-offset-4 dark:ring-offset-gray-800 rounded-full">
           <input
             id="toogleButton"
             type="checkbox"
-            className="hidden"
+            className="absolute opacity-0"
             onChange={handleToggle}
             checked={theme === 'dark' ? 'checked' : ''}
           />

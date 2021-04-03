@@ -4,14 +4,15 @@ import { FaCheckCircle, FaTimes } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { useModalState } from '@/lib/useModalState';
 import Modal from '../Modal';
-import { getProvider } from '@/lib/authUtils';
+import { getProvider, auth } from '@/lib/authUtils';
 import AccountDeleteForm from '@/components/Form/AccountDeleteForm';
 import UpdatePasswordForm from '@/components/Form/UpdatePasswordForm';
 import UpdateEmailForm from '../Form/UpdateEmailForm';
 import { HiChevronDoubleRight } from 'react-icons/hi';
+import UpdateAccountInfoForm from '../Form/UpdateAccountInfoForm';
 
 const AccountSettings = () => {
-  const { user, loading, verified } = useContext(UserContext);
+  const { user, loading } = useContext(UserContext);
   const { accountSettings_i18n } = useContext(AdminContext);
   const providerId = user?.providerData[0]?.providerId;
 
@@ -119,17 +120,7 @@ const AccountSettings = () => {
     <>
       <div className="prose prose-xl dark:prose-dark mx-auto flex flex-wrap justify-between items-end">
         <h3 className="flex-auto">{accountSettings_i18n.info_i18n}</h3>
-        <button className="mb-5 link-standard underline px-2">
-          {user?.info
-            ? accountSettings_i18n.update_i18n
-            : accountSettings_i18n.add_i18n}
-          <HiChevronDoubleRight className="ml-1 inline" />
-        </button>
-        <p className="text-center w-full">
-          {loading
-            ? accountSettings_i18n.loading_i18n
-            : user?.info || accountSettings_i18n.describeYourself_i18n}
-        </p>
+        <UpdateAccountInfoForm />
         <h3 className="flex-auto">{accountSettings_i18n.email}</h3>
         <button
           onClick={() => {
@@ -150,7 +141,7 @@ const AccountSettings = () => {
         </p>
         <div className="w-full flex items-end">
           <h3 className="flex-auto">{accountSettings_i18n.verfied_i18n}</h3>
-          {verified ? (
+          {auth?.currentUser?.emailVerified ? (
             <p className="flex items-center">
               {accountSettings_i18n.isVerified_i18n}
               <FaCheckCircle className="text-green-500 ml-2 dark:bg-white bg-gray-900 rounded-full" />
@@ -200,6 +191,7 @@ const AccountSettings = () => {
         <UpdateEmailForm
           closeModal={onUpdateEmailFormClose}
           providerId={providerId}
+          setEmail={setEmail}
         />
       </Modal>
 
