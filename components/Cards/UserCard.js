@@ -1,6 +1,7 @@
 import { FeedbackItemListContext, UserPostsContext } from '@/lib/context';
 import { getMoreUserPublishedPosts, getUserWithUsername } from '@/lib/dbUtils';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 import FeedbackItemList from '../Feedback/FeedbackItemList';
 
 const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
@@ -25,12 +26,9 @@ const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
         </h1>
         <div className="prose prose-lg dark:prose-dark mt-10 py-10 border-t border-gray-300 dark:border-gray-600 min-w-feedback text-center transition-darkmode">
           <h2>{info_i18n}</h2>
-          <p className="m-auto">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-            ullam voluptatem fugit vel esse doloremque id nesciunt aliquid rem,
-            necessitatibus earum. Animi, consequuntur quo doloribus expedita
-            incidunt nemo pariatur amet.
-          </p>
+          <ReactMarkdown className="m-auto">
+            {user?.aboutInfo || 'No about info given yet'}
+          </ReactMarkdown>
         </div>
         <div className="flex flex-col items-center py-10 border-t border-gray-300 dark:border-gray-600 min-w-feedback transition-darkmode">
           <h2 className="prose dark:prose-dark max-w-none text-center text-3xl font-semibold mb-8">

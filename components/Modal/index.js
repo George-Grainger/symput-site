@@ -26,7 +26,6 @@ export default function Modal({
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
               <h3 className="text-3xl font-semibold">{title}</h3>
               <button
-                aria-label="Close sidebar"
                 onClick={handleClose}
                 className="p-3 absolute top-4 right-4 link-standard button-on-bg"
               >
