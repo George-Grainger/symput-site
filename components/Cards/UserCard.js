@@ -1,14 +1,32 @@
 import { FeedbackItemListContext, UserPostsContext } from '@/lib/context';
-import { getMoreUserPublishedPosts, getUserWithUsername } from '@/lib/dbUtils';
+import { getMoreUserPublishedPosts } from '@/lib/dbUtils';
 import Image from 'next/image';
+import Link from 'next/link';
+import toast from 'react-hot-toast';
+import { FaInfoCircle } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import FeedbackItemList from '../Feedback/FeedbackItemList';
+import { useEffect } from 'react';
 
 const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
   const handleMore = async (last) => {
-    const userDoc = await getUserWithUsername(user.username);
-    return getMoreUserPublishedPosts(userDoc, last);
+    return getMoreUserPublishedPosts(user, last);
   };
+
+  useEffect(() => {
+    if (user?.moderated) {
+      toast(
+        <span>
+          This user's profile has been moderated in line with our terms of
+          service&nbsp;
+          <Link href="/terms">
+            <a className="link link-light-bg underline">located here</a>
+          </Link>
+        </span>,
+        { icon: <FaInfoCircle /> }
+      );
+    }
+  }, []);
 
   return (
     <section className="section-default pt-24 pb-36 px-4 sm:px-8">
@@ -22,7 +40,7 @@ const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
           />
         </div>
         <h1 className="pt-16 prose text-5xl dark:prose-dark font-semibold leading-normal">
-          {user.username}
+          {user.moderatedUsername}
         </h1>
         <div className="prose prose-lg dark:prose-dark mt-10 py-10 border-t border-gray-300 dark:border-gray-600 min-w-feedback text-center transition-darkmode">
           <h2>{info_i18n}</h2>

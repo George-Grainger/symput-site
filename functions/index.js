@@ -36,6 +36,33 @@ exports.moderateFeedback = functions.firestore
     }
   });
 
+exports.moderateUser = functions.firestore
+  .document('/users/{userId}')
+  .onWrite((change, context) => {
+    const userData = change.after.data();
+    if (userData) {
+      const username = userData.username;
+      const previosulyModerateUsername = userData.moderatedUsername;
+      const moderatedUsername = moderateMessage(username);
+      const aboutInfo = userData.aboutInfo;
+      const moderatedAboutInfo = moderateMessage(aboutInfo);
+      if (
+        moderatedUsername == previosulyModerateUsername &&
+        aboutInfo == moderatedAboutInfo
+      ) {
+        console.log('Nothing left to do');
+        return null;
+      }
+      return change.after.ref.update({
+        moderatedUsername,
+        aboutInfo: moderatedAboutInfo,
+        moderated: true
+      });
+    } else {
+      return null;
+    }
+  });
+
 // Moderates the given message if appropriate.
 function moderateMessage(message) {
   // Re-capitalize if the user is Shouting.

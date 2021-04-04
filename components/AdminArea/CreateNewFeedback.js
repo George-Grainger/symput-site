@@ -8,22 +8,24 @@ import Modal from '@/components/Modal';
 import { useModalState } from '@/lib/useModalState';
 import { useForm } from 'react-hook-form';
 import Input from '@/components/Form/Input';
-import { createFeedback } from '@/lib/dbUtils';
+import { createFeedback, getUserRef } from '@/lib/dbUtils';
 import { auth } from '@/lib/authUtils';
+import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
 
 const CreateNewFeedback = () => {
   const router = useRouter();
-  const { user, username, verified, handleVerification } = useContext(
-    UserContext
-  );
+  const { user, username, handleVerification } = useContext(UserContext);
   const { createFeedbackErrors } = useContext(ErrorsContext);
   const { createFeedback_i18n } = useContext(AdminContext);
+
+  const userRef = getUserRef();
+  const [userData] = useDocumentDataOnce(userRef);
   const { isOpen, onToggle, onClose } = useModalState();
   const { register, errors, handleSubmit, watch } = useForm();
   const title = watch('feedbackTitle');
 
   const handleToggle = () => {
-    if (user && !verified) {
+    if (user && !auth.currentUser.emailVerified) {
       let firstClick = true;
       toast(
         (t) => (
@@ -67,7 +69,13 @@ const CreateNewFeedback = () => {
 
   const createPost = async ({ feedbackTitle, feedbackSlug }) => {
     await toast.promise(
-      createFeedback(feedbackTitle, feedbackSlug, user, username),
+      createFeedback(
+        feedbackTitle,
+        feedbackSlug,
+        user,
+        username,
+        userData.moderatedUsername
+      ),
       createFeedback_i18n.toast_i18n
     );
     router.push(`/admin/${feedbackSlug}`);

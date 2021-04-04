@@ -24,7 +24,6 @@ const UpdateAccountInfoForm = () => {
 
   const updateUserInfo = async ({ newAboutInfo }) => {
     const success = await updateAboutInfo(newAboutInfo, username);
-    console.log(success);
     if (success) {
       toast.success('About you upated successfully');
       reset({ newAboutInfo });
