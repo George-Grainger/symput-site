@@ -7,6 +7,7 @@ import TextArea from './TextArea';
 import Triangle from '../Triangle';
 import { useContext } from 'react';
 import { LandingConext } from '@/lib/context';
+import Link from 'next/link';
 
 const Overview = () => {
   const { overview_i18n } = useContext(LandingConext);
@@ -29,7 +30,7 @@ const Overview = () => {
   return (
     <section className="py-24 px-8 bg-white dark:bg-gray-900 dark:text-white relative transition-darkmode">
       <Triangle color="text-white dark:text-gray-900" />
-      <div className="max-w-screen-lg xl:max-w-screen-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-x-8 mx-auto">
+      <div className="max-w-screen-lg xl:max-w-screen-xl grid md:grid-cols-2 lg:grid-cols-10 gap-x-8 mx-auto">
         <div className="flex flex-col col-span-1 lg:col-span-3">
           <LinkCard
             title={card1Title_i18n}
@@ -81,6 +82,36 @@ const Overview = () => {
             <p>{sideTextP3_i18n}</p>
           </TextArea>
         </div>
+      </div>
+      <hr />
+      <div className="max-w-screen-lg xl:max-w-screen-xl grid md:grid-cols-2 lg:grid-cols-8 gap-x-8 mx-auto pb-12">
+        <h3 className="text-3xl my-4 font-semibold leading-normal col-span-full">
+          Other Links
+        </h3>
+        <Link href="/" className="btn btn-yellow">
+          Updates
+        </Link>
+        <Link href="/" className="btn btn-black">
+          License
+        </Link>
+        <Link href="/" className="btn btn-yellow">
+          Languages
+        </Link>
+        <Link href="/" className="btn btn-black">
+          Accessibility
+        </Link>
+        <Link href="/" className="btn btn-yellow">
+          Contact Us
+        </Link>
+        <Link href="/" className="btn btn-black">
+          Privacy policy
+        </Link>
+        <Link href="/" className="btn btn-yellow">
+          Terms of service
+        </Link>
+        <Link href="/" className="btn btn-black">
+          Credits
+        </Link>
       </div>
     </section>
   );

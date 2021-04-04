@@ -44,7 +44,11 @@ const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
         </h1>
         <div className="prose prose-lg dark:prose-dark mt-10 py-10 border-t border-gray-300 dark:border-gray-600 min-w-feedback text-center transition-darkmode">
           <h2>{info_i18n}</h2>
-          <ReactMarkdown className="m-auto">
+          <ReactMarkdown
+            className="m-auto"
+            unwrapDisallowed={true}
+            allowedTypes={['root', 'text', 'paragraph']}
+          >
             {user?.aboutInfo || 'No about info given yet'}
           </ReactMarkdown>
         </div>

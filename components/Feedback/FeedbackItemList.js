@@ -5,7 +5,7 @@ import { useAsync } from '@/lib/useAsync';
 import { useContext, useEffect } from 'react';
 import FeedbackPlaceholder from '../Loading/FeedbackPlaceHolder';
 import { FeedbackItemListContext } from '@/lib/context';
-import { FaRegFrown } from 'react-icons/fa';
+import ThinkingSvg from '../Icons/ThinkingSvg';
 
 const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   const { posts, setPosts, isEnd, setIsEnd } = useContext(context);
@@ -38,7 +38,7 @@ const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   } else if (posts?.length === 0) {
     return (
       <div className="prose prose-xl dark:prose-dark my-8">
-        <FaRegFrown className="mx-auto h-16 w-16" />
+        <ThinkingSvg className="mx-auto h-24 w-24" />
         <p>Yet to provide feedback</p>
       </div>
     );

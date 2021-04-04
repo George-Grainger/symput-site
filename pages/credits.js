@@ -1,22 +1,40 @@
-import { getFooterData, getNavbarData } from '@/lib/pageContent';
-import Layout from 'layout/Layout';
+import {
+  getFooterData,
+  getMarkdownData,
+  getNavbarData
+} from '@/lib/pageContent';
+import ContentPageLayout from 'layout/ContentPageLayout';
 
 export const getStaticProps = async ({ locale }) => {
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
+  const { markdownContent, markdownMetadata } = getMarkdownData(
+    locale,
+    'credits'
+  );
   return {
     props: {
       navbarData,
-      footerData
+      footerData,
+      markdownContent,
+      markdownMetadata
     }
   };
 };
 
-const credits = ({ navbarData, footerData }) => {
+const credits = ({
+  navbarData,
+  footerData,
+  markdownContent,
+  markdownMetadata
+}) => {
   return (
-    <Layout navbarData={navbarData} footerData={footerData}>
-      <p>Credits to be completed</p>
-    </Layout>
+    <ContentPageLayout
+      navbarData={navbarData}
+      footerData={footerData}
+      markdownContent={markdownContent}
+      markdownMetadata={markdownMetadata}
+    />
   );
 };
 

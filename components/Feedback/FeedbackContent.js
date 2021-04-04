@@ -45,7 +45,7 @@ export default function FeedbackContent({ post }) {
         <>
           <span>{writtenBy_i18n}&nbsp;</span>
           <Link href={`/${post.username}/`}>
-            <a className="link-standard p-1">@{post.username}</a>
+            <a className="link-standard p-1">@{post.moderatedUsername}</a>
           </Link>
           <span>{` ${on_i18n} ${localisedDate}`}</span>
         </>
