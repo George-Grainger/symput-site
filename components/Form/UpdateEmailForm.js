@@ -21,7 +21,6 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
   const [, doRefresh] = useState(null);
 
   const handlePasswordReauth = async ({ verifypassword, newemail }) => {
-    console.log(verifypassword, newemail);
     let isValid = false;
     if (providerId === 'password') {
       isValid = await revalidateUser(verifypassword);

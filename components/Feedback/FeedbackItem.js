@@ -55,7 +55,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
           <div className="ml-4 mt-0.5">
             <Link href={`/${post.username}`}>
               <a className="block leading-snug hover:text-yellow-600 dark:hover-link-yellow-400 mb-1">
-                {post.username}
+                {post.moderatedUsername}
               </a>
             </Link>
             <span className="block text-sm font-light leading-snug">
