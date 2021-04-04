@@ -1,22 +1,40 @@
-import { getFooterData, getNavbarData } from '@/lib/pageContent';
-import Layout from 'layout/Layout';
+import {
+  getFooterData,
+  getMarkdownData,
+  getNavbarData
+} from '@/lib/pageContent';
+import ContentPageLayout from 'layout/ContentPageLayout';
 
 export const getStaticProps = async ({ locale }) => {
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
+  const { markdownContent, markdownMetadata } = getMarkdownData(
+    locale,
+    'accessibility'
+  );
   return {
     props: {
       navbarData,
-      footerData
+      footerData,
+      markdownContent,
+      markdownMetadata
     }
   };
 };
 
-const accessibility = ({ navbarData, footerData }) => {
+const accessibility = ({
+  navbarData,
+  footerData,
+  markdownContent,
+  markdownMetadata
+}) => {
   return (
-    <Layout navbarData={navbarData} footerData={footerData}>
-      <p>Accessibility to be completed</p>
-    </Layout>
+    <ContentPageLayout
+      navbarData={navbarData}
+      footerData={footerData}
+      markdownContent={markdownContent}
+      markdownMetadata={markdownMetadata}
+    />
   );
 };
 

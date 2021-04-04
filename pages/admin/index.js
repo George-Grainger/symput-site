@@ -3,6 +3,7 @@ import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import Layout from 'layout/Layout';
 import AdminCard from '@/components/Cards/AdminCard';
 import { FeedbackItemListContext, AdminContext } from '@/lib/context';
+import { NextSeo } from 'next-seo';
 
 export const getStaticProps = async ({ locale }) => {
   const itemsListData = getPageData(locale, 'feedback-itemlist');
@@ -30,6 +31,7 @@ export default function AdminPostsPage({
 }) {
   return (
     <>
+      <NextSeo noindex={true} />
       <Layout navbarData={navbarData} footerData={footerData}>
         <AuthCheck>
           <AdminContext.Provider value={pageData}>

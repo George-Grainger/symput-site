@@ -10,6 +10,7 @@ import UpdatePasswordForm from '@/components/Form/UpdatePasswordForm';
 import UpdateEmailForm from '../Form/UpdateEmailForm';
 import { HiChevronDoubleRight } from 'react-icons/hi';
 import UpdateAccountInfoForm from '../Form/UpdateAccountInfoForm';
+import { deleteUserStorage } from '@/lib/storage';
 
 const AccountSettings = () => {
   const { user, loading } = useContext(UserContext);
@@ -101,6 +102,7 @@ const AccountSettings = () => {
                     error: "You couldn't be verified"
                   })
                   .then(() => {
+                    deleteUserStorage(user.uid);
                     toast.dismiss(t.id);
                     user?.delete();
                   });
