@@ -34,13 +34,13 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
 
   return (
     <Link href={`/${post.username}/${post.slug}`}>
-      <div className="px-5 py-4 bg-white dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose prose-lg dark:prose-dark transition-darkmode">
-        <div className="relative flex mb-4 items-start">
+      <a className="px-5 py-4 bg-white dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose prose-lg dark:prose-dark transition-darkmode">
+        <div className="relative flex mb-4 items-start right-0">
           {admin &&
             (auth.currentUser.emailVerified ? (
               <Link href={`/admin/${post.slug}`}>
-                <a>
-                  <FaEdit className="absolute right-0 h-6 w-6 hover:text-yellow-600 dark:hover:text-yellow-400" />
+                <a className="absolute right-0">
+                  <FaEdit className="h-6 w-6 hover:text-yellow-600 dark:hover:text-yellow-400" />
                 </a>
               </Link>
             ) : (
@@ -55,7 +55,9 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
                   )
                 }
               >
-                <FaEdit className="absolute right-0 h-6 w-6 hover:text-yellow-600 dark:hover:text-yellow-400" />
+                <a className="absolute right-0">
+                  <FaEdit className="h-6 w-6 hover:text-yellow-600 dark:hover:text-yellow-400" />
+                </a>
               </Link>
             ))}
           <Link href={`/${post.username}`} passHref>
@@ -114,7 +116,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
               : `${wordCount} ${words_i18n} ${minutesToRead} ${minRead_i18n}`}
           </div>
         </div>
-      </div>
+      </a>
     </Link>
   );
 }

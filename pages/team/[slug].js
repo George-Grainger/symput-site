@@ -1,10 +1,24 @@
+import Member from '@/components/Team/Member';
+import TeamSocialsLinks from '@/components/Team/TeamSocialsLinks';
+import { getFooterData, getNavbarData } from '@/lib/pageContent';
 import { getAllTeamSlugs, getPersonData } from '@/lib/team';
+import ContentPageLayout from 'layout/ContentPageLayout';
+import Image from 'next/image';
 
-export const getStaticProps = async ({ locale, params }) => {
-  const personData = await getPersonData(locale, params.slug);
+export const getStaticProps = ({ locale, params }) => {
+  const navbarData = getNavbarData(locale);
+  const footerData = getFooterData(locale);
+  const { markdownContent, markdownMetadata } = getPersonData(
+    locale,
+    params.slug
+  );
   return {
     props: {
-      personData
+      slug: params.slug,
+      navbarData,
+      footerData,
+      markdownContent,
+      markdownMetadata
     }
   };
 };
@@ -17,15 +31,35 @@ export const getStaticPaths = ({ locales }) => {
   };
 };
 
-const Person = ({ personData }) => {
+const Person = ({
+  slug,
+  navbarData,
+  footerData,
+  markdownContent,
+  markdownMetadata
+}) => {
+  const availableSocials = Object.keys(markdownMetadata?.socials);
   return (
-    <>
-      <article className="w-full">
-        <h1>{personData.name}</h1>
-        <div>{personData.summary}</div>
-        <div dangerouslySetInnerHTML={{ __html: personData.contentHtml }} />
-      </article>
-    </>
+    <ContentPageLayout
+      title={`Symput - ${markdownMetadata?.name || 'Team member'}`}
+      navbarData={navbarData}
+      footerData={footerData}
+      markdownContent={markdownContent}
+      markdownMetadata={markdownMetadata}
+    >
+      <div className="mb-4">
+        <Image
+          alt={markdownMetadata?.name}
+          src={markdownMetadata?.image || '/images/hacker.png'}
+          className="rounded-full max-w-full cursor-pointer"
+          width="128"
+          height="128"
+        />
+      </div>
+      {availableSocials && (
+        <TeamSocialsLinks availableSocials={availableSocials} />
+      )}
+    </ContentPageLayout>
   );
 };
 export default Person;

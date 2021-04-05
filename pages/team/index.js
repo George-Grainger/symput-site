@@ -2,7 +2,6 @@ import { getSortedPeopleData } from '@/lib/team';
 import Team from '@/components/Team';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import Layout from 'layout/Layout';
-import { TeamContext } from '@/lib/context';
 
 export const getStaticProps = async ({ locale }) => {
   const pageData = getPageData(locale, 'team');

@@ -46,7 +46,7 @@ const Overview = () => {
             title={card2Title_i18n}
             learnMore={learnMore_i18n}
             className="card-yellow"
-            btnClass="btn-black-inverted"
+            btnClass="btn-black-inverted focus:ring-4 focus:ring-black ring-offset-2"
             link="/team"
             icon={<AiOutlineTeam className="h-full w-full" />}
           >
@@ -58,7 +58,7 @@ const Overview = () => {
             title={card3Title_i18n}
             learnMore={learnMore_i18n}
             className="card-black dark:card-gray md:card-yellow md:dark:card-yellow"
-            btnClass="btn-yellow-inverted dark:btn-black-inverted md:btn-black-inverted md:dark:btn-black-inverted"
+            btnClass="btn-yellow-inverted focus:ring-4 md:ring-black ring-offset-2 dark:btn-black-inverted md:btn-black-inverted md:dark:btn-black-inverted"
             link="/release"
             icon={<BsCalendar className="h-full w-full" />}
           >
@@ -68,7 +68,7 @@ const Overview = () => {
             title={card4Title_i18n}
             learnMore={learnMore_i18n}
             className="card-yellow dark:card-yellow md:card-black md:dark:card-gray"
-            btnClass="btn-black-inverted dark:btn-black-inverted md:btn-yellow-inverted md:btn-yellow-inverted"
+            btnClass="btn-black-inverted focus:ring-4 focus:ring-black md:ring-yellow-400 ring-offset-2 dark:btn-black-inverted md:btn-yellow-inverted md:btn-yellow-inverted"
             link="/feedback"
             icon={<BiCommentCheck className="h-full w-full" />}
           >
@@ -84,33 +84,45 @@ const Overview = () => {
         </div>
       </div>
       <hr />
-      <div className="max-w-screen-lg xl:max-w-screen-xl grid md:grid-cols-2 lg:grid-cols-8 gap-x-8 mx-auto pb-12">
+      <div className="max-w-screen-lg xl:max-w-screen-xl grid md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto pb-12 text-center">
         <h3 className="text-3xl my-4 font-semibold leading-normal col-span-full">
           Other Links
         </h3>
-        <Link href="/" className="btn btn-yellow">
-          Updates
+        <Link href="/updates">
+          <a className="animation-btn animation-to-yellow">Updates</a>
         </Link>
-        <Link href="/" className="btn btn-black">
-          License
+        <Link href="/license">
+          <a className="animation-btn animation-to-black">License</a>
         </Link>
-        <Link href="/" className="btn btn-yellow">
-          Languages
+        <Link href="/languages">
+          <a className="animation-btn animation-to-yellow md:animation-to-black lg:animation-to-yellow">
+            Languages
+          </a>
         </Link>
-        <Link href="/" className="btn btn-black">
-          Accessibility
+        <Link href="/accessibility">
+          <a className="animation-btn animation-to-black md:animation-to-yellow lg:animation-to-black">
+            Accessibility
+          </a>
         </Link>
-        <Link href="/" className="btn btn-yellow">
-          Contact Us
+        <Link href="/contact-us">
+          <a className="animation-btn animation-to-yellow lg:animation-to-black">
+            Contact Us
+          </a>
         </Link>
-        <Link href="/" className="btn btn-black">
-          Privacy policy
+        <Link href="/privacy-policy">
+          <a className="animation-btn animation-to-black lg:animation-to-yellow">
+            Privacy policy
+          </a>
         </Link>
-        <Link href="/" className="btn btn-yellow">
-          Terms of service
+        <Link href="/terms">
+          <a className="animation-btn animation-to-yellow md:animation-to-black">
+            Terms of service
+          </a>
         </Link>
-        <Link href="/" className="btn btn-black">
-          Credits
+        <Link href="/credits">
+          <a className="animation-btn animation-to-black md:animation-to-yellow">
+            Credits
+          </a>
         </Link>
       </div>
     </section>
