@@ -1,8 +1,6 @@
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-import IconLink from '@/components/Icons/IconLink';
 import Link from 'next/link';
-import GoogleIcon from '../Icons/GoogleIcon';
 import Image from 'next/image';
+import TeamSocialsLinks from './TeamSocialsLinks';
 
 const Member = ({
   name,
@@ -33,42 +31,7 @@ const Member = ({
           <a className="prose-2xl link link-dark-bg">{name}</a>
         </Link>
         <p className="font-semibold prose prose-dark">{children}</p>
-        <div className="flex justify-center">
-          {availableSocials.includes('twitter') && (
-            <IconLink
-              accessibleLabel="Twitter"
-              size="h-8 w-8"
-              icon={<FaTwitter className="h-5 w-5" />}
-              buttonClasses="bg-red-400 mx-2"
-            />
-          )}
-          {availableSocials.includes('facebook') && (
-            <IconLink
-              accessibleLabel="Facebook"
-              size="h-8 w-8"
-              icon={<FaFacebook className="h-5 w-5" />}
-              buttonClasses="bg-blue-600"
-              linkClasses="link link-dark-bg mx-2"
-            />
-          )}
-          {availableSocials.includes('instagram') && (
-            <IconLink
-              accessibleLabel="Instagram"
-              size="h-8 w-8"
-              icon={<FaInstagram className="h-5 w-5 text-gray-900" />}
-              buttonClasses="bg-white"
-              linkClasses="link link-dark-bg mx-2 mt-0"
-            />
-          )}
-          {availableSocials.includes('google') && (
-            <IconLink
-              accessibleLabel="Google"
-              size="h-8 w-8"
-              icon={<GoogleIcon className="h-5 w-5" />}
-              linkClasses="link link-dark-bg mx-2"
-            />
-          )}
-        </div>
+        <TeamSocialsLinks availableSocials={availableSocials} darkbg={true} />
       </div>
     </div>
   );

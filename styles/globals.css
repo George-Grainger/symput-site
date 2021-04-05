@@ -65,7 +65,7 @@ input:checked ~ .toggle-path {
 }
 
 .input-util {
-  @apply appearance-none border border-transparent w-full py-2 px-4 shadow-md rounded focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent;
+  @apply appearance-none border border-transparent w-full py-2 px-4 shadow-md rounded focus:ring-2 focus:ring-yellow-400 focus:border-transparent;
 }
 
 .input {
@@ -86,6 +86,10 @@ input:checked ~ .toggle-path {
 
 .card p {
   @apply mt-4;
+}
+
+:focus {
+  @apply outline-none ring-4 ring-yellow-400 ring-offset-2 transition;
 }
 
 @responsive {
@@ -153,6 +157,55 @@ input:checked ~ .toggle-path {
       @apply font-bold py-3 px-6 rounded transition-colors shadow-md cursor-pointer;
     }
 
+    .animation-btn {
+      @apply btn relative z-10 overflow-hidden;
+    }
+
+    .animation-btn::before,
+    .animation-btn::after {
+      @apply absolute top-1/2 w-5 h-5 rounded-full;
+      content: '';
+    }
+
+    .animation-btn::before {
+      @apply -left-5 transform -translate-x-1/2 -translate-y-1/2;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    .animation-btn::after {
+      @apply -right-5 transform translate-x-1/2 -translate-y-1/2;
+      z-index: -1;
+    }
+
+    .animation-btn:hover::before {
+      animation: criss-cross-left 0.8s both;
+      animation-direction: alternate;
+    }
+
+    .animation-btn:hover::after {
+      animation: criss-cross-right 0.8s both;
+      animation-direction: alternate;
+    }
+
+    .animation-to-black {
+      @apply text-white bg-gray-900 dark:bg-gray-300 dark:text-black dark:hover:text-white;
+    }
+
+    .animation-to-black::before,
+    .animation-to-black::after {
+      @apply bg-gray-700;
+    }
+
+    .animation-to-yellow {
+      @apply bg-yellow-400 text-black hover:text-white dark:bg-gray-300;
+    }
+
+    .animation-to-yellow::before,
+    .animation-to-yellow::after {
+      @apply bg-yellow-600;
+    }
+
     .btn-lg {
       @apply font-bold py-3 px-8 rounded transition-colors cursor-pointer;
     }
@@ -182,7 +235,7 @@ input:checked ~ .toggle-path {
     }
 
     .btn-black-inverted {
-      @apply text-gray-900 bg-transparent border border-solid border-gray-900 hover:text-white hover:bg-gray-900 hover:border-gray-900;
+      @apply text-gray-900 bg-transparent border border-solid border-gray-900 hover:text-white hover:bg-gray-900;
     }
 
     .link {
@@ -231,44 +284,44 @@ input:checked ~ .toggle-path {
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .loader-dots div:nth-child(1) {
-  left: 8px;
+  @apply left-2;
   animation: loader-dots1 0.6s infinite;
 }
 .loader-dots div:nth-child(2) {
-  left: 8px;
+  @apply left-2;
   animation: loader-dots2 0.6s infinite;
 }
 .loader-dots div:nth-child(3) {
-  left: 32px;
+  @apply left-8;
   animation: loader-dots2 0.6s infinite;
 }
 .loader-dots div:nth-child(4) {
-  left: 56px;
+  @apply left-14;
   animation: loader-dots3 0.6s infinite;
 }
 
 @keyframes loader-dots1 {
   0% {
-    transform: scale(0);
+    @apply transform scale-0;
   }
   100% {
-    transform: scale(1);
+    @apply transform scale-100;
   }
 }
 @keyframes loader-dots3 {
   0% {
-    transform: scale(1);
+    @apply transform scale-100;
   }
   100% {
-    transform: scale(0);
+    @apply transform scale-0;
   }
 }
 @keyframes loader-dots2 {
   0% {
-    transform: translate(0, 0);
+    @apply transform translate-x-0 translate-y-0;
   }
   100% {
-    transform: translate(24px, 0);
+    @apply transform translate-x-6 translate-y-0;
   }
 }
 
@@ -279,12 +332,36 @@ input:checked ~ .toggle-path {
 
 @keyframes blinking-cursor {
   0% {
-    opacity: 0;
+    @apply opacity-0;
   }
   50% {
-    opacity: 1;
+    @apply opacity-100;
   }
   100% {
-    opacity: 0;
+    @apply opacity-0;
+  }
+}
+
+@keyframes criss-cross-left {
+  0% {
+    @apply -left-5;
+  }
+  50% {
+    @apply left-1/2 w-5 h-5;
+  }
+  100% {
+    @apply left-1/2 w-full h-96;
+  }
+}
+
+@keyframes criss-cross-right {
+  0% {
+    @apply -right-5;
+  }
+  50% {
+    @apply right-1/2 w-5 h-5;
+  }
+  100% {
+    @apply right-1/2 w-full h-96;
   }
 }

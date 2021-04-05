@@ -9,16 +9,19 @@ export default function LoggedIn() {
 
   return (
     <li className="link-standard flex p-1 md:mx-3">
-      <div className="rounded-full user-icon h-10 w-10">
+      <button
+        tabIndex="0"
+        className="rounded-full user-icon h-10 w-10 focus:outline-none"
+        onClick={() => setDropDownVisible(!dropDownVisible)}
+      >
         <Image
           alt={`${username} avatar`}
           height="40px"
           width="40px"
-          onClick={() => setDropDownVisible(!dropDownVisible)}
           src={user?.photoURL || '/images/hacker.png'}
           className="rounded-full h-12 w-12"
         />
-      </div>
+      </button>
       <UserControls username={username} visible={dropDownVisible} />
     </li>
   );

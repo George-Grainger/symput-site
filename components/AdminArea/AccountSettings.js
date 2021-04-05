@@ -46,11 +46,11 @@ const AccountSettings = () => {
     toast(
       (t) => (
         <div className="flex flex-wrap text-center">
-          <button className="absolute right-4">
-            <FaTimes
-              onClick={() => toast.dismiss(t.id)}
-              className=" h-6 w-6 link link-light-bg"
-            />
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className="absolute right-4"
+          >
+            <FaTimes className=" h-6 w-6 link link-light-bg" />
           </button>
           <span className="font-semibold text-xl flex-auto">Verification</span>
           <span className="mt-4">
@@ -84,11 +84,11 @@ const AccountSettings = () => {
       toast(
         (t) => (
           <div className="flex flex-wrap text-center">
-            <button className="absolute right-4">
-              <FaTimes
-                onClick={() => toast.dismiss(t.id)}
-                className=" h-6 w-6 link link-light-bg"
-              />
+            <button
+              onClick={() => toast.dismiss(t.id)}
+              className="absolute right-4"
+            >
+              <FaTimes className=" h-6 w-6 link link-light-bg" />
             </button>
             <span className="font-semibold text-xl flex-auto">
               Checking it's you

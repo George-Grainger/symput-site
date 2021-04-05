@@ -7,7 +7,8 @@ const ContentPageLayout = ({
   footerData,
   transparent,
   markdownContent,
-  markdownMetadata
+  markdownMetadata,
+  children
 }) => {
   return (
     <>
@@ -19,9 +20,9 @@ const ContentPageLayout = ({
       >
         <section className="section-default section-default-padding">
           <div className="text-center px-4 prose prose-lg dark:prose-dark transition-darkmode mb-12">
-            {markdownMetadata?.title && (
+            {(markdownMetadata?.title || markdownMetadata?.name) && (
               <h1 className="font-semibold transition-darkmode">
-                {markdownMetadata.title}
+                {markdownMetadata?.title || markdownMetadata?.name}
               </h1>
             )}
             {markdownMetadata?.summary && (
@@ -31,7 +32,8 @@ const ContentPageLayout = ({
             )}
           </div>
           <div className="w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode">
-            <ReactMarkdown className="m-auto prose prose-lg dark:prose-dark">
+            {children}
+            <ReactMarkdown className="w-full py-4 sm:py-8 prose prose-lg dark:prose-dark">
               {markdownContent}
             </ReactMarkdown>
           </div>
