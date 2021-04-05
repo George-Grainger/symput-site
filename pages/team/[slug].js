@@ -38,7 +38,8 @@ const Person = ({
   markdownContent,
   markdownMetadata
 }) => {
-  const availableSocials = Object.keys(markdownMetadata?.socials);
+  const availableSocials =
+    markdownMetadata?.socials && Object.keys(markdownMetadata.socials);
   return (
     <ContentPageLayout
       title={`Symput - ${markdownMetadata?.name || 'Team member'}`}
