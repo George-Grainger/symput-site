@@ -16,7 +16,7 @@ const Member = ({
       className={`${className} flex flex-col items-center card card-black lg:card-hexagon col-span-2`}
     >
       <Link href={`/team/${slug}`}>
-        <a className="flex items-center rounded-lg link-dark-bg">
+        <a className="flex items-center rounded-lg link-dark-bg z-10">
           <Image
             alt={name}
             src={image || '/images/hacker.png'}
