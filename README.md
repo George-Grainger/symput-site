@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is the website for the mathematical keyboard Symput [found here](https://github.com/LefalChizzle/X15Symput).
 
-## Getting Started
+# What is the purpose:
+The keyboard is aimed at reducing the difficulty of writing maths through a keyboard. 
+There are solutions such as [TeX](https://en.wikipedia.org/wiki/TeX) out there that already solve this problem, however, they're not commonly used on mobiles.
 
-First, run the development server:
+We've decided to focus on this and attempted to create something which not only enables people to communicate maths but is comfortable enough to use day to day.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# The website:
+The website is made from [NextJS](https://nextjs.org/), using [Google Firebase](https://firebase.google.com/) as a backend. It was created as a learning project so there are no doubt (many) mistakes in the code. Feel free to let us know or create a pull request if you find any.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview:
+* `components/` contains the bulk of the code. Each component is in its own file, and as much as I could is split into logic folders concerning how to component is used on the site.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+* `data/` contains the text information for the pages. There are different three supported languages on the site, English (en), Arabic (ar), and simplified Chinese (zh-cn). Each significant section of content is indicated by the folder, then the file name indicates the language. The exception here is the team page, which also has subfolders containing each team member in the three languages, this was done early on and probably should be updated so it's more in line with the rest of the data.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+* `functions/` contains the cloud functions used by firebase.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* `Layout/` contains only two components, one of which inherits the other. These (as expected) set a very general page layout, meaning there's less code repetition on each page.
+* `lib/` contains useful functions related to fetching data both from the local data file and from firestore, authenticating the user as well as custom react hooks which are used on the site.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+*  `pages/` contains all of the routed pages on the site. All the pages but `pages/admin/[slug].js` are [statically generated](https://nextjs.org/docs/basic-features/pages#static-generation-recommended). `pages/admin/[slug].js` is client side rendered.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+*  `public/` includes images and SSO related stuff. Note that many of the SVGs are inline and found in `components/Icons`
+
+* `styles/` contains a CSS file containing some custom styles. Most of the styling was done through [Tailwind CSS](https://tailwindcss.com/)
+
+* `/` things in the base directory are mainly config files.  
+
+## License:
+MIT License
+
+Copyright (c) 2018 Symput
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
