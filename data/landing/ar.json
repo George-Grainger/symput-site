@@ -15,9 +15,18 @@
     "card4Content_i18n": "نريد حقًا معرفة تعليقات الأشخاص على مشروعك. شاهد أفكار الآخرين وشارك أفكارك عن طريق إنشاء حساب.",
     "learnMore_i18n": "يتعلم أكثر",
     "sideTextTitle_i18n": "تقدمنا",
-    "sideTextP1_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextP2_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextP3_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextLink_i18n": "التحديثات الأخيرة"
+    "sideTextP1_i18n": "في مشروعنا الأول في جامعة مانشستر ، عملنا على إنشاء لوحة مفاتيح رياضية.",
+    "sideTextP2_i18n": "لقد بدأنا بمعرفة قليلة جدًا ، إن وجدت ، بأجهزة Android أو Kotlin ، مع عدم وجود خبرة لدى بعض الأعضاء في الترميز قبل هذا العام.",
+    "sideTextP3_i18n": "مع مرور الوقت تعلمنا الكثير وحققنا الكثير من التقدم. لقد حاولنا تتبع ما فعلناه بمرور الوقت حتى تتمكن من متابعته.",
+    "sideTextLink_i18n": "التحديثات الأخيرة",
+    "otherLinks_i18n": "روابط أخرى",
+    "updates_i18n": "التحديثات",
+    "license_i18n": "رخصة",
+    "languages_i18n": "اللغات",
+    "accessibility_i18n": "إمكانية الوصول",
+    "contactUs_i18n": "اتصل بنا",
+    "privacyPolicy_i18n": "سياسة الخصوصية",
+    "termsOfService_i18n": "شروط الخدمة",
+    "credits_i18n": "الاعتمادات"
   }
 }

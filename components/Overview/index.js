@@ -25,7 +25,16 @@ const Overview = () => {
     sideTextP1_i18n,
     sideTextP2_i18n,
     sideTextP3_i18n,
-    sideTextLink_i18n
+    sideTextLink_i18n,
+    otherLinks_i18n,
+    updates_i18n,
+    license_i18n,
+    languages_i18n,
+    accessibility_i18n,
+    contactUs_i18n,
+    privacyPolicy_i18n,
+    termsOfService_i18n,
+    credits_i18n
   } = overview_i18n;
   return (
     <section className="py-24 px-8 bg-white dark:bg-gray-900 dark:text-white relative transition-darkmode">
@@ -86,42 +95,42 @@ const Overview = () => {
       <hr />
       <div className="max-w-screen-lg xl:max-w-screen-xl grid md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto pb-12 text-center">
         <h3 className="text-3xl my-4 font-semibold leading-normal col-span-full">
-          Other Links
+          {otherLinks_i18n}
         </h3>
         <Link href="/updates">
-          <a className="animation-btn animation-to-yellow">Updates</a>
+          <a className="animation-btn animation-to-yellow">{updates_i18n}</a>
         </Link>
         <Link href="/license">
-          <a className="animation-btn animation-to-black">License</a>
+          <a className="animation-btn animation-to-black">{license_i18n}</a>
         </Link>
         <Link href="/languages">
           <a className="animation-btn animation-to-yellow md:animation-to-black lg:animation-to-yellow">
-            Languages
+            {languages_i18n}
           </a>
         </Link>
         <Link href="/accessibility">
           <a className="animation-btn animation-to-black md:animation-to-yellow lg:animation-to-black">
-            Accessibility
+            {accessibility_i18n}
           </a>
         </Link>
         <Link href="/contact-us">
           <a className="animation-btn animation-to-yellow lg:animation-to-black">
-            Contact Us
+            {contactUs_i18n}
           </a>
         </Link>
         <Link href="/privacy-policy">
           <a className="animation-btn animation-to-black lg:animation-to-yellow">
-            Privacy policy
+            {privacyPolicy_i18n}
           </a>
         </Link>
         <Link href="/terms">
           <a className="animation-btn animation-to-yellow md:animation-to-black">
-            Terms of service
+            {termsOfService_i18n}
           </a>
         </Link>
         <Link href="/credits">
           <a className="animation-btn animation-to-black md:animation-to-yellow">
-            Credits
+            {credits_i18n}
           </a>
         </Link>
       </div>

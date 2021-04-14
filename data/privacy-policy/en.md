@@ -1,313 +1,87 @@
 ---
 title: 'Privacy Policy'
-summary: 'EN Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae accusamus autem sunt beatae esse blanditiis illo, tempore ea. Architecto iste culpa temporibus minus dicta eum vel debitis voluptatem sapiente ex.'
+summary: 'We care about your privacy. Keeping your personal information safe matters to us. We take data protection seriously because we respect the trust that you place in us to use your personal information appropriately and responsibly.'
 ---
 
-# Markdown: Syntax
+## You can be confident that:
 
-- [Overview](#overview)
-  - [Philosophy](#philosophy)
-  - [Inline HTML](#html)
-  - [Automatic Escaping for Special Characters](#autoescape)
-- [Block Elements](#block)
-  - [Paragraphs and Line Breaks](#p)
-  - [Headers](#header)
-  - [Blockquotes](#blockquote)
-  - [Lists](#list)
-  - [Code Blocks](#precode)
-  - [Horizontal Rules](#hr)
-- [Span Elements](#span)
-  - [Links](#link)
-  - [Emphasis](#em)
-  - [Code](#code)
-  - [Images](#img)
-- [Miscellaneous](#misc)
-  - [Backslash Escapes](#backslash)
-  - [Automatic Links](#autolink)
-
-**Note:** This document is itself written using Markdown; you
-can [see the source for it by adding '.text' to the URL](/projects/markdown/syntax.text).
+- We will only use personal information in ways we need to and that are expected of us.
+- We will make it easy for you to delete your information at any point you want.
+- We will not sell your information with third parties for their marketing purposes
+- We will try to keep your data safe.
 
 ---
 
-## Overview
+## This policy
 
-### Philosophy
+This policy covers how we treat the personal information that we collect when you use our website www.symput.com and our services, or when you contact us in any manner.
 
-Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+---
 
-Readability, however, is emphasized above all else. A Markdown-formatted
-document should be publishable as-is, as plain text, without looking
-like it's been marked up with tags or formatting instructions. While
-Markdown's syntax has been influenced by several existing text-to-HTML
-filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html),
-[Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
-inspiration for Markdown's syntax is the format of plain text email.
+## Personal data and processing – what is it?
 
-## Block Elements
+Personal data means information (whether stored electronically or paper based) relating to a living individual that can be used to determine their identity. Examples include:
 
-### Paragraphs and Line Breaks
+- Name, address, email address, social media posts, photos, passport, personal medical information (e.g. genetic, biometric – this is ‘sensitive personal data’, which can only be processed under strict conditions), IP addresses, bank details, National Insurance Number etc.
 
-A paragraph is simply one or more consecutive lines of text, separated
-by one or more blank lines. (A blank line is any line that looks like a
-blank line -- a line containing nothing but spaces or tabs is considered
-blank.) Normal paragraphs should not be indented with spaces or tabs.
+Processing is any activity that involves use of personal data. It includes obtaining, recording or holding the data, organising, amending, retrieving, using, disclosing, erasing or destroying it. Processing also includes transferring personal data to third parties.
 
-The implication of the "one or more consecutive lines of text" rule is
-that Markdown supports "hard-wrapped" text paragraphs. This differs
-significantly from most other text-to-HTML formatters (including Movable
-Type's "Convert Line Breaks" option) which translate every line break
-character in a paragraph into a `<br />` tag.
+---
 
-When you _do_ want to insert a `<br />` break tag using Markdown, you
-end a line with two or more spaces, then type return.
+## Data protection principles - what are they?
 
-### Headers
+When we process your personal data we’ll be guided by the following principles:
 
-Markdown supports two styles of headers, [Setext] [1] and [atx] [2].
+- Lawfulness, fairness and transparency - We’ll be open about what data processing we do, what is processed will match up with how we have described it and we shall comply with the law.
+- Purpose limitations - We’ll only collect or obtain data for specified, explicit and legitimate purposes which can only be used for the processing purpose that we have made you aware of. If that changes, we’ll need your consent.
+- Data minimisation - The data we collect will be adequate, relevant and limited to what is necessary.
+- Accuracy - Our data will be accurate and where necessary, kept up to date.
+- Storage limitations - Any personal data we keep will be kept for no longer than necessary and then removed / deleted.
+- Integrity and confidentiality - We’ll put in place appropriate security measures to safeguard data and protect against unlawful processing or accidental loss, destruction or damage.
 
-Optionally, you may "close" atx-style headers. This is purely
-cosmetic -- you can use this if you think it looks better. The
-closing hashes don't even need to match the number of hashes
-used to open the header. (The number of opening hashes
-determines the header level.)
+---
 
-### Blockquotes
+## What data do we collect?
 
-Markdown uses email-style `>` characters for blockquoting. If you're
-familiar with quoting passages of text in an email message, then you
-know how to create a blockquote in Markdown. It looks best if you hard
-wrap the text and put a `>` before every line:
+We only collect what we need to.
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
->
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+Depending on your use of our site and if you are contacting us, personal information we collect from you will include some or all of the following - your name, email address, mobile or telephone number and information regarding what web pages are accessed on our site.
 
-Markdown allows you to be lazy and only put the `>` before the first
-line of a hard-wrapped paragraph:
+---
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+## Data may be collected in the following ways:
 
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+When you complete our website enquiry form, email us, phone us, or submit job applications
+by means of ‘cookies’ when you use our website – please see our Cookies Policy
 
-Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
-adding additional levels of `>`:
+We keep a record of traffic data which is logged automatically by the server hosting our website. This includes which pages you visit on our website. We do not store or analyse traffic data in a way that identifies any individual.
 
-> This is the first level of quoting.
->
-> > This is nested blockquote.
->
-> Back to the first level.
+We use [Vercel](https://vercel.com/) to do this.
 
-Blockquotes can contain other Markdown elements, including headers, lists,
-and code blocks:
+---
 
-> ## This is a header.
->
-> 1.  This is the first list item.
-> 2.  This is the second list item.
->
-> Here's some example code:
->
->     return shell_exec("echo $input | $markdown_script");
+## How do we share and disclose information to 3rd parties
 
-Any decent text editor should make email-style quoting easy. For
-example, with BBEdit, you can make a selection and choose Increase
-Quote Level from the Text menu.
+When logging in to the site through a third party you will be consenting to their terms and conditions, which will be found on the log in portal.
 
-### Lists
+We will never sell your personal information with organisations for their marketing activities.
 
-Markdown supports ordered (numbered) and unordered (bulleted) lists.
+Nor do we sell any information about your web browsing activity.
 
-Unordered lists use asterisks, pluses, and hyphens -- interchangably
--- as list markers:
+---
 
-- Red
-- Green
-- Blue
+## How else can you control your data?
 
-is equivalent to:
+Once you create an account you can delete it at any point. This will remove all identifiable data we store on you.
 
-- Red
-- Green
-- Blue
+It’s important to remember that if you request that we delete your personal data, this will delete all feedback you have previously written and is non-recoverable.
 
-and:
+---
 
-- Red
-- Green
-- Blue
+## Changes to our policy
 
-Ordered lists use numbers followed by periods:
+We always strive to improve our website and services so we may change and update this Privacy Policy from time to time.
 
-1.  Bird
-2.  McHale
-3.  Parish
+All changes will be posted on our website with the date that it was last updated.
 
-It's important to note that the actual numbers you use to mark the
-list have no effect on the HTML output Markdown produces. The HTML
-Markdown produces from the above list is:
-
-If you instead wrote the list in Markdown like this:
-
-1.  Bird
-1.  McHale
-1.  Parish
-
-or even:
-
-3. Bird
-1. McHale
-1. Parish
-
-you'd get the exact same HTML output. The point is, if you want to,
-you can use ordinal numbers in your ordered Markdown lists, so that
-the numbers in your source match the numbers in your published HTML.
-But if you want to be lazy, you don't have to.
-
-To make lists look nice, you can wrap items with hanging indents:
-
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-But if you want to be lazy, you don't have to:
-
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-List items may consist of multiple paragraphs. Each subsequent
-paragraph in a list item must be indented by either 4 spaces
-or one tab:
-
-1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
-
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-It looks nice if you indent every line of the subsequent
-paragraphs, but here again, Markdown will allow you to be
-lazy:
-
-- This is a list item with two paragraphs.
-
-      This is the second paragraph in the list item. You're
-
-  only required to indent the first line. Lorem ipsum dolor
-  sit amet, consectetuer adipiscing elit.
-
-- Another item in the same list.
-
-To put a blockquote within a list item, the blockquote's `>`
-delimiters need to be indented:
-
-- A list item with a blockquote:
-
-  > This is a blockquote
-  > inside a list item.
-
-To put a code block within a list item, the code block needs
-to be indented _twice_ -- 8 spaces or two tabs:
-
-- A list item with a code block:
-
-      <code goes here>
-
-### Code Blocks
-
-Pre-formatted code blocks are used for writing about programming or
-markup source code. Rather than forming normal paragraphs, the lines
-of a code block are interpreted literally. Markdown wraps a code block
-in both `<pre>` and `<code>` tags.
-
-To produce a code block in Markdown, simply indent every line of the
-block by at least 4 spaces or 1 tab.
-
-This is a normal paragraph:
-
-    This is a code block.
-
-Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
-
-A code block continues until it reaches a line that is not indented
-(or the end of the article).
-
-Within a code block, ampersands (`&`) and angle brackets (`<` and `>`)
-are automatically converted into HTML entities. This makes it very
-easy to include example HTML source code using Markdown -- just paste
-it and indent it, and Markdown will handle the hassle of encoding the
-ampersands and angle brackets. For example, this:
-
-    <div class="footer">
-        &copy; 2004 Foo Corporation
-    </div>
-
-Regular Markdown syntax is not processed within code blocks. E.g.,
-asterisks are just literal asterisks within a code block. This means
-it's also easy to use Markdown to write about Markdown's own syntax.
-
-```
-tell application "Foo"
-    beep
-end tell
-```
-
-## Span Elements
-
-### Links
-
-Markdown supports two style of links: _inline_ and _reference_.
-
-In both styles, the link text is delimited by [square brackets].
-
-To create an inline link, use a set of regular parentheses immediately
-after the link text's closing square bracket. Inside the parentheses,
-put the URL where you want the link to point, along with an _optional_
-title for the link, surrounded in quotes. For example:
-
-This is [an example](http://example.com/) inline link.
-
-[This link](http://example.net/) has no title attribute.
-
-### Emphasis
-
-Markdown treats asterisks (`*`) and underscores (`_`) as indicators of
-emphasis. Text wrapped with one `*` or `_` will be wrapped with an
-HTML `<em>` tag; double `*`'s or `_`'s will be wrapped with an HTML
-`<strong>` tag. E.g., this input:
-
-_single asterisks_
-
-_single underscores_
-
-**double asterisks**
-
-**double underscores**
-
-### Code
-
-To indicate a span of code, wrap it with backtick quotes (`` ` ``).
-Unlike a pre-formatted code block, a code span indicates code within a
-normal paragraph. For example:
-
-Use the `printf()` function.
+April 2021

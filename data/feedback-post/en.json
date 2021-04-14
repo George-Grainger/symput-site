@@ -1,5 +1,7 @@
 {
   "writtenBy_i18n": "Written by",
   "on_i18n": "on",
-  "signUp_i18n": "Sign up"
+  "signUp_i18n": "Sign up",
+  "moderatedP1_i18n": "This user's profile has been moderated in line with our terms of service ",
+  "moderatedP2_i18n": "located here"
 }
