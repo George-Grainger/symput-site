@@ -15,9 +15,18 @@
     "card4Content_i18n": "We really want to know what feedback people have for your project. View other people's thoughts and share your own by creating an account.",
     "learnMore_i18n": "Learn more",
     "sideTextTitle_i18n": "Our Progress",
-    "sideTextP1_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextP2_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextP3_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextLink_i18n": "Recent Updates"
+    "sideTextP1_i18n": "For our first-year project at the University of Manchester, we've been working to create a mathematical keyboard.",
+    "sideTextP2_i18n": "We started out with very little if any knowledge of Android or Kotlin, with some members having no coding experience prior to this year.",
+    "sideTextP3_i18n": "Over time we've learned a lot and made lots of progress. We've tried to keep track of what we've done over time so you can follow along.",
+    "sideTextLink_i18n": "Recent Updates",
+    "otherLinks_i18n": "Other links",
+    "updates_i18n": "Updates",
+    "license_i18n": "License",
+    "languages_i18n": "Languages",
+    "accessibility_i18n": "Accessibility",
+    "contactUs_i18n": "Contact Us",
+    "privacyPolicy_i18n": "Privacy Policy",
+    "termsOfService_i18n": "Terms of Service",
+    "credits_i18n": "Credits"
   }
 }

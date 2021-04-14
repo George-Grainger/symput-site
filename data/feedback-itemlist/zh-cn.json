@@ -4,5 +4,6 @@
   "error_i18n": "发生错误，请重试",
   "words_i18n": "字",
   "minRead_i18n": "分钟阅读",
-  "unpublished_i18n": "未发表"
+  "unpublished_i18n": "未发表",
+  "noPosts_i18n": "尚未提供反馈"
 }

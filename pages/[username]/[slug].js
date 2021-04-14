@@ -20,11 +20,12 @@ export async function getStaticProps({ params, locale }) {
   }
 
   const pageData = getPageData(locale, 'feedback-post');
+  const authPageData = getPageData(locale, 'auth');
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
 
   return {
-    props: { post, path, navbarData, footerData, pageData },
+    props: { post, path, navbarData, footerData, pageData, authPageData },
     revalidate: 120
   };
 }
@@ -50,7 +51,14 @@ export async function getStaticPaths({ locales }) {
   };
 }
 
-export default function Post({ post, path, navbarData, footerData, pageData }) {
+export default function Post({
+  post,
+  path,
+  navbarData,
+  footerData,
+  pageData,
+  authPageData
+}) {
   return (
     <Layout
       title={`Feedback - ${post.title}`}
@@ -58,7 +66,11 @@ export default function Post({ post, path, navbarData, footerData, pageData }) {
       footerData={footerData}
     >
       <FeedbackItemContext.Provider value={pageData}>
-        <FeedbackCard passedPost={post} path={path} />
+        <FeedbackCard
+          passedPost={post}
+          path={path}
+          authPageData={authPageData}
+        />
       </FeedbackItemContext.Provider>
     </Layout>
   );

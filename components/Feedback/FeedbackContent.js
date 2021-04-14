@@ -8,7 +8,12 @@ import { FaInfoCircle } from 'react-icons/fa';
 
 // UI component for main post content
 export default function FeedbackContent({ post }) {
-  const { writtenBy_i18n, on_i18n } = useContext(FeedbackItemContext);
+  const {
+    writtenBy_i18n,
+    on_i18n,
+    moderatedP1_i18n,
+    moderatedP2_i18n
+  } = useContext(FeedbackItemContext);
   const { locale } = useRouter();
   const updatedDate =
     typeof post?.updatedAt === 'number'
@@ -19,9 +24,9 @@ export default function FeedbackContent({ post }) {
     if (post?.moderated) {
       toast(
         <span>
-          This post has been moderated in line with our terms of service&nbsp;
+          {moderatedP1_i18n}
           <Link href="/terms">
-            <a className="link link-light-bg underline">located here</a>
+            <a className="link link-light-bg underline">{moderatedP2_i18n}</a>
           </Link>
         </span>,
         { icon: <FaInfoCircle /> }
@@ -56,7 +61,18 @@ export default function FeedbackContent({ post }) {
     <article className="w-full">
       <h1 className="text-4xl text-center">{post?.title}</h1>
       <hr className="my-8" />
-      <ReactMarkdown className="mx-auto max-w-markdown sm:max-w-prose">
+      <ReactMarkdown
+        className="mx-auto max-w-markdown sm:max-w-prose"
+        renderers={{
+          link: ({ children, href }) => {
+            return (
+              <Link href={href}>
+                <a>{children}</a>
+              </Link>
+            );
+          }
+        }}
+      >
         {post?.content}
       </ReactMarkdown>
       <hr className="my-8" />
