@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
 import toast from 'react-hot-toast';
 import ResizingTextArea from './ResizingTextArea';
+import Link from 'next/link';
 
 const FeedbackForm = ({ defaultValues, postRef, preview }) => {
   const { register, errors, handleSubmit, formState, reset, watch } = useForm({
@@ -52,7 +53,18 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
         />
 
         {preview ? (
-          <ReactMarkdown className="mx-auto max-w-markdown sm:max-w-prose">
+          <ReactMarkdown
+            className="mx-auto max-w-markdown sm:max-w-prose"
+            renderers={{
+              link: ({ children, href }) => {
+                return (
+                  <Link href={href}>
+                    <a>{children}</a>
+                  </Link>
+                );
+              }
+            }}
+          >
             {watch('content')}
           </ReactMarkdown>
         ) : (

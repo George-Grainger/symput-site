@@ -8,7 +8,15 @@ import ReactMarkdown from 'react-markdown';
 import FeedbackItemList from '../Feedback/FeedbackItemList';
 import { useEffect } from 'react';
 
-const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
+const UserCard = ({
+  user,
+  itemListData,
+  info_i18n,
+  feedbackGiven_i18n,
+  noInfo_i18n,
+  moderatedP1_i18n,
+  moderatedP2_i18n
+}) => {
   const handleMore = async (last) => {
     return getMoreUserPublishedPosts(user, last);
   };
@@ -17,11 +25,12 @@ const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
     if (user?.moderated) {
       toast(
         <span>
-          This user's profile has been moderated in line with our terms of
-          service&nbsp;
-          <Link href="/terms">
-            <a className="link link-light-bg underline">located here</a>
-          </Link>
+          <>
+            {moderatedP1_i18n}
+            <Link href="/terms">
+              <a className="link link-light-bg underline">{moderatedP2_i18n}</a>
+            </Link>
+          </>
         </span>,
         { icon: <FaInfoCircle /> }
       );
@@ -49,7 +58,7 @@ const UserCard = ({ user, itemListData, info_i18n, feedbackGiven_i18n }) => {
             unwrapDisallowed={true}
             allowedTypes={['root', 'text', 'paragraph']}
           >
-            {user?.aboutInfo || 'No about info given yet'}
+            {user?.aboutInfo || noInfo_i18n}
           </ReactMarkdown>
         </div>
         <div className="flex flex-col items-center py-10 border-t border-gray-300 dark:border-gray-600 min-w-feedback transition-darkmode">

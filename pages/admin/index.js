@@ -9,6 +9,7 @@ export const getStaticProps = async ({ locale }) => {
   const itemsListData = getPageData(locale, 'feedback-itemlist');
   const errorsData = getPageData(locale, 'errors');
   const pageData = getPageData(locale, 'admin');
+  const authPageData = getPageData(locale, 'auth');
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
   return {
@@ -17,7 +18,8 @@ export const getStaticProps = async ({ locale }) => {
       footerData,
       itemsListData,
       errorsData,
-      pageData
+      pageData,
+      authPageData
     }
   };
 };
@@ -27,13 +29,14 @@ export default function AdminPostsPage({
   footerData,
   itemsListData,
   errorsData,
-  pageData
+  pageData,
+  authPageData
 }) {
   return (
     <>
       <NextSeo noindex={true} />
       <Layout navbarData={navbarData} footerData={footerData}>
-        <AuthCheck>
+        <AuthCheck authPageData={authPageData}>
           <AdminContext.Provider value={pageData}>
             <FeedbackItemListContext.Provider value={itemsListData}>
               <AdminCard errorsData={errorsData} />

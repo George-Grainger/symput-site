@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import Layout from './Layout';
 
@@ -33,7 +35,21 @@ const ContentPageLayout = ({
           </div>
           <div className="w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode">
             {children}
-            <ReactMarkdown className="w-full py-4 sm:py-8 prose prose-lg dark:prose-dark">
+            <ReactMarkdown
+              className="w-full py-4 sm:py-8 prose prose-lg dark:prose-dark"
+              renderers={{
+                link: ({ children, href }) => {
+                  return (
+                    <Link href={href}>
+                      <a>{children}</a>
+                    </Link>
+                  );
+                }
+                // image: ({ children, node, ...props }) => {
+                //   return <Image {...props} layout="responsive" />;
+                // }
+              }}
+            >
               {markdownContent}
             </ReactMarkdown>
           </div>

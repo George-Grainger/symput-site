@@ -8,11 +8,11 @@ import AuthCheck from '@/components/AuthCheck';
 import Link from 'next/link';
 import { FaEdit, FaRegHeart } from 'react-icons/fa';
 
-const FeedbackCard = ({ path, passedPost }) => {
+const FeedbackCard = ({ path, passedPost, authPageData }) => {
   const postRef = firestore.doc(path);
   const [realtimePost] = useDocumentData(postRef);
   const post = realtimePost || passedPost;
-  const { user: currentUser, loading } = useContext(UserContext);
+  const { user: currentUser } = useContext(UserContext);
   const { signUp_i18n } = useContext(FeedbackItemContext);
 
   return (
@@ -27,6 +27,7 @@ const FeedbackCard = ({ path, passedPost }) => {
             </Link>
           )}
           <AuthCheck
+            authPageData={authPageData}
             fallback={
               <Link href="/sign-in">
                 <a className="link-standard p-1 ml-auto">
