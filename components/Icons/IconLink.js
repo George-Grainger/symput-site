@@ -9,7 +9,12 @@ const Icon = ({
 }) => {
   return (
     <Link href={href}>
-      <a aria-label={accessibleLabel} className={`${linkClasses} p-1`}>
+      <a
+        aria-label={accessibleLabel}
+        className={`${linkClasses} p-1`}
+        target="_blank"
+        rel="noreferrer"
+      >
         <span
           className={`${buttonClasses} ${size} shadow-lg rounded-full text-white items-center justify-center flex`}
         >

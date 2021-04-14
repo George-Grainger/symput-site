@@ -16,7 +16,7 @@ const AdminCard = ({ errorsData }) => {
         {title_i18n}
       </h1>
       <div className="min-w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode">
-        <h2 className="prose text-3xl dark:prose-dark mb-8 font-semibold">
+        <h2 className="prose text-3xl dark:prose-dark mb-8 text-center font-semibold">
           {subtitle_i18n}
         </h2>
         <div className="flex w-full md:w-1/2 mb-8">

@@ -3,9 +3,9 @@ name: 'George Grainger'
 summary: 'Quam et numquam aperiam vel aliquam a animi. Velit aut provident sed sunt quibusdam maiores.'
 socials:
   {
-    'facebook': 'https://www.facebook.com/public/George-Grainger',
+    'facebook': 'https://www.facebook.com/george.grainger.39',
     'instagram': 'https://www.instagram.com/georgegrainger1/?hl=en',
-    'google': 'https://myaccount.google.com/'
+    'twitter': 'https://twitter.com/GeorgeGrainger0'
   }
 ---
 

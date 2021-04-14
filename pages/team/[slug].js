@@ -1,4 +1,3 @@
-import Member from '@/components/Team/Member';
 import TeamSocialsLinks from '@/components/Team/TeamSocialsLinks';
 import { getFooterData, getNavbarData } from '@/lib/pageContent';
 import { getAllTeamSlugs, getPersonData } from '@/lib/team';
@@ -32,14 +31,12 @@ export const getStaticPaths = ({ locales }) => {
 };
 
 const Person = ({
-  slug,
   navbarData,
   footerData,
   markdownContent,
   markdownMetadata
 }) => {
-  const availableSocials =
-    markdownMetadata?.socials && Object.keys(markdownMetadata.socials);
+  const socials = markdownMetadata?.socials;
   return (
     <ContentPageLayout
       title={`Symput - ${markdownMetadata?.name || 'Team member'}`}
@@ -57,9 +54,7 @@ const Person = ({
           height="128"
         />
       </div>
-      {availableSocials && (
-        <TeamSocialsLinks availableSocials={availableSocials} />
-      )}
+      {socials && <TeamSocialsLinks socials={socials} />}
     </ContentPageLayout>
   );
 };

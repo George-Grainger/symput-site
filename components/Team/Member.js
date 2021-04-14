@@ -10,7 +10,6 @@ const Member = ({
   className = '',
   children
 }) => {
-  const availableSocials = Object.keys(socials);
   return (
     <div
       className={`${className} flex flex-col items-center card card-black lg:card-hexagon col-span-2`}
@@ -31,7 +30,7 @@ const Member = ({
           <a className="prose-2xl link link-dark-bg">{name}</a>
         </Link>
         <p className="font-semibold prose prose-dark">{children}</p>
-        <TeamSocialsLinks availableSocials={availableSocials} darkbg={true} />
+        <TeamSocialsLinks socials={socials} darkbg={true} />
       </div>
     </div>
   );
