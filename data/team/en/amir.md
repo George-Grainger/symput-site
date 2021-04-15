@@ -1,6 +1,12 @@
 ---
 name: 'Amir Hazim'
 summary: 'Code Enthusiast | Gamer | Sports Person'
+socials:
+  {
+    'facebook': 'https://www.facebook.com/amir.hazim.754570/',
+    'instagram': 'https://www.instagram.com/azimhazin/',
+    
+  }
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
