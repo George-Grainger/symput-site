@@ -1,4 +1,7 @@
 {
   "info_i18n": "User info",
-  "feedbackGiven_i18n": "Feedback given"
+  "feedbackGiven_i18n": "Feedback given",
+  "noInfo_i18n": "No about info given yet",
+  "moderatedP1_i18n": "This user's profile has been moderated in line with our terms of service ",
+  "moderatedP2_i18n": "located here"
 }

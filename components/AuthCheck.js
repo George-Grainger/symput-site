@@ -5,14 +5,22 @@ import { FaLock } from 'react-icons/fa';
 import ButtonEllipsis from './Loading/ButtonEllipsis';
 
 // Component's children only shown to logged-in users
-export default function AuthCheck(props) {
+export default function AuthCheck({ children, fallback, authPageData }) {
   const { username, user, loading, usernameLoading } = useContext(UserContext);
+  const {
+    loadingAccount_i18n,
+    requiresAccount_i18n,
+    signIn_i18n,
+    loadingUsername_i18n,
+    incomplete,
+    addUsername_i18n
+  } = authPageData;
 
   const getCurrentState = () => {
     if (loading) {
       return (
         <>
-          <h1 className="text-3xl mb-8">Loading account</h1>
+          <h1 className="text-3xl mb-8">{loadingAccount_i18n}</h1>
           <ButtonEllipsis
             className="h-12"
             color="bg-gray-900 dark:bg-gray-200"
@@ -22,10 +30,10 @@ export default function AuthCheck(props) {
     } else if (!user) {
       return (
         <>
-          <h1 className="text-3xl mb-8">You must have an account</h1>
+          <h1 className="text-3xl mb-8">{requiresAccount_i18n}</h1>
           <Link href="/sign-in">
             <a className="btn btn-black-inverted dark:btn-yellow-inverted">
-              Sign in
+              {signIn_i18n}
             </a>
           </Link>
         </>
@@ -33,7 +41,7 @@ export default function AuthCheck(props) {
     } else if (usernameLoading) {
       return (
         <>
-          <h1 className="text-3xl mb-8">Getting username</h1>
+          <h1 className="text-3xl mb-8">{loadingUsername_i18n}</h1>
           <ButtonEllipsis
             className="h-12"
             color="bg-gray-900 dark:bg-gray-200"
@@ -43,10 +51,10 @@ export default function AuthCheck(props) {
     } else {
       return (
         <>
-          <h1 className="text-3xl mb-8">Account setup incomplete</h1>
+          <h1 className="text-3xl mb-8">{incomplete}</h1>
           <Link href="/sign-in">
             <a className="btn btn-black-inverted dark:btn-yellow-inverted">
-              Add username
+              {addUsername_i18n}
             </a>
           </Link>
         </>
@@ -55,8 +63,8 @@ export default function AuthCheck(props) {
   };
 
   return username
-    ? props.children
-    : props.fallback || (
+    ? children
+    : fallback || (
         <section className="section-default section-default-padding justify-center">
           <div className="text-center dark:text-gray-200">
             <FaLock className="h-64 w-64 mb-8 mx-auto" />

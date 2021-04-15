@@ -15,9 +15,18 @@
     "card4Content_i18n": "我们真的很想知道人们对您的项目有什么反馈。 查看其他人的想法并通过创建帐户分享您的想法。",
     "learnMore_i18n": "了解更多",
     "sideTextTitle_i18n": "我们的进步",
-    "sideTextP1_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextP2_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextP3_i18n": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus fugiat animi illum nam laudantium quibusdam tempore sunt porro incidunt!",
-    "sideTextLink_i18n": "最近更新"
+    "sideTextP1_i18n": "在曼彻斯特大学的第一年项目中，我们一直在努力创建数学键盘。",
+    "sideTextP2_i18n": "我们最初对Android或Kotlin的了解很少，有些成员在今年之前还没有编码经验。",
+    "sideTextP3_i18n": "随着时间的流逝，我们学到了很多东西，并且取得了很多进步。 我们一直在努力跟踪随着时间的推移我们所做的事情，因此您可以继续进行下去。 ",
+    "sideTextLink_i18n": "最近更新",
+    "otherLinks_i18n": "其他连结",
+    "updates_i18n": "更新",
+    "license_i18n": "执照",
+    "languages_i18n": "语言能力",
+    "accessibility_i18n": "辅助功能",
+    "contactUs_i18n": "联系我们",
+    "privacyPolicy_i18n": "隐私政策",
+    "termsOfService_i18n": "服务条款",
+    "credits_i18n": "学分"
   }
 }

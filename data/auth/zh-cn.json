@@ -1,0 +1,8 @@
+{
+  "loadingAccount_i18n": "正在载入帐户",
+  "requiresAccount_i18n": "您必须有一个帐户",
+  "signIn_i18n": "登录",
+  "loadingUsername_i18n": "获取用户名",
+  "incomplete": "帐户设置不完整",
+  "addUsername_i18n": "添加用户名"
+}

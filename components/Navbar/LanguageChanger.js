@@ -7,7 +7,6 @@ const LanguageChanger = ({ title }) => {
   const { pathname, query } = router;
   return (
     <>
-      {/*//TODO need to credit images to https://www.flaticon.com/search?word=countries%20flags */}
       <p className="prose-lg w-full">{title}</p>
       <div className="flex my-4">
         <Link href={{ pathname, query }} locale="en" scroll={false}>

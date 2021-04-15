@@ -1,5 +1,7 @@
 {
   "writtenBy_i18n": "Written by",
   "on_i18n": "on",
-  "signUp_i18n": "Sign up"
+  "signUp_i18n": "Sign up",
+  "moderatedP1_i18n": "该用户的个人资料已根据我们的服务条款进行了过滤。",
+  "moderatedP2_i18n": "在这里找到他们。"
 }

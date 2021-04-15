@@ -9,9 +9,12 @@ import ThinkingSvg from '../Icons/ThinkingSvg';
 
 const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   const { posts, setPosts, isEnd, setIsEnd } = useContext(context);
-  const { loadMore_i18n, reachedEnd_i18n, error_i18n } = useContext(
-    FeedbackItemListContext
-  );
+  const {
+    loadMore_i18n,
+    reachedEnd_i18n,
+    error_i18n,
+    noPosts_i18n
+  } = useContext(FeedbackItemListContext);
 
   const getMoreFeedback = async (last) => {
     const [newPosts, nowIsEnd] = await getMore(last);
@@ -39,7 +42,7 @@ const FeedbackItemList = ({ getMore, context, trigger = false }) => {
     return (
       <div className="prose prose-xl dark:prose-dark my-8">
         <ThinkingSvg className="mx-auto h-24 w-24" />
-        <p>Yet to provide feedback</p>
+        <p>{noPosts_i18n}</p>
       </div>
     );
   } else {

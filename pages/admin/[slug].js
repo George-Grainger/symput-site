@@ -10,6 +10,9 @@ import navbarZhCn from '@/data/navbar/zh-cn';
 import footerEn from '@/data/footer/en';
 import footerAr from '@/data/footer/ar';
 import footerZhCn from '@/data/footer/zh-cn';
+import authPageEn from '@/data/auth/en';
+import authPageAr from '@/data/auth/ar';
+import authPageZhCn from '@/data/auth/zh-cn';
 import errorsEn from '@/data/errors/en';
 import errorsAr from '@/data/errors/ar';
 import errorsZhCn from '@/data/errors/zh-cn';
@@ -20,22 +23,26 @@ export default function AdminPostEdit() {
   let navbarData;
   let footerData;
   let errorsData;
+  let authPageData;
 
   switch (locale) {
     case 'ar':
       navbarData = navbarAr;
       footerData = footerAr;
       errorsData = errorsAr;
+      authPageData = authPageAr;
       break;
     case 'zh-cn':
       navbarData = navbarZhCn;
       footerData = footerZhCn;
       errorsData = errorsZhCn;
+      authPageData = authPageZhCn;
       break;
     default:
       navbarData = navbarEn;
       footerData = footerEn;
       errorsData = errorsEn;
+      authPageData = authPageEn;
   }
 
   return (
@@ -44,7 +51,7 @@ export default function AdminPostEdit() {
       navbarData={navbarData}
       footerData={footerData}
     >
-      <AuthCheck>
+      <AuthCheck authPageData={authPageData}>
         <ErrorsContext.Provider value={errorsData}>
           <FeedbackManager />
         </ErrorsContext.Provider>
