@@ -1,313 +1,77 @@
 ---
-title: 'Terms of service'
-summary: 'AR Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae accusamus autem sunt beatae esse blanditiis illo, tempore ea. Architecto iste culpa temporibus minus dicta eum vel debitis voluptatem sapiente ex.'
+title: 'شروط الخدمة'
+summary: 'نحن نقدر جميع التعليقات ، على الرغم من أننا نطلبها أن تكون محترمة وبحسن نية.'
 ---
 
-# Markdown: Syntax
+## استخدام الموقع
 
-- [Overview](#overview)
-  - [Philosophy](#philosophy)
-  - [Inline HTML](#html)
-  - [Automatic Escaping for Special Characters](#autoescape)
-- [Block Elements](#block)
-  - [Paragraphs and Line Breaks](#p)
-  - [Headers](#header)
-  - [Blockquotes](#blockquote)
-  - [Lists](#list)
-  - [Code Blocks](#precode)
-  - [Horizontal Rules](#hr)
-- [Span Elements](#span)
-  - [Links](#link)
-  - [Emphasis](#em)
-  - [Code](#code)
-  - [Images](#img)
-- [Miscellaneous](#misc)
-  - [Backslash Escapes](#backslash)
-  - [Automatic Links](#autolink)
-
-**Note:** This document is itself written using Markdown; you
-can [see the source for it by adding '.text' to the URL](/projects/markdown/syntax.text).
+باستخدام الموقع ، فإنك توافق على استخدامنا لبياناتك على النحو المبين في [سياسة خاصة](/privacy-policy)
 
 ---
 
-## Overview
+## التعليقات وأوصاف المستخدم
 
-### Philosophy
+نحن نحترم ونقدر كل ردود الفعل ، حتى النقد.
 
-Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+نشعر أنه يجب أن تكون حراً في وصف نفسك بالشكل الذي تراه مناسبًا.
 
-Readability, however, is emphasized above all else. A Markdown-formatted
-document should be publishable as-is, as plain text, without looking
-like it's been marked up with tags or formatting instructions. While
-Markdown's syntax has been influenced by several existing text-to-HTML
-filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html),
-[Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
-inspiration for Markdown's syntax is the format of plain text email.
+ومع ذلك ، **لن نتسامح مع** التعليقات أو أوصاف المستخدم التي قد تكون تمييزية أو مسيئة.
+وهذا يشمل على سبيل المثال لا الحصر:
 
-## Block Elements
+- عنصرية
+- التمييز على أساس الجنس
+- لغة معادية للمثليين
+- التنمر أو التهديد سواء جسديًا أو عقليًا
 
-### Paragraphs and Line Breaks
+---
 
-A paragraph is simply one or more consecutive lines of text, separated
-by one or more blank lines. (A blank line is any line that looks like a
-blank line -- a line containing nothing but spaces or tabs is considered
-blank.) Normal paragraphs should not be indented with spaces or tabs.
+## ما نفعله لفرض هذا:
 
-The implication of the "one or more consecutive lines of text" rule is
-that Markdown supports "hard-wrapped" text paragraphs. This differs
-significantly from most other text-to-HTML formatters (including Movable
-Type's "Convert Line Breaks" option) which translate every line break
-character in a paragraph into a `<br />` tag.
+- **نقوم بإجراء الإشراف التلقائي** على ملاحظات المستخدمين وأوصافهم لمحاولة تعديل اللغة المسيئة
 
-When you _do_ want to insert a `<br />` break tag using Markdown, you
-end a line with two or more spaces, then type return.
+- تشير المشاركات والملفات الشخصية التي تم الإشراف عليها إلى ذلك عند تحميلها
+- في حالات فشل الإشراف التلقائي ، سنقوم **بالإشراف يدويًا على المشاركات وتعطيل المستخدمين** الذين ينتهكون الشروط المذكورة أعلاه
 
-### Headers
+---
 
-Markdown supports two styles of headers, [Setext] [1] and [atx] [2].
+## بسكويت
 
-Optionally, you may "close" atx-style headers. This is purely
-cosmetic -- you can use this if you think it looks better. The
-closing hashes don't even need to match the number of hashes
-used to open the header. (The number of opening hashes
-determines the header level.)
+**نهتم بالخصوصية** وبالوضوح والشفافية في كيفية جمع بياناتك الشخصية واستخدامها. نستخدم المعلومات التي تم جمعها عبر الإنترنت لمساعدتنا على تحسين تجربتك في زيارة موقعنا على الويب وتطوير خدماتنا وتحسينها لك.
 
-### Blockquotes
+تمنحك هذه السياسة معلومات حول ملفات تعريف الارتباط التي نستخدمها وأغراض استخدام ملفات تعريف الارتباط هذه.
 
-Markdown uses email-style `>` characters for blockquoting. If you're
-familiar with quoting passages of text in an email message, then you
-know how to create a blockquote in Markdown. It looks best if you hard
-wrap the text and put a `>` before every line:
+---
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
->
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+### ما هو ملف تعريف الارتباط؟
 
-Markdown allows you to be lazy and only put the `>` before the first
-line of a hard-wrapped paragraph:
+ملف تعريف الارتباط هو ملف صغير تخزنه مواقع الويب على جهاز الكمبيوتر أو الجهاز المحمول الخاص بك. يحتوي كل ملف تعريف ارتباط على معلومات مجهولة المصدر حول كيفية استخدامك لموقعنا الإلكتروني وتطبيقاتنا ، وهذا يسمح لنا بتحسين تجربة المستخدم الخاصة بك.
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+---
 
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+### أنواع ملفات تعريف الارتباط وما يفعلونه
 
-Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
-adding additional levels of `>`:
+يعتمد طول مدة بقاء ملف تعريف الارتباط على جهازك على نوعه.
 
-> This is the first level of quoting.
->
-> > This is nested blockquote.
->
-> Back to the first level.
+نستخدم نوعين من ملفات تعريف الارتباط على موقعنا - _ملفات تعريف الارتباط الخاصة بالجلسة_ و _ملفات تعريف الارتباط الدائمة_
 
-Blockquotes can contain other Markdown elements, including headers, lists,
-and code blocks:
+- توجد بعض ملفات تعريف الارتباط فقط أثناء بقائك على الموقع ويتم مسحها عند إغلاق المستعرض الخاص بك ؛ تُعرف هذه باسم ملفات تعريف الارتباط للجلسة.
+- يظل الآخرون على جهازك أو جهازك بين الجلسات مما يتيح لنا التعرف عليك عند العودة إلى الموقع ؛ تُعرف هذه باسم ملفات تعريف الارتباط الدائمة.
 
-> ## This is a header.
->
-> 1.  This is the first list item.
-> 2.  This is the second list item.
->
-> Here's some example code:
->
->     return shell_exec("echo $input | $markdown_script");
+بشكل عام ، تحتوي ملفات تعريف الارتباط أيضًا على أربع وظائف مختلفة ويمكن تصنيفها على النحو التالي: -
+ملفات تعريف الارتباط _"الضرورية للغاية"_ ،_"الأداء_" ملفات تعريف الارتباط _"الوظيفة"_ وملفات تعريف الارتباط الاستهداف أو _"الإعلان"_.
 
-Any decent text editor should make email-style quoting easy. For
-example, with BBEdit, you can make a selection and choose Increase
-Quote Level from the Text menu.
+ربما تكون قد سمعت أيضًا عن ملفات تعريف الارتباط الخاصة بالطرف الأول والثالث. ما إذا كان ملف تعريف الارتباط _"الأول"_ أو _"الطرف الثالث"_ يشير إلى موقع الويب (النطاق) الذي يضع ملف تعريف الارتباط. **ملفات تعريف ارتباط الطرف الأول** يتم تعيينها بواسطة موقع ويب يزوره المستخدم في ذلك الوقت. **ملفات تعريف ارتباط الطرف الثالث** هي تلك التي تم تعيينها بواسطة مجال آخر غير ذلك الذي تتم زيارته.
 
-### Lists
+**نحن لا نستخدم ملفات تعريف الارتباط "الاستهداف" أو "الإعلانات" على موقعنا.**
 
-Markdown supports ordered (numbered) and unordered (bulleted) lists.
+تعد ملفات تعريف الارتباط الضرورية **ضرورية** للتنقل حول موقع الويب واستخدام ميزاته. لا تجمع ملفات تعريف الارتباط هذه معلومات عنك يمكن استخدامها للتسويق أو تذكر مكان وجودك على الإنترنت.
 
-Unordered lists use asterisks, pluses, and hyphens -- interchangably
--- as list markers:
+---
 
-- Red
-- Green
-- Blue
+### هل يمكنني إلغاء الاشتراك؟
 
-is equivalent to:
+ملفات تعريف الارتباط الخاصة بالطرف الأول التي نستخدمها **ضرورية تمامًا** ونتيجة لذلك **لا يمكن إلغاء الاشتراك**.
 
-- Red
-- Green
-- Blue
+هناك أيضًا ملفات تعريف ارتباط تابعة لجهات خارجية مستخدمة على هذا الموقع لإبقائك مسجلاً للدخول عند مغادرتك للموقع والعودة إليه.
 
-and:
-
-- Red
-- Green
-- Blue
-
-Ordered lists use numbers followed by periods:
-
-1.  Bird
-2.  McHale
-3.  Parish
-
-It's important to note that the actual numbers you use to mark the
-list have no effect on the HTML output Markdown produces. The HTML
-Markdown produces from the above list is:
-
-If you instead wrote the list in Markdown like this:
-
-1.  Bird
-1.  McHale
-1.  Parish
-
-or even:
-
-3. Bird
-1. McHale
-1. Parish
-
-you'd get the exact same HTML output. The point is, if you want to,
-you can use ordinal numbers in your ordered Markdown lists, so that
-the numbers in your source match the numbers in your published HTML.
-But if you want to be lazy, you don't have to.
-
-To make lists look nice, you can wrap items with hanging indents:
-
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-But if you want to be lazy, you don't have to:
-
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-List items may consist of multiple paragraphs. Each subsequent
-paragraph in a list item must be indented by either 4 spaces
-or one tab:
-
-1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
-
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-It looks nice if you indent every line of the subsequent
-paragraphs, but here again, Markdown will allow you to be
-lazy:
-
-- This is a list item with two paragraphs.
-
-      This is the second paragraph in the list item. You're
-
-  only required to indent the first line. Lorem ipsum dolor
-  sit amet, consectetuer adipiscing elit.
-
-- Another item in the same list.
-
-To put a blockquote within a list item, the blockquote's `>`
-delimiters need to be indented:
-
-- A list item with a blockquote:
-
-  > This is a blockquote
-  > inside a list item.
-
-To put a code block within a list item, the code block needs
-to be indented _twice_ -- 8 spaces or two tabs:
-
-- A list item with a code block:
-
-      <code goes here>
-
-### Code Blocks
-
-Pre-formatted code blocks are used for writing about programming or
-markup source code. Rather than forming normal paragraphs, the lines
-of a code block are interpreted literally. Markdown wraps a code block
-in both `<pre>` and `<code>` tags.
-
-To produce a code block in Markdown, simply indent every line of the
-block by at least 4 spaces or 1 tab.
-
-This is a normal paragraph:
-
-    This is a code block.
-
-Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
-
-A code block continues until it reaches a line that is not indented
-(or the end of the article).
-
-Within a code block, ampersands (`&`) and angle brackets (`<` and `>`)
-are automatically converted into HTML entities. This makes it very
-easy to include example HTML source code using Markdown -- just paste
-it and indent it, and Markdown will handle the hassle of encoding the
-ampersands and angle brackets. For example, this:
-
-    <div class="footer">
-        &copy; 2004 Foo Corporation
-    </div>
-
-Regular Markdown syntax is not processed within code blocks. E.g.,
-asterisks are just literal asterisks within a code block. This means
-it's also easy to use Markdown to write about Markdown's own syntax.
-
-```
-tell application "Foo"
-    beep
-end tell
-```
-
-## Span Elements
-
-### Links
-
-Markdown supports two style of links: _inline_ and _reference_.
-
-In both styles, the link text is delimited by [square brackets].
-
-To create an inline link, use a set of regular parentheses immediately
-after the link text's closing square bracket. Inside the parentheses,
-put the URL where you want the link to point, along with an _optional_
-title for the link, surrounded in quotes. For example:
-
-This is [an example](http://example.com/) inline link.
-
-[This link](http://example.net/) has no title attribute.
-
-### Emphasis
-
-Markdown treats asterisks (`*`) and underscores (`_`) as indicators of
-emphasis. Text wrapped with one `*` or `_` will be wrapped with an
-HTML `<em>` tag; double `*`'s or `_`'s will be wrapped with an HTML
-`<strong>` tag. E.g., this input:
-
-_single asterisks_
-
-_single underscores_
-
-**double asterisks**
-
-**double underscores**
-
-### Code
-
-To indicate a span of code, wrap it with backtick quotes (`` ` ``).
-Unlike a pre-formatted code block, a code span indicates code within a
-normal paragraph. For example:
-
-Use the `printf()` function.
+**من خلال عدم الاشتراك في الموقع** ستمنع نفسك من الحصول على ملف تعريف ارتباط تابع لجهة خارجية Google Firebase وموفر التفويض الذي تقوم بتسجيل الدخول من خلاله.

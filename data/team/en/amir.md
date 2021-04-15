@@ -4,8 +4,7 @@ summary: 'Code Enthusiast | Gamer | Sports Person'
 socials:
   {
     'facebook': 'https://www.facebook.com/amir.hazim.754570/',
-    'instagram': 'https://www.instagram.com/azimhazin/',
-    
+    'instagram': 'https://www.instagram.com/azimhazin/'
   }
 ---
 
@@ -14,5 +13,4 @@ socials:
 Age : 20  
 Gender : Male  
 Nationality : Malaysian  
-About Me : A code enthusiast who took an interest in computer science after watching a movie about hacking (not Matrix). I'm a sports person who enjoy being
-active and being outdoor. Hoping to be featured in Forbes magazine in the next 10-15 years.  
+About Me : A code enthusiast who took an interest in computer science after watching a movie about hacking (not Matrix). I'm a sports person who enjoy being active and being outdoor. Hoping to be featured in Forbes magazine in the next 10-15 years.

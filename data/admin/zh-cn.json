@@ -33,5 +33,34 @@
     "verifyNow_i18n": "立即验证",
     "updatePassword_i18n": "更新密码",
     "deleteAccount_i18n": "删除帐户"
+  },
+
+  "accountPopups_i18n": {
+    "verification_i18n": "验证",
+    "verificationLink_i18n": "按下连结即可传送验证电子邮件至",
+    "verificationProcessing_i18n": "验证中...",
+    "verificationSuccess_i18n": "身份确认",
+    "verifiationError_i18n": "您的身份无法验证",
+    "resendVerification_i18n": "重新发送验证",
+    "checkingIdentity_i18n": "验证您的身份",
+    "verifyThroughAuth_i18n": "通过身份验证提供程序验证",
+    "exit_i18n": "出口",
+    "updatePassword_i18n": "更新密码",
+    "allInfoWillDelete_i18n": "这将删除您的帐户和所有相关的反馈",
+    "aboutUpdateSuccess_i18n": "您的信息更新成功",
+    "error_i18n": "抱歉，发生错误，请重试。",
+    "cancel_i18n": "取消",
+    "aboutYou_i18n": "帐户信息",
+    "contentTooLong_i18n": "内容必须少于1000个字符",
+    "saveChanges_i18n": "保存更改",
+    "passwordUpdating_i18n": "密码正在更新",
+    "passwordUpdated_i18n": "密码更新成功",
+    "previousPassword_i18n": "以前的密码",
+    "newPassword_i18n": "新的密码",
+    "repeatPassword_i18n": "重复新密码",
+    "emailUpdating_i18n": "电子邮件正在更新中...",
+    "emailUpdated_i18n": "电子邮件更新成功",
+    "newEmail_i18n": "新邮件",
+    "updateEmail_i18n": "更新电子邮件"
   }
 }
