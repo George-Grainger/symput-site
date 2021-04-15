@@ -33,5 +33,34 @@
     "verifyNow_i18n": "Verify now",
     "updatePassword_i18n": "Update password",
     "deleteAccount_i18n": "Delete Account"
+  },
+
+  "accountPopups_i18n": {
+    "verification_i18n": "Verification",
+    "verificationLink_i18n": "Press the link to send a verification email to",
+    "verificationProcessing_i18n": "Verifying...",
+    "verificationSuccess_i18n": "Identity confirmed",
+    "verifiationError_i18n": "Your identity couldn't be verified",
+    "resendVerification_i18n": "Resend verification",
+    "checkingIdentity_i18n": "Checking it's you",
+    "verifyThroughAuth_i18n": "Verify through auth provider",
+    "exit_i18n": "Exit",
+    "updatePassword_i18n": "Update Password",
+    "allInfoWillDelete_i18n": "This will delete your account and all associated feedback",
+    "aboutUpdateSuccess_i18n": "About you upated successfully",
+    "error_i18n": "Sorry, an error occurred, please try again.",
+    "cancel_i18n": "Cancel",
+    "aboutYou_i18n": "About you",
+    "contentTooLong_i18n": "Content is must be less than 1000 characters",
+    "saveChanges_i18n": "Save Changes",
+    "passwordUpdating_i18n": "Password updating...",
+    "passwordUpdated_i18n": "Password updated successfully",
+    "previousPassword_i18n": "Previous password",
+    "newPassword_i18n": "New password",
+    "repeatPassword_i18n": "Repeat new password",
+    "emailUpdating_i18n": "Email updating...",
+    "emailUpdated_i18n": "Email updated successfully",
+    "newEmail_i18n": "New email",
+    "updateEmail_i18n": "Update email"
   }
 }

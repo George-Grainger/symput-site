@@ -302,26 +302,26 @@ input:checked ~ .toggle-path {
 
 @keyframes loader-dots1 {
   0% {
-    @apply transform scale-0;
+    transform: scale(0);
   }
   100% {
-    @apply transform scale-100;
+    transform: scale(1);
   }
 }
 @keyframes loader-dots3 {
   0% {
-    @apply transform scale-100;
+    transform: scale(1);
   }
   100% {
-    @apply transform scale-0;
+    transform: scale(0);
   }
 }
 @keyframes loader-dots2 {
   0% {
-    @apply transform translate-x-0 translate-y-0;
+    transform: translate(0, 0);
   }
   100% {
-    @apply transform translate-x-6 translate-y-0;
+    transform: translate(24px, 0);
   }
 }
 

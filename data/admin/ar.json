@@ -33,5 +33,34 @@
     "verifyNow_i18n": "تحقق الآن",
     "updatePassword_i18n": "قم بتحديث كلمة المرور الخاصة بك",
     "deleteAccount_i18n": "حذف الحساب"
+  },
+
+  "accountPopups_i18n": {
+    "verification_i18n": "تحقق",
+    "verificationLink_i18n": "اضغط على الرابط لإرسال رسالة التحقق إلى",
+    "verificationProcessing_i18n": "جار التحقق من",
+    "verificationSuccess_i18n": "تم تأكيد الهوية",
+    "verifiationError_i18n": "لا يمكن التحقق من هويتك",
+    "resendVerification_i18n": "إعادة التحقق",
+    "checkingIdentity_i18n": "التحقق من هويتك",
+    "verifyThroughAuth_i18n": "تحقق من خلال المصادقة مزود",
+    "exit_i18n": "خروج",
+    "updatePassword_i18n": "قم بتحديث كلمة المرور الخاصة بك",
+    "allInfoWillDelete_i18n": "سيؤدي هذا إلى حذف حسابك وجميع التعليقات المرتبطة به",
+    "aboutUpdateSuccess_i18n": "معلومات عنك تحديثها بنجاح",
+    "error_i18n": "عذرا ، حدث خطأ ، يرجى المحاولة مرة أخرى",
+    "cancel_i18n": "إلغاء",
+    "aboutYou_i18n": "حولك",
+    "contentTooLong_i18n": "يجب أن يكون المحتوى أقل من 1000 حرف",
+    "saveChanges_i18n": "حفظ التغييرات",
+    "passwordUpdating_i18n": "يتم تحديث كلمة المرور حاليًا",
+    "passwordUpdated_i18n": "تم تحديث كلمة السر بنجاح",
+    "previousPassword_i18n": "كلمة المرور السابقة",
+    "newPassword_i18n": "كلمة سر جديدة",
+    "repeatPassword_i18n": "كرر كلمة المرور الجديدة",
+    "emailUpdating_i18n": "البريد الإلكتروني بتحديث حاليا",
+    "emailUpdated_i18n": "تم تحديث البريد الإلكتروني بنجاح",
+    "newEmail_i18n": "بريد إلكتروني جديد",
+    "updateEmail_i18n": "تحديث البريد الإلكتروني"
   }
 }

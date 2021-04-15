@@ -1,313 +1,76 @@
 ---
-title: 'Terms of service'
-summary: 'zh-cn Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae accusamus autem sunt beatae esse blanditiis illo, tempore ea. Architecto iste culpa temporibus minus dicta eum vel debitis voluptatem sapiente ex.'
+title: '服务条款'
+summary: '我们感谢所有反馈，尽管我们要求它要尊重和真诚。'
 ---
 
-# Markdown: Syntax
+## 使用网站
 
-- [Overview](#overview)
-  - [Philosophy](#philosophy)
-  - [Inline HTML](#html)
-  - [Automatic Escaping for Special Characters](#autoescape)
-- [Block Elements](#block)
-  - [Paragraphs and Line Breaks](#p)
-  - [Headers](#header)
-  - [Blockquotes](#blockquote)
-  - [Lists](#list)
-  - [Code Blocks](#precode)
-  - [Horizontal Rules](#hr)
-- [Span Elements](#span)
-  - [Links](#link)
-  - [Emphasis](#em)
-  - [Code](#code)
-  - [Images](#img)
-- [Miscellaneous](#misc)
-  - [Backslash Escapes](#backslash)
-  - [Automatic Links](#autolink)
-
-**Note:** This document is itself written using Markdown; you
-can [see the source for it by adding '.text' to the URL](/projects/markdown/syntax.text).
+使用该网站即表示您同意我们使用[隐私政策](/privacy-policy)中概述的数据
 
 ---
 
-## Overview
+## 反馈和用户描述
 
-### Philosophy
+我们尊重并赞赏所有反馈，甚至批评。
 
-Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+我们认为您应该随意描述自己。
 
-Readability, however, is emphasized above all else. A Markdown-formatted
-document should be publishable as-is, as plain text, without looking
-like it's been marked up with tags or formatting instructions. While
-Markdown's syntax has been influenced by several existing text-to-HTML
-filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html),
-[Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
-inspiration for Markdown's syntax is the format of plain text email.
+但是，**我们不会容忍**可能带有歧视性或冒犯性的反馈或用户描述。
+这包括但不限于：
 
-## Block Elements
+- 种族主义
+- 性别歧视
+- 恐同语言
+- 身心受到欺凌或威胁
 
-### Paragraphs and Line Breaks
+---
 
-A paragraph is simply one or more consecutive lines of text, separated
-by one or more blank lines. (A blank line is any line that looks like a
-blank line -- a line containing nothing but spaces or tabs is considered
-blank.) Normal paragraphs should not be indented with spaces or tabs.
+## 我们为执行此操作正在执行的操作：
 
-The implication of the "one or more consecutive lines of text" rule is
-that Markdown supports "hard-wrapped" text paragraphs. This differs
-significantly from most other text-to-HTML formatters (including Movable
-Type's "Convert Line Breaks" option) which translate every line break
-character in a paragraph into a `<br />` tag.
+- **我们会根据用户的反馈和说明进行自动审核**，以尝试和缓和令人反感的语言
+- 已审核的帖子和个人资料会在加载时指明这一点
+- 如果自动审核失败，我们将**手动审核帖子并禁用违反上述条款的用户**
 
-When you _do_ want to insert a `<br />` break tag using Markdown, you
-end a line with two or more spaces, then type return.
+---
 
-### Headers
+## 饼干
 
-Markdown supports two styles of headers, [Setext] [1] and [atx] [2].
+**我们关心隐私**，并希望我们在收集和使用您的个人数据时保持清晰透明。我们使用在线收集的信息来帮助我们改善您访问我们网站的体验，并开发和增强我们为您提供的服务。
 
-Optionally, you may "close" atx-style headers. This is purely
-cosmetic -- you can use this if you think it looks better. The
-closing hashes don't even need to match the number of hashes
-used to open the header. (The number of opening hashes
-determines the header level.)
+本政策为您提供有关我们使用的 cookie 以及使用这些 cookie 的目的的信息。
 
-### Blockquotes
+---
 
-Markdown uses email-style `>` characters for blockquoting. If you're
-familiar with quoting passages of text in an email message, then you
-know how to create a blockquote in Markdown. It looks best if you hard
-wrap the text and put a `>` before every line:
+### 什么是 Cookie？
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
->
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+Cookie 是网站存储在您的计算机或移动设备上的一个小文件。每个 Cookie 都包含有关您如何使用我们的网站和应用程序的匿名信息，这使我们能够改善您的用户体验。
 
-Markdown allows you to be lazy and only put the `>` before the first
-line of a hard-wrapped paragraph:
+---
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+### Cookie 的类型及其作用
 
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+Cookie 在您的设备上停留的时间长度取决于其类型。
 
-Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
-adding additional levels of `>`:
+我们在网站上使用两种类型的 Cookie - _session cookies_ 和 _persistent cookies_
 
-> This is the first level of quoting.
->
-> > This is nested blockquote.
->
-> Back to the first level.
+- 某些 Cookie 仅在您停留在网站上时存在，而在您关闭浏览器时将被删除；这些被称为会话 cookie。
+- 在两次会话之间，其他人仍留在您的计算机或设备上，以便我们在您返回站点时识别您；这些被称为永久性 cookie。
 
-Blockquotes can contain other Markdown elements, including headers, lists,
-and code blocks:
+从广义上讲，Cookie 也具有四个不同的功能，可以归类为：-
+_'非常必要'_ cookie，_'性能'_ cookie，_'功能'_ cookie 和 _目标_ 或 _广告_ cookie。
 
-> ## This is a header.
->
-> 1.  This is the first list item.
-> 2.  This is the second list item.
->
-> Here's some example code:
->
->     return shell_exec("echo $input | $markdown_script");
+您可能还听说过第一方和第三方 Cookie。 Cookie 是 **第一** _还是_**第三方** 是指放置 Cookie 的网站（域）。 **第一方 Cookie** 由用户当时正在访问的网站设置。 **第三方 Cookie** 是由非访问域设置的那些 Cookie。
 
-Any decent text editor should make email-style quoting easy. For
-example, with BBEdit, you can make a selection and choose Increase
-Quote Level from the Text menu.
+**我们不会在我们的网站上使用**定位或广告 Cookie
 
-### Lists
+在网站上浏览并使用其功能是非常必要的。这些 cookie 不会收集有关您的信息，这些信息可用于营销或记住您上网的地方。
 
-Markdown supports ordered (numbered) and unordered (bulleted) lists.
+---
 
-Unordered lists use asterisks, pluses, and hyphens -- interchangably
--- as list markers:
+### 我可以选择退出吗？
 
-- Red
-- Green
-- Blue
+我们使用的第一方 Cookie 是**严格必要的**，因此无法选择退出。
 
-is equivalent to:
+该站点上还使用了第三方 Cookie，以使您离开和返回站点时保持登录状态。
 
-- Red
-- Green
-- Blue
-
-and:
-
-- Red
-- Green
-- Blue
-
-Ordered lists use numbers followed by periods:
-
-1.  Bird
-2.  McHale
-3.  Parish
-
-It's important to note that the actual numbers you use to mark the
-list have no effect on the HTML output Markdown produces. The HTML
-Markdown produces from the above list is:
-
-If you instead wrote the list in Markdown like this:
-
-1.  Bird
-1.  McHale
-1.  Parish
-
-or even:
-
-3. Bird
-1. McHale
-1. Parish
-
-you'd get the exact same HTML output. The point is, if you want to,
-you can use ordinal numbers in your ordered Markdown lists, so that
-the numbers in your source match the numbers in your published HTML.
-But if you want to be lazy, you don't have to.
-
-To make lists look nice, you can wrap items with hanging indents:
-
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-But if you want to be lazy, you don't have to:
-
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-List items may consist of multiple paragraphs. Each subsequent
-paragraph in a list item must be indented by either 4 spaces
-or one tab:
-
-1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
-
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-It looks nice if you indent every line of the subsequent
-paragraphs, but here again, Markdown will allow you to be
-lazy:
-
-- This is a list item with two paragraphs.
-
-      This is the second paragraph in the list item. You're
-
-  only required to indent the first line. Lorem ipsum dolor
-  sit amet, consectetuer adipiscing elit.
-
-- Another item in the same list.
-
-To put a blockquote within a list item, the blockquote's `>`
-delimiters need to be indented:
-
-- A list item with a blockquote:
-
-  > This is a blockquote
-  > inside a list item.
-
-To put a code block within a list item, the code block needs
-to be indented _twice_ -- 8 spaces or two tabs:
-
-- A list item with a code block:
-
-      <code goes here>
-
-### Code Blocks
-
-Pre-formatted code blocks are used for writing about programming or
-markup source code. Rather than forming normal paragraphs, the lines
-of a code block are interpreted literally. Markdown wraps a code block
-in both `<pre>` and `<code>` tags.
-
-To produce a code block in Markdown, simply indent every line of the
-block by at least 4 spaces or 1 tab.
-
-This is a normal paragraph:
-
-    This is a code block.
-
-Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
-
-A code block continues until it reaches a line that is not indented
-(or the end of the article).
-
-Within a code block, ampersands (`&`) and angle brackets (`<` and `>`)
-are automatically converted into HTML entities. This makes it very
-easy to include example HTML source code using Markdown -- just paste
-it and indent it, and Markdown will handle the hassle of encoding the
-ampersands and angle brackets. For example, this:
-
-    <div class="footer">
-        &copy; 2004 Foo Corporation
-    </div>
-
-Regular Markdown syntax is not processed within code blocks. E.g.,
-asterisks are just literal asterisks within a code block. This means
-it's also easy to use Markdown to write about Markdown's own syntax.
-
-```
-tell application "Foo"
-    beep
-end tell
-```
-
-## Span Elements
-
-### Links
-
-Markdown supports two style of links: _inline_ and _reference_.
-
-In both styles, the link text is delimited by [square brackets].
-
-To create an inline link, use a set of regular parentheses immediately
-after the link text's closing square bracket. Inside the parentheses,
-put the URL where you want the link to point, along with an _optional_
-title for the link, surrounded in quotes. For example:
-
-This is [an example](http://example.com/) inline link.
-
-[This link](http://example.net/) has no title attribute.
-
-### Emphasis
-
-Markdown treats asterisks (`*`) and underscores (`_`) as indicators of
-emphasis. Text wrapped with one `*` or `_` will be wrapped with an
-HTML `<em>` tag; double `*`'s or `_`'s will be wrapped with an HTML
-`<strong>` tag. E.g., this input:
-
-_single asterisks_
-
-_single underscores_
-
-**double asterisks**
-
-**double underscores**
-
-### Code
-
-To indicate a span of code, wrap it with backtick quotes (`` ` ``).
-Unlike a pre-formatted code block, a code span indicates code within a
-normal paragraph. For example:
-
-Use the `printf()` function.
+**通过不注册网站**，您将阻止自己获取第三方 Cookie Google Firebase 和您登录时使用的授权提供程序。

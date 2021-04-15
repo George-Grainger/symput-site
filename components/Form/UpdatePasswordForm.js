@@ -1,5 +1,5 @@
 import { revalidateUser } from '@/lib/authUtils';
-import { ErrorsContext, UserContext } from '@/lib/context';
+import { AdminContext, ErrorsContext, UserContext } from '@/lib/context';
 import { useContext, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -16,6 +16,7 @@ const UpdatePasswordForm = ({ closeModal }) => {
     formState: { isSubmitting }
   } = useForm();
   const { signInErrors_i18n, genericErrors_i18n } = useContext(ErrorsContext);
+  const { accountPopups_i18n } = useContext(AdminContext);
   const { user } = useContext(UserContext);
 
   const handlePasswordReauth = async ({ verifypassword, newpassword }) => {
@@ -23,9 +24,9 @@ const UpdatePasswordForm = ({ closeModal }) => {
       if (isValid) {
         toast
           .promise(user.updatePassword(newpassword), {
-            loading: 'updating',
-            success: 'Password updated',
-            error: "Password couldn't be upated, please try again."
+            loading: accountPopups_i18n.passwordUpdating_i18n,
+            success: accountPopups_i18n.passwordUpdated_i18n,
+            error: accountPopups_i18n.error
           })
           .then(reset())
           .then(closeModal);
@@ -49,7 +50,7 @@ const UpdatePasswordForm = ({ closeModal }) => {
       <Input
         className="input-bg-toggle mb-4"
         labelclassname="font-semibold text-lg required"
-        label="Previous password"
+        label={accountPopups_i18n.previousPassword_i18n}
         errors={errors}
         name="verifypassword"
         type="password"
@@ -70,7 +71,7 @@ const UpdatePasswordForm = ({ closeModal }) => {
       <Input
         className="input-bg-toggle mb-4"
         labelclassname="font-semibold text-lg required"
-        label="New password"
+        label={accountPopups_i18n.newPassword_i18n}
         errors={errors}
         name="newpassword"
         type="password"
@@ -91,7 +92,7 @@ const UpdatePasswordForm = ({ closeModal }) => {
       <Input
         className="input-bg-toggle mb-4"
         labelclassname="font-semibold text-lg required"
-        label="Repeat new password"
+        label={accountPopups_i18n.repeatPassword_i18n}
         errors={errors}
         name="newpassword_repeat"
         type="password"
@@ -106,7 +107,7 @@ const UpdatePasswordForm = ({ closeModal }) => {
         className="btn btn-yellow"
         disabled={isSubmitting}
         type="submit"
-        value="Update password"
+        value={accountPopups_i18n.updatePassword_i18n}
       />
     </form>
   );
