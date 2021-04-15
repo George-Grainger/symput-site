@@ -1,6 +1,6 @@
 ---
-name: 'Amir'
-summary: 'مرحبا بالعالم'
+name: 'Amir Hazim'
+summary: 'Code Enthusiast | Gamer | Sports Person'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
