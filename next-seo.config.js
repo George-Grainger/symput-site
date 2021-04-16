@@ -18,10 +18,24 @@ const SEO = {
     description,
     images: [
       {
+        url:
+          'https://www.symput.com/images/icons/android-chrome-192x192.png.png',
+        alt: title,
+        width: 192,
+        height: 192
+      },
+      {
+        url:
+          'https://www.symput.com/images/icons/android-chrome-512x512.png.png',
+        alt: title,
+        width: 512,
+        height: 512
+      },
+      {
         url: 'https://www.symput.com/images/symput-logo.png',
         alt: title,
-        width: 1280,
-        height: 1280
+        width: 1024,
+        height: 512
       }
     ]
   },
