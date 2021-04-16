@@ -23,7 +23,9 @@ const UsernameForm = () => {
   const [formValue, setFormValue] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { register, errors, handleSubmit } = useForm();
+  const { register, errors, handleSubmit } = useForm({
+    reValidateMode: 'onSubmit'
+  });
   const re = /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 
   const onSubmit = async () => {
@@ -74,7 +76,7 @@ const UsernameForm = () => {
       <hr className="my-6 border-b-1 border-gray-200" />
       <h2 className="text-2xl font-semibold text-cente ">{subheading_i18n}</h2>
       <form
-        className="grid gap-4 text-left md:w-3/5 mx-auto md:pt-20"
+        className="grid gap-4 text-left w-3/5 mx-auto pt-10 md:pt-20"
         onSubmit={handleSubmit(onSubmit)}
       >
         <label htmlFor="username" className="required font-bold text-lg">

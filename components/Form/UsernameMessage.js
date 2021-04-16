@@ -27,14 +27,14 @@ const UsernameMessage = ({ username, isValid, loading, error }) => {
         }}
       />
     );
-  } else if (error) {
-    return <ErrorMessage className="text-center" error={error} />;
   } else if (isValid) {
     return (
       <p role="alert" className="text-green-500 text-center">
         {username} {usernameErrors_i18n.isAvailable_i18n}
       </p>
     );
+  } else if (error) {
+    return <ErrorMessage className="text-center" error={error} />;
   } else {
     return <p>&nbsp;</p>;
   }

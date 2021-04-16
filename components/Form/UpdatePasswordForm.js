@@ -14,7 +14,9 @@ const UpdatePasswordForm = ({ closeModal }) => {
     watch,
     reset,
     formState: { isSubmitting }
-  } = useForm();
+  } = useForm({
+    reValidateMode: 'onSubmit'
+  });
   const { signInErrors_i18n, genericErrors_i18n } = useContext(ErrorsContext);
   const { accountPopups_i18n } = useContext(AdminContext);
   const { user } = useContext(UserContext);
