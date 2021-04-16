@@ -1,4 +1,3 @@
-![Symput Logo](/public/images/symput-logo.svg)
 <p align="center">
   <img src="/public/images/symput-logo.svg" width="20%">
 </p>
