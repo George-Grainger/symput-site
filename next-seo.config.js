@@ -28,7 +28,8 @@ const SEO = {
   twitter: {
     handle: '@Symput',
     site: '@Symput',
-    cardType: 'summary_large_image'
+    cardType: 'summary_large_image',
+    image: '/images/icons/android-chrome-512x512.png'
   },
   additionalLinkTags: [
     { rel: 'manifest', href: 'manifest.json' },
