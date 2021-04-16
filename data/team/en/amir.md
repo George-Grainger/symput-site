@@ -10,7 +10,7 @@ socials:
 
 ## Amir Hazim Bin Zulhazmi
 
-Age : 20  
-Gender : Male  
-Nationality : Malaysian  
-About Me : A code enthusiast who took an interest in computer science after watching a movie about hacking (not Matrix). I'm a sports person who enjoy being active and being outdoor. Hoping to be featured in Forbes magazine in the next 10-15 years.
+Age: 20  
+Gender: Male  
+Nationality: Malaysian  
+About Me: A code enthusiast who took an interest in computer science after watching a movie about hacking (not Matrix). I'm a sports person who enjoys being active and being outdoors. Hoping to be featured in Forbes magazine in the next 10-15 years.
