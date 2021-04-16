@@ -14,21 +14,25 @@ const Socials = () => {
       </h5>
       <div className="flex justify-between">
         <IconLink
+          href="https://twitter.com/symputkeyboard"
           accessibleLabel="Twitter"
           icon={<FaTwitter className="h-6 w-6" />}
           buttonClasses="bg-blue-400 dark:yellow-ring-on-hover"
         />
         <IconLink
+          href="https://www.facebook.com/symputkeyboard"
           accessibleLabel="Facebook"
           icon={<FaFacebook className="h-6 w-6" />}
           buttonClasses="bg-blue-600 dark:yellow-ring-on-hover"
         />
         <IconLink
+          href="https://www.instagram.com/symput/"
           accessibleLabel="Instagram"
           icon={<FaInstagram className="h-6 w-6" />}
           buttonClasses="bg-gray-900 dark:yellow-ring-on-hover"
         />
         <IconLink
+          href="mailto:symputkeyboard@gmail.com"
           accessibleLabel="Google"
           icon={<GoogleIcon className="h-6 w-6" />}
           buttonClasses="bg-white dark:yellow-ring-on-hover"

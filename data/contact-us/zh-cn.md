@@ -9,9 +9,9 @@ summary: '我们的目标是简化沟通-因此我们的目标是使其易于与
 
 您也可以**通过社交媒体与我们联系:**
 
-- [Facebook](/)
-- [推特](/)
-- [Instagram](/)
-- [谷歌](/)
+- [Facebook](https://www.facebook.com/symputkeyboard)
+- [推特](https://twitter.com/symputkeyboard)
+- [Instagram](https://www.instagram.com/symput/)
+- [谷歌](mailto:symputkeyboard@gmail.com)
 
-**给我们发送电子邮件:** 将被设置
+**给我们发送电子邮件：** [单击此处](mailto：symputkeyboard@gmail.com)
