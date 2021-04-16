@@ -1,5 +1,5 @@
 import { getProvider, revalidateUser } from '@/lib/authUtils';
-import { ErrorsContext, UserContext } from '@/lib/context';
+import { AdminContext, ErrorsContext, UserContext } from '@/lib/context';
 import { useAsync } from '@/lib/useAsync';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -17,6 +17,7 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
     formState: { isSubmitting }
   } = useForm();
   const { signInErrors_i18n, genericErrors_i18n } = useContext(ErrorsContext);
+  const { accountPopups_i18n } = useContext(AdminContext);
   const { user } = useContext(UserContext);
   const [, doRefresh] = useState(null);
 
@@ -31,9 +32,9 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
     if (isValid) {
       toast
         .promise(user.updateEmail(newemail), {
-          loading: 'updating',
-          success: 'Email updated',
-          error: "Email couldn't be upated, please try again."
+          loading: accountPopups_i18n.emailUpdating_i18n,
+          success: accountPopups_i18n.emailUpdated_i18n,
+          error: accountPopups_i18n.error_i18n
         })
         .then(() => {
           setEmail(newemail);
@@ -65,7 +66,7 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
         <Input
           className="input-bg-toggle mb-4"
           labelclassname="font-semibold text-lg required"
-          label="Previous password"
+          label={accountPopups_i18n.previousPassword_i18n}
           errors={errors}
           name="verifypassword"
           type="password"
@@ -89,7 +90,7 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
       <Input
         className="input-bg-toggle mb-4"
         labelclassname="font-semibold text-lg required"
-        label="New email"
+        label={accountPopups_i18n.newEmail_i18n}
         errors={errors}
         placeholder="user@email.com"
         name="newemail"
@@ -106,7 +107,7 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
         className="btn btn-yellow"
         disabled={isSubmitting}
         type="submit"
-        value="Update email"
+        value={accountPopups_i18n.updateEmail_i18n}
       />
     </form>
   );
@@ -116,6 +117,7 @@ export default UpdateEmailForm;
 
 const ReauthButton = ({ providerId }) => {
   const { user } = useContext(UserContext);
+  const { accountSettings_i18n, accountPopups_i18n } = useContext(AdminContext);
   const { loading, error, result, execute } = useAsync({
     asyncFunction: async () =>
       user?.reauthenticateWithPopup(getProvider(providerId))
@@ -124,19 +126,19 @@ const ReauthButton = ({ providerId }) => {
   if (result) {
     return (
       <div className="text-center font-bold py-3 px-6 rounded shadow-md cursor-default bg-green-500 text-white mb-4">
-        Verified
+        {accountSettings_i18n.verfied_i18n}
       </div>
     );
   } else if (loading) {
     return (
-      <div className="bg-transparent border border-solid border-gray-900 py-3 px-6 rounded mb-4">
-        <ButtonEllipsis />
+      <div className="bg-transparent border border-solid border-gray-900 dark:border-white py-3 px-6 rounded mb-4">
+        <ButtonEllipsis color="bg-gray-900 dark:bg-white" />
       </div>
     );
   } else if (error) {
     return (
       <button onClick={execute} className="btn btn-red w-full mb-4">
-        An error occured please try again
+        {accountPopups_i18n.error_i18n}
       </button>
     );
   } else {
@@ -145,7 +147,7 @@ const ReauthButton = ({ providerId }) => {
         onClick={execute}
         className="btn btn-black-inverted dark:btn-yellow-inverted w-full mb-4"
       >
-        Verify through auth provider
+        {accountPopups_i18n.verifyThroughAuth_i18n}
       </button>
     );
   }

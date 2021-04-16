@@ -34,7 +34,10 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
 
   return (
     <Link href={`/${post.username}/${post.slug}`}>
-      <a className="px-5 py-4 bg-white dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose prose-lg dark:prose-dark transition-darkmode">
+      <div
+        tabIndex="0"
+        className="px-5 py-4 bg-white dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose prose-lg dark:prose-dark transition-darkmode focus-within:ring-gray-900 dark:focus-within:ring-yellow-400"
+      >
         <div className="relative flex mb-4 items-start right-0">
           {admin &&
             (auth.currentUser.emailVerified ? (
@@ -116,7 +119,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
               : `${wordCount} ${words_i18n} ${minutesToRead} ${minRead_i18n}`}
           </div>
         </div>
-      </a>
+      </div>
     </Link>
   );
 }

@@ -24,7 +24,9 @@ const SignUpForm = () => {
     watch,
     errors,
     formState: { isSubmitting }
-  } = useForm();
+  } = useForm({
+    reValidateMode: 'onSubmit'
+  });
 
   const password = useRef({});
   password.current = watch('supassword', '');

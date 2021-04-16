@@ -11,8 +11,8 @@ import { getUserRef, updateAboutInfo } from '@/lib/dbUtils';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 
 const UpdateAccountInfoForm = () => {
-  const { user, loading, username } = useContext(UserContext);
-  const { accountSettings_i18n } = useContext(AdminContext);
+  const { loading, username } = useContext(UserContext);
+  const { accountSettings_i18n, accountPopups_i18n } = useContext(AdminContext);
 
   const userRef = getUserRef();
   const [realTimeUser] = useDocumentData(userRef);
@@ -25,10 +25,10 @@ const UpdateAccountInfoForm = () => {
   const updateUserInfo = async ({ newAboutInfo }) => {
     const success = await updateAboutInfo(newAboutInfo, username);
     if (success) {
-      toast.success('About you upated successfully');
+      toast.success(accountPopups_i18n.aboutUpdateSuccess_i18n);
       reset({ newAboutInfo });
     } else {
-      toast.error('Something went wrong');
+      toast.error(accountPopups_i18n.error_i18n);
     }
   };
 
@@ -46,7 +46,7 @@ const UpdateAccountInfoForm = () => {
           ? realTimeUser?.aboutInfo
             ? accountSettings_i18n.update_i18n
             : accountSettings_i18n.add_i18n
-          : 'Cancel'}
+          : accountPopups_i18n.cancel_i18n}
         <HiChevronDoubleRight className="ml-1 inline" />
       </button>
       {editing ? (
@@ -55,7 +55,7 @@ const UpdateAccountInfoForm = () => {
           className="w-full flex flex-wrap"
         >
           <ResizingTextArea
-            label="About you"
+            label={accountPopups_i18n.aboutYou_i18n}
             errors={errors}
             className="w-full mt-2 mb-4 dark:bg-gray-900"
             parentClassName="border-t border-b border-gray-900 dark:border-gray-200 my-2 py-4 w-full"
@@ -63,16 +63,19 @@ const UpdateAccountInfoForm = () => {
             defaultValue={realTimeUser?.aboutInfo}
             name="newAboutInfo"
             ref={register({
-              maxLength: { value: 1000, message: 'content is too long' }
+              maxLength: {
+                value: 1000,
+                message: accountPopups_i18n.contentTooLong_i18n
+              }
             })}
           />
           <div className="ml-auto my-6">
             <button
               disabled={loadingUpdate}
-              className="btn text-base btn-black mr-8"
+              className="btn dark:btn-yellow-inverted text-base btn-black mr-8"
               onClick={() => setEditing(false)}
             >
-              Cancel
+              {accountPopups_i18n.cancel_i18n}
             </button>
 
             <button
@@ -83,7 +86,7 @@ const UpdateAccountInfoForm = () => {
               {loadingUpdate ? (
                 <ButtonEllipsis color="bg-white" />
               ) : (
-                'Save Changes'
+                accountPopups_i18n.saveChanges_i18n
               )}
             </button>
           </div>
