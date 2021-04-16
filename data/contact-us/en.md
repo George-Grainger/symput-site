@@ -9,9 +9,9 @@ The easiest way is through the **feedback** section on this site [found here](/f
 
 You can also **contact us on social media:**
 
-- [Facebook](/)
-- [Twitter](/)
-- [Instagram](/)
-- [Google](/)
+- [Facebook](https://www.facebook.com/symputkeyboard)
+- [Twitter](https://twitter.com/symputkeyboard)
+- [Instagram](https://www.instagram.com/symput/)
+- [Google](mailto:symputkeyboard@gmail.com)
 
-**Email us:** to be set up
+**Email us:** [Click here](mailto:symputkeyboard@gmail.com)

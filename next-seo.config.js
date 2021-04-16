@@ -18,7 +18,7 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://www.symput.com/images/symput-logo.svg',
+        url: 'https://www.symput.com/images/symput-logo.png',
         alt: title,
         width: 1280,
         height: 1280
@@ -28,8 +28,7 @@ const SEO = {
   twitter: {
     handle: '@Symput',
     site: '@Symput',
-    cardType: 'summary_large_image',
-    image: '/images/icons/android-chrome-512x512.png'
+    cardType: 'summary_large_image'
   },
   additionalLinkTags: [
     { rel: 'manifest', href: 'manifest.json' },
