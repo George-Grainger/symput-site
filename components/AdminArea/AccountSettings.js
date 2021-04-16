@@ -11,10 +11,12 @@ import UpdateEmailForm from '../Form/UpdateEmailForm';
 import { HiChevronDoubleRight } from 'react-icons/hi';
 import UpdateAccountInfoForm from '../Form/UpdateAccountInfoForm';
 import { deleteUserStorage } from '@/lib/storage';
+import { useRouter } from 'next/router';
 
 const AccountSettings = () => {
+  const { locale } = useRouter();
   const { user, loading } = useContext(UserContext);
-  const { accountSettings_i18n } = useContext(AdminContext);
+  const { accountSettings_i18n, accountPopups_i18n } = useContext(AdminContext);
   const providerId = user?.providerData[0]?.providerId;
 
   const {
@@ -52,9 +54,13 @@ const AccountSettings = () => {
           >
             <FaTimes className=" h-6 w-6 link link-light-bg" />
           </button>
-          <span className="font-semibold text-xl flex-auto">Verification</span>
+          <span className="font-semibold text-xl flex-auto">
+            {accountPopups_i18n.verification_i18n}
+          </span>
           <span className="mt-4">
-            Press the link to send a verification email to {email}
+            {locale == 'ar'
+              ? `${email} ${accountPopups_i18n.verificationLink_i18n}`
+              : `${accountPopups_i18n.verificationLink_i18n} ${email}`}
           </span>
           <button
             onClick={() => {
@@ -62,7 +68,7 @@ const AccountSettings = () => {
                 firstClick = false;
                 handleVerification(() => {
                   toast.dismiss(t.id);
-                  toast.success('Successfully verified');
+                  toast.success(accountPopups_i18n.verificationSuccess_i18n);
                 });
               } else {
                 user?.sendEmailVerification();
@@ -70,7 +76,7 @@ const AccountSettings = () => {
             }}
             className="btn btn-black-inverted mt-4 w-full"
           >
-            Resend verification
+            {accountPopups_i18n.resendVerification_i18n}
           </button>
         </div>
       ),
@@ -91,15 +97,15 @@ const AccountSettings = () => {
               <FaTimes className=" h-6 w-6 link link-light-bg" />
             </button>
             <span className="font-semibold text-xl flex-auto">
-              Checking it's you
+              {accountPopups_i18n.checkingIdentity_i18n}
             </span>
             <button
               onClick={() => {
                 toast
                   .promise(user?.reauthenticateWithPopup(provider), {
-                    loading: 'Verifying',
-                    success: 'Identity confirmed',
-                    error: "You couldn't be verified"
+                    loading: accountPopups_i18n.verificationProcessing_i18n,
+                    success: accountPopups_i18n.verificationSuccess_i18n,
+                    error: accountPopups_i18n.verifiationError_i18n
                   })
                   .then(() => {
                     deleteUserStorage(user.uid);
@@ -109,7 +115,7 @@ const AccountSettings = () => {
               }}
               className="btn btn-black-inverted mt-4 w-full"
             >
-              Verify through auth provider
+              {accountPopups_i18n.verifyThroughAuth_i18n}
             </button>
           </div>
         ),
@@ -173,8 +179,8 @@ const AccountSettings = () => {
           </button>
           <Modal
             hidden={!updatePasswordFormOpen}
-            title="Checking it's you"
-            button1="Exit"
+            title={accountPopups_i18n.checkingIdentity_i18n}
+            button1={accountPopups_i18n.exit_i18n}
             handleClose={onUpdatePassordFormClose}
             zIndex="z-40"
           >
@@ -185,8 +191,8 @@ const AccountSettings = () => {
 
       <Modal
         hidden={!updateEmailFormOpen}
-        title="Checking it's you"
-        button1="Exit"
+        title={accountPopups_i18n.checkingIdentity_i18n}
+        button1={accountPopups_i18n.exit_i18n}
         handleClose={onUpdateEmailFormClose}
         zIndex="z-40"
       >
@@ -211,12 +217,12 @@ const AccountSettings = () => {
 
       <Modal
         hidden={!deleteFromOpen}
-        title="Update password"
+        title={accountPopups_i18n.updatePassword_i18n}
         zIndex="z-40"
         handleClose={onDeleteFormClose}
       >
         <p className="font-semibold text-xl pb-8">
-          This will delete your account and all associated feedback
+          {accountPopups_i18n.allInfoWillDelete_i18n}
         </p>
         <AccountDeleteForm />
       </Modal>
