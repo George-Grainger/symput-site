@@ -1,17 +1,34 @@
 ---
-name: 'George'
-summary: 'مرحبا بالعالم'
+name: 'George Grainger'
+summary: 'A programmer from Newcastle living in Fallowfield'
 socials:
   {
-    'facebook': 'https://www.facebook.com/public/George-Grainger',
+    'facebook': 'https://www.facebook.com/george.grainger.39',
     'instagram': 'https://www.instagram.com/georgegrainger1/?hl=en',
-    'google': 'https://myaccount.google.com/'
+    'twitter': 'https://twitter.com/GeorgeGrainger0'
   }
 ---
 
-Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+## حول
 
-- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
-- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
+عمري 20 عامًا ولدي خبرة عام واحد في إنشاء مواقع الويب.
 
-Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+لقد عشت في نيوكاسل طوال حياتي حتى انتقلت إلى مانشستر هذا العام.
+
+## الإهتمامات
+
+أرغب تمامًا في الدخول إلى [Rust](https://www.rust-lang.org/) واللغات ذات المستوى الأدنى على الرغم من أنني لم أبدأ بعد.
+
+أنا مهتم بالأمن السيبراني على الرغم من أنني مبتدئ جدًا (يرجى إعلامي بأي مصادر جيدة للبدء)!
+
+أود أيضًا تجربة تعلم مكتبة JS ثلاثية الأبعاد مثل [three.js](https://threejs.org/) ولكني لست متأكدًا من الوقت الذي سأنتقل فيه للقيام بذلك.
+
+## هوايات
+
+أحب ممارسة الرياضة ، ولا سيما الرجبي والتنس.
+
+أنا أستمتع أيضًا بالقراءة من وقت لآخر ، على الرغم من أنني ربما لا أفعل ذلك كثيرًا كما ينبغي.
+
+## آمال المستقبل
+
+ليسمح له بالذهاب في عطلة مرة أخرى.

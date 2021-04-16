@@ -27,7 +27,7 @@ I'd also like to try learning a 3d JS library like [three.js](https://threejs.or
 
 I like playing sports, particularly rugby and tennis.
 
-I also enjoy reading from time to time, though probably don't do it as much as I should.
+I also enjoy reading from time to time, though probably don't do it as often as I should.
 
 ## Future hopes
 
