@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="/public/images/symput-logo.svg" width="20%">
+</p>
+
+Repositry for the Symput website [found here](https://www.symput.com/)
+
 This is the website for the mathematical keyboard Symput [found here](https://github.com/LefalChizzle/X15Symput).
 
 # What is the purpose:
@@ -35,7 +41,7 @@ The website is made from [NextJS](https://nextjs.org/), using [Google Firebase](
 ## License:
 MIT License
 
-Copyright (c) 2018 Symput
+Copyright (c) 2021 Symput
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

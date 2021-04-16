@@ -96,12 +96,16 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
         <div className="flex items-center justify-between py-4 bottom-0 sticky bg-white dark:bg-gray-900">
           <div className="relative flex items-center">
             <input
+              tabIndex="0"
               name="published"
               type="checkbox"
               ref={register}
               className="checkbox"
             />
-            <label className="text-xl checkbox-label ml-2 md:ml-4">
+            <label
+              htmlFor="published"
+              className="text-xl checkbox-label ml-2 md:ml-4"
+            >
               Published
             </label>
           </div>

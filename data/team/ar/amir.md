@@ -1,11 +1,16 @@
 ---
-name: 'Amir'
-summary: 'مرحبا بالعالم'
+name: 'Amir Hazim'
+summary: 'المتحمسون للكود | اللاعب | شخص رياضي'
+socials:
+  {
+    'facebook': 'https://www.facebook.com/amir.hazim.754570/',
+    'instagram': 'https://www.instagram.com/azimhazin/'
+  }
 ---
 
-Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+## Amir Hazim Bin Zulhazmi
 
-- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
-- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
-
-Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+العمر: 20
+الجنس: ذكر
+الجنسية: ماليزي
+نبذة عني: متحمس للكود اهتم بعلوم الكمبيوتر بعد مشاهدة فيلم عن القرصنة (وليس Matrix). أنا شخص رياضي يتمتع بالنشاط في الهواء الطلق. آمل أن تظهر في مجلة فوربس في السنوات العشر إلى الخمس عشرة القادمة.

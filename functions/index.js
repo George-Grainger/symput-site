@@ -45,7 +45,7 @@ exports.moderateUser = functions.firestore
       const previosulyModerateUsername = userData.moderatedUsername;
       const moderatedUsername = moderateMessage(username);
       const aboutInfo = userData.aboutInfo;
-      const moderatedAboutInfo = moderateMessage(aboutInfo);
+      const moderatedAboutInfo = aboutInfo ? moderateMessage(aboutInfo) : '';
       if (
         moderatedUsername == previosulyModerateUsername &&
         aboutInfo == moderatedAboutInfo
