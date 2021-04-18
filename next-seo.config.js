@@ -19,13 +19,6 @@ const SEO = {
     images: [
       {
         url:
-          'https://www.symput.com/images/icons/android-chrome-192x192.png.png',
-        alt: title,
-        width: 192,
-        height: 192
-      },
-      {
-        url:
           'https://www.symput.com/images/icons/android-chrome-512x512.png.png',
         alt: title,
         width: 512,

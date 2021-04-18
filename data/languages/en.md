@@ -7,9 +7,9 @@ summary: 'Maths is international and we aim to be available around the world too
 
 We currently aim to **support three languages** in our products:
 
-1. [English](languages)
-2. [Arabic](/ar/languages)
-3. [Chinese (simplified)](/zh-cn/languages)
+1. **English**
+2. **Arabic**
+3. **Chinese (simplified)**
 
 The reason for picking these three languages is that these are those spoken in our project team.
 To change your language, click on the settings _(cog)_ button in the navbar, then click on the flag of the language you recognise.
