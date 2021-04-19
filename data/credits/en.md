@@ -9,7 +9,7 @@ If you feel your content has been used but not fairly attributed, please get in 
 
 ## UI
 
-### [Freepik](www.freepik.com)
+### [Freepik](https://www.freepik.com/)
 
 The **language icons** ([found here](https://www.flaticon.com/search?word=countries%20flags)) and **_thinking face_** ([found here](https://www.flaticon.com/search?word=thinking)) were provided by **Freepick**.
 

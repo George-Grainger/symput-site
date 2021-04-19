@@ -9,7 +9,7 @@ summary: 'يحتوي هذا الموقع على العديد من الأشخاص
 
 ## واجهة المستخدم
 
-### [Freepik](www.freepik.com)
+### [Freepik](https://www.freepik.com/)
 
 **رموز اللغة** ([موجودة هنا] (https://www.flaticon.com/search؟word=countries٪20flags)) و** _وجه التفكير _** ([موجود هنا] (https: // www .flaticon.com / search؟ word = Think)) تم توفيرها بواسطة **Freepick**.
 

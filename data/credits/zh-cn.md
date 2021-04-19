@@ -9,7 +9,7 @@ summary: '该网站有许多人要感谢其提供的信息和内容。 我们感
 
 ## 用户界面
 
-### [Freepik](www.freepik.com)
+### [Freepik](https://www.freepik.com/)
 
 **语言图标** ([在这里找到和](https://www.flaticon.com/search?word=countries%20flags)) 和 **_思维的脸_** ([在这里找到和](https://www.flaticon.com/search?word=thinking)) 由提供 **Freepick**.
 
