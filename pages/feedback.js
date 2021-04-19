@@ -21,7 +21,7 @@ export async function getStaticProps({ locale }) {
       navbarData,
       footerData
     },
-    revalidate: 30
+    revalidate: 5
   };
 }
 

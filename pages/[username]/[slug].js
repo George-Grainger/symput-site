@@ -26,7 +26,7 @@ export async function getStaticProps({ params, locale }) {
 
   return {
     props: { post, path, navbarData, footerData, pageData, authPageData },
-    revalidate: 120
+    revalidate: 5
   };
 }
 
