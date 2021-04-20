@@ -1,9 +1,9 @@
 {
   "links_i18n": [
-    { "link_i18n": "/aims", "text_i18n": "目的" },
+    { "link_i18n": "/aims", "text_i18n": "目标" },
     { "link_i18n": "/team", "text_i18n": "团队" },
     { "link_i18n": "/release", "text_i18n": "发布日期" },
-    { "link_i18n": "/feedback", "text_i18n": "回馈" }
+    { "link_i18n": "/feedback", "text_i18n": "反馈" }
   ],
   "loginText_i18n": "登录",
 
@@ -11,18 +11,18 @@
   "sidebarCloseAria_i18n": "关闭侧边栏",
 
   "settingsTitle_i18n": "设定值",
-  "darkModeTitle_i18n": "切换暗模式",
-  "languagesTitle_i18n": "语言能力",
-  "exitButtonText_i18n": "出口",
+  "darkModeTitle_i18n": "切换夜间模式",
+  "languagesTitle_i18n": "语言",
+  "exitButtonText_i18n": "返回",
 
-  "admin_i18n": "行政",
+  "admin_i18n": "管理",
   "adminTagline_i18n": "查看管理区",
   "profile_i18n": "个人资料",
   "profileTagline_i18n": "查看您当前的个人资料",
   "signOut_i18n": "登出",
   "signOutToast_i18n": {
-    "loading": "退出中",
-    "success": "成功退出",
+    "loading": "登出中",
+    "success": "成功登出",
     "error": "抱歉，出了点问题，请重试。"
   }
 }

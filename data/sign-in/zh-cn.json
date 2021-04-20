@@ -10,19 +10,19 @@
     "password_i18n": "密码",
     "reminder_i18n": "忘记密码？",
     "repeatPassword_i18n": "重复输入密码",
-    "resetLink_i18n": "发送重置链接",
-    "goBack_i18n": "回去",
+    "resetLink_i18n": "发送密码重置链接",
+    "goBack_i18n": "返回",
     "signInSuccess_i18n": "登录成功",
     "signUpSuccess_i18n": "该帐户已被注册"
   },
 
   "usernameForm_i18n": {
-    "heading_i18n": "你做到了",
-    "subheading_i18n": "请选择一个用户名",
+    "heading_i18n": "注册成功",
+    "subheading_i18n": "请设置您的用户名",
     "username_i18n": "用户名",
-    "button_i18n": "选择",
+    "button_i18n": "确认",
     "toast_i18n": {
-      "loading": "正在进行预订",
+      "loading": "正在加载",
       "success": "用户名已保存",
       "error": "抱歉，出了点问题，请重试。"
     }

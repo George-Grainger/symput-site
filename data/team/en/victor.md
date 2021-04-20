@@ -1,10 +1,6 @@
 ---
 name: 'Victor'
-summary: "403 - Victor's information is secret!"
+summary: 'A Chinese Gamer, also loves travelling. '
 ---
 
-## 403!
-
-Victor wants to remain private.
-
-Come back another time to see if it's changed!
+P.s. Contact me if you play Arknights

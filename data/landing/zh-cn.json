@@ -1,32 +1,32 @@
 {
   "hero_i18n": {
     "title_i18n": "简化数学交流",
-    "subtitle_i18n": "顺理成章",
+    "subtitle_i18n": "逻辑清晰",
     "buttonText_i18n": "查看总览"
   },
   "overview_i18n": {
     "card1Title_i18n": "目的",
-    "card1Content_i18n": "通过我们的新键盘，我们旨在使所有流行的消息传递应用程序之间的数学交流变得容易，同时仍提供每天使用舒适的产品。",
+    "card1Content_i18n": "我们的键盘能够简化所有聊天软件中的数学交流，同时不妨碍日常交流使用。",
     "card2Title_i18n": "团队",
-    "card2Content_i18n": "查看该项目工作人员的友好面孔。",
+    "card2Content_i18n": "来看看为项目付出的幕后人员吧。",
     "card3Title_i18n": "发布日期",
-    "card3Content_i18n": "由于这是一个大学项目，我们知道我们需要在2021年4月16日（星期五）之前完成。",
-    "card4Title_i18n": "回馈",
-    "card4Content_i18n": "我们真的很想知道人们对您的项目有什么反馈。 查看其他人的想法并通过创建帐户分享您的想法。",
+    "card3Content_i18n": "这是我们的大学作业，我们需要在2021年4月16日（星期五）之前完成。",
+    "card4Title_i18n": "反馈",
+    "card4Content_i18n": "我们很想知道您对我们产品的意见。您可以通过创建帐户来查看其他人的想法并分享您的想法。",
     "learnMore_i18n": "了解更多",
     "sideTextTitle_i18n": "我们的进步",
-    "sideTextP1_i18n": "在曼彻斯特大学的第一年项目中，我们一直在努力创建数学键盘。",
-    "sideTextP2_i18n": "我们最初对Android或Kotlin的了解很少，有些成员在今年之前还没有编码经验。",
-    "sideTextP3_i18n": "随着时间的流逝，我们学到了很多东西，并且取得了很多进步。 我们一直在努力跟踪随着时间的推移我们所做的事情，因此您可以继续进行下去。 ",
+    "sideTextP1_i18n": "作为曼彻斯特大学第一学年的课题，我们设计并做出了一款数学键盘。",
+    "sideTextP2_i18n": "我们最初对Android或Kotlin的了解很少，有些成员在今年之前还没有对应的编程经验。",
+    "sideTextP3_i18n": "随着时间的流逝，我们学习了很多，也成长了很多。 我们一直在记录我们的进度，您可以通过点击下方链接来查看。 ",
     "sideTextLink_i18n": "最近更新",
-    "otherLinks_i18n": "其他连结",
+    "otherLinks_i18n": "其他链接",
     "updates_i18n": "更新",
-    "license_i18n": "执照",
-    "languages_i18n": "语言能力",
-    "accessibility_i18n": "辅助功能",
+    "license_i18n": "许可证",
+    "languages_i18n": "语言相关",
+    "accessibility_i18n": "网站优化",
     "contactUs_i18n": "联系我们",
     "privacyPolicy_i18n": "隐私政策",
     "termsOfService_i18n": "服务条款",
-    "credits_i18n": "学分"
+    "credits_i18n": "鸣谢"
   }
 }

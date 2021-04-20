@@ -3,7 +3,7 @@
   "subtitle_i18n": "在任何这些平台上找到我们以保持更新。",
   "columns_i18n": [
     {
-      "title_i18n": "有用的链接",
+      "title_i18n": "相关链接链接",
       "links_i18n": [
         { "link_i18n": "/aims", "text_i18n": "目的" },
         { "link_i18n": "/team", "text_i18n": "团队" },
@@ -13,12 +13,12 @@
         },
         {
           "link_i18n": "/feedback",
-          "text_i18n": "回馈"
+          "text_i18n": "反馈"
         }
       ]
     },
     {
-      "title_i18n": "有用的链接",
+      "title_i18n": "相关链接",
       "links_i18n": [
         {
           "link_i18n": "/updates",
@@ -27,7 +27,7 @@
         { "link_i18n": "/license", "text_i18n": "执照" },
         {
           "link_i18n": "/languages",
-          "text_i18n": "语言能力"
+          "text_i18n": "语言"
         },
         {
           "link_i18n": "/accessibility",
@@ -52,7 +52,7 @@
         },
         {
           "link_i18n": "/credits",
-          "text_i18n": "学分"
+          "text_i18n": "鸣谢"
         }
       ]
     }
