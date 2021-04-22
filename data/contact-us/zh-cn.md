@@ -12,6 +12,6 @@ summary: '我们的产品的目标是简化沟通-因此我们也会尽力简化
 - [Facebook](https://www.facebook.com/symputkeyboard)
 - [推特](https://twitter.com/symputkeyboard)
 - [Instagram](https://www.instagram.com/symput/)
-- [谷歌](mailto:symputkeyboard@gmail.com)
+- [Google Play](https://play.google.com/store/apps/details?id=com.symput.mathkeyboard)
 
 **给我们发送电子邮件：** [单击此处](mailto：symputkeyboard@gmail.com)

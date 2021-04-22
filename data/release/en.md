@@ -5,8 +5,6 @@ summary: "We've already released! Since our group project deadline was 16th Apri
 
 ## Where to find us?
 
-Unfortunately we're **still waiting to be approved** by Google Play for the time being.
+We're on google play **Google Play** [found here](https://play.google.com/store/apps/details?id=com.symput.mathkeyboard)
 
-**Updates will be posted** as soon as this changes.
-
-For now, if you know how you can install the app from the code found in our **GitHub repositry [found here](https://github.com/LefalChizzle/X15Symput)**
+If you're interested in trying to improve our code, the **GitHub repositry** can be [found here](https://github.com/LefalChizzle/X15Symput)

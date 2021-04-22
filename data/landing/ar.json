@@ -2,7 +2,9 @@
   "hero_i18n": {
     "title_i18n": "تبسيط التواصل في الرياضيات",
     "subtitle_i18n": "إنه منطقي",
-    "buttonText_i18n": "انظر نظرة عامة"
+    "buttonText_i18n": "انظر نظرة عامة",
+    "playButtonText_i18nP1": "تجدنا على",
+    "playButtonText_i18nP2": "تطبيقات جوجل"
   },
   "overview_i18n": {
     "card1Title_i18n": "أهداف",

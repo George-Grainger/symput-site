@@ -12,6 +12,6 @@ summary: 'هدفنا هو تبسيط الاتصال - لذلك نهدف إلى �
 - [موقع التواصل الاجتماعي الفيسبوك](https://www.facebook.com/symputkeyboard)
 - [تويتر](https://twitter.com/symputkeyboard)
 - [إنستغرام](https://www.instagram.com/symput/)
-- [جوجل](mailto:symputkeyboard@gmail.com)
+- [تطبيقات جوجل](https://play.google.com/store/apps/details?id=com.symput.mathkeyboard)
 
 **ارسل لنا عبر البريد الإلكتروني:**[انقر هنا](mailto:symputkeyboard@gmail.com)

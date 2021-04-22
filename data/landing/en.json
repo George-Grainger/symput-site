@@ -2,7 +2,9 @@
   "hero_i18n": {
     "title_i18n": "Simplifying the communication of maths",
     "subtitle_i18n": "It's logical",
-    "buttonText_i18n": "See an overview"
+    "buttonText_i18n": "See an overview",
+    "playButtonText_i18nP1": "Find us on",
+    "playButtonText_i18nP2": "Google Play"
   },
   "overview_i18n": {
     "card1Title_i18n": "Aims",

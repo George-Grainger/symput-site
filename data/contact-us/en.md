@@ -12,6 +12,6 @@ You can also **contact us on social media:**
 - [Facebook](https://www.facebook.com/symputkeyboard)
 - [Twitter](https://twitter.com/symputkeyboard)
 - [Instagram](https://www.instagram.com/symput/)
-- [Google](mailto:symputkeyboard@gmail.com)
+- [Google Play](https://play.google.com/store/apps/details?id=com.symput.mathkeyboard)
 
 **Email us:** [Click here](mailto:symputkeyboard@gmail.com)

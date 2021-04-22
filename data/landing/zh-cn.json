@@ -2,7 +2,9 @@
   "hero_i18n": {
     "title_i18n": "简化数学交流",
     "subtitle_i18n": "逻辑清晰",
-    "buttonText_i18n": "查看总览"
+    "buttonText_i18n": "查看总览",
+    "playButtonText_i18nP1": "在 - 找到我们",
+    "playButtonText_i18nP2": "Google Play"
   },
   "overview_i18n": {
     "card1Title_i18n": "目的",

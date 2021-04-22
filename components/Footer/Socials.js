@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-import GoogleIcon from '../Icons/GoogleIcon';
+import PlayIcon from '../Icons/PlayIcon';
 import IconLink from '../Icons/IconLink';
 import { useContext } from 'react';
 import { FooterContext } from '@/lib/context';
@@ -32,10 +32,10 @@ const Socials = () => {
           buttonClasses="bg-gray-900 dark:yellow-ring-on-hover"
         />
         <IconLink
-          href="mailto:symputkeyboard@gmail.com"
-          accessibleLabel="Google"
-          icon={<GoogleIcon className="h-6 w-6" />}
-          buttonClasses="bg-white dark:yellow-ring-on-hover"
+          href="https://play.google.com/store/apps/details?id=com.symput.mathkeyboard"
+          accessibleLabel="Get us on google play"
+          icon={<PlayIcon className="h-6 w-6" />}
+          buttonClasses="bg-white dark:yellow-ring-on-hover pl-1"
         />
       </div>
     </div>

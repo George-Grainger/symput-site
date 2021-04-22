@@ -5,8 +5,6 @@ summary: '我们的产品已经发布了！我们的小组项目的截止日期�
 
 ## 在哪里找到我们？
 
-不幸的是，我们暂时仍在等待 Google Play 的审核。
+我们在 Google Play **Google Play** [在这里找到](https://play.google.com/store/apps/details?id=com.symput.mathkeyboard)上
 
-**更新将一经发布**。
-
-就目前而言，如果您知道如何从我们的 **GitHub 存储库中找到的代码安装应用程序[可在此处找到](https://github.com/LefalChizzle/X15Symput)**
+如果您有兴趣尝试改进我们的代码，**可以在 GitHub 存储库中找到用于改进应用程序的代码**[在此处可用](https://github.com/LefalChizzle/X15Symput)
