@@ -57,7 +57,7 @@ const Hero = () => {
                 {buttonText_i18n}
               </a>
             </Link>
-            <Link href="/">
+            <Link href="https://play.google.com/store/apps/details?id=com.symput.mathkeyboard">
               <a
                 type="button"
                 className="flex w-48 h-14 bg-white hover:bg-gray-200 text-black rounded-lg items-center justify-center"
