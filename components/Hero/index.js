@@ -51,9 +51,9 @@ const Hero = () => {
             pause={2000}
             emptyPause={500}
           />
-          <div className="mt-10 flex flex-col md:flex-row justify-center items-center">
+          <div className="mt-10 flex flex-col sm:flex-row justify-center items-center">
             <Link href="/aims">
-              <a className="btn btn-yellow-inverted mb-10 md:mb-0 md:mr-10">
+              <a className="btn btn-yellow-inverted mb-10 sm:mb-0 sm:mr-10">
                 {buttonText_i18n}
               </a>
             </Link>
