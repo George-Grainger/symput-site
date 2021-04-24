@@ -1,6 +1,6 @@
 ---
 name: 'George Grainger'
-summary: 'A programmer from Newcastle living in Fallowfield'
+summary: 'مبرمج من نيوكاسل يعيش في فالوفيلد'
 socials:
   {
     'facebook': 'https://www.facebook.com/george.grainger.39',
