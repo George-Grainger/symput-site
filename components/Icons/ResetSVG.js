@@ -26,7 +26,7 @@ const ResetSVG = ({ className }) => {
         transform="translate(-93.27537 -144.85931)"
         fill="none"
         stroke="#f2f2f2"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <rect
         x="303.45419"
@@ -56,7 +56,7 @@ const ResetSVG = ({ className }) => {
         y2="608.49156"
         fill="none"
         stroke="#f2f2f2"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <path
         d="M93.27537,630.2124c0,58.96027,36.98858,106.67017,82.69935,106.67017"

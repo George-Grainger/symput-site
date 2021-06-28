@@ -5,6 +5,8 @@ import { useContext } from 'react';
 import { LandingConext } from '@/lib/context';
 import PlayIcon from '../Icons/PlayIcon';
 
+import heroImage from '../../public/images/heroImage.jpg'
+
 const Hero = () => {
   const { hero_i18n } = useContext(LandingConext);
   const {
@@ -20,9 +22,10 @@ const Hero = () => {
         <Image
           quality={25}
           alt="Hero image"
-          src="/images/heroImage.jpg"
+          src={heroImage}
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
           priority
         />
         <span

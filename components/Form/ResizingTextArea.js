@@ -54,4 +54,6 @@ const ResizingTextArea = forwardRef(
   }
 );
 
+ResizingTextArea.displayName = 'ResizingTextArea';
+
 export default ResizingTextArea;

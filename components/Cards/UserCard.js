@@ -42,6 +42,7 @@ const UserCard = ({
       <div className="w-fs-card px-4 sm:px-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode">
         <div className="absolute transform-gpu -translate-y-1/2">
           <Image
+            alt="Profile Image"
             className="object-cover rounded-full"
             height="100px"
             width="100px"
