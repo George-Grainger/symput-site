@@ -8,12 +8,8 @@ import { FaInfoCircle } from 'react-icons/fa';
 
 // UI component for main post content
 export default function FeedbackContent({ post }) {
-  const {
-    writtenBy_i18n,
-    on_i18n,
-    moderatedP1_i18n,
-    moderatedP2_i18n
-  } = useContext(FeedbackItemContext);
+  const { writtenBy_i18n, on_i18n, moderatedP1_i18n, moderatedP2_i18n } =
+    useContext(FeedbackItemContext);
   const { locale } = useRouter();
   const updatedDate =
     typeof post?.updatedAt === 'number'
@@ -63,7 +59,7 @@ export default function FeedbackContent({ post }) {
       <hr className="my-8" />
       <ReactMarkdown
         className="mx-auto max-w-markdown sm:max-w-prose"
-        renderers={{
+        components={{
           link: ({ children, href }) => {
             return (
               <Link href={href}>

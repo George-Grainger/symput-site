@@ -57,7 +57,7 @@ const UserCard = ({
           <ReactMarkdown
             className="m-auto"
             unwrapDisallowed={true}
-            allowedTypes={['root', 'text', 'paragraph']}
+            allowedElements={['root', 'text', 'paragraph']}
           >
             {user?.aboutInfo || noInfo_i18n}
           </ReactMarkdown>

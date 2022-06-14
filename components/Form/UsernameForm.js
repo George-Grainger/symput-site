@@ -27,9 +27,7 @@ const UsernameForm = () => {
     register,
     handleSubmit,
 
-    formState: {
-      errors,
-    },
+    formState: { errors }
   } = useForm({
     reValidateMode: 'onSubmit'
   });
@@ -108,7 +106,8 @@ const UsernameForm = () => {
           })}
           placeholder="username"
           value={formValue}
-          onChange={onChange} />
+          onChange={onChange}
+        />
         <button type="submit" className="btn btn-yellow my-4">
           {loading ? <ButtonEllipsis /> : button_i18n}
         </button>

@@ -31,7 +31,7 @@ export default function Navbar({ transparent }) {
     return () => {
       window.removeEventListener('scroll', changeNav);
     };
-  }, []);
+  });
 
   return (
     <header>

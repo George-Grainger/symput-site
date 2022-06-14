@@ -13,9 +13,8 @@ const VerifyUser = () => {
     button_i18n,
     toast_i18n
   } = verifyPage_i18n;
-  const { user, username, loading, handleVerification } = useContext(
-    UserContext
-  );
+  const { user, username, loading, handleVerification } =
+    useContext(UserContext);
 
   const sendEmail = async (firstLoad = false) => {
     if (firstLoad) {
@@ -25,7 +24,9 @@ const VerifyUser = () => {
     }
   };
 
-  useEffect(() => sendEmail(true), []);
+  useEffect(() => {
+    sendEmail(true);
+  }, []);
 
   return (
     <div className="grid md:grid-cols-5 w-full h-full">

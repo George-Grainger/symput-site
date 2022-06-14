@@ -102,7 +102,7 @@ const UpdateAccountInfoForm = () => {
       <ReactMarkdown
         className="text-center w-full"
         unwrapDisallowed={true}
-        allowedTypes={['root', 'text', 'paragraph']}
+        allowedElements={['root', 'text', 'paragraph']}
       >
         {loading
           ? accountSettings_i18n.loading_i18n

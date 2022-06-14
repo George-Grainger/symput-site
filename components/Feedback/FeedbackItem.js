@@ -33,7 +33,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
   const published = post?.published;
 
   return (
-    <Link href={`/${post.username}/${post.slug}`}>
+    <Link href={`/${post.username}/${post.slug}`} passHref>
       <div
         tabIndex="0"
         className="px-5 py-4 bg-white dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg min-w-feedback max-w-3xl mb-6 cursor-pointer prose prose-lg dark:prose-dark transition-darkmode focus-within:ring-gray-900 dark:focus-within:ring-yellow-400"
@@ -99,7 +99,7 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
         <ReactMarkdown
           className="max-w-none"
           unwrapDisallowed={true}
-          allowedTypes={['root', 'text', 'paragraph']}
+          allowedElements={['root', 'text', 'paragraph']}
         >
           {post?.summary}
         </ReactMarkdown>

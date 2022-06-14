@@ -63,7 +63,7 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
         {preview ? (
           <ReactMarkdown
             className="mx-auto max-w-markdown sm:max-w-prose"
-            renderers={{
+            components={{
               link: ({ children, href }) => {
                 return (
                   <Link href={href}>

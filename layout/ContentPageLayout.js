@@ -37,7 +37,7 @@ const ContentPageLayout = ({
             {children}
             <ReactMarkdown
               className="w-full py-4 sm:py-8 prose prose-lg dark:prose-dark"
-              renderers={{
+              components={{
                 link: ({ children, href }) => {
                   return (
                     <Link href={href}>

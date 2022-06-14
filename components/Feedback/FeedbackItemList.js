@@ -9,12 +9,8 @@ import ThinkingSvg from '../Icons/ThinkingSvg';
 
 const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   const { posts, setPosts, isEnd, setIsEnd } = useContext(context);
-  const {
-    loadMore_i18n,
-    reachedEnd_i18n,
-    error_i18n,
-    noPosts_i18n
-  } = useContext(FeedbackItemListContext);
+  const { loadMore_i18n, reachedEnd_i18n, error_i18n, noPosts_i18n } =
+    useContext(FeedbackItemListContext);
 
   const getMoreFeedback = async (last) => {
     const [newPosts, nowIsEnd] = await getMore(last);
