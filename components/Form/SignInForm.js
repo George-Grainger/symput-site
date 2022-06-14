@@ -22,8 +22,11 @@ const SignInForm = ({ handlePasswordReset }) => {
     handleSubmit,
     setError,
     getValues,
-    errors,
-    formState: { isSubmitting }
+
+    formState: {
+      isSubmitting,
+      errors,
+    },
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -43,22 +46,17 @@ const SignInForm = ({ handlePasswordReset }) => {
         label={email_i18n}
         errors={errors}
         placeholder={emailEG_i18n}
-        name="siemail"
-        ref={register({
+        {...register('siemail', {
           required: true,
           pattern: {
             value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             message: signInErrors_i18n.validEmail_i18n
           }
-        })}
-      />
+        })} />
       <Input
         label={password_i18n}
         errors={errors}
-        name="sipassword"
-        type="password"
-        placeholder="••••••••••••"
-        ref={register({
+        {...register('sipassword', {
           required: true,
           minLength: {
             value: 8,
@@ -69,7 +67,8 @@ const SignInForm = ({ handlePasswordReset }) => {
             message: signInErrors_i18n.maxLength_i18n
           }
         })}
-      />
+        type="password"
+        placeholder="••••••••••••" />
 
       <input
         className="btn btn-yellow my-4"

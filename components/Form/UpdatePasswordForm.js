@@ -9,11 +9,14 @@ const UpdatePasswordForm = ({ closeModal }) => {
   const {
     register,
     handleSubmit,
-    errors,
     setError,
     watch,
     reset,
-    formState: { isSubmitting }
+
+    formState: {
+      isSubmitting,
+      errors,
+    },
   } = useForm({
     reValidateMode: 'onSubmit'
   });
@@ -54,10 +57,7 @@ const UpdatePasswordForm = ({ closeModal }) => {
         labelclassname="font-semibold text-lg required"
         label={accountPopups_i18n.previousPassword_i18n}
         errors={errors}
-        name="verifypassword"
-        type="password"
-        placeholder="••••••••••••"
-        ref={register({
+        {...register('verifypassword', {
           required: true,
           minLength: {
             value: 8,
@@ -68,17 +68,15 @@ const UpdatePasswordForm = ({ closeModal }) => {
             message: signInErrors_i18n.maxLength_i18n
           }
         })}
-      />
+        type="password"
+        placeholder="••••••••••••" />
 
       <Input
         className="input-bg-toggle mb-4"
         labelclassname="font-semibold text-lg required"
         label={accountPopups_i18n.newPassword_i18n}
         errors={errors}
-        name="newpassword"
-        type="password"
-        placeholder="••••••••••••"
-        ref={register({
+        {...register('newpassword', {
           required: true,
           minLength: {
             value: 8,
@@ -89,21 +87,20 @@ const UpdatePasswordForm = ({ closeModal }) => {
             message: signInErrors_i18n.maxLength_i18n
           }
         })}
-      />
+        type="password"
+        placeholder="••••••••••••" />
 
       <Input
         className="input-bg-toggle mb-4"
         labelclassname="font-semibold text-lg required"
         label={accountPopups_i18n.repeatPassword_i18n}
         errors={errors}
-        name="newpassword_repeat"
-        type="password"
-        placeholder="••••••••••••"
-        ref={register({
+        {...register('newpassword_repeat', {
           validate: (value) =>
             value === password.current || signInErrors_i18n.passwordMatch_i18n
         })}
-      />
+        type="password"
+        placeholder="••••••••••••" />
 
       <input
         className="btn btn-yellow"

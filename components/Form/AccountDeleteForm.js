@@ -8,9 +8,12 @@ const PasswordAccountDeleteForm = () => {
   const {
     register,
     handleSubmit,
-    errors,
     setError,
-    formState: { isSubmitting }
+
+    formState: {
+      isSubmitting,
+      errors,
+    },
   } = useForm();
   const { signInErrors_i18n, genericErrors_i18n } = useContext(ErrorsContext);
   const { user } = useContext(UserContext);
@@ -38,10 +41,7 @@ const PasswordAccountDeleteForm = () => {
         labelclassname="font-semibold text-lg required"
         label="Password"
         errors={errors}
-        name="verifypassword"
-        type="password"
-        placeholder="••••••••••••"
-        ref={register({
+        {...register('verifypassword', {
           required: true,
           minLength: {
             value: 8,
@@ -52,7 +52,8 @@ const PasswordAccountDeleteForm = () => {
             message: signInErrors_i18n.maxLength_i18n
           }
         })}
-      />
+        type="password"
+        placeholder="••••••••••••" />
 
       <input
         className="btn btn-red"

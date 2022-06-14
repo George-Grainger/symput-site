@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors');
 const { fontFamily, outline, cursor } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     fontFamily: {
@@ -160,12 +160,6 @@ module.exports = {
           }
         }
       })
-    }
-  },
-  variants: {
-    typography: ['dark'],
-    extend: {
-      ringWidth: ['hover', 'dark']
     }
   },
   plugins: [require('@tailwindcss/typography')]

@@ -11,10 +11,13 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
   const {
     register,
     handleSubmit,
-    errors,
     setError,
     reset,
-    formState: { isSubmitting }
+
+    formState: {
+      isSubmitting,
+      errors,
+    },
   } = useForm();
   const { signInErrors_i18n, genericErrors_i18n } = useContext(ErrorsContext);
   const { accountPopups_i18n } = useContext(AdminContext);
@@ -68,10 +71,7 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
           labelclassname="font-semibold text-lg required"
           label={accountPopups_i18n.previousPassword_i18n}
           errors={errors}
-          name="verifypassword"
-          type="password"
-          placeholder="••••••••••••"
-          ref={register({
+          {...register('verifypassword', {
             required: true,
             minLength: {
               value: 8,
@@ -82,7 +82,8 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
               message: signInErrors_i18n.maxLength_i18n
             }
           })}
-        />
+          type="password"
+          placeholder="••••••••••••" />
       ) : (
         <ReauthButton providerId={providerId} />
       )}
@@ -93,15 +94,13 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
         label={accountPopups_i18n.newEmail_i18n}
         errors={errors}
         placeholder="user@email.com"
-        name="newemail"
-        ref={register({
+        {...register('newemail', {
           required: true,
           pattern: {
             value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             message: signInErrors_i18n.validEmail_i18n
           }
-        })}
-      />
+        })} />
 
       <input
         className="btn btn-yellow"

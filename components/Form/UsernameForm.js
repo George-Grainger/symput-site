@@ -23,7 +23,14 @@ const UsernameForm = () => {
   const [formValue, setFormValue] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { register, errors, handleSubmit } = useForm({
+  const {
+    register,
+    handleSubmit,
+
+    formState: {
+      errors,
+    },
+  } = useForm({
     reValidateMode: 'onSubmit'
   });
   const re = /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
@@ -84,11 +91,7 @@ const UsernameForm = () => {
         </label>
         <input
           className="input"
-          name="username"
-          placeholder="username"
-          value={formValue}
-          onChange={onChange}
-          ref={register({
+          {...register('username', {
             required: true,
             minLength: {
               value: 3,
@@ -103,7 +106,9 @@ const UsernameForm = () => {
               message: usernameErrors_i18n.pattern_i18n
             }
           })}
-        />
+          placeholder="username"
+          value={formValue}
+          onChange={onChange} />
         <button type="submit" className="btn btn-yellow my-4">
           {loading ? <ButtonEllipsis /> : button_i18n}
         </button>

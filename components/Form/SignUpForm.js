@@ -22,8 +22,11 @@ const SignUpForm = () => {
     handleSubmit,
     setError,
     watch,
-    errors,
-    formState: { isSubmitting }
+
+    formState: {
+      isSubmitting,
+      errors,
+    },
   } = useForm({
     reValidateMode: 'onSubmit'
   });
@@ -48,22 +51,17 @@ const SignUpForm = () => {
         label={email_i18n}
         errors={errors}
         placeholder={emailEG_i18n}
-        name="suemail"
-        ref={register({
+        {...register('suemail', {
           required: true,
           pattern: {
             value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             message: signInErrors_i18n.validEmail_i18n
           }
-        })}
-      />
+        })} />
       <Input
         label={password_i18n}
         errors={errors}
-        name="supassword"
-        type="password"
-        placeholder="••••••••••••"
-        ref={register({
+        {...register('supassword', {
           required: true,
           minLength: {
             value: 8,
@@ -74,18 +72,17 @@ const SignUpForm = () => {
             message: signInErrors_i18n.maxLength_i18n
           }
         })}
-      />
+        type="password"
+        placeholder="••••••••••••" />
       <Input
         label={repeatPassword_i18n}
         errors={errors}
-        name="supassword_repeat"
-        type="password"
-        placeholder="••••••••••••"
-        ref={register({
+        {...register('supassword_repeat', {
           validate: (value) =>
             value === password.current || signInErrors_i18n.passwordMatch_i18n
         })}
-      />
+        type="password"
+        placeholder="••••••••••••" />
 
       <input
         className="btn btn-yellow mt-4"

@@ -2,12 +2,12 @@ const withPWA = require('next-pwa');
 const generateSitemap = require('./scripts/generate-sitemap');
 
 module.exports = withPWA({
-  webpack(config, { buildId, dev, isServer, defaultLoaders, webpack }) {
-    if (isServer) {
-      generateSitemap();
-    }
-    return config;
-  },
+  // webpack(config, { buildId, dev, isServer, defaultLoaders, webpack }) {
+  //   if (isServer) {
+  //     generateSitemap();
+  //   }
+  //   return config;
+  // },
   pwa: {
     disable: process.env.NODE_ENV === 'development',
     dest: 'public'

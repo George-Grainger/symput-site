@@ -7,10 +7,20 @@ import ResizingTextArea from './ResizingTextArea';
 import Link from 'next/link';
 
 const FeedbackForm = ({ defaultValues, postRef, preview }) => {
-  const { register, errors, handleSubmit, formState, reset, watch } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState,
+    reset,
+    watch,
+  } = useForm({
     defaultValues,
     mode: 'onChange'
   });
+
+  const {
+    errors,
+  } = formState;
 
   const { isValid, isDirty } = formState;
 
@@ -46,11 +56,9 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
             preview ? 'hidden' : ''
           } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
           labelclassname={`${preview ? 'hidden' : ''} text-xl label`}
-          name="summary"
-          ref={register({
+          {...register('summary', {
             maxLength: { value: 1000, message: 'Summary is too long' }
-          })}
-        />
+          })} />
 
         {preview ? (
           <ReactMarkdown
@@ -81,13 +89,11 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
             preview ? 'hidden' : ''
           } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
           labelclassname={`${preview ? 'hidden' : ''} text-xl label required`}
-          name="content"
-          ref={register({
+          {...register('content', {
             maxLength: { value: 20000, message: 'content is too long' },
             minLength: { value: 10, message: 'content is too short' },
             required: { value: true, message: 'content is required' }
-          })}
-        />
+          })} />
 
         {errors.content && (
           <p className="text-danger">{errors.content.message}</p>
@@ -97,11 +103,9 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
           <div className="relative flex items-center">
             <input
               tabIndex="0"
-              name="published"
+              {...register('published')}
               type="checkbox"
-              ref={register}
-              className="checkbox"
-            />
+              className="checkbox" />
             <label
               htmlFor="published"
               className="text-xl checkbox-label ml-2 md:ml-4"
