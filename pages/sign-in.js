@@ -5,7 +5,6 @@ import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import LoginPlaceHolder from '@/components/Loading/LoginPalceHolder';
 import UsernameForm from '@/components/Form/UsernameForm';
-import { auth } from '@/lib/authUtils';
 
 const Login = dynamic(() => import('@/components/Login'), {
   loading: () => <LoginPlaceHolder />
@@ -41,9 +40,8 @@ export default function SignIn({
   pageData,
   errorsData
 }) {
-  const { user, username, usernameLoading, loading, error } = useContext(
-    UserContext
-  );
+  const { user, username, usernameLoading, loading, error } =
+    useContext(UserContext);
 
   const getCurrentState = () => {
     if (error) {
@@ -54,7 +52,7 @@ export default function SignIn({
       return <Login />;
     } else if (!username) {
       return <UsernameForm />;
-    } else if (!auth.currentUser.emailVerified) {
+    } else if (!user.emailVerified) {
       return <VerifyUser />;
     } else {
       return <Completed />;

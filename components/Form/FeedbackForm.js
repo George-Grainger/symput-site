@@ -7,21 +7,12 @@ import ResizingTextArea from './ResizingTextArea';
 import Link from 'next/link';
 
 const FeedbackForm = ({ defaultValues, postRef, preview }) => {
-  const {
-    register,
-    handleSubmit,
-    formState,
-    reset,
-    watch,
-  } = useForm({
+  const { register, handleSubmit, formState, reset, watch } = useForm({
     defaultValues,
     mode: 'onChange'
   });
 
-  const {
-    errors,
-  } = formState;
-
+  const { errors } = formState;
   const { isValid, isDirty } = formState;
 
   const updatePost = async ({ summary, content, published }) => {
@@ -58,7 +49,8 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
           labelclassname={`${preview ? 'hidden' : ''} text-xl label`}
           {...register('summary', {
             maxLength: { value: 1000, message: 'Summary is too long' }
-          })} />
+          })}
+        />
 
         {preview ? (
           <ReactMarkdown
@@ -93,7 +85,8 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
             maxLength: { value: 20000, message: 'content is too long' },
             minLength: { value: 10, message: 'content is too short' },
             required: { value: true, message: 'content is required' }
-          })} />
+          })}
+        />
 
         {errors.content && (
           <p className="text-danger">{errors.content.message}</p>
@@ -105,7 +98,8 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
               tabIndex="0"
               {...register('published')}
               type="checkbox"
-              className="checkbox" />
+              className="checkbox"
+            />
             <label
               htmlFor="published"
               className="text-xl checkbox-label ml-2 md:ml-4"

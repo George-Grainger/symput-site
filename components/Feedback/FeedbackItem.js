@@ -5,10 +5,11 @@ import ReactMarkdown from 'react-markdown';
 import { FaEdit, FaHeart, FaInfoCircle } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { auth } from '@/lib/authUtils';
 import toast from 'react-hot-toast';
+import { getAuth } from 'firebase/auth';
 
 export default function FeedbackItem({ post, initialAdmin = false }) {
+  const auth = getAuth();
   const { locale } = useRouter();
   const [admin, setAdmin] = useState(initialAdmin);
   const { user, loading } = useContext(UserContext);

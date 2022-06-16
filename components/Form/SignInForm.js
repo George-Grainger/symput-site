@@ -1,11 +1,12 @@
 import { useForm } from 'react-hook-form';
 import Input from './Input';
-import { auth } from '@/lib/authUtils';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import toast from 'react-hot-toast';
 import { SignInContext, ErrorsContext } from '@/lib/context';
 import { useContext } from 'react';
 
 const SignInForm = ({ handlePasswordReset }) => {
+  const auth = getAuth();
   const { loginPage_i18n } = useContext(SignInContext);
   const {
     email_i18n,
@@ -23,15 +24,11 @@ const SignInForm = ({ handlePasswordReset }) => {
     setError,
     getValues,
 
-    formState: {
-      isSubmitting,
-      errors,
-    },
+    formState: { isSubmitting, errors }
   } = useForm();
 
   const onSubmit = async (data) => {
-    auth
-      .signInWithEmailAndPassword(data.siemail, data.sipassword)
+    signInWithEmailAndPassword(auth, data.siemail, data.sipassword)
       .then(() => {
         toast.success(signInSuccess_i18n);
       })
@@ -49,10 +46,12 @@ const SignInForm = ({ handlePasswordReset }) => {
         {...register('siemail', {
           required: true,
           pattern: {
-            value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            value:
+              /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             message: signInErrors_i18n.validEmail_i18n
           }
-        })} />
+        })}
+      />
       <Input
         label={password_i18n}
         errors={errors}
@@ -68,7 +67,8 @@ const SignInForm = ({ handlePasswordReset }) => {
           }
         })}
         type="password"
-        placeholder="••••••••••••" />
+        placeholder="••••••••••••"
+      />
 
       <input
         className="btn btn-yellow my-4"

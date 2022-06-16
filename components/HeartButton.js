@@ -1,12 +1,14 @@
+import { UserContext } from '@/lib/context';
 import { incrementHeart } from '@/lib/dbUtils';
-import { auth } from '@/lib/authUtils';
+import { useContext } from 'react';
 import { useDocument } from 'react-firebase-hooks/firestore';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 // Allows user to heart or like a post
 export default function Heart({ postRef, hc }) {
-  // Listen to heart document for currently logged in user
-  const heartRef = postRef.collection('hearts').doc(auth.currentUser?.uid);
+  // Listen to heart document for currently logged in user#
+  const { user } = useContext(UserContext);
+  const heartRef = postRef.collection('hearts').doc(user?.uid);
   const [heartDoc] = useDocument(heartRef);
 
   return heartDoc?.exists ? (

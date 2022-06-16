@@ -1,11 +1,12 @@
 import { useRef, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from './Input';
-import { auth } from '@/lib/authUtils';
 import toast from 'react-hot-toast';
 import { SignInContext, ErrorsContext } from '@/lib/context';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 
 const SignUpForm = () => {
+  const auth = getAuth();
   const { loginPage_i18n } = useContext(SignInContext);
   const {
     email_i18n,
@@ -23,10 +24,7 @@ const SignUpForm = () => {
     setError,
     watch,
 
-    formState: {
-      isSubmitting,
-      errors,
-    },
+    formState: { isSubmitting, errors }
   } = useForm({
     reValidateMode: 'onSubmit'
   });
@@ -35,8 +33,7 @@ const SignUpForm = () => {
   password.current = watch('supassword', '');
 
   const onSubmit = async (data) => {
-    auth
-      .createUserWithEmailAndPassword(data.suemail, data.supassword)
+    createUserWithEmailAndPassword(auth, data.suemail, data.supassword)
       .then(() => {
         toast.success(signUpSuccess_i18n);
       })
@@ -54,10 +51,12 @@ const SignUpForm = () => {
         {...register('suemail', {
           required: true,
           pattern: {
-            value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            value:
+              /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             message: signInErrors_i18n.validEmail_i18n
           }
-        })} />
+        })}
+      />
       <Input
         label={password_i18n}
         errors={errors}
@@ -73,7 +72,8 @@ const SignUpForm = () => {
           }
         })}
         type="password"
-        placeholder="••••••••••••" />
+        placeholder="••••••••••••"
+      />
       <Input
         label={repeatPassword_i18n}
         errors={errors}
@@ -82,7 +82,8 @@ const SignUpForm = () => {
             value === password.current || signInErrors_i18n.passwordMatch_i18n
         })}
         type="password"
-        placeholder="••••••••••••" />
+        placeholder="••••••••••••"
+      />
 
       <input
         className="btn btn-yellow mt-4"

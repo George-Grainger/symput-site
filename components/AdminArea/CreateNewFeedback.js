@@ -9,8 +9,8 @@ import { useModalState } from '@/lib/useModalState';
 import { useForm } from 'react-hook-form';
 import Input from '@/components/Form/Input';
 import { createFeedback, getUserRef } from '@/lib/dbUtils';
-import { auth } from '@/lib/authUtils';
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
+import { sendEmailVerification } from 'firebase/auth';
 
 const CreateNewFeedback = () => {
   const router = useRouter();
@@ -25,15 +25,12 @@ const CreateNewFeedback = () => {
     register,
     handleSubmit,
     watch,
-
-    formState: {
-      errors,
-    },
+    formState: { errors }
   } = useForm();
   const title = watch('feedbackTitle');
 
   const handleToggle = () => {
-    if (user && !auth.currentUser.emailVerified) {
+    if (!user?.emailVerified) {
       let firstClick = true;
       toast(
         (t) => (
@@ -59,7 +56,7 @@ const CreateNewFeedback = () => {
                     toast.success('Successfully verified');
                   });
                 } else {
-                  user?.sendEmailVerification();
+                  sendEmailVerification(user);
                 }
               }}
               className="btn btn-black-inverted mt-4 w-full"
@@ -89,66 +86,70 @@ const CreateNewFeedback = () => {
     router.push(`/admin/${feedbackSlug}`);
   };
 
-  return <>
-    <button
-      className="p-8 mt-6 bg-transparent rounded-lg min-w-feedback prose prose-xl dark:prose-dark border-4 border-dashed border-gray-900 dark:border-gray-300 text-center cursor-pointer max-w-none"
-      onClick={handleToggle}
-    >
-      <h3>{createFeedback_i18n.title_i18n}</h3>
-      <p>{createFeedback_i18n.letUsKnow_i18n}</p>
-      <FaPlusCircle className="h-10 w-10 mx-auto" />
-    </button>
-    <Modal
-      hidden={!isOpen}
-      title={createFeedback_i18n.modalTitle_i18n}
-      button1={createFeedback_i18n.modalButton1_i18n}
-      button2={createFeedback_i18n.modalButton2_i18n}
-      handleClose={onClose}
-      handleSave={handleSubmit(createPost)}
-      zIndex="z-40"
-    >
-      <form>
-        <Input
-          className="input-bg-toggle mb-4"
-          labelclassname="font-semibold text-lg required"
-          label={createFeedback_i18n.titleInputLabel_i18n}
-          errors={errors}
-          placeholder={createFeedback_i18n.titleInputPlaceholder_i18n}
-          {...register('feedbackTitle', {
-            required: true,
-            minLength: {
-              value: 5,
-              message: createFeedbackErrors.minLengthTitle_i18n
-            },
-            maxLength: {
-              value: 20,
-              message: createFeedbackErrors.maxLengthtitle_i18n
-            }
-          })} />
-        <Input
-          className="input-bg-toggle mb-4"
-          labelclassname="font-semibold text-lg required"
-          label={createFeedback_i18n.slugInputLabel_i18n}
-          errors={errors}
-          defaultValue={encodeURI(kebabCase(title))}
-          {...register('feedbackSlug', {
-            required: true,
-            pattern: {
-              value: /^(?=[a-zA-Z0-9._-]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
-              message: createFeedbackErrors.minLengthSlug_i18n
-            },
-            minLength: {
-              value: 3,
-              message: createFeedbackErrors.maxLengthSlug_i18n
-            },
-            maxLength: {
-              value: 50,
-              message: createFeedbackErrors.invallidSlug
-            }
-          })} />
-      </form>
-    </Modal>
-  </>;
+  return (
+    <>
+      <button
+        className="p-8 mt-6 bg-transparent rounded-lg min-w-feedback prose prose-xl dark:prose-dark border-4 border-dashed border-gray-900 dark:border-gray-300 text-center cursor-pointer max-w-none"
+        onClick={handleToggle}
+      >
+        <h3>{createFeedback_i18n.title_i18n}</h3>
+        <p>{createFeedback_i18n.letUsKnow_i18n}</p>
+        <FaPlusCircle className="h-10 w-10 mx-auto" />
+      </button>
+      <Modal
+        hidden={!isOpen}
+        title={createFeedback_i18n.modalTitle_i18n}
+        button1={createFeedback_i18n.modalButton1_i18n}
+        button2={createFeedback_i18n.modalButton2_i18n}
+        handleClose={onClose}
+        handleSave={handleSubmit(createPost)}
+        zIndex="z-40"
+      >
+        <form>
+          <Input
+            className="input-bg-toggle mb-4"
+            labelclassname="font-semibold text-lg required"
+            label={createFeedback_i18n.titleInputLabel_i18n}
+            errors={errors}
+            placeholder={createFeedback_i18n.titleInputPlaceholder_i18n}
+            {...register('feedbackTitle', {
+              required: true,
+              minLength: {
+                value: 5,
+                message: createFeedbackErrors.minLengthTitle_i18n
+              },
+              maxLength: {
+                value: 20,
+                message: createFeedbackErrors.maxLengthtitle_i18n
+              }
+            })}
+          />
+          <Input
+            className="input-bg-toggle mb-4"
+            labelclassname="font-semibold text-lg required"
+            label={createFeedback_i18n.slugInputLabel_i18n}
+            errors={errors}
+            defaultValue={encodeURI(kebabCase(title))}
+            {...register('feedbackSlug', {
+              required: true,
+              pattern: {
+                value: /^(?=[a-zA-Z0-9._-]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
+                message: createFeedbackErrors.minLengthSlug_i18n
+              },
+              minLength: {
+                value: 3,
+                message: createFeedbackErrors.maxLengthSlug_i18n
+              },
+              maxLength: {
+                value: 50,
+                message: createFeedbackErrors.invallidSlug
+              }
+            })}
+          />
+        </form>
+      </Modal>
+    </>
+  );
 };
 
 export default CreateNewFeedback;

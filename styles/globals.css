@@ -92,166 +92,166 @@ input:checked ~ .toggle-path {
   @apply outline-none ring-4 ring-yellow-400 ring-offset-2 transition;
 }
 
-@layer utilities {
-    .bg-transparent .user-icon,
-    .yellow-ring-on-hover {
-      @apply hover:ring-2 focus:ring-2 ring-yellow-400 transition;
-    }
+@layer components {
+  .bg-transparent .user-icon,
+  .yellow-ring-on-hover {
+    @apply hover:ring-2 focus:ring-2 ring-yellow-400 transition;
+  }
 
-    .card-yellow {
-      @apply bg-yellow-500 text-black;
-    }
+  .card-yellow {
+    @apply bg-yellow-500 text-black;
+  }
 
-    .card-black {
-      @apply bg-gray-900 text-white;
-    }
+  .card-black {
+    @apply bg-gray-900 text-white;
+  }
 
-    .card-gray {
-      @apply bg-gray-300 text-black;
-    }
+  .card-gray {
+    @apply bg-gray-300 text-black;
+  }
 
-    .card-gray a {
-      @apply btn-black-inverted;
-    }
+  .card-gray a {
+    @apply btn-black-inverted;
+  }
 
-    .card-hexagon {
-      @apply relative bg-gray-900 py-0 rounded-none;
-      width: 480px;
-      height: 277px;
-    }
+  .card-hexagon {
+    @apply relative bg-gray-900 py-0 rounded-none;
+    width: 480px;
+    height: 277px;
+  }
 
-    .card-hexagon::before,
-    .card-hexagon::after {
-      @apply absolute;
-      content: '';
-      border-left: 240px solid transparent;
-      border-right: 240px solid transparent;
-    }
-    .card-hexagon::before {
-      @apply bottom-full;
-      border-bottom: 138.5px solid rgba(17, 24, 39, 1);
-    }
-    .card-hexagon::after {
-      @apply top-full;
-      border-top: 138.5px solid rgba(17, 24, 39, 1);
-    }
+  .card-hexagon::before,
+  .card-hexagon::after {
+    @apply absolute;
+    content: '';
+    border-left: 240px solid transparent;
+    border-right: 240px solid transparent;
+  }
+  .card-hexagon::before {
+    @apply bottom-full;
+    border-bottom: 138.5px solid rgba(17, 24, 39, 1);
+  }
+  .card-hexagon::after {
+    @apply top-full;
+    border-top: 138.5px solid rgba(17, 24, 39, 1);
+  }
 
-    .link-standard {
-      @apply link link-light-bg dark:link-dark-bg;
-    }
+  .link-standard {
+    @apply link link-light-bg dark:link-dark-bg;
+  }
 
-    .bg-transparent .link-standard:not(.button-on-bg) {
-      @apply link-yellow-text;
-    }
+  .bg-transparent .link-standard:not(.button-on-bg) {
+    @apply link-yellow-text;
+  }
 
-    .link-yellow-text {
-      @apply link hover:text-yellow-400;
-    }
+  .link-yellow-text {
+    @apply link hover:text-yellow-400;
+  }
 
-    .btn-sm {
-      @apply font-bold py-2 px-4 rounded transition-colors shadow-md cursor-pointer;
-    }
+  .btn-sm {
+    @apply font-bold py-2 px-4 rounded transition-colors shadow-md cursor-pointer;
+  }
 
-    .btn {
-      @apply font-bold py-3 px-6 rounded transition-colors shadow-md cursor-pointer;
-    }
+  .btn {
+    @apply font-bold py-3 px-6 rounded transition-colors shadow-md cursor-pointer;
+  }
 
-    .animation-btn {
-      @apply btn relative z-10 overflow-hidden;
-    }
+  .animation-btn {
+    @apply btn relative z-10 overflow-hidden;
+  }
 
-    .animation-btn::before,
-    .animation-btn::after {
-      @apply absolute top-1/2 w-5 h-5 rounded-full;
-      content: '';
-    }
+  .animation-btn::before,
+  .animation-btn::after {
+    @apply absolute top-1/2 w-5 h-5 rounded-full;
+    content: '';
+  }
 
-    .animation-btn::before {
-      @apply -left-5 transform -translate-x-1/2 -translate-y-1/2;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-    }
+  .animation-btn::before {
+    @apply -left-5 transform -translate-x-1/2 -translate-y-1/2;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
 
-    .animation-btn::after {
-      @apply -right-5 transform translate-x-1/2 -translate-y-1/2;
-      z-index: -1;
-    }
+  .animation-btn::after {
+    @apply -right-5 transform translate-x-1/2 -translate-y-1/2;
+    z-index: -1;
+  }
 
-    .animation-btn:hover::before {
-      animation: criss-cross-left 0.8s both;
-      animation-direction: alternate;
-    }
+  .animation-btn:hover::before {
+    animation: criss-cross-left 0.8s both;
+    animation-direction: alternate;
+  }
 
-    .animation-btn:hover::after {
-      animation: criss-cross-right 0.8s both;
-      animation-direction: alternate;
-    }
+  .animation-btn:hover::after {
+    animation: criss-cross-right 0.8s both;
+    animation-direction: alternate;
+  }
 
-    .animation-to-black {
-      @apply text-white bg-gray-900 dark:bg-gray-300 dark:text-black dark:hover:text-white;
-    }
+  .animation-to-black {
+    @apply text-white bg-gray-900 dark:bg-gray-300 dark:text-black dark:hover:text-white;
+  }
 
-    .animation-to-black::before,
-    .animation-to-black::after {
-      @apply bg-gray-700;
-    }
+  .animation-to-black::before,
+  .animation-to-black::after {
+    @apply bg-gray-700;
+  }
 
-    .animation-to-yellow {
-      @apply bg-yellow-400 text-black hover:text-white dark:bg-gray-300;
-    }
+  .animation-to-yellow {
+    @apply bg-yellow-400 text-black hover:text-white dark:bg-gray-300;
+  }
 
-    .animation-to-yellow::before,
-    .animation-to-yellow::after {
-      @apply bg-yellow-600;
-    }
+  .animation-to-yellow::before,
+  .animation-to-yellow::after {
+    @apply bg-yellow-600;
+  }
 
-    .btn-lg {
-      @apply font-bold py-3 px-8 rounded transition-colors cursor-pointer;
-    }
+  .btn-lg {
+    @apply font-bold py-3 px-8 rounded transition-colors cursor-pointer;
+  }
 
-    .a-btn {
-      @apply block w-max mx-auto;
-    }
+  .a-btn {
+    @apply block w-max mx-auto;
+  }
 
-    .btn-green {
-      @apply bg-green-500 hover:bg-green-600 text-white;
-    }
+  .btn-green {
+    @apply bg-green-500 hover:bg-green-600 text-white;
+  }
 
-    .btn-red {
-      @apply bg-red-500 hover:bg-red-600 text-white;
-    }
+  .btn-red {
+    @apply bg-red-500 hover:bg-red-600 text-white;
+  }
 
-    .btn-yellow {
-      @apply bg-yellow-400 text-black hover:text-white hover:bg-yellow-600;
-    }
+  .btn-yellow {
+    @apply bg-yellow-400 text-black hover:text-white hover:bg-yellow-600;
+  }
 
-    .btn-black {
-      @apply text-white bg-gray-900 hover:bg-gray-700;
-    }
+  .btn-black {
+    @apply text-white bg-gray-900 hover:bg-gray-700;
+  }
 
-    .btn-yellow-inverted {
-      @apply text-yellow-400 bg-transparent border border-solid border-yellow-400 hover:text-white hover:bg-yellow-600 hover:border-yellow-600;
-    }
+  .btn-yellow-inverted {
+    @apply text-yellow-400 bg-transparent border border-solid border-yellow-400 hover:text-white hover:bg-yellow-600 hover:border-yellow-600;
+  }
 
-    .btn-black-inverted {
-      @apply text-gray-900 bg-transparent border border-solid border-gray-900 hover:text-white hover:bg-gray-900;
-    }
+  .btn-black-inverted {
+    @apply text-gray-900 bg-transparent border border-solid border-gray-900 hover:text-white hover:bg-gray-900;
+  }
 
-    .link {
-      @apply focus:outline-none cursor-pointer rounded-lg;
-    }
+  .link {
+    @apply focus:outline-none cursor-pointer rounded-lg;
+  }
 
-    .link-light-bg {
-      @apply hover:bg-gray-200 focus:bg-gray-200;
-    }
+  .link-light-bg {
+    @apply hover:bg-gray-200 focus:bg-gray-200;
+  }
 
-    .link-dark-bg {
-      @apply link-dark-bg-no-text hover:text-yellow-400 focus:text-yellow-400;
-    }
+  .link-dark-bg {
+    @apply link-dark-bg-no-text hover:text-yellow-400 focus:text-yellow-400;
+  }
 
-    .link-dark-bg-no-text {
-      @apply hover:bg-gray-700 focus:bg-gray-700;
-    }
+  .link-dark-bg-no-text {
+    @apply hover:bg-gray-700 focus:bg-gray-700;
+  }
 }
 
 .override-pre-styles {

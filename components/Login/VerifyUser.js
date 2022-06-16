@@ -1,4 +1,5 @@
 import { UserContext, SignInContext } from '@/lib/context';
+import { sendEmailVerification } from 'firebase/auth';
 import { useContext, useEffect } from 'react';
 import toast from 'react-hot-toast';
 
@@ -20,7 +21,7 @@ const VerifyUser = () => {
     if (firstLoad) {
       handleVerification();
     } else if (!loading) {
-      toast.promise(user?.sendEmailVerification(), toast_i18n);
+      toast.promise(sendEmailVerification(user), toast_i18n);
     }
   };
 

@@ -1,5 +1,6 @@
 import { revalidateUser } from '@/lib/authUtils';
 import { AdminContext, ErrorsContext, UserContext } from '@/lib/context';
+import { updatePassword } from 'firebase/auth';
 import { useContext, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -13,10 +14,7 @@ const UpdatePasswordForm = ({ closeModal }) => {
     watch,
     reset,
 
-    formState: {
-      isSubmitting,
-      errors,
-    },
+    formState: { isSubmitting, errors }
   } = useForm({
     reValidateMode: 'onSubmit'
   });
@@ -28,13 +26,14 @@ const UpdatePasswordForm = ({ closeModal }) => {
     revalidateUser(verifypassword).then((isValid) => {
       if (isValid) {
         toast
-          .promise(user.updatePassword(newpassword), {
+          .promise(updatePassword(user, newpassword), {
             loading: accountPopups_i18n.passwordUpdating_i18n,
             success: accountPopups_i18n.passwordUpdated_i18n,
             error: accountPopups_i18n.error
           })
           .then(reset())
-          .then(closeModal);
+          .then(closeModal)
+          .catch((e) => console.log(e));
       } else {
         setError('verifypassword', {
           type: 'auth/incorrect-details',
@@ -69,7 +68,8 @@ const UpdatePasswordForm = ({ closeModal }) => {
           }
         })}
         type="password"
-        placeholder="••••••••••••" />
+        placeholder="••••••••••••"
+      />
 
       <Input
         className="input-bg-toggle mb-4"
@@ -88,7 +88,8 @@ const UpdatePasswordForm = ({ closeModal }) => {
           }
         })}
         type="password"
-        placeholder="••••••••••••" />
+        placeholder="••••••••••••"
+      />
 
       <Input
         className="input-bg-toggle mb-4"
@@ -100,7 +101,8 @@ const UpdatePasswordForm = ({ closeModal }) => {
             value === password.current || signInErrors_i18n.passwordMatch_i18n
         })}
         type="password"
-        placeholder="••••••••••••" />
+        placeholder="••••••••••••"
+      />
 
       <input
         className="btn btn-yellow"

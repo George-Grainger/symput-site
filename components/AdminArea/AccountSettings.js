@@ -4,7 +4,7 @@ import { FaCheckCircle, FaTimes } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { useModalState } from '@/lib/useModalState';
 import Modal from '../Modal';
-import { getProvider, auth } from '@/lib/authUtils';
+import { getProvider } from '@/lib/authUtils';
 import AccountDeleteForm from '@/components/Form/AccountDeleteForm';
 import UpdatePasswordForm from '@/components/Form/UpdatePasswordForm';
 import UpdateEmailForm from '../Form/UpdateEmailForm';
@@ -12,6 +12,11 @@ import { HiChevronDoubleRight } from 'react-icons/hi';
 import UpdateAccountInfoForm from '../Form/UpdateAccountInfoForm';
 import { deleteUserStorage } from '@/lib/storage';
 import { useRouter } from 'next/router';
+import {
+  deleteUser,
+  reauthenticateWithPopup,
+  sendEmailVerification
+} from 'firebase/auth';
 
 const AccountSettings = () => {
   const { locale } = useRouter();
@@ -71,7 +76,7 @@ const AccountSettings = () => {
                   toast.success(accountPopups_i18n.verificationSuccess_i18n);
                 });
               } else {
-                user?.sendEmailVerification();
+                sendEmailVerification(user);
               }
             }}
             className="btn btn-black-inverted mt-4 w-full"
@@ -102,7 +107,7 @@ const AccountSettings = () => {
             <button
               onClick={() => {
                 toast
-                  .promise(user?.reauthenticateWithPopup(provider), {
+                  .promise(reauthenticateWithPopup(user, provider), {
                     loading: accountPopups_i18n.verificationProcessing_i18n,
                     success: accountPopups_i18n.verificationSuccess_i18n,
                     error: accountPopups_i18n.verifiationError_i18n
@@ -110,7 +115,7 @@ const AccountSettings = () => {
                   .then(() => {
                     deleteUserStorage(user.uid);
                     toast.dismiss(t.id);
-                    user?.delete();
+                    deleteUser(user);
                   });
               }}
               className="btn btn-black-inverted mt-4 w-full"
@@ -149,7 +154,7 @@ const AccountSettings = () => {
         </p>
         <div className="w-full flex items-end">
           <h3 className="flex-auto">{accountSettings_i18n.verfied_i18n}</h3>
-          {auth?.currentUser?.emailVerified ? (
+          {user?.emailVerified ? (
             <p className="flex items-center">
               {accountSettings_i18n.isVerified_i18n}
               <FaCheckCircle className="text-green-500 ml-2 dark:bg-white bg-gray-900 rounded-full" />

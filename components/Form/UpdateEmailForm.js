@@ -1,6 +1,7 @@
 import { getProvider, revalidateUser } from '@/lib/authUtils';
 import { AdminContext, ErrorsContext, UserContext } from '@/lib/context';
 import { useAsync } from '@/lib/useAsync';
+import { reauthenticateWithPopup, updateEmail } from 'firebase/auth';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -14,10 +15,7 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
     setError,
     reset,
 
-    formState: {
-      isSubmitting,
-      errors,
-    },
+    formState: { isSubmitting, errors }
   } = useForm();
   const { signInErrors_i18n, genericErrors_i18n } = useContext(ErrorsContext);
   const { accountPopups_i18n } = useContext(AdminContext);
@@ -34,7 +32,7 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
 
     if (isValid) {
       toast
-        .promise(user.updateEmail(newemail), {
+        .promise(updateEmail(user, newemail), {
           loading: accountPopups_i18n.emailUpdating_i18n,
           success: accountPopups_i18n.emailUpdated_i18n,
           error: accountPopups_i18n.error_i18n
@@ -45,6 +43,7 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
           closeModal();
         })
         .catch((e) => {
+          console.log(e);
           setError('newemail', {
             type: e.code,
             message: e.message
@@ -83,7 +82,8 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
             }
           })}
           type="password"
-          placeholder="••••••••••••" />
+          placeholder="••••••••••••"
+        />
       ) : (
         <ReauthButton providerId={providerId} />
       )}
@@ -97,10 +97,12 @@ const UpdateEmailForm = ({ closeModal, providerId, setEmail }) => {
         {...register('newemail', {
           required: true,
           pattern: {
-            value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            value:
+              /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             message: signInErrors_i18n.validEmail_i18n
           }
-        })} />
+        })}
+      />
 
       <input
         className="btn btn-yellow"
@@ -119,8 +121,10 @@ const ReauthButton = ({ providerId }) => {
   const { accountSettings_i18n, accountPopups_i18n } = useContext(AdminContext);
   const { loading, error, result, execute } = useAsync({
     asyncFunction: async () =>
-      user?.reauthenticateWithPopup(getProvider(providerId))
+      reauthenticateWithPopup(user, getProvider(providerId))
   });
+
+  console.log(error);
 
   if (result) {
     return (
