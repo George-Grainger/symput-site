@@ -1,9 +1,10 @@
 import { useState, useRef } from 'react';
 import { auth } from '@/lib/authUtils';
-import { storage, STATE_CHANGED } from '@/lib/storage';
+import { storage } from '@/lib/storage';
 import { FaCopy, FaPlusSquare } from 'react-icons/fa';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import toast from 'react-hot-toast';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
 // Uploads images to Firebase Storage
 export default function ImageUploader() {
@@ -19,30 +20,33 @@ export default function ImageUploader() {
     const extension = file.type.split('/')[1];
 
     // Makes reference to the storage bucket location
-    const ref = storage.ref(
+    const storageRef = ref(
+      storage,
       `uploads/${auth.currentUser.uid}/${Date.now()}.${extension}`
     );
     setUploading(true);
 
     // Starts the upload
-    const task = ref.put(file);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
     // Listen to updates to upload task
-    task.on(STATE_CHANGED, (snapshot) => {
-      const pct = (
-        (snapshot.bytesTransferred / snapshot.totalBytes) *
-        100
-      ).toFixed(0);
-      setProgress(pct);
-    });
-
-    // Get downloadURL AFTER task resolves (Note: this is not a native Promise)
-    task
-      .then((d) => ref.getDownloadURL())
-      .then((url) => {
-        setDownloadURL(url);
-        setUploading(false);
-      });
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {
+        setProgress((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      },
+      (error) => {
+        toast.error('Sorry - something went wrong - please try again');
+        console.log(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          setDownloadURL(url);
+          setUploading(false);
+          toast.success('Upload complete');
+        });
+      }
+    );
   };
 
   const doCopy = (e) => {
@@ -69,7 +73,7 @@ export default function ImageUploader() {
         </label>
       ) : (
         <div className="flex-1 font-bold py-3 px-6 rounded transition-colors shadow-md text-gray-900 dark:text-white bg-transparent border border-solid border-gray-900 dark:border-white flex items-center justify-between">
-          <ButtonEllipsis className="ml-0" />
+          <ButtonEllipsis color="bg-gray-900 dark:bg-white" className="ml-0" />
           <span>{progress}%</span>
         </div>
       )}
