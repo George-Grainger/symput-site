@@ -124,8 +124,6 @@ const ReauthButton = ({ providerId }) => {
       reauthenticateWithPopup(user, getProvider(providerId))
   });
 
-  console.log(error);
-
   if (result) {
     return (
       <div className="text-center font-bold py-3 px-6 rounded shadow-md cursor-default bg-green-500 text-white mb-4">

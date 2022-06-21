@@ -1,6 +1,5 @@
-import { forwardRef } from 'react';
 import ErrorMessage from './ErrorMessage';
-import { useRef, useEffect, useState } from 'react';
+import { forwardRef, useLayoutEffect, useRef } from 'react';
 
 const ResizingTextArea = forwardRef(
   (
@@ -11,32 +10,29 @@ const ResizingTextArea = forwardRef(
       parentClassName = '',
       name,
       errors,
-      defaultValue
+      defaultValue,
+      value,
+      ...register
     },
     ref
   ) => {
     const parentRef = useRef(null);
-    const [parentHeight, setParentHeight] = useState('auto');
-    const [textAreaHeight, setTextAreaHeight] = useState('auto');
 
-    useEffect(() => {
-      setParentHeight(`${parentRef.current.firstChild.scrollHeight}px`);
-      setTextAreaHeight(`${parentRef.current.firstChild.scrollHeight}px`);
-    }, [textAreaHeight]);
+    useLayoutEffect(() => {
+      // Reset height - important to shrink on delete
+      parentRef.current.firstChild.style.height = 'inherit';
+      // Set height
+      parentRef.current.firstChild.style.height = `${parentRef.current.firstChild.scrollHeight}px`;
+    }, [value]);
 
     return (
       <>
         <label htmlFor={name} className={labelclassname}>
           {label}
         </label>
-        <div
-          ref={parentRef}
-          style={{ minHeight: parentHeight }}
-          className={parentClassName}
-        >
+        <div ref={parentRef} className={parentClassName}>
           <textarea
             style={{
-              height: textAreaHeight,
               resize: 'none'
             }}
             aria-invalid={errors.name ? 'true' : 'false'}
@@ -44,8 +40,8 @@ const ResizingTextArea = forwardRef(
             name={name}
             className={`${className}`}
             errors=""
+            {...register}
             ref={ref}
-            onChange={() => setTextAreaHeight('auto')}
           />
         </div>
         <ErrorMessage error={errors[name]} />

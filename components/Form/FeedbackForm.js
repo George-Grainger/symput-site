@@ -1,10 +1,10 @@
-import { serverTimestamp } from '@/lib/dbUtils';
 import ImageUploader from '@/components/AdminArea/ImageUploader';
 import { useForm } from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
 import toast from 'react-hot-toast';
 import ResizingTextArea from './ResizingTextArea';
 import Link from 'next/link';
+import { serverTimestamp, updateDoc } from 'firebase/firestore';
 
 const FeedbackForm = ({ defaultValues, postRef, preview }) => {
   const { register, handleSubmit, formState, reset, watch } = useForm({
@@ -12,12 +12,11 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
     mode: 'onChange'
   });
 
-  const { errors } = formState;
-  const { isValid, isDirty } = formState;
+  const { errors, isValid, isDirty } = formState;
 
   const updatePost = async ({ summary, content, published }) => {
     toast.promise(
-      postRef.update({
+      updateDoc(postRef, {
         summary,
         content,
         published,
@@ -47,6 +46,7 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
             preview ? 'hidden' : ''
           } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
           labelclassname={`${preview ? 'hidden' : ''} text-xl label`}
+          value={watch('summary')}
           {...register('summary', {
             maxLength: { value: 1000, message: 'Summary is too long' }
           })}
@@ -81,6 +81,7 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
             preview ? 'hidden' : ''
           } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
           labelclassname={`${preview ? 'hidden' : ''} text-xl label required`}
+          value={watch('content')}
           {...register('content', {
             maxLength: { value: 20000, message: 'content is too long' },
             minLength: { value: 10, message: 'content is too short' },

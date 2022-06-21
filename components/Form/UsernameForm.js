@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { firestore } from '@/lib/dbUtils';
+import { db } from '@/lib/dbUtils';
 import debounce from 'lodash.debounce';
 import { useEffect, useState, useCallback, useContext } from 'react';
 import UsernameMessage from '@/components/Form/UsernameMessage';
@@ -7,6 +7,7 @@ import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import toast from 'react-hot-toast';
 import { updateUsername } from '@/lib/dbUtils';
 import { SignInContext, ErrorsContext } from '@/lib/context';
+import { doc, getDoc } from 'firebase/firestore';
 
 const UsernameForm = () => {
   const { usernameForm_i18n } = useContext(SignInContext);
@@ -66,9 +67,9 @@ const UsernameForm = () => {
   const checkUsername = useCallback(
     debounce(async (username) => {
       if (username.length >= 3 && username.length <= 20) {
-        const ref = firestore.doc(`usernames/${username}`);
-        const { exists } = await ref.get();
-        setIsValid(!exists);
+        const usernameRef = doc(db, `usernames/${username}`);
+        const username = await getDoc(usernameRef);
+        setIsValid(!username.exists());
         setLoading(false);
       }
     }, 500),

@@ -1,9 +1,10 @@
-import { firestore } from '@/lib/dbUtils';
+import { db, firestore } from '@/lib/dbUtils';
 import { getUserWithUsername, postToJSON } from '@/lib/dbUtils';
 import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import FeedbackCard from '@/components/Cards/FeedbackCard';
 import { FeedbackItemContext } from '@/lib/context';
+import { collectionGroup, doc, getDoc, getDocs } from 'firebase/firestore';
 
 export async function getStaticProps({ params, locale }) {
   const { username, slug } = params;
@@ -13,9 +14,15 @@ export async function getStaticProps({ params, locale }) {
   let path;
 
   if (userDoc) {
-    const postRef = userDoc.ref.collection('posts').doc(slug);
-    post = postToJSON(await postRef.get());
+    const postRef = doc(userDoc.ref, 'posts', slug);
+    const postDoc = await getDoc(postRef);
 
+    // Feedback on that url doesn't exist
+    if (!postDoc.exists()) {
+      return { notFound: true };
+    }
+
+    post = postToJSON(postDoc);
     path = postRef.path;
   }
 
@@ -32,7 +39,7 @@ export async function getStaticProps({ params, locale }) {
 
 export async function getStaticPaths({ locales }) {
   // Improve my using Admin SDK to select empty docs
-  const snapshot = await firestore.collectionGroup('posts').get();
+  const snapshot = await getDocs(collectionGroup(db, 'posts'));
   const paths = [];
 
   snapshot.docs.forEach((doc) => {

@@ -2,12 +2,13 @@ import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
 import UserCard from '@/components/Cards/UserCard';
 import {
-  firestore,
+  db,
   getMoreUserPublishedPosts,
   getUserWithUsername
 } from '@/lib/dbUtils';
 import { useState, useEffect } from 'react';
 import { UserPostsContext } from '@/lib/context';
+import { collection, getDocs } from 'firebase/firestore';
 
 export async function getStaticProps({ params, locale }) {
   const { username } = params;
@@ -45,7 +46,7 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export async function getStaticPaths({ locales }) {
-  const snapshot = await firestore.collection('users').get();
+  const snapshot = await getDocs(collection(db, 'users'));
   const paths = [];
 
   snapshot.docs.forEach((doc) => {

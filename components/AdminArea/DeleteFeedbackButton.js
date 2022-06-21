@@ -1,4 +1,5 @@
 import { getFeedbackPostRef } from '@/lib/dbUtils';
+import { deleteDoc } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import toast from 'react-hot-toast';
 
@@ -17,7 +18,7 @@ const DeleteFeedbackButton = () => {
           </span>
           <button
             onClick={async () => {
-              await postRef.delete();
+              await deleteDoc(postRef);
               toast.dismiss(t.id);
               router.push('/admin');
               toast('Feedback annihilated ', { icon: '🗑️' });

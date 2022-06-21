@@ -1,5 +1,5 @@
 import { UserContext, FeedbackItemContext } from '@/lib/context';
-import { firestore } from '@/lib/dbUtils';
+import { db } from '@/lib/dbUtils';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useContext } from 'react';
 import PostContent from '@/components/Feedback/FeedbackContent';
@@ -7,9 +7,10 @@ import HeartButton from '@/components/HeartButton';
 import AuthCheck from '@/components/AuthCheck';
 import Link from 'next/link';
 import { FaEdit, FaRegHeart } from 'react-icons/fa';
+import { doc } from 'firebase/firestore';
 
 const FeedbackCard = ({ path, passedPost, authPageData }) => {
-  const postRef = firestore.doc(path);
+  const postRef = doc(db, path);
   const [realtimePost] = useDocumentData(postRef);
   const post = realtimePost || passedPost;
   const { user: currentUser } = useContext(UserContext);

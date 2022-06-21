@@ -19,24 +19,16 @@ const UpdateAccountInfoForm = () => {
 
   const [editing, setEditing] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState,
-    reset,
-  } = useForm();
+  const { register, handleSubmit, watch, formState, reset } = useForm();
 
-  const {
-    errors,
-  } = formState;
-
-  const { isDirty } = formState;
+  const { errors, isDirty } = formState;
 
   const updateUserInfo = async ({ newAboutInfo }) => {
     const success = await updateAboutInfo(newAboutInfo, username);
     if (success) {
       toast.success(accountPopups_i18n.aboutUpdateSuccess_i18n);
       reset({ newAboutInfo });
+      setEditing(false);
     } else {
       toast.error(accountPopups_i18n.error_i18n);
     }
@@ -46,71 +38,75 @@ const UpdateAccountInfoForm = () => {
     asyncFunction: updateUserInfo
   });
 
-  return <>
-    <button
-      onClick={() => setEditing(!editing)}
-      className="mb-5 link-standard underline px-2"
-    >
-      {!editing
-        ? realTimeUser?.aboutInfo
-          ? accountSettings_i18n.update_i18n
-          : accountSettings_i18n.add_i18n
-        : accountPopups_i18n.cancel_i18n}
-      <HiChevronDoubleRight className="ml-1 inline" />
-    </button>
-    {editing ? (
-      <form
-        onSubmit={handleSubmit(execute)}
-        className="w-full flex flex-wrap"
+  return (
+    <>
+      <button
+        onClick={() => setEditing(!editing)}
+        className="mb-5 link-standard underline px-2"
       >
-        <ResizingTextArea
-          label={accountPopups_i18n.aboutYou_i18n}
-          errors={errors}
-          className="w-full mt-2 mb-4 dark:bg-gray-900"
-          parentClassName="border-t border-b border-gray-900 dark:border-gray-200 my-2 py-4 w-full"
-          labelclassname="invisible h-0"
-          defaultValue={realTimeUser?.aboutInfo}
-          {...register('newAboutInfo', {
-            maxLength: {
-              value: 1000,
-              message: accountPopups_i18n.contentTooLong_i18n
-            }
-          })} />
-        <div className="ml-auto my-6">
-          <button
-            disabled={loadingUpdate}
-            className="btn dark:btn-yellow-inverted text-base btn-black mr-8"
-            onClick={() => setEditing(false)}
-          >
-            {accountPopups_i18n.cancel_i18n}
-          </button>
+        {!editing
+          ? realTimeUser?.aboutInfo
+            ? accountSettings_i18n.update_i18n
+            : accountSettings_i18n.add_i18n
+          : accountPopups_i18n.cancel_i18n}
+        <HiChevronDoubleRight className="ml-1 inline" />
+      </button>
+      {editing ? (
+        <form
+          onSubmit={handleSubmit(execute)}
+          className="w-full flex flex-wrap"
+        >
+          <ResizingTextArea
+            label={accountPopups_i18n.aboutYou_i18n}
+            errors={errors}
+            className="w-full mt-2 mb-4 dark:bg-gray-900"
+            parentClassName="border-t border-b border-gray-900 dark:border-gray-200 my-2 py-4 w-full"
+            labelclassname="invisible h-0"
+            defaultValue={realTimeUser?.aboutInfo}
+            value={watch('newAboutInfo')}
+            {...register('newAboutInfo', {
+              maxLength: {
+                value: 1000,
+                message: accountPopups_i18n.contentTooLong_i18n
+              }
+            })}
+          />
+          <div className="ml-auto my-6">
+            <button
+              disabled={loadingUpdate}
+              className="btn dark:btn-yellow-inverted text-base btn-black mr-8"
+              onClick={() => setEditing(false)}
+            >
+              {accountPopups_i18n.cancel_i18n}
+            </button>
 
-          <button
-            type="submit"
-            className="btn text-base btn-green"
-            disabled={!isDirty || loadingUpdate}
-          >
-            {loadingUpdate ? (
-              <ButtonEllipsis color="bg-white" />
-            ) : (
-              accountPopups_i18n.saveChanges_i18n
-            )}
-          </button>
-        </div>
-      </form>
-    ) : (
-      <ReactMarkdown
-        className="text-center w-full"
-        unwrapDisallowed={true}
-        allowedElements={['root', 'text', 'paragraph']}
-      >
-        {loading
-          ? accountSettings_i18n.loading_i18n
-          : realTimeUser?.aboutInfo ||
-            accountSettings_i18n.describeYourself_i18n}
-      </ReactMarkdown>
-    )}
-  </>;
+            <button
+              type="submit"
+              className="btn text-base btn-green"
+              disabled={!isDirty || loadingUpdate}
+            >
+              {loadingUpdate ? (
+                <ButtonEllipsis color="bg-white" />
+              ) : (
+                accountPopups_i18n.saveChanges_i18n
+              )}
+            </button>
+          </div>
+        </form>
+      ) : (
+        <ReactMarkdown
+          className="text-center w-full"
+          unwrapDisallowed={true}
+          allowedElements={['root', 'text', 'paragraph']}
+        >
+          {loading
+            ? accountSettings_i18n.loading_i18n
+            : realTimeUser?.aboutInfo ||
+              accountSettings_i18n.describeYourself_i18n}
+        </ReactMarkdown>
+      )}
+    </>
+  );
 };
 
 export default UpdateAccountInfoForm;

@@ -24,10 +24,9 @@ const CreateNewFeedback = () => {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors }
+    setValue,
+    formState: { errors, dirtyFields }
   } = useForm();
-  const title = watch('feedbackTitle');
 
   const handleToggle = () => {
     if (!user?.emailVerified) {
@@ -121,6 +120,15 @@ const CreateNewFeedback = () => {
               maxLength: {
                 value: 20,
                 message: createFeedbackErrors.maxLengthtitle_i18n
+              },
+              onChange: (e) => {
+                // Required to update the slug on each change
+                if (!dirtyFields?.feedbackSlug) {
+                  setValue(
+                    'feedbackSlug',
+                    encodeURI(kebabCase(e.target.value))
+                  );
+                }
               }
             })}
           />
@@ -129,7 +137,6 @@ const CreateNewFeedback = () => {
             labelclassname="font-semibold text-lg required"
             label={createFeedback_i18n.slugInputLabel_i18n}
             errors={errors}
-            defaultValue={encodeURI(kebabCase(title))}
             {...register('feedbackSlug', {
               required: true,
               pattern: {
