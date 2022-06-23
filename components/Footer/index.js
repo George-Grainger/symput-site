@@ -1,4 +1,3 @@
-import Triangle from '../Triangle';
 import LinkColumn from './LinkColumn';
 import Socials from './Socials';
 import uuid from 'react-uuid';
@@ -8,8 +7,7 @@ import { FooterContext } from '@/lib/context';
 const Footer = () => {
   const { columns_i18n } = useContext(FooterContext);
   return (
-    <footer className="relative bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white pt-8 pb-6 transition-darkmode">
-      <Triangle color="text-gray-300 dark:text-gray-700" top />
+    <footer className="relative bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white pb-6 transition-darkmode clip-triangle-top">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-y-8 justify-items-center text-center lg:text-left">
         <Socials />
         {columns_i18n &&

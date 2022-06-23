@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  @apply bg-yellow-400 dark:bg-gray-700;
+  @apply bg-yellow-400 dark:bg-gray-700 transition-darkmode;
 }
 
 footer {
@@ -92,7 +92,28 @@ input:checked ~ .toggle-path {
   @apply outline-none ring-4 ring-yellow-400 ring-offset-2 transition;
 }
 
+::selection {
+  @apply text-black bg-yellow-500;
+}
+
 @layer components {
+  .clip-triangle-top {
+    @apply pt-[calc(2rem+5vw)] -mt-[5vw];
+    clip-path: polygon(0 5vw, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .tg-1-2 div:nth-child(3n + 1) {
+    @apply col-start-auto lg:col-start-2 2xl:col-start-auto;
+  }
+
+  .tg-2-3 div:nth-child(5n + 1) {
+    @apply col-start-2;
+  }
+
+  .tg-r-offset div:nth-child(2) {
+    @apply row-start-auto md:row-start-2 lg:row-start-auto;
+  }
+
   .bg-transparent .user-icon,
   .yellow-ring-on-hover {
     @apply hover:ring-2 focus:ring-2 ring-yellow-400 transition;
@@ -114,26 +135,22 @@ input:checked ~ .toggle-path {
     @apply btn-black-inverted;
   }
 
-  .card-hexagon {
-    @apply relative bg-gray-900 py-0 rounded-none;
-    width: 480px;
-    height: 277px;
+  .card-v-hexagon {
+    @apply card-black -mb-32 mx-0 aspect-[0.866] h-[32rem] max-h-max !mx-0;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   }
 
-  .card-hexagon::before,
-  .card-hexagon::after {
-    @apply absolute;
-    content: '';
-    border-left: 240px solid transparent;
-    border-right: 240px solid transparent;
+  .card-h-hexagon {
+    @apply card-black aspect-[1.1547] px-16 py-8;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   }
-  .card-hexagon::before {
-    @apply bottom-full;
-    border-bottom: 138.5px solid rgba(17, 24, 39, 1);
+
+  .card-h-hexagon:nth-child(2n - 1) {
+    @apply md:-ml-12;
   }
-  .card-hexagon::after {
-    @apply top-full;
-    border-top: 138.5px solid rgba(17, 24, 39, 1);
+
+  .card-h-hexagon:nth-child(2n) {
+    @apply md:-mr-12;
   }
 
   .link-standard {
@@ -230,7 +247,7 @@ input:checked ~ .toggle-path {
   }
 
   .btn-yellow-inverted {
-    @apply text-yellow-400 bg-transparent border border-solid border-yellow-400 hover:text-white hover:bg-yellow-600 hover:border-yellow-600;
+    @apply animation-btn text-yellow-400 bg-transparent border border-solid border-yellow-400 hover:text-white hover:bg-yellow-600 hover:border-yellow-600;
   }
 
   .btn-black-inverted {

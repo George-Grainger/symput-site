@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { LandingConext } from '@/lib/context';
 import PlayIcon from '../Icons/PlayIcon';
 
-import heroImage from '../../public/images/heroImage.jpg'
+import heroImage from '../../public/images/heroImage.jpg';
 
 const Hero = () => {
   const { hero_i18n } = useContext(LandingConext);

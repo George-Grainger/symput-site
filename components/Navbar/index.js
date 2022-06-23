@@ -36,6 +36,7 @@ export default function Navbar({ transparent }) {
   return (
     <header>
       <nav
+        aria-label="primiary navigation"
         className={
           (transparent && !navScrolled
             ? 'bg-transparent text-white'

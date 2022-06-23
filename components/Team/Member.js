@@ -12,10 +12,10 @@ const Member = ({
 }) => {
   return (
     <div
-      className={`${className} flex flex-col items-center card card-black lg:card-hexagon col-span-2`}
+      className={`${className} grid place-content-center card-black lg:card-v-hexagon card-h-hexagon lg:col-span-2 row-span-2 lg:row-span-1`}
     >
       <Link href={`/team/${slug}`}>
-        <a className="flex items-center rounded-lg link-dark-bg z-10">
+        <a className="flex m-auto rounded-lg link-dark-bg z-10">
           <Image
             alt={name}
             src={image || '/images/hacker.png'}

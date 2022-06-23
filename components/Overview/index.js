@@ -4,7 +4,6 @@ import { AiOutlineTeam } from 'react-icons/ai';
 import { BiCommentCheck } from 'react-icons/bi';
 import { BsCalendar } from 'react-icons/bs';
 import TextArea from './TextArea';
-import Triangle from '../Triangle';
 import { useContext } from 'react';
 import { LandingConext } from '@/lib/context';
 import Link from 'next/link';
@@ -37,8 +36,7 @@ const Overview = () => {
     credits_i18n
   } = overview_i18n;
   return (
-    <section className="py-24 px-8 bg-white dark:bg-gray-900 dark:text-white relative transition-darkmode">
-      <Triangle color="text-white dark:text-gray-900" />
+    <section className="pb-20 px-8 bg-white dark:bg-gray-900 dark:text-white relative transition-darkmode clip-triangle-top">
       <div className="max-w-screen-lg xl:max-w-screen-xl grid md:grid-cols-2 lg:grid-cols-10 gap-x-8 mx-auto">
         <div className="flex flex-col col-span-1 lg:col-span-3">
           <LinkCard
@@ -93,7 +91,10 @@ const Overview = () => {
         </div>
       </div>
       <hr />
-      <div className="max-w-screen-lg xl:max-w-screen-xl grid md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto pb-12 text-center">
+      <nav
+        aria-label="other links"
+        className="max-w-screen-lg xl:max-w-screen-xl grid md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto pb-12 text-center"
+      >
         <h3 className="text-3xl my-4 font-semibold leading-normal col-span-full">
           {otherLinks_i18n}
         </h3>
@@ -133,7 +134,7 @@ const Overview = () => {
             {credits_i18n}
           </a>
         </Link>
-      </div>
+      </nav>
     </section>
   );
 };
