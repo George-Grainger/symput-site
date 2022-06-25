@@ -19,7 +19,7 @@ const FeedbackManager = () => {
       {post && (
         <section className="section-default section-default-padding">
           <div className="w-fs-card bg-white px-3 sm:px-8 sm:pb-4 dark:bg-gray-900 grid md:grid-cols-2 relative rounded-3xl transition-darkmode p-2">
-            <div className="md:sticky md:top-20 pt-6 md:mb-24 md:pb-2 bg-white dark:bg-gray-900 z-10">
+            <div className="md:sticky md:top-20 pt-6 md:mb-24 md:pb-2 bg-white dark:bg-gray-900 z-10 transition-darkmode">
               <h1 className="prose text-3xl dark:prose-dark font-semibold md:mb-2">
                 Title: {post?.title}
               </h1>
@@ -28,7 +28,7 @@ const FeedbackManager = () => {
               </p>
             </div>
 
-            <aside className="sticky top-20 pt-8 pb-2 md:pb-0 mb-24 bg-white dark:bg-gray-900 z-10">
+            <aside className="sticky top-20 pt-8 pb-2 md:pb-0 mb-24 bg-white dark:bg-gray-900 z-10 transition-darkmode">
               <div className="flex">
                 <button
                   className={

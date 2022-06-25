@@ -59,7 +59,7 @@ const UpdateAccountInfoForm = () => {
           <ResizingTextArea
             label={accountPopups_i18n.aboutYou_i18n}
             errors={errors}
-            className="w-full mt-2 mb-4 dark:bg-gray-900"
+            className="w-full mt-2 mb-4 dark:bg-gray-900 transition-darkmode"
             parentClassName="border-t border-b border-gray-900 dark:border-gray-200 my-2 py-4 w-full"
             labelclassname="invisible h-0"
             defaultValue={realTimeUser?.aboutInfo}

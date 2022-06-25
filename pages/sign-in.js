@@ -62,7 +62,7 @@ export default function SignIn({
   return (
     <Layout navbarData={navbarData} footerData={footerData}>
       <section className="section-default section-default-padding">
-        <div className="card bg-gray-900 text-white md:min-h-fs-card w-fs-card">
+        <div className="card bg-gray-900 text-white md:min-h-[600px] w-fs-card">
           <div>
             <SignInContext.Provider value={pageData}>
               <ErrorsContext.Provider value={errorsData}>

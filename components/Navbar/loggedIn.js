@@ -8,7 +8,12 @@ export default function LoggedIn() {
   const [dropDownVisible, setDropDownVisible] = useState(false);
 
   return (
-    <li className="link-standard flex p-1 md:mx-3">
+    <li
+      className="link-standard flex p-1 md:mx-3"
+      onBlur={(e) =>
+        !e.currentTarget.matches(':focus-within') && setDropDownVisible(false)
+      }
+    >
       <button
         tabIndex="0"
         className="rounded-full user-icon h-10 w-10 focus:outline-none"

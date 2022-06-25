@@ -41,7 +41,7 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
         <ResizingTextArea
           label="Summary"
           errors={errors}
-          className="w-full mt-2 mb-4 dark:bg-gray-900"
+          className="w-full mt-2 mb-4 dark:bg-gray-900 transition-darkmode"
           parentClassName={`${
             preview ? 'hidden' : ''
           } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
@@ -54,7 +54,7 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
 
         {preview ? (
           <ReactMarkdown
-            className="mx-auto max-w-markdown sm:max-w-prose"
+            className="mx-auto max-w-[100vw-4rem] sm:max-w-prose"
             components={{
               link: ({ children, href }) => {
                 return (
@@ -76,7 +76,7 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
         <ResizingTextArea
           label="Main Content"
           errors={errors}
-          className="w-full mt-2 mb-4 dark:bg-gray-900"
+          className="w-full mt-2 mb-4 dark:bg-gray-900 transition-darkmode"
           parentClassName={`${
             preview ? 'hidden' : ''
           } border-t border-b border-gray-900 dark:border-gray-200 my-2`}
@@ -93,7 +93,7 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
           <p className="text-danger">{errors.content.message}</p>
         )}
 
-        <div className="flex items-center justify-between py-4 bottom-0 sticky bg-white dark:bg-gray-900">
+        <div className="flex items-center justify-between py-4 bottom-0 sticky bg-white dark:bg-gray-900 transition-darkmode">
           <div className="relative flex items-center">
             <input
               tabIndex="0"

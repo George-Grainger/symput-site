@@ -82,7 +82,7 @@ const Overview = () => {
             {card4Content_i18n}
           </LinkCard>
         </div>
-        <div className="flex flex-col col-span-1 md:col-span-2 lg:col-span-4 m-auto lg:ml-16 xl:ml-24 max-w-prose">
+        <div className="flex flex-col col-span-1 md:col-span-2 lg:col-span-4 m-auto lg:ml-16 xl:ml-24 max-w-prose lang-switch">
           <TextArea title={sideTextTitle_i18n} linkText={sideTextLink_i18n}>
             <p>{sideTextP1_i18n}</p>
             <p>{sideTextP2_i18n}</p>

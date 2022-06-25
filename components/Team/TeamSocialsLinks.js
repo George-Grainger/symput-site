@@ -12,7 +12,7 @@ const TeamSocialsLinks = ({ socials = {}, darkbg }) => {
           accessibleLabel="Twitter"
           size="h-8 w-8"
           icon={<FaTwitter className="h-5 w-5" />}
-          buttonClasses="bg-blue-400"
+          buttonClasses="bg-[#1DA1F2]"
           linkClasses={`${darkbg ? 'link-dark-bg' : 'link-standard'} link mx-2`}
         />
       )}
@@ -22,7 +22,7 @@ const TeamSocialsLinks = ({ socials = {}, darkbg }) => {
           accessibleLabel="Facebook"
           size="h-8 w-8"
           icon={<FaFacebook className="h-5 w-5" />}
-          buttonClasses="bg-blue-600"
+          buttonClasses="bg-[#4267B2]"
           linkClasses={`${darkbg ? 'link-dark-bg' : 'link-standard'} link mx-2`}
         />
       )}
@@ -31,14 +31,8 @@ const TeamSocialsLinks = ({ socials = {}, darkbg }) => {
           href={socials.instagram}
           accessibleLabel="Instagram"
           size="h-8 w-8"
-          icon={
-            <FaInstagram
-              className={`${
-                darkbg ? 'text-gray-900' : 'text-white dark:text-gray-900'
-              } h-5 w-5`}
-            />
-          }
-          buttonClasses={darkbg ? 'bg-white' : 'bg-gray-900 dark:bg-white'}
+          icon={<FaInstagram className={'text-white h-5 w-5'} />}
+          buttonClasses={'bg-instagram'}
           linkClasses={`${darkbg ? 'link-dark-bg' : 'link-standard'} link mx-2`}
         />
       )}

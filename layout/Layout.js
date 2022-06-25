@@ -22,7 +22,7 @@ const Layout = ({ title, navbarData, footerData, children, transparent }) => {
       <NavContext.Provider value={navbarData}>
         <Navbar transparent={transparent} />
       </NavContext.Provider>
-      <main className={'flex-auto' + (transparent ? '' : ' offset-header')}>
+      <main className={`flex-auto ${transparent ? 'nav-transparent' : ''}`}>
         {children}
       </main>
       <FooterContext.Provider value={footerData}>

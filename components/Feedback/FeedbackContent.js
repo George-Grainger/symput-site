@@ -58,7 +58,7 @@ export default function FeedbackContent({ post }) {
       <h1 className="text-4xl text-center">{post?.title}</h1>
       <hr className="my-8" />
       <ReactMarkdown
-        className="mx-auto max-w-markdown sm:max-w-prose"
+        className="mx-auto max-w-[100vw-4rem] sm:max-w-prose"
         components={{
           link: ({ children, href }) => {
             return (

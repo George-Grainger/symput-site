@@ -33,7 +33,7 @@ const ContentPageLayout = ({
               </p>
             )}
           </div>
-          <div className="w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode">
+          <div className="w-fs-card p-4 sm:p-8 bg-white dark:bg-gray-900 flex flex-col items-center rounded-lg relative transition-darkmode lang-switch">
             {children}
             <ReactMarkdown
               className="w-full py-4 sm:py-8 prose prose-lg dark:prose-dark"

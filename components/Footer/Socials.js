@@ -17,19 +17,19 @@ const Socials = () => {
           href="https://twitter.com/symputkeyboard"
           accessibleLabel="Twitter"
           icon={<FaTwitter className="h-6 w-6" />}
-          buttonClasses="bg-blue-400 dark:yellow-ring-on-hover"
+          buttonClasses="bg-[#1DA1F2] dark:yellow-ring-on-hover"
         />
         <IconLink
           href="https://www.facebook.com/symputkeyboard"
           accessibleLabel="Facebook"
           icon={<FaFacebook className="h-6 w-6" />}
-          buttonClasses="bg-blue-600 dark:yellow-ring-on-hover"
+          buttonClasses="bg-[#4267B2] dark:yellow-ring-on-hover"
         />
         <IconLink
           href="https://www.instagram.com/symput/"
           accessibleLabel="Instagram"
           icon={<FaInstagram className="h-6 w-6" />}
-          buttonClasses="bg-gray-900 dark:yellow-ring-on-hover"
+          buttonClasses="bg-instagram dark:yellow-ring-on-hover"
         />
         <IconLink
           href="https://play.google.com/store/apps/details?id=com.symput.mathkeyboard"

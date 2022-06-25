@@ -56,13 +56,13 @@ const Login = () => {
           callback={signInWithTwitter}
           title="Twitter"
           icon={<TwitterCircle className="h-8 w-8" />}
-          className="bg-blue-400 text-white hover:opacity-90"
+          className="bg-[#1DA1F2] text-white hover:opacity-90"
         />
         <SignInWithButton
           callback={signInWithFacebook}
           title="Facebook"
           icon={<FaFacebook className="h-8 w-8" />}
-          className="bg-blue-600 text-white hover:opacity-90"
+          className="bg-[#4267B2] text-white hover:opacity-90"
         />
         <SignInWithButton
           callback={signInWithGitHub}

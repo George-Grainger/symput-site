@@ -23,9 +23,9 @@ const UserControls = ({ username, visible }) => {
     <div
       className={` ${
         visible ? 'block' : 'hidden'
-      } absolute w-full right-0 md:w-64 3xl:-right-16 top-18 origin-top`}
+      } absolute w-full right-0 md:w-64 3xl:-right-16 top-[4.5rem] origin-top`}
     >
-      <div className="px-2 pt-2 pb-4 text-gray-900 bg-white rounded-md shadow-lg dark:bg-gray-900">
+      <div className="px-2 pt-2 pb-4 text-gray-900 bg-white rounded-md shadow-lg dark:bg-gray-900 lang-switch">
         <div className="grid grid-cols-1 gap-4">
           <Link href={`/admin`}>
             <a className="usercontrol-button button-on-bg">

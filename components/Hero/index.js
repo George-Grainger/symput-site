@@ -17,7 +17,7 @@ const Hero = () => {
     playButtonText_i18nP2
   } = hero_i18n;
   return (
-    <section className="min-h-1.1v relative section-default-padding flex content-center items-center justify-center text-white font-semibold">
+    <section className="min-h-[110vh] relative section-default-padding flex content-center items-center justify-center text-white font-semibold">
       <div className="absolute h-full w-full top-0">
         <Image
           quality={25}
