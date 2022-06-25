@@ -1,4 +1,4 @@
-import { db, firestore } from '@/lib/dbUtils';
+import { db } from '@/lib/dbUtils';
 import { getUserWithUsername, postToJSON } from '@/lib/dbUtils';
 import Layout from 'layout/Layout';
 import { getFooterData, getNavbarData, getPageData } from '@/lib/pageContent';
@@ -32,7 +32,8 @@ export async function getStaticProps({ params, locale }) {
   const footerData = getFooterData(locale);
 
   return {
-    props: { post, path, navbarData, footerData, pageData, authPageData }
+    props: { post, path, navbarData, footerData, pageData, authPageData },
+    revalidate: 5
   };
 }
 

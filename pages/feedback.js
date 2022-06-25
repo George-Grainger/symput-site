@@ -28,7 +28,8 @@ export async function getStaticProps({ locale }) {
       itemListData,
       navbarData,
       footerData
-    }
+    },
+    revalidate: 5
   };
 }
 
