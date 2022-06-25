@@ -30,18 +30,26 @@ export async function getStaticProps({ params, locale }) {
   const navbarData = getNavbarData(locale);
   const footerData = getFooterData(locale);
 
+  const lastUpdate = new Date().toLocaleString(locale, {
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+
   return {
     props: {
       user,
       username,
+      lastUpdate,
       pageData,
       initialPosts,
       initialIsEnd,
       itemListData,
       navbarData,
       footerData
-    },
-    revalidate: 5
+    }
   };
 }
 
@@ -68,6 +76,7 @@ export async function getStaticPaths({ locales }) {
 export default function UserProfilePage({
   user,
   username,
+  lastUpdate,
   pageData,
   initialPosts,
   initialIsEnd,
@@ -91,7 +100,12 @@ export default function UserProfilePage({
       footerData={footerData}
     >
       <UserPostsContext.Provider value={{ posts, setPosts, isEnd, setIsEnd }}>
-        <UserCard user={user} itemListData={itemListData} {...pageData} />
+        <UserCard
+          user={user}
+          itemListData={itemListData}
+          lastUpdate={lastUpdate}
+          {...pageData}
+        />
       </UserPostsContext.Provider>
     </Layout>
   );

@@ -32,8 +32,7 @@ export async function getStaticProps({ params, locale }) {
   const footerData = getFooterData(locale);
 
   return {
-    props: { post, path, navbarData, footerData, pageData, authPageData },
-    revalidate: 5
+    props: { post, path, navbarData, footerData, pageData, authPageData }
   };
 }
 

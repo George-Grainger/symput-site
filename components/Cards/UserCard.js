@@ -15,7 +15,8 @@ const UserCard = ({
   feedbackGiven_i18n,
   noInfo_i18n,
   moderatedP1_i18n,
-  moderatedP2_i18n
+  moderatedP2_i18n,
+  lastUpdate
 }) => {
   const handleMore = async (last) => {
     return getMoreUserPublishedPosts(user, last);
@@ -52,6 +53,9 @@ const UserCard = ({
         <h1 className="pt-16 prose text-5xl dark:prose-dark font-semibold leading-normal">
           {user.moderatedUsername}
         </h1>
+        <span className="text-sm font-weight-light text-gray-700">
+          Last updated: {lastUpdate || 'unknown'}
+        </span>
         <div className="prose prose-lg dark:prose-dark mt-10 py-10 border-t border-gray-300 dark:border-gray-600 min-w-feedback text-center transition-darkmode">
           <h2>{info_i18n}</h2>
           <ReactMarkdown
