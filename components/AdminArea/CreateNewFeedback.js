@@ -64,7 +64,7 @@ const CreateNewFeedback = () => {
             </button>
           </div>
         ),
-        { duration: 40000000 }
+        { duration: Infinity }
       );
     } else {
       onToggle();

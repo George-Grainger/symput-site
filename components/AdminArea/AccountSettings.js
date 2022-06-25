@@ -20,7 +20,7 @@ import {
 
 const AccountSettings = () => {
   const { locale } = useRouter();
-  const { user, loading } = useContext(UserContext);
+  const { user, loading, handleVerification } = useContext(UserContext);
   const { accountSettings_i18n, accountPopups_i18n } = useContext(AdminContext);
   const providerId = user?.providerData[0]?.providerId;
 
@@ -50,6 +50,7 @@ const AccountSettings = () => {
   };
 
   const triggerVerification = () => {
+    let firstClick = true;
     toast(
       (t) => (
         <div className="flex flex-wrap text-center">
@@ -76,7 +77,11 @@ const AccountSettings = () => {
                   toast.success(accountPopups_i18n.verificationSuccess_i18n);
                 });
               } else {
-                sendEmailVerification(user);
+                toast.promise(sendEmailVerification(user), {
+                  loading: 'Sending verification email',
+                  success: 'Verfication email sent',
+                  error: 'Something went wrong, please try again'
+                });
               }
             }}
             className="btn btn-black-inverted mt-4 w-full"
@@ -85,7 +90,7 @@ const AccountSettings = () => {
           </button>
         </div>
       ),
-      { duration: 40000000 }
+      { duration: Infinity }
     );
   };
 
@@ -115,7 +120,12 @@ const AccountSettings = () => {
                   .then(() => {
                     deleteUserStorage(user.uid);
                     toast.dismiss(t.id);
-                    deleteUser(user);
+                    deleteUser(user)
+                      .then(() => toast.success('User deleted'))
+                      .catch((e) => {
+                        console.log(e);
+                        toast.error('Deletion failed - please try again');
+                      });
                   });
               }}
               className="btn btn-black-inverted mt-4 w-full"
@@ -124,7 +134,7 @@ const AccountSettings = () => {
             </button>
           </div>
         ),
-        { duration: 40000000 }
+        { duration: Infinity }
       );
     }
   };

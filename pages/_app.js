@@ -13,13 +13,7 @@ function MyApp({ Component, pageProps }) {
       <UserContext.Provider value={userData}>
         <DefaultSeo {...SEO} />
         <Component {...pageProps} />
-        <Toaster
-          toastOptions={{
-            style: {
-              marginTop: '100px'
-            }
-          }}
-        />
+        <Toaster containerStyle={{ top: 100 }} />
       </UserContext.Provider>
     </ThemeProvider>
   );

@@ -32,10 +32,10 @@ const UserCard = ({
             </Link>
           </>
         </span>,
-        { icon: <FaInfoCircle /> }
+        { icon: <FaInfoCircle size={50} /> }
       );
     }
-  }, []);
+  }, [user?.moderated]);
 
   return (
     <section className="section-default pt-24 pb-36 px-4 sm:px-8">

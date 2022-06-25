@@ -25,10 +25,10 @@ export default function FeedbackContent({ post }) {
             <a className="link link-light-bg underline">{moderatedP2_i18n}</a>
           </Link>
         </span>,
-        { icon: <FaInfoCircle /> }
+        { icon: <FaInfoCircle size={50} /> }
       );
     }
-  }, []);
+  }, [post?.moderated]);
 
   const localisedDate = updatedDate?.toLocaleString(locale, {
     day: 'numeric',

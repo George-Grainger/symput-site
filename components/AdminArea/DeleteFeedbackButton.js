@@ -35,7 +35,7 @@ const DeleteFeedbackButton = () => {
           </button>
         </div>
       ),
-      { duration: 4000000 }
+      { duration: Infinity }
     );
   };
 
