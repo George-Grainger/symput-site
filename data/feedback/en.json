@@ -1,5 +1,7 @@
 {
   "title_i18n": "Feedback",
   "noFeedbackTitle_i18n": "There's no feedback yet",
-  "noFeedbackMessage_i18n": "You could be the first person to ever leave feedback - head to the admin area"
+  "noFeedbackMessage_i18n": "You could be the first person to ever leave feedback - head to the admin area",
+  "lastUpdated_i18n": "Last updated",
+  "unkown_i18n": "unknown"
 }

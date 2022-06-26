@@ -3,5 +3,7 @@
   "feedbackGiven_i18n": "用户反馈",
   "noInfo_i18n": "尚未提供帐户信息",
   "moderatedP1_i18n": "该用户的个人资料已根据我们的服务条款进行了过滤。",
-  "moderatedP2_i18n": "在这里找到他们。"
+  "moderatedP2_i18n": "在这里找到他们。",
+  "lastUpdated_i18n": "上次更新时间",
+  "unkown_i18n": "未知"
 }

@@ -3,5 +3,9 @@
   "on_i18n": "on",
   "signUp_i18n": "Sign up",
   "moderatedP1_i18n": "This post has been moderated in line with our terms of service ",
-  "moderatedP2_i18n": "located here"
+  "moderatedP2_i18n": "located here",
+  "loading_i18n": "Checking post is up to date...",
+  "updated_i18n": "Post updated",
+  "noUpdate_i18n": "Post was up to date",
+  "error_i18n": "Something went wrong - please try reloading the page"
 }

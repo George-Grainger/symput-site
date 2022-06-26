@@ -3,5 +3,7 @@
   "feedbackGiven_i18n": "Feedback given",
   "noInfo_i18n": "No about info given yet",
   "moderatedP1_i18n": "This profile has been moderated in line with our terms of service ",
-  "moderatedP2_i18n": "located here"
+  "moderatedP2_i18n": "located here",
+  "lastUpdated_i18n": "Last updated",
+  "unkown_i18n": "unknown"
 }

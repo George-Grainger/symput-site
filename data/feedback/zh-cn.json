@@ -1,5 +1,7 @@
 {
   "title_i18n": "反馈",
   "noFeedbackTitle_i18n": "暂无反馈",
-  "noFeedbackMessage_i18n": "您可能是第一个留下反馈的人-前往管理区域"
+  "noFeedbackMessage_i18n": "您可能是第一个留下反馈的人-前往管理区域",
+  "lastUpdated_i18n": "上次更新时间",
+  "unkown_i18n": "未知"
 }

@@ -7,7 +7,13 @@ import FeedbackPlaceholder from '../Loading/FeedbackPlaceHolder';
 import { FeedbackItemListContext } from '@/lib/context';
 import ThinkingSvg from '../Icons/ThinkingSvg';
 
-const FeedbackItemList = ({ getMore, context, trigger = false }) => {
+const FeedbackItemList = ({
+  getMore,
+  context,
+  trigger = false,
+  placeHolders = 1,
+  noPostMessage = false
+}) => {
   const { posts, setPosts, isEnd, setIsEnd } = useContext(context);
   const { loadMore_i18n, reachedEnd_i18n, error_i18n, noPosts_i18n } =
     useContext(FeedbackItemListContext);
@@ -28,18 +34,19 @@ const FeedbackItemList = ({ getMore, context, trigger = false }) => {
   const { loading, error, execute } = useAsync({
     asyncFunction: () => getMoreFeedback(posts[posts.length - 1] || -1)
   });
-  if (posts?.length === 0 && loading) {
-    return (
-      <>
-        <FeedbackPlaceholder />
-      </>
-    );
+
+  if (posts?.length !== 0 && loading) {
+    return Array.from({ length: placeHolders }, (_) => (
+      <FeedbackPlaceholder key={uuid()} />
+    ));
   } else if (posts?.length === 0) {
     return (
-      <div className="prose prose-xl dark:prose-dark my-8">
-        <ThinkingSvg className="mx-auto h-24 w-24" />
-        <p>{noPosts_i18n}</p>
-      </div>
+      noPostMessage || (
+        <div className="prose prose-xl dark:prose-dark my-8">
+          <ThinkingSvg className="mx-auto h-24 w-24" />
+          <p>{noPosts_i18n}</p>
+        </div>
+      )
     );
   } else {
     return (

@@ -43,13 +43,13 @@ export default function FeedbackContent({ post }) {
       return 'Just updated';
     } else {
       return (
-        <>
-          <span>{writtenBy_i18n}&nbsp;</span>
+        <span className="lang-switch">
+          {writtenBy_i18n}
           <Link href={`/${post.username}/`}>
             <a className="link-standard p-1">@{post.moderatedUsername}</a>
           </Link>
-          <span>{` ${on_i18n} ${localisedDate}`}</span>
-        </>
+          {`${on_i18n} ${localisedDate}`}
+        </span>
       );
     }
   };
