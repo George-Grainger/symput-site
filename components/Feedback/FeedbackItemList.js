@@ -35,7 +35,7 @@ const FeedbackItemList = ({
     asyncFunction: () => getMoreFeedback(posts[posts.length - 1] || -1)
   });
 
-  if (posts?.length !== 0 && loading) {
+  if (posts?.length === 0 && loading) {
     return Array.from({ length: placeHolders }, (_) => (
       <FeedbackPlaceholder key={uuid()} />
     ));
