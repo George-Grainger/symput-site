@@ -31,22 +31,25 @@ export default function FeedbackFeed({
   }, [posts, locale]);
 
   const noPostSection = (
-    <section className="section-default section-default-padding justify-center">
-      <div className=" prose prose-2xl dark:prose-dark text-center mb-12">
-        <h2 className="text-6xl">{noFeedbackTitle_i18n}</h2>
-        <p className="text-xl">{noFeedbackMessage_i18n}</p>
-      </div>
-    </section>
+    <div className="prose prose-2xl dark:prose-dark text-center m-auto">
+      <h2 className="text-6xl">{noFeedbackTitle_i18n}</h2>
+      <p className="text-xl">{noFeedbackMessage_i18n}</p>
+    </div>
   );
 
-  return (
-    <section className="section-default section-default-padding">
+  const postSection = (
+    <>
       <h1 className="prose dark:prose-dark text-5xl font-semibold text-center mb-12">
         {title_i18n}
       </h1>
       <span className="-mt-10 mb-10 text-sm font-weight-light text-gray-700 dark:text-white lang-switch">
         {`${lastUpdated_i18n} ${lastUpdate || unknown_i18n}`}
       </span>
+    </>
+  );
+
+  return (
+    <section className="section-default section-default-padding">
       <FeedbackPostsContext.Provider
         value={{ posts, setPosts, isEnd, setIsEnd }}
       >
@@ -56,6 +59,7 @@ export default function FeedbackFeed({
             context={FeedbackPostsContext}
             trigger
             placeHolders={4}
+            postMessage={postSection}
             noPostMessage={noPostSection}
           />
         </FeedbackItemListContext.Provider>

@@ -12,6 +12,7 @@ const FeedbackItemList = ({
   context,
   trigger = false,
   placeHolders = 1,
+  postHeader = <></>,
   noPostMessage = false
 }) => {
   const { posts, setPosts, isEnd, setIsEnd } = useContext(context);
@@ -51,6 +52,7 @@ const FeedbackItemList = ({
   } else {
     return (
       <>
+        {postHeader}
         {posts?.map((post) => (
           <FeedbackItem key={uuid()} post={post} />
         ))}
