@@ -19,7 +19,8 @@ module.exports = withPWA({
       'lh3.googleusercontent.com',
       'abs.twimg.com',
       'graph.facebook.com',
-      'avatars.githubusercontent.com'
+      'avatars.githubusercontent.com',
+      'firebasestorage.googleapis.com'
     ]
   },
   i18n: {

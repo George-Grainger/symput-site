@@ -114,10 +114,8 @@ export default function FeedbackItem({ post, initialAdmin = false }) {
               {unpublished_i18n}
             </p>
           )}
-          <div className="ml-1 font-light">
-            {locale === 'ar'
-              ? `${minRead_i18n} ${minutesToRead} ${words_i18n} ${wordCount}`
-              : `${wordCount} ${words_i18n} ${minutesToRead} ${minRead_i18n}`}
+          <div className="ml-1 font-light lang-switch">
+            {`${wordCount} ${words_i18n} ${minutesToRead} ${minRead_i18n}`}
           </div>
         </div>
       </div>

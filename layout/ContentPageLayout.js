@@ -44,10 +44,18 @@ const ContentPageLayout = ({
                       <a>{children}</a>
                     </Link>
                   );
+                },
+                img: ({ src, alt, title: dimensions }) => {
+                  const [width, height] = dimensions.split('x');
+                  return (
+                    <Image
+                      src={src}
+                      alt={alt}
+                      height={height || 360}
+                      width={width || 360}
+                    />
+                  );
                 }
-                // image: ({ children, node, ...props }) => {
-                //   return <Image {...props} layout="responsive" />;
-                // }
               }}
             >
               {markdownContent}

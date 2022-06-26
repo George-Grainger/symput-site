@@ -4,14 +4,34 @@ import { storage } from '@/lib/storage';
 import { FaCopy, FaPlusSquare } from 'react-icons/fa';
 import ButtonEllipsis from '../Loading/ButtonEllipsis';
 import toast from 'react-hot-toast';
-import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import {
+  getDownloadURL,
+  ref,
+  updateMetadata,
+  uploadBytesResumable
+} from 'firebase/storage';
 
 // Uploads images to Firebase Storage
 export default function ImageUploader() {
   const linkRef = useRef(null);
+  const [dimensions, setDimensions] = useState('');
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [downloadURL, setDownloadURL] = useState(null);
+
+  const createReader = (file, whenReady) => {
+    const reader = new FileReader();
+    reader.onload = function (evt) {
+      var image = new Image();
+      image.onload = function (evt) {
+        var width = this.width;
+        var height = this.height;
+        if (whenReady) whenReady(width, height);
+      };
+      image.src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  };
 
   // Creates a Firebase Upload Task
   const uploadFile = async (e) => {
@@ -44,6 +64,10 @@ export default function ImageUploader() {
           setDownloadURL(url);
           setUploading(false);
           toast.success('Upload complete');
+        });
+        createReader(file, (width, height) => {
+          updateMetadata(storageRef, { customMetadata: { height, width } });
+          setDimensions(`${width}x${height}`);
         });
       }
     );
@@ -85,7 +109,7 @@ export default function ImageUploader() {
             <code
               onDoubleClick={doCopy}
               ref={linkRef}
-            >{`![alt](${downloadURL})`}</code>
+            >{`![alt](${downloadURL} "${dimensions}")`}</code>
             <button
               aria-label="Copy link"
               onClick={doCopy}

@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import ResizingTextArea from './ResizingTextArea';
 import Link from 'next/link';
 import { serverTimestamp, updateDoc } from 'firebase/firestore';
+import Image from 'next/image';
 
 const FeedbackForm = ({ defaultValues, postRef, preview }) => {
   const { register, handleSubmit, formState, reset, watch } = useForm({
@@ -54,13 +55,24 @@ const FeedbackForm = ({ defaultValues, postRef, preview }) => {
 
         {preview ? (
           <ReactMarkdown
-            className="mx-auto max-w-[100vw-4rem] sm:max-w-prose"
+            className="mx-auto max-w-[calc(100vw-4rem)] sm:max-w-prose"
             components={{
               link: ({ children, href }) => {
                 return (
                   <Link href={href}>
                     <a>{children}</a>
                   </Link>
+                );
+              },
+              img: ({ src, alt, title: dimensions }) => {
+                const [width, height] = dimensions.split('x');
+                return (
+                  <Image
+                    src={src}
+                    alt={alt}
+                    height={height || 360}
+                    width={width || 360}
+                  />
                 );
               }
             }}
